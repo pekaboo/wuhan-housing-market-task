@@ -425,3 +425,57 @@ def test_one_price_3d_floor_view_keeps_filtered_rooms_as_grey_blocks(tmp_path):
     assert 'var columnFloors=floorRooms.get(column.key).size' in detail
     assert "block.style.setProperty('--floors',String(columnFloors))" in detail
     assert "columnFloors+' 层，'" in detail
+
+
+def test_one_price_3d_view_has_premium_camera_and_extruded_depth(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [
+            {
+                **certificate(901),
+                'rooms': [
+                    room(11, buildName='1', floor='9', roomName='0901', price=18000),
+                    room(12, buildName='1', floor='9', roomName='0902', saleStatus=1, price=18000),
+                    room(13, buildName='1', floor='8', roomName='0801', price=21000),
+                ],
+            }
+        ],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 456, 'name': '立体楼栋', 'date': '2026-08-27'}],
+        site_dir=site_dir,
+        generated_at='2026-08-27 22:00:00',
+        one_price_snapshots={456: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '456' / 'index.html').read_text(encoding='utf-8')
+
+    assert 'data-role="camera-preset" data-preset="front"' in detail
+    assert 'data-role="camera-preset" data-preset="iso"' in detail
+    assert 'data-role="camera-preset" data-preset="top"' in detail
+    assert 'data-role="camera-zoom" type="range"' in detail
+    assert '正视' in detail
+    assert '轴测' in detail
+    assert '俯视' in detail
+    assert 'function setCameraPreset(preset)' in detail
+    assert 'function setZoom(value)' in detail
+    assert 'function moveCamera(deltaX,deltaY)' in detail
+    assert "floorResults.addEventListener('keydown'" in detail
+    assert "floorToolbar.hidden=view!=='floor'" in detail
+
+    assert '.room-3d::before' in detail
+    assert '.room-3d::after' in detail
+    assert '.building-3d::before' in detail
+    assert '.building-3d::after' in detail
+    assert '.overview-body::before' in detail
+    assert '.overview-body::after' in detail
+    assert '.building-ground::before' in detail
+    assert '.building-ground::after' in detail
+    assert 'translateZ(16px)' in detail
+    assert 'rotateY(68deg)' in detail
+    assert 'rotateX(74deg)' in detail
+    assert 'pointer-events:none' in detail
+    assert 'radial-gradient' in detail
+    assert '--spatial-panel:#0b141d' in detail
