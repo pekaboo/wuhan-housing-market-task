@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:51:49",
   "projectId": 334502236389479,
   "status": "complete",
   "types": [
@@ -7,23 +7,6 @@
       "area": 88.0,
       "availableRoomNum": 182,
       "buildList": [
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 29,
-          "buildId": 312484573093958,
-          "buildName": "居住项目（武汉正商书香华府）2",
-          "buildShortName": "2#",
-          "buildType": "高层",
-          "buildTypeId": 4,
-          "evidenceId": 311854830743631,
-          "evidenceName": "武房开预售[2022]235号",
-          "floorTotal": 34,
-          "oldUnitName": "2",
-          "roomTotal": 68,
-          "soldNum": 39,
-          "unitId": 0,
-          "unitName": "2"
-        },
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 34,
@@ -40,6 +23,23 @@
           "soldNum": 34,
           "unitId": 0,
           "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 29,
+          "buildId": 312484573093958,
+          "buildName": "居住项目（武汉正商书香华府）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311854830743631,
+          "evidenceName": "武房开预售[2022]235号",
+          "floorTotal": 34,
+          "oldUnitName": "2",
+          "roomTotal": 68,
+          "soldNum": 39,
+          "unitId": 0,
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -145,23 +145,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312484573093964,
-          "buildName": "居住项目（武汉正商书香华府）8",
-          "buildShortName": "8#",
-          "buildType": "高层",
-          "buildTypeId": 4,
-          "evidenceId": 311873696944214,
-          "evidenceName": "武房开预售[2019]1111号",
-          "floorTotal": 34,
-          "oldUnitName": "2",
-          "roomTotal": 68,
-          "soldNum": 68,
-          "unitId": 0,
-          "unitName": "2"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 1,
           "buildId": 312484573093964,
           "buildName": "居住项目（武汉正商书香华府）8",
@@ -176,6 +159,23 @@
           "soldNum": 65,
           "unitId": 0,
           "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312484573093964,
+          "buildName": "居住项目（武汉正商书香华府）8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873696944214,
+          "evidenceName": "武房开预售[2019]1111号",
+          "floorTotal": 34,
+          "oldUnitName": "2",
+          "roomTotal": 68,
+          "soldNum": 68,
+          "unitId": 0,
+          "unitName": "2"
         }
       ],
       "effectImage": null,
@@ -550,23 +550,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312484573093961,
-          "buildName": "居住项目（武汉正商书香华府）5",
-          "buildShortName": "5#",
-          "buildType": "高层",
-          "buildTypeId": 4,
-          "evidenceId": 311874590773329,
-          "evidenceName": "武房开预售[2021]396号",
-          "floorTotal": 34,
-          "oldUnitName": "1",
-          "roomTotal": 32,
-          "soldNum": 32,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 1,
           "buildId": 312484573093961,
           "buildName": "居住项目（武汉正商书香华府）5",
@@ -581,6 +564,23 @@
           "soldNum": 33,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312484573093961,
+          "buildName": "居住项目（武汉正商书香华府）5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874590773329,
+          "evidenceName": "武房开预售[2021]396号",
+          "floorTotal": 34,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:51:49",
   "projectId": 334501415100496,
   "status": "complete",
   "types": [
@@ -484,23 +484,6 @@
           "evidenceId": 311874276241494,
           "evidenceName": "武房开预售[2020]742号",
           "floorTotal": 17,
-          "oldUnitName": "1",
-          "roomTotal": 15,
-          "soldNum": 15,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312482997739590,
-          "buildName": "新洲万达项目E地块10",
-          "buildShortName": "E-10#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874276241494,
-          "evidenceName": "武房开预售[2020]742号",
-          "floorTotal": 17,
           "oldUnitName": "2",
           "roomTotal": 34,
           "soldNum": 34,
@@ -523,6 +506,23 @@
           "soldNum": 34,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482997739590,
+          "buildName": "新洲万达项目E地块10",
+          "buildShortName": "E-10#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874276241494,
+          "evidenceName": "武房开预售[2020]742号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 15,
+          "soldNum": 15,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,

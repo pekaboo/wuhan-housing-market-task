@@ -1,41 +1,86 @@
 {
   "count": 390,
-  "generatedAt": "2026-08-27 19:09:09",
+  "generatedAt": "2026-08-27 19:51:49",
   "projects": [
     {
       "date": "2026-08-27",
       "douYinSoldChartImg": null,
-      "id": 329239308890196,
-      "name": "保利庭瑞阅江台",
-      "salePrice": 11000.0,
+      "id": 515850699612242,
+      "name": "能建青誉府",
+      "salePrice": 18000.0,
       "soldChartImg": null,
-      "soldNum": 23
+      "soldNum": 37
     },
     {
       "date": "2026-08-27",
       "douYinSoldChartImg": null,
-      "id": 334503202558031,
-      "name": "交投合盛嘉园",
-      "salePrice": 7000.0,
+      "id": 445105776463944,
+      "name": "长江新天地",
+      "salePrice": 29000.0,
       "soldChartImg": null,
-      "soldNum": 35
+      "soldNum": 8
     },
     {
       "date": "2026-08-27",
       "douYinSoldChartImg": null,
-      "id": 334502236389464,
-      "name": "孔雀城航天府",
-      "salePrice": 5700.0,
+      "id": 334502236393558,
+      "name": "帝大御璟城",
+      "salePrice": 8500.0,
       "soldChartImg": null,
+      "soldNum": -12
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/44a924bd5e844b1e9ad0271ae5744b7c.png",
+      "id": 334502236389471,
+      "name": "东湖ONE",
+      "salePrice": 14999.0,
+      "soldChartImg": "https://img.wufangtong.cn/e4be08bd70a8474fa92576dc15a5a675.png",
       "soldNum": 14
     },
     {
       "date": "2026-08-27",
-      "douYinSoldChartImg": null,
+      "douYinSoldChartImg": "https://img.wufangtong.cn/19e53cde758c47be947f0f737751b681.png",
+      "id": 334503227465804,
+      "name": "洺悦华府",
+      "salePrice": 3000.0,
+      "soldChartImg": "https://img.wufangtong.cn/36d1998b25ef4d2c9767053e021abe2a.png",
+      "soldNum": 1
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/93b03a73b1954228a85c2dfac9934e92.png",
+      "id": 329239308890196,
+      "name": "保利庭瑞阅江台",
+      "salePrice": 11000.0,
+      "soldChartImg": "https://img.wufangtong.cn/95f00a8f86bd4ed2843614f0c68f0c79.png",
+      "soldNum": 23
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/771983a6bfc4403bb420bdc6028b84e8.png",
+      "id": 334503202558031,
+      "name": "交投合盛嘉园",
+      "salePrice": 7000.0,
+      "soldChartImg": "https://img.wufangtong.cn/1fe83f018d7b47ada8e71996361363a8.png",
+      "soldNum": 35
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/1b84ddd672a948c59bbad4169436ca99.png",
+      "id": 334502236389464,
+      "name": "孔雀城航天府",
+      "salePrice": 5700.0,
+      "soldChartImg": "https://img.wufangtong.cn/495bd7d035f040508713375f65e6ce16.png",
+      "soldNum": 14
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/d9d25fc1353c4dabb50350e5e8606d97.png",
       "id": 641949061926989,
       "name": "汉阳城更·境湖玥",
       "salePrice": 16000.0,
-      "soldChartImg": null,
+      "soldChartImg": "https://img.wufangtong.cn/bf154f373e7a4b22a46142cad359f2be.png",
       "soldNum": 8
     },
     {
@@ -279,15 +324,6 @@
       "name": "保利云璟",
       "salePrice": 12500.0,
       "soldChartImg": "https://img.wufangtong.cn/f5eb439d3f8d4215ad57740186d7e6f3.png",
-      "soldNum": 1
-    },
-    {
-      "date": "2026-08-27",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/4bfa6e2a9b814d2c88b5aa60fe811994.png",
-      "id": 334503227465804,
-      "name": "洺悦华府",
-      "salePrice": 3000.0,
-      "soldChartImg": "https://img.wufangtong.cn/f5d42392d7324974966fc09e162d20f6.png",
       "soldNum": 1
     },
     {
@@ -652,30 +688,12 @@
     },
     {
       "date": "2026-08-26",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/1fe16c6b86d0437b9ac6bec3282c8475.png",
-      "id": 445105776463944,
-      "name": "长江新天地",
-      "salePrice": 29000.0,
-      "soldChartImg": "https://img.wufangtong.cn/3c419f787eb54e3f88cde243dd59ea95.png",
-      "soldNum": 8
-    },
-    {
-      "date": "2026-08-26",
       "douYinSoldChartImg": "https://img.wufangtong.cn/8ad404f96e4749a2836d2669710fc146.png",
       "id": 334503202562127,
       "name": "联投悦西湖",
       "salePrice": 10000.0,
       "soldChartImg": "https://img.wufangtong.cn/00bfd129df0340a0873faba9617f8558.png",
       "soldNum": 16
-    },
-    {
-      "date": "2026-08-26",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/e4c109dae67e42e8aef4630eba024a98.png",
-      "id": 334502236393558,
-      "name": "帝大御璟城",
-      "salePrice": 8500.0,
-      "soldChartImg": "https://img.wufangtong.cn/3c82fcb5b7b74011864f10aa0afcaf05.png",
-      "soldNum": -12
     },
     {
       "date": "2026-08-26",
@@ -913,15 +931,6 @@
     },
     {
       "date": "2026-08-25",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/fabde6b950aa494c9df9f25332e599c3.png",
-      "id": 515850699612242,
-      "name": "能建青誉府",
-      "salePrice": 18000.0,
-      "soldChartImg": "https://img.wufangtong.cn/482fbbd0c0fb4654b9fccfc8388a6ab6.png",
-      "soldNum": 37
-    },
-    {
-      "date": "2026-08-25",
       "douYinSoldChartImg": "https://img.wufangtong.cn/5b0bb518bc6f44c6872a0d1b932da0f4.png",
       "id": 334502236389457,
       "name": "坤合云海城",
@@ -946,15 +955,6 @@
       "salePrice": 11500.0,
       "soldChartImg": "https://img.wufangtong.cn/e296b9d1d3314abbaa70d234ab4cc114.png",
       "soldNum": 19
-    },
-    {
-      "date": "2026-08-25",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/a3c56762e469474d95852743df6d7a12.png",
-      "id": 334502236389471,
-      "name": "东湖ONE",
-      "salePrice": 14999.0,
-      "soldChartImg": "https://img.wufangtong.cn/97fb7dedaeeb4486a0985224a85bb4b6.png",
-      "soldNum": 14
     },
     {
       "date": "2026-08-25",

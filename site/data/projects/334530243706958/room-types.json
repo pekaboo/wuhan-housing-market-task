@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:51:49",
   "projectId": 334530243706958,
   "status": "complete",
   "types": [
@@ -322,23 +322,6 @@
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
-          "buildId": 312580260483175,
-          "buildName": "庙山大花山社区建设项目6",
-          "buildShortName": "6#",
-          "buildType": "高层",
-          "buildTypeId": 4,
-          "evidenceId": 311872019202136,
-          "evidenceName": "武房开预售[2017]420号",
-          "floorTotal": 28,
-          "oldUnitName": "/",
-          "roomTotal": 111,
-          "soldNum": 111,
-          "unitId": 0,
-          "unitName": "/"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
           "buildId": 312580260483174,
           "buildName": "庙山大花山社区建设项目5",
           "buildShortName": "5#",
@@ -352,6 +335,23 @@
           "soldNum": 49,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312580260483175,
+          "buildName": "庙山大花山社区建设项目6",
+          "buildShortName": "6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311872019202136,
+          "evidenceName": "武房开预售[2017]420号",
+          "floorTotal": 28,
+          "oldUnitName": "/",
+          "roomTotal": 111,
+          "soldNum": 111,
+          "unitId": 0,
+          "unitName": "/"
         },
         {
           "abnormalRoomNum": 0,

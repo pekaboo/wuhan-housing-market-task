@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:51:49",
   "projectId": 760858721439813,
   "status": "complete",
   "types": [
@@ -9,20 +9,20 @@
       "buildList": [
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 766441987211334,
-          "buildName": "经开3C2地块项目（A地块）1",
-          "buildShortName": "1#",
+          "availableRoomNum": 4,
+          "buildId": 766441987211335,
+          "buildName": "经开3C2地块项目（A地块）5",
+          "buildShortName": "5#",
           "buildType": "洋房",
           "buildTypeId": 2,
           "evidenceId": 781928000364613,
           "evidenceName": "武房开预售[2026]030号",
-          "floorTotal": 9,
-          "oldUnitName": "1",
-          "roomTotal": 8,
-          "soldNum": 8,
+          "floorTotal": 10,
+          "oldUnitName": "2",
+          "roomTotal": 9,
+          "soldNum": 5,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -43,20 +43,20 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 4,
-          "buildId": 766441987211335,
-          "buildName": "经开3C2地块项目（A地块）5",
-          "buildShortName": "5#",
+          "availableRoomNum": 0,
+          "buildId": 766441987211334,
+          "buildName": "经开3C2地块项目（A地块）1",
+          "buildShortName": "1#",
           "buildType": "洋房",
           "buildTypeId": 2,
           "evidenceId": 781928000364613,
           "evidenceName": "武房开预售[2026]030号",
-          "floorTotal": 10,
-          "oldUnitName": "2",
-          "roomTotal": 9,
-          "soldNum": 5,
+          "floorTotal": 9,
+          "oldUnitName": "1",
+          "roomTotal": 8,
+          "soldNum": 8,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -225,23 +225,6 @@
       "buildList": [
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 766441987211335,
-          "buildName": "经开3C2地块项目（A地块）5",
-          "buildShortName": "5#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 781928000364613,
-          "evidenceName": "武房开预售[2026]030号",
-          "floorTotal": 10,
-          "oldUnitName": "1",
-          "roomTotal": 9,
-          "soldNum": 9,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 1,
           "buildId": 766441987211335,
           "buildName": "经开3C2地块项目（A地块）5",
@@ -256,6 +239,23 @@
           "soldNum": 8,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 766441987211335,
+          "buildName": "经开3C2地块项目（A地块）5",
+          "buildShortName": "5#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 781928000364613,
+          "evidenceName": "武房开预售[2026]030号",
+          "floorTotal": 10,
+          "oldUnitName": "1",
+          "roomTotal": 9,
+          "soldNum": 9,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,

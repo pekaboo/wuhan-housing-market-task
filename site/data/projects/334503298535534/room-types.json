@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:51:49",
   "projectId": 334503298535534,
   "status": "complete",
   "types": [
@@ -37,23 +37,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312482946461769,
-          "buildName": "佳兆业浣溪璞园(一期)4",
-          "buildShortName": "4#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 311874209607754,
-          "evidenceName": "武房开预售[2020]618号",
-          "floorTotal": 13,
-          "oldUnitName": "/",
-          "roomTotal": 11,
-          "soldNum": 11,
-          "unitId": 0,
-          "unitName": "/"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 1,
           "buildId": 312482946461767,
           "buildName": "佳兆业浣溪璞园(一期)2",
@@ -66,23 +49,6 @@
           "oldUnitName": "/",
           "roomTotal": 11,
           "soldNum": 10,
-          "unitId": 0,
-          "unitName": "/"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312482946461773,
-          "buildName": "佳兆业浣溪璞园(一期)8",
-          "buildShortName": "8#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874370592842,
-          "evidenceName": "武房开预售[2020]987号",
-          "floorTotal": 14,
-          "oldUnitName": "/",
-          "roomTotal": 13,
-          "soldNum": 13,
           "unitId": 0,
           "unitName": "/"
         },
@@ -106,6 +72,23 @@
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
+          "buildId": 312482946461773,
+          "buildName": "佳兆业浣溪璞园(一期)8",
+          "buildShortName": "8#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874370592842,
+          "evidenceName": "武房开预售[2020]987号",
+          "floorTotal": 14,
+          "oldUnitName": "/",
+          "roomTotal": 13,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
           "buildId": 312482946461774,
           "buildName": "佳兆业浣溪璞园(一期)9",
           "buildShortName": "9#",
@@ -119,6 +102,23 @@
           "soldNum": 14,
           "unitId": 0,
           "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482946461769,
+          "buildName": "佳兆业浣溪璞园(一期)4",
+          "buildShortName": "4#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 311874209607754,
+          "evidenceName": "武房开预售[2020]618号",
+          "floorTotal": 13,
+          "oldUnitName": "/",
+          "roomTotal": 11,
+          "soldNum": 11,
+          "unitId": 0,
+          "unitName": "/"
         }
       ],
       "effectImage": null,

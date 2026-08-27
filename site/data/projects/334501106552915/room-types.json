@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:51:49",
   "projectId": 334501106552915,
   "status": "complete",
   "types": [
@@ -1765,23 +1765,6 @@
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
-          "buildId": 312483618852940,
-          "buildName": "天汇龙城龙枫苑项目8",
-          "buildShortName": "8#",
-          "buildType": "高层",
-          "buildTypeId": 4,
-          "evidenceId": 311854830743632,
-          "evidenceName": "武房开预售[2022]234号",
-          "floorTotal": 33,
-          "oldUnitName": "2",
-          "roomTotal": 32,
-          "soldNum": 32,
-          "unitId": 0,
-          "unitName": "2"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
           "buildId": 312483618852938,
           "buildName": "天汇龙城龙枫苑项目6",
           "buildShortName": "6#",
@@ -1795,6 +1778,23 @@
           "soldNum": 32,
           "unitId": 0,
           "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483618852940,
+          "buildName": "天汇龙城龙枫苑项目8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311854830743632,
+          "evidenceName": "武房开预售[2022]234号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
