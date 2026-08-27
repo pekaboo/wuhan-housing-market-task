@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 334503298535514,
   "status": "complete",
   "types": [
@@ -85,11 +85,11 @@
     },
     {
       "area": 100.0,
-      "availableRoomNum": 13,
+      "availableRoomNum": 12,
       "buildList": [
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 13,
+          "availableRoomNum": 12,
           "buildId": 312483924824133,
           "buildName": "中新盛景项目（居住、商务服务设施用地）1",
           "buildShortName": "1#",
@@ -100,7 +100,7 @@
           "floorTotal": 32,
           "oldUnitName": "2",
           "roomTotal": 62,
-          "soldNum": 49,
+          "soldNum": 50,
           "unitId": 0,
           "unitName": "2"
         }

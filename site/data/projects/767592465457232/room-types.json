@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 767592465457232,
   "status": "complete",
   "types": [
@@ -142,7 +142,7 @@
     },
     {
       "area": 140.0,
-      "availableRoomNum": 2,
+      "availableRoomNum": 1,
       "buildList": [
         {
           "abnormalRoomNum": 0,
@@ -180,7 +180,7 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 1,
+          "availableRoomNum": 0,
           "buildId": 789805630996551,
           "buildName": "新建居住、防护绿地项目（车站街片一期地块）3",
           "buildShortName": "3#",
@@ -191,7 +191,7 @@
           "floorTotal": 17,
           "oldUnitName": "1",
           "roomTotal": 30,
-          "soldNum": 29,
+          "soldNum": 30,
           "unitId": 0,
           "unitName": "1"
         },

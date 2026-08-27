@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 334503397294149,
   "status": "complete",
   "types": [
@@ -7,23 +7,6 @@
       "area": 99.0,
       "availableRoomNum": 5,
       "buildList": [
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312488205942854,
-          "buildName": "住宅项目（金辉优步湖畔）10、15、16",
-          "buildShortName": "10#,15#,16#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311873202012243,
-          "evidenceName": "武房开预售[2018]793号",
-          "floorTotal": 16,
-          "oldUnitName": "10号楼1",
-          "roomTotal": 31,
-          "soldNum": 31,
-          "unitId": 0,
-          "unitName": "10号楼1"
-        },
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 5,
@@ -40,6 +23,23 @@
           "soldNum": 0,
           "unitId": 0,
           "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312488205942854,
+          "buildName": "住宅项目（金辉优步湖畔）10、15、16",
+          "buildShortName": "10#,15#,16#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311873202012243,
+          "evidenceName": "武房开预售[2018]793号",
+          "floorTotal": 16,
+          "oldUnitName": "10号楼1",
+          "roomTotal": 31,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "10号楼1"
         },
         {
           "abnormalRoomNum": 0,
@@ -497,7 +497,7 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
+          "availableRoomNum": 1,
           "buildId": 312488205942869,
           "buildName": "住宅项目（金辉优步湖畔）7",
           "buildShortName": "7#",
@@ -506,11 +506,11 @@
           "evidenceId": 311873062817868,
           "evidenceName": "武房开预售[2018]469号",
           "floorTotal": 16,
-          "oldUnitName": "1",
-          "roomTotal": 14,
-          "soldNum": 14,
+          "oldUnitName": "2",
+          "roomTotal": 16,
+          "soldNum": 15,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -531,7 +531,7 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 1,
+          "availableRoomNum": 0,
           "buildId": 312488205942869,
           "buildName": "住宅项目（金辉优步湖畔）7",
           "buildShortName": "7#",
@@ -540,11 +540,11 @@
           "evidenceId": 311873062817868,
           "evidenceName": "武房开预售[2018]469号",
           "floorTotal": 16,
-          "oldUnitName": "2",
-          "roomTotal": 16,
-          "soldNum": 15,
+          "oldUnitName": "1",
+          "roomTotal": 14,
+          "soldNum": 14,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,

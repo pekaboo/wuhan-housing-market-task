@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 334503202558031,
   "status": "complete",
   "types": [
@@ -170,25 +170,8 @@
     },
     {
       "area": 107.0,
-      "availableRoomNum": 72,
+      "availableRoomNum": 70,
       "buildList": [
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 5,
-          "buildId": 312483129339973,
-          "buildName": "住宅楼（交投合盛嘉园二期）14",
-          "buildShortName": "14#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874219966550,
-          "evidenceName": "武房开预售[2020]626号",
-          "floorTotal": 16,
-          "oldUnitName": "1",
-          "roomTotal": 24,
-          "soldNum": 19,
-          "unitId": 0,
-          "unitName": "1"
-        },
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 7,
@@ -205,6 +188,23 @@
           "soldNum": 17,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 312483129339973,
+          "buildName": "住宅楼（交投合盛嘉园二期）14",
+          "buildShortName": "14#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874219966550,
+          "evidenceName": "武房开预售[2020]626号",
+          "floorTotal": 16,
+          "oldUnitName": "1",
+          "roomTotal": 24,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -514,6 +514,23 @@
         },
         {
           "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 312484162449491,
+          "buildName": "住宅楼（交投合盛嘉园一期）3",
+          "buildShortName": "3#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874298306645,
+          "evidenceName": "武房开预售[2020]802号",
+          "floorTotal": 16,
+          "oldUnitName": "2",
+          "roomTotal": 20,
+          "soldNum": 17,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
           "availableRoomNum": 0,
           "buildId": 312484162449491,
           "buildName": "住宅楼（交投合盛嘉园一期）3",
@@ -526,40 +543,6 @@
           "oldUnitName": "1",
           "roomTotal": 20,
           "soldNum": 20,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 5,
-          "buildId": 312484162449491,
-          "buildName": "住宅楼（交投合盛嘉园一期）3",
-          "buildShortName": "3#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874298306645,
-          "evidenceName": "武房开预售[2020]802号",
-          "floorTotal": 16,
-          "oldUnitName": "2",
-          "roomTotal": 20,
-          "soldNum": 15,
-          "unitId": 0,
-          "unitName": "2"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 1,
-          "buildId": 312484162449496,
-          "buildName": "住宅楼（交投合盛嘉园一期）4",
-          "buildShortName": "4#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874027872332,
-          "evidenceName": "武房开预售[2020]180号",
-          "floorTotal": 16,
-          "oldUnitName": "1",
-          "roomTotal": 22,
-          "soldNum": 21,
           "unitId": 0,
           "unitName": "1"
         },
@@ -579,6 +562,23 @@
           "soldNum": 22,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312484162449496,
+          "buildName": "住宅楼（交投合盛嘉园一期）4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874027872332,
+          "evidenceName": "武房开预售[2020]180号",
+          "floorTotal": 16,
+          "oldUnitName": "1",
+          "roomTotal": 22,
+          "soldNum": 21,
+          "unitId": 0,
+          "unitName": "1"
         }
       ],
       "effectImage": null,
@@ -645,23 +645,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 2,
-          "buildId": 312484162449478,
-          "buildName": "住宅楼（交投合盛嘉园一期）10、15、S2",
-          "buildShortName": "10#,15#,S2#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874482200662,
-          "evidenceName": "武房开预售[2021]126号",
-          "floorTotal": 16,
-          "oldUnitName": "10号楼1",
-          "roomTotal": 3,
-          "soldNum": 1,
-          "unitId": 0,
-          "unitName": "10号楼1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 3,
           "buildId": 312484162449478,
           "buildName": "住宅楼（交投合盛嘉园一期）10、15、S2",
@@ -679,6 +662,23 @@
         },
         {
           "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312484162449478,
+          "buildName": "住宅楼（交投合盛嘉园一期）10、15、S2",
+          "buildShortName": "10#,15#,S2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874482200662,
+          "evidenceName": "武房开预售[2021]126号",
+          "floorTotal": 16,
+          "oldUnitName": "10号楼1",
+          "roomTotal": 3,
+          "soldNum": 1,
+          "unitId": 0,
+          "unitName": "10号楼1"
+        },
+        {
+          "abnormalRoomNum": 0,
           "availableRoomNum": 1,
           "buildId": 312484162449479,
           "buildName": "住宅楼（交投合盛嘉园一期）11",
@@ -693,23 +693,6 @@
           "soldNum": 1,
           "unitId": 0,
           "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 15,
-          "buildId": 312484162449480,
-          "buildName": "住宅楼（交投合盛嘉园一期）12",
-          "buildShortName": "12#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874401239126,
-          "evidenceName": "武房开预售[2020]1033号",
-          "floorTotal": 14,
-          "oldUnitName": "/",
-          "roomTotal": 20,
-          "soldNum": 5,
-          "unitId": 0,
-          "unitName": "/"
         },
         {
           "abnormalRoomNum": 0,
@@ -744,6 +727,23 @@
           "soldNum": 1,
           "unitId": 0,
           "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 15,
+          "buildId": 312484162449480,
+          "buildName": "住宅楼（交投合盛嘉园一期）12",
+          "buildShortName": "12#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874401239126,
+          "evidenceName": "武房开预售[2020]1033号",
+          "floorTotal": 14,
+          "oldUnitName": "/",
+          "roomTotal": 20,
+          "soldNum": 5,
+          "unitId": 0,
+          "unitName": "/"
         },
         {
           "abnormalRoomNum": 0,
@@ -1014,23 +1014,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312483129339984,
-          "buildName": "住宅楼（交投合盛嘉园二期）32",
-          "buildShortName": "32#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311875097895000,
-          "evidenceName": "武房开预售[2022]044号",
-          "floorTotal": 15,
-          "oldUnitName": "1",
-          "roomTotal": 23,
-          "soldNum": 23,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 8,
           "buildId": 312483129339984,
           "buildName": "住宅楼（交投合盛嘉园二期）32",
@@ -1045,6 +1028,23 @@
           "soldNum": 16,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483129339984,
+          "buildName": "住宅楼（交投合盛嘉园二期）32",
+          "buildShortName": "32#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311875097895000,
+          "evidenceName": "武房开预售[2022]044号",
+          "floorTotal": 15,
+          "oldUnitName": "1",
+          "roomTotal": 23,
+          "soldNum": 23,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -1082,23 +1082,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 13,
-          "buildId": 312483129339986,
-          "buildName": "住宅楼（交投合盛嘉园二期）34",
-          "buildShortName": "34#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311875097895000,
-          "evidenceName": "武房开预售[2022]044号",
-          "floorTotal": 16,
-          "oldUnitName": "1",
-          "roomTotal": 24,
-          "soldNum": 11,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 21,
           "buildId": 312483129339986,
           "buildName": "住宅楼（交投合盛嘉园二期）34",
@@ -1113,6 +1096,23 @@
           "soldNum": 3,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 13,
+          "buildId": 312483129339986,
+          "buildName": "住宅楼（交投合盛嘉园二期）34",
+          "buildShortName": "34#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311875097895000,
+          "evidenceName": "武房开预售[2022]044号",
+          "floorTotal": 16,
+          "oldUnitName": "1",
+          "roomTotal": 24,
+          "soldNum": 11,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -1184,23 +1184,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 16,
-          "buildId": 312484162449492,
-          "buildName": "住宅楼（交投合盛嘉园一期）30、S4",
-          "buildShortName": "30#,S4#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874754359377,
-          "evidenceName": "武房开预售[2021]830号",
-          "floorTotal": 16,
-          "oldUnitName": "1",
-          "roomTotal": 24,
-          "soldNum": 8,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 14,
           "buildId": 312484162449492,
           "buildName": "住宅楼（交投合盛嘉园一期）30、S4",
@@ -1215,6 +1198,23 @@
           "soldNum": 7,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 16,
+          "buildId": 312484162449492,
+          "buildName": "住宅楼（交投合盛嘉园一期）30、S4",
+          "buildShortName": "30#,S4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874754359377,
+          "evidenceName": "武房开预售[2021]830号",
+          "floorTotal": 16,
+          "oldUnitName": "1",
+          "roomTotal": 24,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -1294,7 +1294,7 @@
     },
     {
       "area": 123.0,
-      "availableRoomNum": 63,
+      "availableRoomNum": 62,
       "buildList": [
         {
           "abnormalRoomNum": 0,
@@ -1366,7 +1366,7 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 5,
+          "availableRoomNum": 4,
           "buildId": 312483129339990,
           "buildName": "住宅楼（交投合盛嘉园二期）9",
           "buildShortName": "9#",
@@ -1377,7 +1377,7 @@
           "floorTotal": 16,
           "oldUnitName": "1",
           "roomTotal": 13,
-          "soldNum": 8,
+          "soldNum": 9,
           "unitId": 0,
           "unitName": "1"
         },

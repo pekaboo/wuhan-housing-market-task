@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 409008542720080,
   "status": "complete",
   "types": [
@@ -477,23 +477,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 1,
-          "buildId": 472383021695058,
-          "buildName": "中国中铁·金桥云境6",
-          "buildShortName": "6#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 473433204654149,
-          "evidenceName": "武房开预售[2023]424号",
-          "floorTotal": 10,
-          "oldUnitName": "1",
-          "roomTotal": 10,
-          "soldNum": 9,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 0,
           "buildId": 472383021695058,
           "buildName": "中国中铁·金桥云境6",
@@ -508,6 +491,23 @@
           "soldNum": 10,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 472383021695058,
+          "buildName": "中国中铁·金桥云境6",
+          "buildShortName": "6#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 473433204654149,
+          "evidenceName": "武房开预售[2023]424号",
+          "floorTotal": 10,
+          "oldUnitName": "1",
+          "roomTotal": 10,
+          "soldNum": 9,
+          "unitId": 0,
+          "unitName": "1"
         }
       ],
       "effectImage": null,
@@ -676,23 +676,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 1,
-          "buildId": 472383021695059,
-          "buildName": "中国中铁·金桥云境7",
-          "buildShortName": "7#",
-          "buildType": "别墅",
-          "buildTypeId": 1,
-          "evidenceId": 473433204654149,
-          "evidenceName": "武房开预售[2023]424号",
-          "floorTotal": 4,
-          "oldUnitName": "1",
-          "roomTotal": 2,
-          "soldNum": 1,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 0,
           "buildId": 472383021695059,
           "buildName": "中国中铁·金桥云境7",
@@ -707,6 +690,23 @@
           "soldNum": 2,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 472383021695059,
+          "buildName": "中国中铁·金桥云境7",
+          "buildShortName": "7#",
+          "buildType": "别墅",
+          "buildTypeId": 1,
+          "evidenceId": 473433204654149,
+          "evidenceName": "武房开预售[2023]424号",
+          "floorTotal": 4,
+          "oldUnitName": "1",
+          "roomTotal": 2,
+          "soldNum": 1,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -935,11 +935,11 @@
           "evidenceId": 473433204654149,
           "evidenceName": "武房开预售[2023]424号",
           "floorTotal": 4,
-          "oldUnitName": "1",
+          "oldUnitName": "2",
           "roomTotal": 2,
           "soldNum": 2,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -952,11 +952,11 @@
           "evidenceId": 473433204654149,
           "evidenceName": "武房开预售[2023]424号",
           "floorTotal": 4,
-          "oldUnitName": "2",
+          "oldUnitName": "1",
           "roomTotal": 2,
           "soldNum": 2,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,

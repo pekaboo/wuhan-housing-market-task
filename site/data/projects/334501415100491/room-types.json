@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 334501415100491,
   "status": "complete",
   "types": [
@@ -26,23 +26,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312482744143945,
-          "buildName": "新建居住项目（徐东村城中村改造K2、K3及扩大地块）4",
-          "buildShortName": "4#",
-          "buildType": "超高层",
-          "buildTypeId": 5,
-          "evidenceId": 311874754359378,
-          "evidenceName": "武房开预售[2021]829号",
-          "floorTotal": 43,
-          "oldUnitName": "1",
-          "roomTotal": 2,
-          "soldNum": 2,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 5,
           "buildId": 312482744143946,
           "buildName": "新建居住项目（徐东村城中村改造K2、K3及扩大地块）5",
@@ -55,6 +38,23 @@
           "oldUnitName": "1",
           "roomTotal": 41,
           "soldNum": 36,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482744143945,
+          "buildName": "新建居住项目（徐东村城中村改造K2、K3及扩大地块）4",
+          "buildShortName": "4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874754359378,
+          "evidenceName": "武房开预售[2021]829号",
+          "floorTotal": 43,
+          "oldUnitName": "1",
+          "roomTotal": 2,
+          "soldNum": 2,
           "unitId": 0,
           "unitName": "1"
         },

@@ -1,7 +1,70 @@
 {
   "count": 390,
-  "generatedAt": "2026-08-27 18:44:46",
+  "generatedAt": "2026-08-27 19:09:09",
   "projects": [
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": null,
+      "id": 329239308890196,
+      "name": "保利庭瑞阅江台",
+      "salePrice": 11000.0,
+      "soldChartImg": null,
+      "soldNum": 23
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": null,
+      "id": 334503202558031,
+      "name": "交投合盛嘉园",
+      "salePrice": 7000.0,
+      "soldChartImg": null,
+      "soldNum": 35
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": null,
+      "id": 334502236389464,
+      "name": "孔雀城航天府",
+      "salePrice": 5700.0,
+      "soldChartImg": null,
+      "soldNum": 14
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": null,
+      "id": 641949061926989,
+      "name": "汉阳城更·境湖玥",
+      "salePrice": 16000.0,
+      "soldChartImg": null,
+      "soldNum": 8
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/898bf0bb165c48f581df54d1037f6fde.png",
+      "id": 767592465457232,
+      "name": "金地·知音乐府",
+      "salePrice": 20000.0,
+      "soldChartImg": "https://img.wufangtong.cn/772345be5315451aaf22a696938cce63.png",
+      "soldNum": 1
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/807b9fe5915645e38c65f28093fff372.png",
+      "id": 750595721310277,
+      "name": "招商·原颂",
+      "salePrice": 16700.0,
+      "soldChartImg": "https://img.wufangtong.cn/5f3e62fd924e406992f54b1659684b01.png",
+      "soldNum": 54
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/940ed6cb3bf541969af16767bcabdac6.png",
+      "id": 334503298535514,
+      "name": "中新盛景",
+      "salePrice": 6480.0,
+      "soldChartImg": "https://img.wufangtong.cn/1f2cf1aaed3d4184923cd6ffcc9742c9.png",
+      "soldNum": 24
+    },
     {
       "date": "2026-08-27",
       "douYinSoldChartImg": "https://img.wufangtong.cn/a2043ee406ec4f319d8a7b1cca4935ff.png",
@@ -37,15 +100,6 @@
       "salePrice": 9400.0,
       "soldChartImg": "https://img.wufangtong.cn/13cdceaa3cff46148e2cf93204659a60.png",
       "soldNum": 1
-    },
-    {
-      "date": "2026-08-27",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/15a7951d1303495487aa6a0ddb6e95b4.png",
-      "id": 334503202558031,
-      "name": "交投合盛嘉园",
-      "salePrice": 7000.0,
-      "soldChartImg": "https://img.wufangtong.cn/dae97cab8f944e05b5651b749b75d9cc.png",
-      "soldNum": 35
     },
     {
       "date": "2026-08-27",
@@ -643,30 +697,12 @@
     },
     {
       "date": "2026-08-26",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/337ba5bdefe84f47b4df3c0259e356db.png",
-      "id": 329239308890196,
-      "name": "保利庭瑞阅江台",
-      "salePrice": 11000.0,
-      "soldChartImg": "https://img.wufangtong.cn/4e5693e274e84dba9c0127d781a87a8c.png",
-      "soldNum": 23
-    },
-    {
-      "date": "2026-08-26",
       "douYinSoldChartImg": "https://img.wufangtong.cn/ba693c64c6d04605b5323d8c66a3d17c.png",
       "id": 334502236389479,
       "name": "正商书香华府",
       "salePrice": 4800.0,
       "soldChartImg": "https://img.wufangtong.cn/ff320ea65f024193aeef4eb1a33da26e.png",
       "soldNum": 11
-    },
-    {
-      "date": "2026-08-26",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/712780a9c23d4c63858d2b8d2dd7a4af.png",
-      "id": 334502236389464,
-      "name": "孔雀城航天府",
-      "salePrice": 5700.0,
-      "soldChartImg": "https://img.wufangtong.cn/0ea347fabb1f494fa10744d76617772e.png",
-      "soldNum": 14
     },
     {
       "date": "2026-08-26",
@@ -802,15 +838,6 @@
       "salePrice": 14900.0,
       "soldChartImg": "https://img.wufangtong.cn/5f8724ff34a74e5a978cd0797ac39171.png",
       "soldNum": 21
-    },
-    {
-      "date": "2026-08-25",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/3f2665fe8d99485eb59472524f7832fb.png",
-      "id": 750595721310277,
-      "name": "招商·原颂",
-      "salePrice": 16700.0,
-      "soldChartImg": "https://img.wufangtong.cn/c90fc154787f474fac4cc44566d0e610.png",
-      "soldNum": 54
     },
     {
       "date": "2026-08-25",
@@ -1525,15 +1552,6 @@
     },
     {
       "date": "2026-08-22",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/2d767fc1f82d44839a03459c94ccb8d4.png",
-      "id": 334503298535514,
-      "name": "中新盛景",
-      "salePrice": 6480.0,
-      "soldChartImg": "https://img.wufangtong.cn/d8202d4e740b4a20a16a4b8e33e604a8.png",
-      "soldNum": 24
-    },
-    {
-      "date": "2026-08-22",
       "douYinSoldChartImg": "https://img.wufangtong.cn/69f1b906527a489e90279082a3c79c33.png",
       "id": 329239308890208,
       "name": "新希望D10天元",
@@ -1648,15 +1666,6 @@
       "salePrice": 16000.0,
       "soldChartImg": "https://img.wufangtong.cn/b8832b957264451ca13f4f71052e415c.png",
       "soldNum": 90
-    },
-    {
-      "date": "2026-08-21",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/9d6918d4c77942e985d87dbb86d13345.png",
-      "id": 641949061926989,
-      "name": "汉阳城更·境湖玥",
-      "salePrice": 16000.0,
-      "soldChartImg": "https://img.wufangtong.cn/98aae0c9f8cd4cfbaa696587c0e26a25.png",
-      "soldNum": 8
     },
     {
       "date": "2026-08-21",
@@ -3475,15 +3484,6 @@
       "salePrice": 0.0,
       "soldChartImg": "https://img.wufangtong.cn/2da5caa54d754d4c9303a515193cae57.png",
       "soldNum": 0
-    },
-    {
-      "date": "2026-07-21",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/4139af8d825b45c0a095b9f2f4bdfc5d.png",
-      "id": 767592465457232,
-      "name": "金地·知音乐府",
-      "salePrice": 20000.0,
-      "soldChartImg": "https://img.wufangtong.cn/b0a81edfe5bb42f790fc0332185ba735.png",
-      "soldNum": 1
     },
     {
       "date": "2026-07-21",

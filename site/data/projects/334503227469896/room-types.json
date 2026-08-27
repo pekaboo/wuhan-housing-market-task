@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 334503227469896,
   "status": "complete",
   "types": [
@@ -668,7 +668,7 @@
     },
     {
       "area": 118.0,
-      "availableRoomNum": 72,
+      "availableRoomNum": 70,
       "buildList": [
         {
           "abnormalRoomNum": 0,
@@ -740,7 +740,7 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 29,
+          "availableRoomNum": 27,
           "buildId": 312483834036297,
           "buildName": "商住楼（水木兰亭）二期5",
           "buildShortName": "5#",
@@ -751,7 +751,7 @@
           "floorTotal": 18,
           "oldUnitName": "1",
           "roomTotal": 35,
-          "soldNum": 6,
+          "soldNum": 8,
           "unitId": 0,
           "unitName": "1"
         },

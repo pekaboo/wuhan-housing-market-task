@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 750595721310277,
   "status": "complete",
   "types": [
@@ -142,7 +142,7 @@
     },
     {
       "area": 155.0,
-      "availableRoomNum": 1,
+      "availableRoomNum": 2,
       "buildList": [
         {
           "abnormalRoomNum": 0,
@@ -163,7 +163,7 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
+          "availableRoomNum": 1,
           "buildId": 743090616627272,
           "buildName": "居住项目（P（2023）090号B地块）3",
           "buildShortName": "3#",
@@ -174,7 +174,7 @@
           "floorTotal": 33,
           "oldUnitName": "1",
           "roomTotal": 32,
-          "soldNum": 32,
+          "soldNum": 31,
           "unitId": 0,
           "unitName": "1"
         }

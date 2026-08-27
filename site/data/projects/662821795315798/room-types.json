@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 662821795315798,
   "status": "complete",
   "types": [
@@ -26,23 +26,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 665620180082760,
-          "buildName": "新建居住项目（团结路25号地块）3",
-          "buildShortName": "3#",
-          "buildType": "高层",
-          "buildTypeId": 4,
-          "evidenceId": 690728690036805,
-          "evidenceName": "武房开预售[2025]175号",
-          "floorTotal": 25,
-          "oldUnitName": "2",
-          "roomTotal": 21,
-          "soldNum": 21,
-          "unitId": 0,
-          "unitName": "2"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 3,
           "buildId": 665620180082761,
           "buildName": "新建居住项目（团结路25号地块）4",
@@ -57,6 +40,23 @@
           "soldNum": 29,
           "unitId": 0,
           "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 665620180082760,
+          "buildName": "新建居住项目（团结路25号地块）3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 690728690036805,
+          "evidenceName": "武房开预售[2025]175号",
+          "floorTotal": 25,
+          "oldUnitName": "2",
+          "roomTotal": 21,
+          "soldNum": 21,
+          "unitId": 0,
+          "unitName": "2"
         }
       ],
       "effectImage": null,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 19:09:09",
   "projectId": 334502236389475,
   "status": "complete",
   "types": [
@@ -1165,11 +1165,11 @@
           "evidenceId": 311873620664398,
           "evidenceName": "武房开预售[2019]919号",
           "floorTotal": 6,
-          "oldUnitName": "2",
+          "oldUnitName": "3",
           "roomTotal": 4,
           "soldNum": 2,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "3"
         },
         {
           "abnormalRoomNum": 0,
@@ -1182,11 +1182,11 @@
           "evidenceId": 311873620664398,
           "evidenceName": "武房开预售[2019]919号",
           "floorTotal": 6,
-          "oldUnitName": "3",
+          "oldUnitName": "2",
           "roomTotal": 4,
           "soldNum": 2,
           "unitId": 0,
-          "unitName": "3"
+          "unitName": "2"
         }
       ],
       "effectImage": null,
@@ -1593,6 +1593,23 @@
           "evidenceId": 311873620664398,
           "evidenceName": "武房开预售[2019]919号",
           "floorTotal": 6,
+          "oldUnitName": "3",
+          "roomTotal": 5,
+          "soldNum": 5,
+          "unitId": 0,
+          "unitName": "3"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312484568424524,
+          "buildName": "商住项目（武汉中国健康谷养生社区B地块）B-16",
+          "buildShortName": "B-16#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 311873620664398,
+          "evidenceName": "武房开预售[2019]919号",
+          "floorTotal": 6,
           "oldUnitName": "1",
           "roomTotal": 5,
           "soldNum": 5,
@@ -1615,23 +1632,6 @@
           "soldNum": 6,
           "unitId": 0,
           "unitName": "2"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312484568424524,
-          "buildName": "商住项目（武汉中国健康谷养生社区B地块）B-16",
-          "buildShortName": "B-16#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 311873620664398,
-          "evidenceName": "武房开预售[2019]919号",
-          "floorTotal": 6,
-          "oldUnitName": "3",
-          "roomTotal": 5,
-          "soldNum": 5,
-          "unitId": 0,
-          "unitName": "3"
         }
       ],
       "effectImage": null,
