@@ -1,7 +1,25 @@
 {
   "count": 390,
-  "generatedAt": "2026-08-27 17:27:33",
+  "generatedAt": "2026-08-27 18:00:27",
   "projects": [
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/e78faa3739054e71ab0863ee80d19dac.png",
+      "id": 334503202562130,
+      "name": "融创首创国际智慧生态城市",
+      "salePrice": 8500.0,
+      "soldChartImg": "https://img.wufangtong.cn/c3631f2efeca4d3ea8eed42678aeb459.png",
+      "soldNum": -1
+    },
+    {
+      "date": "2026-08-27",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/0dd52d67b7684f069c977d6b80b79b37.png",
+      "id": 334503298535510,
+      "name": "地铁时代云上城",
+      "salePrice": 8800.0,
+      "soldChartImg": "https://img.wufangtong.cn/a85d32a575b441b3a743f42be7035155.png",
+      "soldNum": 40
+    },
     {
       "date": "2026-08-27",
       "douYinSoldChartImg": "https://img.wufangtong.cn/7c6dba34a6314914a72399c1e86bc199.png",
@@ -658,15 +676,6 @@
       "salePrice": 10000.0,
       "soldChartImg": "https://img.wufangtong.cn/4bc32b9a2fa5455f9e1b841e83135099.png",
       "soldNum": 16
-    },
-    {
-      "date": "2026-08-26",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/0a32b68462e347ab87857488f21262d0.png",
-      "id": 334503298535510,
-      "name": "地铁时代云上城",
-      "salePrice": 8800.0,
-      "soldChartImg": "https://img.wufangtong.cn/a9654f4672a1464285ed0bfc027c9959.png",
-      "soldNum": 40
     },
     {
       "date": "2026-08-26",
@@ -2206,15 +2215,6 @@
       "salePrice": 11000.0,
       "soldChartImg": "https://img.wufangtong.cn/f76cfb429d9f43159ecb81af870514ae.png",
       "soldNum": 2
-    },
-    {
-      "date": "2026-08-18",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/71db57e1cacc4532aa819be77f7dc044.png",
-      "id": 334503202562130,
-      "name": "融创首创国际智慧生态城市",
-      "salePrice": 8500.0,
-      "soldChartImg": "https://img.wufangtong.cn/3a2e0865cd804d0692577e035a5a2278.png",
-      "soldNum": -1
     },
     {
       "date": "2026-08-18",
