@@ -1,6 +1,6 @@
 {
-  "count": 390,
-  "generatedAt": "2026-08-27 23:25:20",
+  "count": 385,
+  "generatedAt": "2026-08-28 00:02:44",
   "projects": [
     {
       "date": "2026-08-27",
@@ -3465,51 +3465,6 @@
       "name": "汉口1872",
       "salePrice": 17500.0,
       "soldChartImg": "https://img.wufangtong.cn/074c5b7315bd4fa29a6bd281e2a9ccd0.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-21",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/1166513bb2d24248abb893e64fea7185.png",
-      "id": 662821795315798,
-      "name": "中寰悦府",
-      "salePrice": 26000.0,
-      "soldChartImg": "https://img.wufangtong.cn/19f69d917aa241669a58149c7ddc8254.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-21",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/6321087303cc49f7873d705aebdfdc73.png",
-      "id": 710681294225477,
-      "name": "武汉当代境MOMΛ",
-      "salePrice": 0.0,
-      "soldChartImg": "https://img.wufangtong.cn/2da5caa54d754d4c9303a515193cae57.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-21",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/bfc0e727859a4c01a7906934be787e76.png",
-      "id": 654429259935818,
-      "name": "保利·沙湖嘉瑞",
-      "salePrice": 29000.0,
-      "soldChartImg": "https://img.wufangtong.cn/6ce2153d7b6f43a6a636d651f4734bcd.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-21",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/5017d255c2e04d9e8ba8d76d7ef3fb84.png",
-      "id": 475599691698255,
-      "name": "光谷中央公园",
-      "salePrice": 19000.0,
-      "soldChartImg": "https://img.wufangtong.cn/41e34ca6d90e4f79944ad7db694ead79.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-21",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/5f9ff5b9fd7e4377b0248512df7f76cb.png",
-      "id": 334503202558048,
-      "name": "中核锦城",
-      "salePrice": 8500.0,
-      "soldChartImg": "https://img.wufangtong.cn/1fc819c2f265411fa769a249128d525a.png",
       "soldNum": 0
     }
   ]
