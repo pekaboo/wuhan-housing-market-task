@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -16,8 +17,17 @@ from .client import (
     SaleApiClient,
     SaleApiError,
 )
-from .enrichment import build_one_price_snapshot, build_room_type_snapshot
+from .enrichment import build_one_price_snapshot, build_room_type_snapshot, summarize_one_price
 from .generate import write_site
+
+
+def make_progress_logger(stream=None):
+    output = stream or sys.stdout
+
+    def log(message: str) -> None:
+        print(f'[sale-dashboard] {message}', file=output, flush=True)
+
+    return log
 
 
 def positive_int(value: str) -> int:
@@ -64,6 +74,9 @@ def main() -> int:
     if not token:
         raise SystemExit('WFT_TOKEN is required')
 
+    log = make_progress_logger()
+    log('starting production snapshot generation')
+    log(f'fetching project list with page size {args.page_size} and max pages {args.max_pages}')
     client = SaleApiClient(
         token=token,
         api_url=args.api_url,
@@ -72,8 +85,10 @@ def main() -> int:
         room_page_size=args.room_page_size,
         max_pages=args.max_pages,
         timeout_seconds=args.timeout,
+        progress=log,
     )
     projects = client.fetch_all_projects()
+    log(f'fetched {len(projects)} unique projects')
     one_price_snapshots: dict[str, dict] | None = None
     room_type_snapshots: dict[str, dict] | None = None
     wangqian_snapshot: dict | None = None
@@ -81,14 +96,26 @@ def main() -> int:
     if args.fetch_one_price:
         one_price_snapshots = {}
         room_type_snapshots = {}
-        for project in projects:
+        project_count = len(projects)
+        for index, project in enumerate(projects, 1):
             project_id = project.get('id')
             if project_id is None:
+                log(f'[{index}/{project_count}] skipped a project without an id')
                 continue
+            project_name = project.get('name') or 'unnamed project'
+            log(f'[{index}/{project_count}] enriching {project_name} ({project_id})')
             one_price_snapshots[str(project_id)] = build_one_price_snapshot(client, project_id)
             room_type_snapshots[str(project_id)] = build_room_type_snapshot(client, project_id)
+            one_price_summary = summarize_one_price(one_price_snapshots[str(project_id)])
+            room_type_count = len(room_type_snapshots[str(project_id)].get('types') or [])
+            log(
+                f'[{index}/{project_count}] completed {project_name}: '
+                f'{one_price_summary["certificates"]} certificates, '
+                f'{one_price_summary["rooms"]} rooms, {room_type_count} room types'
+            )
 
         request_date = _wangqian_request_date()
+        log(f'fetching yesterday wangqian changes for {request_date}')
         try:
             wangqian_snapshot = client.fetch_wangqian_data(request_date)
             wangqian_snapshot.setdefault('date', request_date)
@@ -109,7 +136,7 @@ def main() -> int:
         room_type_snapshots=room_type_snapshots,
         wangqian_snapshot=wangqian_snapshot,
     )
-    print(f'Generated {len(projects)} projects and {len(output_paths)} files')
+    log(f'generated {len(projects)} projects and {len(output_paths)} files')
     return 0
 
 

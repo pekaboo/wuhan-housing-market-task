@@ -80,6 +80,7 @@ class SaleApiClient:
         max_pages: int = DEFAULT_MAX_PAGES,
         transport: Transport | None = None,
         timeout_seconds: float = DEFAULT_TIMEOUT_SECONDS,
+        progress: Callable[[str], None] | None = None,
     ) -> None:
         if not token:
             raise ValueError('A wfTToken is required')
@@ -95,6 +96,11 @@ class SaleApiClient:
         self.max_pages = max_pages
         self.token = token
         self.transport = transport or urllib_transport(timeout_seconds)
+        self.progress = progress
+
+    def _report_progress(self, message: str) -> None:
+        if self.progress is not None:
+            self.progress(message)
 
     def _headers(self) -> dict[str, str]:
         return {
@@ -112,6 +118,7 @@ class SaleApiClient:
             payload=payload,
             headers=self._headers(),
         )
+        self._report_progress(f'requesting {context}')
         response = self.transport(request)
         if response.status_code != 200:
             raise SaleApiError(f'Upstream API returned HTTP {response.status_code} ({context}).')
@@ -150,6 +157,7 @@ class SaleApiClient:
             payload={'pageInt': page_int, 'pageSize': self.page_size},
             headers=self._headers(),
         )
+        self._report_progress(f'projects page {page_int}')
         response = self.transport(request)
         if response.status_code != 200:
             raise SaleApiError(f'Upstream API returned HTTP {response.status_code} on page {page_int}.')

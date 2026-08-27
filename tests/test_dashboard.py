@@ -48,11 +48,19 @@ class TestSaleApiClient(unittest.TestCase):
                 {'result': None, 'success': True, 'code': 0},
             ]
         )
-        client = SaleApiClient(token=TOKEN, api_url=API_URL, page_size=2, transport=transport)
+        progress: list[str] = []
+        client = SaleApiClient(
+            token=TOKEN,
+            api_url=API_URL,
+            page_size=2,
+            transport=transport,
+            progress=progress.append,
+        )
 
         projects = client.fetch_all_projects()
 
         self.assertEqual([item['id'] for item in projects], [1, 2, 3, 4])
+        self.assertEqual(progress, ['projects page 1', 'projects page 2', 'projects page 3', 'projects page 4'])
         self.assertEqual([request.payload['pageInt'] for request in transport.requests], [1, 2, 3, 4])
         self.assertEqual(transport.requests[0].headers['wfTToken'], TOKEN)
         self.assertEqual(transport.requests[0].headers['X-City-Id'], '4201')
