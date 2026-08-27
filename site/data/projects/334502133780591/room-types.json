@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 334502133780591,
   "status": "complete",
   "types": [
@@ -7,23 +7,6 @@
       "area": 110.0,
       "availableRoomNum": 4,
       "buildList": [
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 2,
-          "buildId": 312481057292361,
-          "buildName": "联投濮园4",
-          "buildShortName": "4#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311875144376404,
-          "evidenceName": "武房开预售[2022]181号",
-          "floorTotal": 17,
-          "oldUnitName": "2",
-          "roomTotal": 16,
-          "soldNum": 14,
-          "unitId": 0,
-          "unitName": "2"
-        },
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
@@ -40,6 +23,23 @@
           "soldNum": 16,
           "unitId": 0,
           "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312481057292361,
+          "buildName": "联投濮园4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311875144376404,
+          "evidenceName": "武房开预售[2022]181号",
+          "floorTotal": 17,
+          "oldUnitName": "2",
+          "roomTotal": 16,
+          "soldNum": 14,
+          "unitId": 0,
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,

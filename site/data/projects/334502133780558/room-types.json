@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 334502133780558,
   "status": "complete",
   "types": [
@@ -225,23 +225,6 @@
       "buildList": [
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 1,
-          "buildId": 312483315216454,
-          "buildName": "住宅项目（武建·龙樾上城）10",
-          "buildShortName": "10#",
-          "buildType": "别墅",
-          "buildTypeId": 1,
-          "evidenceId": 311874540658766,
-          "evidenceName": "武房开预售[2021]263号",
-          "floorTotal": 6,
-          "oldUnitName": "1",
-          "roomTotal": 2,
-          "soldNum": 1,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 2,
           "buildId": 312483315216454,
           "buildName": "住宅项目（武建·龙樾上城）10",
@@ -324,6 +307,23 @@
           "soldNum": 2,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483315216454,
+          "buildName": "住宅项目（武建·龙樾上城）10",
+          "buildShortName": "10#",
+          "buildType": "别墅",
+          "buildTypeId": 1,
+          "evidenceId": 311874540658766,
+          "evidenceName": "武房开预售[2021]263号",
+          "floorTotal": 6,
+          "oldUnitName": "1",
+          "roomTotal": 2,
+          "soldNum": 1,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,

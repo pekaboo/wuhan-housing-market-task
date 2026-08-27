@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 334530051637343,
   "status": "complete",
   "types": [
@@ -68,23 +68,6 @@
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
-          "buildId": 312585097801800,
-          "buildName": "CBD楚世家2",
-          "buildShortName": "2#",
-          "buildType": "高层",
-          "buildTypeId": 4,
-          "evidenceId": 311871833280589,
-          "evidenceName": "武房开预售[2016]673号",
-          "floorTotal": 32,
-          "oldUnitName": "/",
-          "roomTotal": 1,
-          "soldNum": 1,
-          "unitId": 0,
-          "unitName": "/"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
           "buildId": 312585097801802,
           "buildName": "CBD楚世家4",
           "buildShortName": "4#",
@@ -96,6 +79,23 @@
           "oldUnitName": "/",
           "roomTotal": 30,
           "soldNum": 30,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312585097801800,
+          "buildName": "CBD楚世家2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311871833280589,
+          "evidenceName": "武房开预售[2016]673号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 1,
+          "soldNum": 1,
           "unitId": 0,
           "unitName": "/"
         }

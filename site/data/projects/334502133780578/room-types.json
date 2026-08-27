@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 334502133780578,
   "status": "complete",
   "types": [
@@ -188,11 +188,11 @@
           "evidenceId": 311874009858117,
           "evidenceName": "武房开预售[2020]148号",
           "floorTotal": 16,
-          "oldUnitName": "1",
+          "oldUnitName": "2",
           "roomTotal": 16,
           "soldNum": 16,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -205,11 +205,11 @@
           "evidenceId": 311874009858117,
           "evidenceName": "武房开预售[2020]148号",
           "floorTotal": 16,
-          "oldUnitName": "2",
+          "oldUnitName": "1",
           "roomTotal": 16,
           "soldNum": 16,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -336,11 +336,11 @@
           "evidenceId": 311874338283606,
           "evidenceName": "武房开预售[2020]901号",
           "floorTotal": 16,
-          "oldUnitName": "2",
+          "oldUnitName": "1",
           "roomTotal": 32,
           "soldNum": 32,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -353,11 +353,11 @@
           "evidenceId": 311874338283606,
           "evidenceName": "武房开预售[2020]901号",
           "floorTotal": 16,
-          "oldUnitName": "1",
+          "oldUnitName": "2",
           "roomTotal": 32,
           "soldNum": 32,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -420,6 +420,23 @@
           "buildTypeId": 3,
           "evidenceId": 311873456910411,
           "evidenceName": "武房开预售[2019]462号",
+          "floorTotal": 16,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312485066158162,
+          "buildName": "住宅项目（武汉诺德逸园）8",
+          "buildShortName": "8#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311874009858117,
+          "evidenceName": "武房开预售[2020]148号",
           "floorTotal": 16,
           "oldUnitName": "2",
           "roomTotal": 32,
@@ -443,23 +460,6 @@
           "soldNum": 31,
           "unitId": 0,
           "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312485066158162,
-          "buildName": "住宅项目（武汉诺德逸园）8",
-          "buildShortName": "8#",
-          "buildType": "小高层",
-          "buildTypeId": 3,
-          "evidenceId": 311874009858117,
-          "evidenceName": "武房开预售[2020]148号",
-          "floorTotal": 16,
-          "oldUnitName": "2",
-          "roomTotal": 32,
-          "soldNum": 32,
-          "unitId": 0,
-          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -611,6 +611,23 @@
         },
         {
           "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312485066158152,
+          "buildName": "住宅项目（武汉诺德逸园）12",
+          "buildShortName": "12#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 315047542865991,
+          "evidenceName": "武房开预售[2022]260号",
+          "floorTotal": 8,
+          "oldUnitName": "1",
+          "roomTotal": 7,
+          "soldNum": 5,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
           "availableRoomNum": 0,
           "buildId": 312485066158152,
           "buildName": "住宅项目（武汉诺德逸园）12",
@@ -645,40 +662,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 2,
-          "buildId": 312485066158152,
-          "buildName": "住宅项目（武汉诺德逸园）12",
-          "buildShortName": "12#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 315047542865991,
-          "evidenceName": "武房开预售[2022]260号",
-          "floorTotal": 8,
-          "oldUnitName": "1",
-          "roomTotal": 7,
-          "soldNum": 5,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312485066158153,
-          "buildName": "住宅项目（武汉诺德逸园）13",
-          "buildShortName": "13#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 315047542865991,
-          "evidenceName": "武房开预售[2022]260号",
-          "floorTotal": 7,
-          "oldUnitName": "1",
-          "roomTotal": 6,
-          "soldNum": 6,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 0,
           "buildId": 312485066158153,
           "buildName": "住宅项目（武汉诺德逸园）13",
@@ -693,6 +676,23 @@
           "soldNum": 6,
           "unitId": 0,
           "unitName": "3"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312485066158153,
+          "buildName": "住宅项目（武汉诺德逸园）13",
+          "buildShortName": "13#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 315047542865991,
+          "evidenceName": "武房开预售[2022]260号",
+          "floorTotal": 7,
+          "oldUnitName": "1",
+          "roomTotal": 6,
+          "soldNum": 6,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -946,23 +946,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312485066158152,
-          "buildName": "住宅项目（武汉诺德逸园）12",
-          "buildShortName": "12#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 315047542865991,
-          "evidenceName": "武房开预售[2022]260号",
-          "floorTotal": 8,
-          "oldUnitName": "3",
-          "roomTotal": 7,
-          "soldNum": 7,
-          "unitId": 0,
-          "unitName": "3"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 1,
           "buildId": 312485066158152,
           "buildName": "住宅项目（武汉诺德逸园）12",
@@ -977,6 +960,23 @@
           "soldNum": 6,
           "unitId": 0,
           "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312485066158152,
+          "buildName": "住宅项目（武汉诺德逸园）12",
+          "buildShortName": "12#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 315047542865991,
+          "evidenceName": "武房开预售[2022]260号",
+          "floorTotal": 8,
+          "oldUnitName": "3",
+          "roomTotal": 7,
+          "soldNum": 7,
+          "unitId": 0,
+          "unitName": "3"
         },
         {
           "abnormalRoomNum": 0,
@@ -1205,11 +1205,11 @@
           "evidenceId": 311874338283606,
           "evidenceName": "武房开预售[2020]901号",
           "floorTotal": 16,
-          "oldUnitName": "2",
-          "roomTotal": 16,
-          "soldNum": 16,
+          "oldUnitName": "1",
+          "roomTotal": 15,
+          "soldNum": 15,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -1222,11 +1222,11 @@
           "evidenceId": 311874338283606,
           "evidenceName": "武房开预售[2020]901号",
           "floorTotal": 16,
-          "oldUnitName": "1",
-          "roomTotal": 15,
-          "soldNum": 15,
+          "oldUnitName": "2",
+          "roomTotal": 16,
+          "soldNum": 16,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -1307,11 +1307,11 @@
           "evidenceId": 311874009858117,
           "evidenceName": "武房开预售[2020]148号",
           "floorTotal": 16,
-          "oldUnitName": "1",
-          "roomTotal": 15,
-          "soldNum": 15,
+          "oldUnitName": "2",
+          "roomTotal": 16,
+          "soldNum": 16,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -1324,11 +1324,11 @@
           "evidenceId": 311874009858117,
           "evidenceName": "武房开预售[2020]148号",
           "floorTotal": 16,
-          "oldUnitName": "2",
-          "roomTotal": 16,
-          "soldNum": 16,
+          "oldUnitName": "1",
+          "roomTotal": 15,
+          "soldNum": 15,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,

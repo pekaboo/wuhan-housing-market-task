@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 736441926881386,
   "status": "complete",
   "types": [
@@ -156,11 +156,11 @@
           "evidenceId": 753008764788805,
           "evidenceName": "武房开预售[2025]357号",
           "floorTotal": 14,
-          "oldUnitName": "1",
-          "roomTotal": 11,
-          "soldNum": 11,
+          "oldUnitName": "2",
+          "roomTotal": 9,
+          "soldNum": 9,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -173,11 +173,11 @@
           "evidenceId": 753008764788805,
           "evidenceName": "武房开预售[2025]357号",
           "floorTotal": 14,
-          "oldUnitName": "2",
-          "roomTotal": 9,
-          "soldNum": 9,
+          "oldUnitName": "1",
+          "roomTotal": 11,
+          "soldNum": 11,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         }
       ],
       "effectImage": null,

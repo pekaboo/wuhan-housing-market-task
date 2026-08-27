@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 334501106552902,
   "status": "complete",
   "types": [
@@ -545,9 +545,9 @@
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
-          "buildId": 312230552490053,
-          "buildName": "武汉城建金地和悦一期（E、F、G地块）E-1",
-          "buildShortName": "E-1#",
+          "buildId": 312230552490054,
+          "buildName": "武汉城建金地和悦一期（E、F、G地块）E-2",
+          "buildShortName": "E-2#",
           "buildType": "小高层",
           "buildTypeId": 3,
           "evidenceId": 311875156443220,
@@ -562,9 +562,9 @@
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
-          "buildId": 312230552490054,
-          "buildName": "武汉城建金地和悦一期（E、F、G地块）E-2",
-          "buildShortName": "E-2#",
+          "buildId": 312230552490053,
+          "buildName": "武汉城建金地和悦一期（E、F、G地块）E-1",
+          "buildShortName": "E-1#",
           "buildType": "小高层",
           "buildTypeId": 3,
           "evidenceId": 311875156443220,

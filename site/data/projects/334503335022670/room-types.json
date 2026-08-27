@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 334503335022670,
   "status": "complete",
   "types": [
@@ -30,23 +30,6 @@
           "buildId": 312489783533649,
           "buildName": "中投·江南新天地一期（住宅、商业及地下室等）20",
           "buildShortName": "20#",
-          "buildType": "别墅",
-          "buildTypeId": 1,
-          "evidenceId": 311873680752727,
-          "evidenceName": "武房开预售[2019]1071号",
-          "floorTotal": 3,
-          "oldUnitName": "/",
-          "roomTotal": 2,
-          "soldNum": 2,
-          "unitId": 0,
-          "unitName": "/"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
-          "buildId": 312489783533660,
-          "buildName": "中投·江南新天地一期（住宅、商业及地下室等）30",
-          "buildShortName": "30#",
           "buildType": "别墅",
           "buildTypeId": 1,
           "evidenceId": 311873680752727,
@@ -102,6 +85,23 @@
           "buildTypeId": 1,
           "evidenceId": 311873620664403,
           "evidenceName": "武房开预售[2019]914号",
+          "floorTotal": 3,
+          "oldUnitName": "/",
+          "roomTotal": 2,
+          "soldNum": 2,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312489783533660,
+          "buildName": "中投·江南新天地一期（住宅、商业及地下室等）30",
+          "buildShortName": "30#",
+          "buildType": "别墅",
+          "buildTypeId": 1,
+          "evidenceId": 311873680752727,
+          "evidenceName": "武房开预售[2019]1071号",
           "floorTotal": 3,
           "oldUnitName": "/",
           "roomTotal": 2,
@@ -175,23 +175,6 @@
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 0,
-          "buildId": 312489783533660,
-          "buildName": "中投·江南新天地一期（住宅、商业及地下室等）30",
-          "buildShortName": "30#",
-          "buildType": "别墅",
-          "buildTypeId": 1,
-          "evidenceId": 311873680752727,
-          "evidenceName": "武房开预售[2019]1071号",
-          "floorTotal": 3,
-          "oldUnitName": "/",
-          "roomTotal": 2,
-          "soldNum": 2,
-          "unitId": 0,
-          "unitName": "/"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 0,
           "buildId": 312489783533650,
           "buildName": "中投·江南新天地一期（住宅、商业及地下室等）21",
           "buildShortName": "21#",
@@ -233,6 +216,23 @@
           "buildTypeId": 1,
           "evidenceId": 311873620664403,
           "evidenceName": "武房开预售[2019]914号",
+          "floorTotal": 3,
+          "oldUnitName": "/",
+          "roomTotal": 2,
+          "soldNum": 2,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312489783533660,
+          "buildName": "中投·江南新天地一期（住宅、商业及地下室等）30",
+          "buildShortName": "30#",
+          "buildType": "别墅",
+          "buildTypeId": 1,
+          "evidenceId": 311873680752727,
+          "evidenceName": "武房开预售[2019]1071号",
           "floorTotal": 3,
           "oldUnitName": "/",
           "roomTotal": 2,
@@ -309,11 +309,11 @@
           "evidenceId": 311873231966282,
           "evidenceName": "武房开预售[2018]863号",
           "floorTotal": 6,
-          "oldUnitName": "1",
+          "oldUnitName": "2",
           "roomTotal": 8,
           "soldNum": 8,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "2"
         },
         {
           "abnormalRoomNum": 0,
@@ -326,11 +326,11 @@
           "evidenceId": 311873231966282,
           "evidenceName": "武房开预售[2018]863号",
           "floorTotal": 6,
-          "oldUnitName": "2",
+          "oldUnitName": "1",
           "roomTotal": 8,
           "soldNum": 8,
           "unitId": 0,
-          "unitName": "2"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -479,11 +479,11 @@
           "evidenceId": 311873041494094,
           "evidenceName": "武房开预售[2018]409号",
           "floorTotal": 6,
-          "oldUnitName": "3",
-          "roomTotal": 4,
-          "soldNum": 4,
+          "oldUnitName": "1",
+          "roomTotal": 6,
+          "soldNum": 6,
           "unitId": 0,
-          "unitName": "3"
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -496,11 +496,11 @@
           "evidenceId": 311873041494094,
           "evidenceName": "武房开预售[2018]409号",
           "floorTotal": 6,
-          "oldUnitName": "1",
-          "roomTotal": 6,
-          "soldNum": 6,
+          "oldUnitName": "3",
+          "roomTotal": 4,
+          "soldNum": 4,
           "unitId": 0,
-          "unitName": "1"
+          "unitName": "3"
         },
         {
           "abnormalRoomNum": 0,

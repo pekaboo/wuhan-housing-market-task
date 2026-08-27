@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27 18:26:03",
+  "generatedAt": "2026-08-27 18:44:46",
   "projectId": 334530182430815,
   "status": "complete",
   "types": [
@@ -7,6 +7,23 @@
       "area": 128.0,
       "availableRoomNum": 42,
       "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312487608401991,
+          "buildName": "中建·壹品澜郡12",
+          "buildShortName": "12#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 311873674813512,
+          "evidenceName": "武房开预售[2019]1065号",
+          "floorTotal": 7,
+          "oldUnitName": "1",
+          "roomTotal": 14,
+          "soldNum": 10,
+          "unitId": 0,
+          "unitName": "1"
+        },
         {
           "abnormalRoomNum": 0,
           "availableRoomNum": 6,
@@ -43,18 +60,18 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 4,
-          "buildId": 312487608401991,
-          "buildName": "中建·壹品澜郡12",
-          "buildShortName": "12#",
+          "availableRoomNum": 6,
+          "buildId": 312487608401993,
+          "buildName": "中建·壹品澜郡14",
+          "buildShortName": "14#",
           "buildType": "洋房",
           "buildTypeId": 2,
           "evidenceId": 311873674813512,
           "evidenceName": "武房开预售[2019]1065号",
-          "floorTotal": 7,
+          "floorTotal": 5,
           "oldUnitName": "1",
-          "roomTotal": 14,
-          "soldNum": 10,
+          "roomTotal": 10,
+          "soldNum": 4,
           "unitId": 0,
           "unitName": "1"
         },
@@ -74,23 +91,6 @@
           "soldNum": 4,
           "unitId": 0,
           "unitName": "2"
-        },
-        {
-          "abnormalRoomNum": 0,
-          "availableRoomNum": 6,
-          "buildId": 312487608401993,
-          "buildName": "中建·壹品澜郡14",
-          "buildShortName": "14#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 311873674813512,
-          "evidenceName": "武房开预售[2019]1065号",
-          "floorTotal": 5,
-          "oldUnitName": "1",
-          "roomTotal": 10,
-          "soldNum": 4,
-          "unitId": 0,
-          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
@@ -111,23 +111,6 @@
         },
         {
           "abnormalRoomNum": 0,
-          "availableRoomNum": 3,
-          "buildId": 312487608401996,
-          "buildName": "中建·壹品澜郡3号楼",
-          "buildShortName": "3#",
-          "buildType": "洋房",
-          "buildTypeId": 2,
-          "evidenceId": 311873594011734,
-          "evidenceName": "武房开预售[2019]850号",
-          "floorTotal": 10,
-          "oldUnitName": "1",
-          "roomTotal": 20,
-          "soldNum": 17,
-          "unitId": 0,
-          "unitName": "1"
-        },
-        {
-          "abnormalRoomNum": 0,
           "availableRoomNum": 6,
           "buildId": 312487608401996,
           "buildName": "中建·壹品澜郡3号楼",
@@ -142,6 +125,23 @@
           "soldNum": 14,
           "unitId": 0,
           "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 312487608401996,
+          "buildName": "中建·壹品澜郡3号楼",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 311873594011734,
+          "evidenceName": "武房开预售[2019]850号",
+          "floorTotal": 10,
+          "oldUnitName": "1",
+          "roomTotal": 20,
+          "soldNum": 17,
+          "unitId": 0,
+          "unitName": "1"
         },
         {
           "abnormalRoomNum": 0,
