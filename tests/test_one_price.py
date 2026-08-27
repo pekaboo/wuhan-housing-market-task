@@ -370,7 +370,7 @@ def test_one_price_floor_view_keeps_rooms_on_the_same_floor_in_one_row(tmp_path)
     assert 'grid-template-columns:repeat(auto-fit' not in style
 
 
-def test_one_price_3d_floor_view_keeps_filtered_rooms_as_grey_blocks(tmp_path):
+def test_one_price_flat_floor_view_keeps_filtered_rooms_as_grey_blocks(tmp_path):
     one_price = {
         'status': 'complete',
         'certificates': [
@@ -397,37 +397,30 @@ def test_one_price_3d_floor_view_keeps_filtered_rooms_as_grey_blocks(tmp_path):
 
     assert 'data-role="zoom-in"' in detail
     assert 'data-role="zoom-out"' in detail
-    assert 'data-role="reset-camera"' in detail
-    assert '3D 楼栋' in detail
-    assert '拖拽旋转 · 滚轮缩放' in detail
+    assert '楼层从上到下、同一楼层横向一排' in detail
     assert 'function roomMatches(room)' in detail
     assert 'function scopedRooms()' in detail
     assert 'renderFloorView(visibleRooms)' in detail
     assert "article.classList.toggle('filtered-out',!roomMatches(room))" in detail
-    assert 'function setCamera()' in detail
-    assert 'rotateX(calc(var(--camera-x)' in detail
     assert '.floor-stage' in detail
-    assert '.floor-camera' in detail
-    assert '.building-3d' in detail
+    assert '.building-column' in detail
     assert '.floor-slab' in detail
-    assert '.room-3d' in detail
-    assert '.filtered-out>*{display:none}' in detail
+    assert '.floor-room' in detail
+    assert '.floor-room.filtered-out>*{display:none}' in detail
     assert 'priceGroups.get(priceKey(room))' in detail
     assert 'var group=priceGroups.get(priceKey(room))' in detail
     assert "swatch.className='price-chip'" in detail
-    assert 'building-ground' in detail
     assert 'DETAIL_BUILDING_LIMIT=16' in detail
-    assert '.building-world{display:flex;flex-wrap:wrap;width:100%;align-items:end;transform-style:flat}' in detail
-    assert 'rotateX(calc(var(--camera-x)' in detail.split('.building-3d',1)[1]
+    assert '.building-world{display:flex;flex-wrap:wrap;width:100%;align-items:stretch}' in detail
     assert 'building-overview' in detail
     assert 'focusBuilding(column)' in detail
-    assert "if(view==='table'||!event.target.closest('.floor-stage'))return;if(event.target.closest('.building-overview'))return;" in detail
+    assert "if(view==='table'||!event.target.closest('.floor-stage'))return" in detail
     assert 'var columnFloors=floorRooms.get(column.key).size' in detail
     assert "block.style.setProperty('--floors',String(columnFloors))" in detail
     assert "columnFloors+' 层，'" in detail
 
 
-def test_one_price_3d_view_has_premium_camera_and_extruded_depth(tmp_path):
+def test_one_price_flat_floor_view_supports_zoom_without_3d_transforms(tmp_path):
     one_price = {
         'status': 'complete',
         'certificates': [
@@ -444,7 +437,7 @@ def test_one_price_3d_view_has_premium_camera_and_extruded_depth(tmp_path):
     site_dir = tmp_path / 'site'
 
     write_site(
-        [{'id': 456, 'name': '立体楼栋', 'date': '2026-08-27'}],
+        [{'id': 456, 'name': '平面楼栋', 'date': '2026-08-27'}],
         site_dir=site_dir,
         generated_at='2026-08-27 22:00:00',
         one_price_snapshots={456: one_price},
@@ -452,30 +445,35 @@ def test_one_price_3d_view_has_premium_camera_and_extruded_depth(tmp_path):
 
     detail = (site_dir / 'projects' / '456' / 'index.html').read_text(encoding='utf-8')
 
-    assert 'data-role="camera-preset" data-preset="front"' in detail
-    assert 'data-role="camera-preset" data-preset="iso"' in detail
-    assert 'data-role="camera-preset" data-preset="top"' in detail
-    assert 'data-role="camera-zoom" type="range"' in detail
-    assert '正视' in detail
-    assert '轴测' in detail
-    assert '俯视' in detail
-    assert 'function setCameraPreset(preset)' in detail
+    assert 'aria-label="楼层分布缩放控制"' in detail
+    assert 'data-role="zoom-in"' in detail
+    assert 'data-role="zoom-out"' in detail
+    assert 'data-role="reset-zoom"' in detail
+    assert 'data-role="zoom-range" type="range"' in detail
+    assert 'data-role="zoom-scale"' in detail
     assert 'function setZoom(value)' in detail
-    assert 'function moveCamera(deltaX,deltaY)' in detail
+    assert 'Math.min(2.2,Math.max(.45' in detail
+    assert "floorResults.style.setProperty('--floor-scale'" in detail
+    assert '.floor-matrix{display:block;width:100%;zoom:var(--floor-scale,1)' in detail
+    assert '.floor-stage{position:relative;z-index:1;overflow:auto' in detail
+    assert "floorResults.addEventListener('wheel'" in detail
+    assert 'event.deltaY*.12' in detail
+    assert 'function panStage(stage,deltaX,deltaY)' in detail
+    assert 'stage.scrollLeft' in detail
+    assert 'stage.scrollTop' in detail
     assert "floorResults.addEventListener('keydown'" in detail
     assert "floorToolbar.hidden=view!=='floor'" in detail
+    assert '加号放大，减号缩小，0 复位' in detail
 
-    assert '.room-3d::before' in detail
-    assert '.room-3d::after' in detail
-    assert '.building-3d::before' in detail
-    assert '.building-3d::after' in detail
-    assert '.overview-body::before' in detail
-    assert '.overview-body::after' in detail
-    assert '.building-ground::before' in detail
-    assert '.building-ground::after' in detail
-    assert 'translateZ(16px)' in detail
-    assert 'rotateY(68deg)' in detail
-    assert 'rotateX(74deg)' in detail
-    assert 'pointer-events:none' in detail
-    assert 'radial-gradient' in detail
-    assert '--spatial-panel:#0b141d' in detail
+    assert 'data-role="camera-preset"' not in detail
+    assert 'data-role="camera-zoom"' not in detail
+    assert 'setCameraPreset' not in detail
+    assert 'moveCamera' not in detail
+    assert 'rotateX(' not in detail
+    assert 'rotateY(' not in detail
+    assert 'transform-style:preserve-3d' not in detail
+    assert 'translateZ(' not in detail
+    assert 'perspective:' not in detail
+    assert 'matrix3d' not in detail
+    assert 'room-3d' not in detail
+    assert 'building-3d' not in detail
