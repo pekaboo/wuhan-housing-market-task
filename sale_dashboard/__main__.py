@@ -12,7 +12,7 @@ from .client import (
     DEFAULT_TIMEOUT_SECONDS,
     SaleApiClient,
 )
-from .generate import write_outputs
+from .generate import write_site
 
 
 def positive_int(value: str) -> int:
@@ -24,8 +24,12 @@ def positive_int(value: str) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Generate the Wuhan sale-control static dashboard')
-    parser.add_argument('--output', default='index.html')
-    parser.add_argument('--data-output', default='data/sale-data.json')
+    parser.add_argument('--site-output', default=os.getenv('WFT_SITE_OUTPUT', 'site'))
+    parser.add_argument(
+        '--projects-per-page',
+        type=positive_int,
+        default=int(os.getenv('WFT_PROJECTS_PER_PAGE', '6')),
+    )
     parser.add_argument('--api-url', default=os.getenv('WFT_API_URL', DEFAULT_API_URL))
     parser.add_argument('--city-id', default=os.getenv('WFT_CITY_ID', DEFAULT_CITY_ID))
     parser.add_argument('--page-size', type=positive_int, default=int(os.getenv('WFT_PAGE_SIZE', DEFAULT_PAGE_SIZE)))
@@ -48,8 +52,12 @@ def main() -> int:
         max_pages=args.max_pages,
         timeout_seconds=args.timeout,
     ).fetch_all_projects()
-    generated_at = write_outputs(projects, html_path=Path(args.output), data_path=Path(args.data_output))
-    print(f'Generated {len(projects)} projects at {generated_at}')
+    output_paths = write_site(
+        projects,
+        site_dir=Path(args.site_output),
+        per_page=args.projects_per_page,
+    )
+    print(f'Generated {len(projects)} projects and {len(output_paths)} pages')
     return 0
 
 

@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 from sale_dashboard.client import ApiRequest, ApiResponse, SaleApiClient, SaleApiError
-from sale_dashboard.generate import write_outputs
+from sale_dashboard.generate import write_outputs, write_site
 from sale_dashboard.render import render_html
 
 TOKEN = 'secret-token'
@@ -127,6 +127,82 @@ class TestWriteOutputs(unittest.TestCase):
             self.assertEqual(snapshot['count'], 1)
             self.assertEqual(snapshot['projects'][0]['name'], '测试项目')
             self.assertEqual(snapshot['generatedAt'], generated_at)
+
+
+
+class TestMultiPageSite(unittest.TestCase):
+    def test_generates_paginated_overview_and_every_project_detail_page(self):
+        projects = [
+            project(1, '第一楼盘', soldNum=10, salePrice=10000),
+            project(2, '第二楼盘', soldNum=20, salePrice=12000),
+            project(3, '第三楼盘', soldNum=30, salePrice=13000),
+            project(4, '第四楼盘', soldNum=40, salePrice=14000),
+            {
+                **project(5, '第五楼盘', soldNum=50, salePrice=15000, soldChartImg=None),
+                'soldChartList': [
+                    {'img': 'https://img.example.test/5-old.png', 'time': '2026-08-01'},
+                    {'img': 'https://img.example.test/5-new.png', 'time': '2026-08-27'},
+                ],
+            },
+        ]
+
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            site_dir = Path(temporary_directory) / 'site'
+            (site_dir / 'stale').mkdir(parents=True)
+            (site_dir / 'stale' / 'index.html').write_text('old', encoding='utf-8')
+
+            paths = write_site(
+                projects,
+                site_dir=site_dir,
+                generated_at='2026-08-27 08:00:00',
+                per_page=2,
+            )
+
+            self.assertEqual(
+                paths,
+                [
+                    Path('index.html'),
+                    Path('page/2/index.html'),
+                    Path('page/3/index.html'),
+                    Path('projects/1/index.html'),
+                    Path('projects/2/index.html'),
+                    Path('projects/3/index.html'),
+                    Path('projects/4/index.html'),
+                    Path('projects/5/index.html'),
+                ],
+            )
+            self.assertFalse((site_dir / 'stale').exists())
+
+            first_page = (site_dir / 'index.html').read_text(encoding='utf-8')
+            second_page = (site_dir / 'page' / '2' / 'index.html').read_text(encoding='utf-8')
+            third_page = (site_dir / 'page' / '3' / 'index.html').read_text(encoding='utf-8')
+            fifth_detail = (site_dir / 'projects' / '5' / 'index.html').read_text(encoding='utf-8')
+
+            self.assertIn('第一楼盘', first_page)
+            self.assertIn('第二楼盘', first_page)
+            self.assertNotIn('第三楼盘', first_page)
+            self.assertIn('href="page/2/"', first_page)
+            self.assertIn('aria-current="page"', first_page)
+
+            self.assertIn('第三楼盘', second_page)
+            self.assertIn('第四楼盘', second_page)
+            self.assertNotIn('第五楼盘', second_page)
+            self.assertIn('href="../3/"', second_page)
+            self.assertIn('href="../../projects/3/"', second_page)
+
+            self.assertIn('第五楼盘', third_page)
+            self.assertIn('href="../../projects/5/"', third_page)
+            self.assertIn('第 3 / 3 页', third_page)
+
+            self.assertIn('第五楼盘', fifth_detail)
+            self.assertIn('https://img.example.test/5-old.png', fifth_detail)
+            self.assertIn('https://img.example.test/5-new.png', fifth_detail)
+            self.assertIn('href="../../"', fifth_detail)
+            self.assertIn('全部历史销控图', fifth_detail)
+
+            snapshot = json.loads((site_dir / 'data' / 'sale-data.json').read_text(encoding='utf-8'))
+            self.assertEqual(snapshot['count'], 5)
+            self.assertEqual(snapshot['generatedAt'], '2026-08-27 08:00:00')
 
 
 if __name__ == '__main__':

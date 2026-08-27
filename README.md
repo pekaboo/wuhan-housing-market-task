@@ -2,8 +2,10 @@
 
 这个仓库每天 **08:00（Asia/Shanghai）** 调用五房通生产接口，拉取武汉全部在售楼盘销控数据，生成：
 
-- `index.html` — 可直接部署的静态生产 HTML 仪表盘
-- `data/sale-data.json` — 原始生产数据快照
+- `site/index.html` — 第 1 页生产仪表盘
+- `site/page/2/`、`site/page/3/` … — 后续楼盘分页
+- `site/projects/{id}/` — 每个楼盘独立详情页，包含全部历史销控图
+- `site/data/sale-data.json` — 原始生产数据快照
 - GitHub Pages 生产站点
 
 页面包含最新销控图、已售套数、均价、搜索、排序、暗色模式和响应式布局。
@@ -14,7 +16,7 @@
 GitHub Actions schedule (00:00 UTC = 08:00 CST)
   → pytest
   → Python 标准库分页请求 GetLouPanSaleImages
-  → 生成静态 HTML + JSON
+  → 生成多页静态 HTML + JSON
   → 安全检查 token 不落盘
   → 提交快照到 main
   → 部署 GitHub Pages
@@ -31,8 +33,8 @@ python3 -m venv .venv
 
 export WFT_TOKEN='你的 wfTToken'
 .venv/bin/python -m sale_dashboard \
-  --output index.html \
-  --data-output data/sale-data.json
+  --site-output site \
+  --projects-per-page 6
 ```
 
 也支持这些可选参数或同名环境变量：
@@ -44,6 +46,8 @@ export WFT_TOKEN='你的 wfTToken'
 | `--page-size` | `WFT_PAGE_SIZE` | `10` |
 | `--max-pages` | `WFT_MAX_PAGES` | `100` |
 | `--timeout` | `WFT_REQUEST_TIMEOUT_SECONDS` | `20` |
+| `--site-output` | `WFT_SITE_OUTPUT` | `site` |
+| `--projects-per-page` | `WFT_PROJECTS_PER_PAGE` | `6` |
 
 ## GitHub 配置
 
@@ -70,4 +74,4 @@ export WFT_TOKEN='你的 wfTToken'
 .venv/bin/pytest -q
 ```
 
-测试覆盖分页停止条件、去重、上游错误、安全转义、历史图列表选择、HTML 生成和 JSON 原子输出。
+测试覆盖分页停止条件、去重、上游错误、安全转义、历史图列表选择、多页 HTML 生成、项目详情页和 JSON 原子输出。

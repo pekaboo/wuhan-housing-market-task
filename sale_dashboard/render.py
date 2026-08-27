@@ -72,8 +72,9 @@ def _metric(label: str, value: str) -> str:
     return f'<div class="metric"><span>{label}</span><strong>{value}</strong></div>'
 
 
-def project_card(project: dict[str, Any]) -> str:
+def project_card(project: dict[str, Any], *, root_prefix: str = '') -> str:
     chart = latest_chart(project)
+    detail_url = f'{root_prefix}projects/{project.get("id")}/'
     search = ' '.join(str(project.get(key) or '') for key in ('name', 'companyName', 'address'))
     image = (
         f'''<a class="chart" href="{esc(chart['img'])}" target="_blank" rel="noopener noreferrer">
@@ -92,7 +93,7 @@ def project_card(project: dict[str, Any]) -> str:
     )
     return f'''<article class="project" role="listitem" data-name="{esc(project.get('name'))}" data-search="{esc(search)}" data-sold="{integer_value(project)}" data-price="{float_value(project)}" data-date="{esc(project.get('date') or '')}">
       <header>
-        <h3>{esc(project.get('name'))}</h3>
+        <h3><a class="detail-link" href="{esc(detail_url)}">{esc(project.get('name'))}</a></h3>
         <span class="date">{esc(project.get('date') or project.get('time'))}</span>
       </header>
       <div class="metrics">{metrics}</div>
@@ -118,9 +119,43 @@ def float_value(project: dict[str, Any]) -> str:
         return '0'
 
 
-def render_html(projects: list[dict[str, Any]], *, generated_at: str) -> str:
-    summary = summarize(projects)
-    cards = ''.join(project_card(project) for project in projects)
+def page_link(current_page: int, target_page: int) -> str:
+    if target_page == current_page:
+        return '#'
+    if current_page == 1:
+        return './' if target_page == 1 else f'page/{target_page}/'
+    if target_page == 1:
+        return '../../'
+    return './' if target_page == current_page else f'../{target_page}/'
+
+
+def pagination(current_page: int, page_count: int) -> str:
+    if page_count <= 1:
+        return ''
+    links = ''.join(
+        f'<a href="{page_link(current_page, page)}"'
+        f'{" aria-current=\"page\"" if page == current_page else ""}>'
+        f'{page}</a>'
+        for page in range(1, page_count + 1)
+    )
+    return (
+        f'<nav class="pager" aria-label="楼盘分页">'
+        f'<span>第 {current_page} / {page_count} 页</span><div>{links}</div></nav>'
+    )
+
+
+def render_html(
+    projects: list[dict[str, Any]],
+    *,
+    generated_at: str,
+    summary_projects: list[dict[str, Any]] | None = None,
+    current_page: int = 1,
+    page_count: int = 1,
+    root_prefix: str = '',
+) -> str:
+    all_projects = projects if summary_projects is None else summary_projects
+    summary = summarize(all_projects)
+    cards = ''.join(project_card(project, root_prefix=root_prefix) for project in projects)
     public_projects = [
         {
             'id': item.get('id'),
@@ -144,7 +179,7 @@ def render_html(projects: list[dict[str, Any]], *, generated_at: str) -> str:
 <style>
 :root{{--surface:#f4f7fb;--panel:#fff;--panel-soft:#eef3f9;--ink:#132233;--muted:#556879;--line:#d8e1ea;--brand:#0068a8;--brand-ink:#014d7d;--accent:#b98511;--focus:#2b7fd1;--shadow:0 12px 32px #17324d14}}
 @media (prefers-color-scheme:dark){{:root{{--surface:#0a121b;--panel:#121d28;--panel-soft:#182633;--ink:#edf4fa;--muted:#a5b6c4;--line:#293b4a;--brand:#69b6e8;--brand-ink:#a9d8f6;--accent:#dfae4e;--focus:#8ccbf7;--shadow:0 12px 32px #00000059}}}}
-*{{box-sizing:border-box}}html{{overflow-x:hidden}}body{{margin:0;background:var(--surface);color:var(--ink);font:15px/1.55 "Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;letter-spacing:.01em}}.shell{{max-width:1500px;margin:0 auto;padding:0 clamp(14px,3vw,38px) 72px}}.top{{display:flex;justify-content:space-between;gap:22px;align-items:flex-end;padding:clamp(28px,5vw,58px) 0 25px}}.eyebrow{{display:flex;gap:8px;color:var(--brand-ink);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}}.eyebrow:before{{content:"";width:26px;height:2px;background:var(--accent)}}h1{{margin:8px 0 9px;font-size:clamp(29px,4.8vw,58px);line-height:1.02;letter-spacing:-.055em}}.subtitle{{max-width:640px;margin:0;color:var(--muted)}}.metadata{{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}}.pill{{display:inline-flex;align-items:center;height:30px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);font-size:12px;font-weight:650}}.kpis{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}}.kpi{{display:flex;min-height:103px;min-width:0;padding:17px;align-items:center;gap:13px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}}.kpi-icon{{width:27px;height:27px;flex:none;color:var(--brand)}}.kpi span{{display:block;color:var(--muted);font-size:12px}}.kpi strong{{display:block;margin-top:3px;font-size:clamp(20px,2vw,30px);line-height:1.12;letter-spacing:-.04em}}.controls{{position:sticky;top:0;z-index:10;padding:13px 0;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(15px);border-bottom:1px solid transparent}}.control-inner{{display:grid;grid-template-columns:minmax(210px,1fr) auto;gap:9px;padding:11px;border:1px solid var(--line);border-radius:17px;background:var(--panel);box-shadow:var(--shadow)}}.search{{display:flex;align-items:center;gap:9px;min-width:0;padding:0 12px;border-radius:12px;background:var(--panel-soft)}}.search svg{{width:18px;height:18px;flex:none;color:var(--muted)}}input{{min-width:0;flex:1;height:43px;border:0;background:transparent;color:var(--ink);font:inherit;outline:none}}input::placeholder{{color:var(--muted)}}.sort{{display:flex;gap:6px;overflow:auto;scrollbar-width:none}}.sort::-webkit-scrollbar{{display:none}}button{{height:43px;border:0;border-radius:11px;background:var(--panel-soft);color:var(--muted);padding:0 11px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:color .2s ease,background .2s ease}}button[aria-pressed=true]{{background:var(--brand);color:#fff}}@media (prefers-color-scheme:dark){{button[aria-pressed=true]{{color:#07131d}}}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px;margin-top:17px}}.project{{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:19px;background:var(--panel);box-shadow:var(--shadow);transition:border-color .2s ease}}.project:hover{{border-color:var(--brand)}}.project header{{display:flex;justify-content:space-between;gap:12px;align-items:start;padding:17px 17px 13px}}h3{{margin:0;font-size:17px;line-height:1.38;letter-spacing:-.03em;overflow-wrap:anywhere}}.date{{flex:none;margin-top:2px;color:var(--brand-ink);font-size:12px;font-weight:750}}.metrics{{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;padding:0 12px 13px;background:var(--panel-soft)}}.metric{{min-width:0;padding:10px;background:var(--panel)}}.metric span{{display:block;color:var(--muted);font-size:11px}}.metric strong{{display:block;margin-top:2px;font-size:14px;letter-spacing:-.02em}}.chart{{position:relative;display:block;aspect-ratio:792/1000;background:var(--panel-soft);color:var(--brand-ink)}}.chart img{{display:block;width:100%;height:100%;object-fit:contain}}.chart span{{position:absolute;right:8px;bottom:8px;padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--panel) 82%,transparent);font-size:11px;font-weight:700}}.chart-empty{{display:grid;place-items:center;color:var(--muted)}}.project footer{{display:flex;flex-direction:column;gap:3px;min-height:64px;padding:12px 17px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}}.sr-only{{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}}.empty{{display:grid;min-height:250px;place-items:center;border:1px dashed var(--line);border-radius:20px;background:var(--panel);color:var(--muted)}}:is(a,button,input):focus-visible{{outline:3px solid var(--focus);outline-offset:3px}}@media (max-width:760px){{.top{{align-items:start;flex-direction:column}}.metadata{{justify-content:flex-start}}.kpis{{grid-template-columns:repeat(2,minmax(0,1fr))}}.control-inner{{grid-template-columns:1fr}}.sort{{width:100%}}}}@media (max-width:430px){{.kpis{{grid-template-columns:1fr}}.metrics{{grid-template-columns:1fr 1fr}}.metric:last-child{{display:none}}}}@media (prefers-reduced-motion:reduce){{*,*::before,*::after{{scroll-behavior:auto!important;transition-duration:.01ms!important}}}}
+*{{box-sizing:border-box}}html{{overflow-x:hidden}}body{{margin:0;background:var(--surface);color:var(--ink);font:15px/1.55 "Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;letter-spacing:.01em}}.shell{{max-width:1500px;margin:0 auto;padding:0 clamp(14px,3vw,38px) 72px}}.top{{display:flex;justify-content:space-between;gap:22px;align-items:flex-end;padding:clamp(28px,5vw,58px) 0 25px}}.eyebrow{{display:flex;gap:8px;color:var(--brand-ink);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}}.eyebrow:before{{content:"";width:26px;height:2px;background:var(--accent)}}h1{{margin:8px 0 9px;font-size:clamp(29px,4.8vw,58px);line-height:1.02;letter-spacing:-.055em}}.subtitle{{max-width:640px;margin:0;color:var(--muted)}}.metadata{{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}}.pill{{display:inline-flex;align-items:center;height:30px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);font-size:12px;font-weight:650}}.kpis{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}}.kpi{{display:flex;min-height:103px;min-width:0;padding:17px;align-items:center;gap:13px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}}.kpi-icon{{width:27px;height:27px;flex:none;color:var(--brand)}}.kpi span{{display:block;color:var(--muted);font-size:12px}}.kpi strong{{display:block;margin-top:3px;font-size:clamp(20px,2vw,30px);line-height:1.12;letter-spacing:-.04em}}.controls{{position:sticky;top:0;z-index:10;padding:13px 0;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(15px);border-bottom:1px solid transparent}}.control-inner{{display:grid;grid-template-columns:minmax(210px,1fr) auto;gap:9px;padding:11px;border:1px solid var(--line);border-radius:17px;background:var(--panel);box-shadow:var(--shadow)}}.search{{display:flex;align-items:center;gap:9px;min-width:0;padding:0 12px;border-radius:12px;background:var(--panel-soft)}}.search svg{{width:18px;height:18px;flex:none;color:var(--muted)}}input{{min-width:0;flex:1;height:43px;border:0;background:transparent;color:var(--ink);font:inherit;outline:none}}input::placeholder{{color:var(--muted)}}.sort{{display:flex;gap:6px;overflow:auto;scrollbar-width:none}}.sort::-webkit-scrollbar{{display:none}}button{{height:43px;border:0;border-radius:11px;background:var(--panel-soft);color:var(--muted);padding:0 11px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:color .2s ease,background .2s ease}}button[aria-pressed=true]{{background:var(--brand);color:#fff}}@media (prefers-color-scheme:dark){{button[aria-pressed=true]{{color:#07131d}}}}.pager{{display:flex;align-items:center;justify-content:space-between;gap:13px;margin:18px 0 0;padding:13px 15px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}}.pager>span{{color:var(--muted);font-size:13px;font-weight:700}}.pager div{{display:flex;gap:6px;flex-wrap:wrap}}.pager a{{display:grid;min-width:36px;height:36px;place-items:center;border:1px solid var(--line);border-radius:10px;background:var(--panel-soft);color:var(--ink);font-size:13px;font-weight:750;text-decoration:none;transition:color .2s ease,background .2s ease}}.pager a:hover{{color:var(--brand-ink);background:var(--panel)}}.pager a[aria-current=page]{{background:var(--brand);border-color:var(--brand);color:#fff}}@media (prefers-color-scheme:dark){{.pager a[aria-current=page]{{color:#07131d}}}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px;margin-top:17px}}.project{{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:19px;background:var(--panel);box-shadow:var(--shadow);transition:border-color .2s ease}}.project:hover{{border-color:var(--brand)}}.project header{{display:flex;justify-content:space-between;gap:12px;align-items:start;padding:17px 17px 13px}}h3{{margin:0;font-size:17px;line-height:1.38;letter-spacing:-.03em;overflow-wrap:anywhere}}.date{{flex:none;margin-top:2px;color:var(--brand-ink);font-size:12px;font-weight:750}}.metrics{{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;padding:0 12px 13px;background:var(--panel-soft)}}.metric{{min-width:0;padding:10px;background:var(--panel)}}.metric span{{display:block;color:var(--muted);font-size:11px}}.metric strong{{display:block;margin-top:2px;font-size:14px;letter-spacing:-.02em}}.chart{{position:relative;display:block;aspect-ratio:792/1000;background:var(--panel-soft);color:var(--brand-ink)}}.chart img{{display:block;width:100%;height:100%;object-fit:contain}}.chart span{{position:absolute;right:8px;bottom:8px;padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--panel) 82%,transparent);font-size:11px;font-weight:700}}.chart-empty{{display:grid;place-items:center;color:var(--muted)}}.project footer{{display:flex;flex-direction:column;gap:3px;min-height:64px;padding:12px 17px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}}.sr-only{{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}}.empty{{display:grid;min-height:250px;place-items:center;border:1px dashed var(--line);border-radius:20px;background:var(--panel);color:var(--muted)}}:is(a,button,input):focus-visible{{outline:3px solid var(--focus);outline-offset:3px}}@media (max-width:760px){{.top{{align-items:start;flex-direction:column}}.metadata{{justify-content:flex-start}}.kpis{{grid-template-columns:repeat(2,minmax(0,1fr))}}.control-inner{{grid-template-columns:1fr}}.sort{{width:100%}}}}@media (max-width:430px){{.kpis{{grid-template-columns:1fr}}.metrics{{grid-template-columns:1fr 1fr}}.metric:last-child{{display:none}}}}@media (prefers-reduced-motion:reduce){{*,*::before,*::after{{scroll-behavior:auto!important;transition-duration:.01ms!important}}}}
 </style>
 </head>
 <body data-project-json="{embedded_projects}">
@@ -163,9 +198,9 @@ def render_html(projects: list[dict[str, Any]], *, generated_at: str) -> str:
   <div class="kpi">{_icon('price')}<div><span>样本均价</span><strong>{money(summary['averagePrice'])}</strong></div></div>
   <div class="kpi">{_icon('date')}<div><span>最新数据</span><strong>{esc(summary['latestDate'])}</strong></div></div>
 </section>
-<section class="controls" aria-label="筛选与排序">
+<section class="controls" aria-label="本页筛选与排序">
   <div class="control-inner">
-    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg><span class="sr-only">搜索楼盘、开发商或地址</span><input data-role="project-search" type="search" placeholder="搜索楼盘、开发商或地址" autocomplete="off"></label>
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg><span class="sr-only">搜索楼盘、开发商或地址</span><input data-role="project-search" type="search" placeholder="搜索本页楼盘、开发商或地址" autocomplete="off"></label>
     <div class="sort" role="group" aria-label="排序">
       <button type="button" data-role="sort-control" data-sort="default" aria-pressed="true">默认</button>
       <button type="button" data-role="sort-control" data-sort="sold" aria-pressed="false">已售优先</button>
@@ -175,6 +210,7 @@ def render_html(projects: list[dict[str, Any]], *, generated_at: str) -> str:
   </div>
 </section>
 <main class="grid" role="list" aria-live="polite">{cards or '<section class="empty">暂无楼盘数据</section>'}</main>
+{pagination(current_page, page_count)}
 </div>
 <script>
 (function(){{'use strict';const grid=document.querySelector('[role="list"]');const cards=[...grid.querySelectorAll('.project')];const search=document.querySelector('[data-role="project-search"]');let sortMode='default';function apply(){{const words=search.value.trim().toLowerCase().split(/\\s+/).filter(Boolean);cards.forEach(card=>{{const value=(card.dataset.search||'').toLowerCase();card.hidden=words.some(word=>!value.includes(word));}});if(sortMode==='sold')cards.sort((a,b)=>Number(b.dataset.sold)-Number(a.dataset.sold));else if(sortMode==='price-asc')cards.sort((a,b)=>Number(a.dataset.price)-Number(b.dataset.price));else if(sortMode==='price-desc')cards.sort((a,b)=>Number(b.dataset.price)-Number(a.dataset.price));else cards.sort((a,b)=>a.dataset.defaultIndex-b.dataset.defaultIndex);cards.forEach(card=>grid.append(card));}}cards.forEach((card,index)=>card.dataset.defaultIndex=index);search.addEventListener('input',apply);document.querySelectorAll('[data-role="sort-control"]').forEach(button=>button.addEventListener('click',()=>{{document.querySelectorAll('[data-role="sort-control"]').forEach(item=>item.setAttribute('aria-pressed','false'));button.setAttribute('aria-pressed','true');sortMode=button.dataset.sort;apply();}}));}})();
