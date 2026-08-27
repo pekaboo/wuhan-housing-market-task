@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 667064385736785,
+  "status": "complete",
+  "types": [
+    {
+      "area": 127.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 701000480202824,
+          "buildName": "新建居住项目（紫阳村东A地块）4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 719182907793477,
+          "evidenceName": "武房开预售[2025]241号",
+          "floorTotal": 26,
+          "oldUnitName": "二",
+          "roomTotal": 48,
+          "soldNum": 48,
+          "unitId": 0,
+          "unitName": "二"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 701000480202824,
+          "buildName": "新建居住项目（紫阳村东A地块）4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 719182907793477,
+          "evidenceName": "武房开预售[2025]241号",
+          "floorTotal": 26,
+          "oldUnitName": "一",
+          "roomTotal": 48,
+          "soldNum": 48,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 675221523480675,
+      "img": "https://img.wufangtong.cn/ec12007e4486417bb2ecc9ffa24f2eec.png",
+      "name": "127平户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 158.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 701000480202823,
+          "buildName": "新建居住项目（紫阳村东A地块）3",
+          "buildShortName": "3#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 706648472117317,
+          "evidenceName": "武房开预售[2025]216号",
+          "floorTotal": 19,
+          "oldUnitName": "一",
+          "roomTotal": 36,
+          "soldNum": 36,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 675221523480676,
+      "img": "https://img.wufangtong.cn/aa33d463ef154d12b5011ff63cb98fa3.png",
+      "name": "158平户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 146.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 701000480202821,
+          "buildName": "新建居住项目（紫阳村东A地块）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 715141936394309,
+          "evidenceName": "武房开预售[2025]232号",
+          "floorTotal": 26,
+          "oldUnitName": "一",
+          "roomTotal": 50,
+          "soldNum": 50,
+          "unitId": 0,
+          "unitName": "一"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 701000480202822,
+          "buildName": "新建居住项目（紫阳村东A地块）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 706648472117317,
+          "evidenceName": "武房开预售[2025]216号",
+          "floorTotal": 23,
+          "oldUnitName": "一",
+          "roomTotal": 44,
+          "soldNum": 44,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 826732458385680,
+      "img": "https://img.wufangtong.cn/36070df4ff7f44a2be372a77ea4c05d7.png",
+      "name": "1厨，146平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

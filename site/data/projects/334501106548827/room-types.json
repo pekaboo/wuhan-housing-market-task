@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334501106548827,
+  "status": "complete",
+  "types": [
+    {
+      "area": 140.0,
+      "availableRoomNum": 56,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 56,
+          "buildId": 470960965709894,
+          "buildName": "新建居住项目（铁机村城中村改造2号地块）-B区6",
+          "buildShortName": "B6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 472372167024709,
+          "evidenceName": "武房开预售[2023]420号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 84,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 462936858861671,
+      "img": "https://img.wufangtong.cn/c854f3f9d1cf4e328fb768af3aac539a.png",
+      "name": "G2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 120.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483828985925,
+          "buildName": "新建居住项目（铁机村城中村改造A-1地块）1",
+          "buildShortName": "11#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873735520336,
+          "evidenceName": "武房开预售[2020]041号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 64,
+          "soldNum": 64,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483828985925,
+          "buildName": "新建居住项目（铁机村城中村改造A-1地块）1",
+          "buildShortName": "11#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873735520336,
+          "evidenceName": "武房开预售[2020]041号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 50,
+          "soldNum": 50,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 462936858861673,
+      "img": "https://img.wufangtong.cn/de99e06b96e34b6fb51d7c649dd06446.png",
+      "name": "E户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 113.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 779364636381263,
+      "img": "https://img.wufangtong.cn/065eaf266ea0448bbd48f3581ef6466f.png",
+      "name": "1厨，113平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 75.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 784331127623761,
+      "img": "https://img.wufangtong.cn/8497ad2e294a44dd90ff9e9fec3e3f0f.png",
+      "name": "1厨，75平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 102.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 840336969249040,
+      "img": "https://img.wufangtong.cn/9fa888ec07d74ee98041db828e6b20d0.png",
+      "name": "1厨，102平米",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    }
+  ]
+}

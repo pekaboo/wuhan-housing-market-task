@@ -21,7 +21,7 @@
   <p class="description">共 390 个楼盘中的当前项目详情页；展示接口返回的全部字段、标准销控图、抖音版销控图与历史销控图。</p>
 </header>
 <section class="metrics" aria-label="核心指标">
-  <div class="metric"><span>数据日期</span><strong>2026-08-27</strong></div>
+  <div class="metric"><span>数据日期</span><strong>2026-08-18</strong></div>
   <div class="metric"><span>已售</span><strong>-1</strong></div>
   <div class="metric"><span>均价</span><strong>8,500 元/㎡</strong></div>
   <div class="metric"><span>总房源</span><strong>—</strong></div>
@@ -32,34 +32,302 @@
     <table class="field-table">
       <caption class="sr-only">接口返回的全部字段与值</caption>
       <thead><tr><th scope="col">字段</th><th scope="col">值</th></tr></thead>
-      <tbody><tr data-field="id"><th scope="row"><span>项目 ID</span><code>id</code></th><td><span>334503202562130</span></td></tr><tr data-field="name"><th scope="row"><span>楼盘名称</span><code>name</code></th><td><span>融创首创国际智慧生态城市</span></td></tr><tr data-field="soldChartImg"><th scope="row"><span>标准销控图</span><code>soldChartImg</code></th><td><a href="https://img.wufangtong.cn/c3631f2efeca4d3ea8eed42678aeb459.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/c3631f2efeca4d3ea8eed42678aeb459.png</a></td></tr><tr data-field="douYinSoldChartImg"><th scope="row"><span>抖音版销控图</span><code>douYinSoldChartImg</code></th><td><a href="https://img.wufangtong.cn/e78faa3739054e71ab0863ee80d19dac.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/e78faa3739054e71ab0863ee80d19dac.png</a></td></tr><tr data-field="salePrice"><th scope="row"><span>均价</span><code>salePrice</code></th><td><span>8500.0</span></td></tr><tr data-field="soldNum"><th scope="row"><span>已售套数</span><code>soldNum</code></th><td><span>-1</span></td></tr><tr data-field="date"><th scope="row"><span>数据日期</span><code>date</code></th><td><span>2026-08-27</span></td></tr></tbody>
+      <tbody><tr data-field="id"><th scope="row"><span>项目 ID</span><code>id</code></th><td><span>334503202562130</span></td></tr><tr data-field="name"><th scope="row"><span>楼盘名称</span><code>name</code></th><td><span>融创首创国际智慧生态城市</span></td></tr><tr data-field="soldChartImg"><th scope="row"><span>标准销控图</span><code>soldChartImg</code></th><td><a href="https://img.wufangtong.cn/3a2e0865cd804d0692577e035a5a2278.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/3a2e0865cd804d0692577e035a5a2278.png</a></td></tr><tr data-field="douYinSoldChartImg"><th scope="row"><span>抖音版销控图</span><code>douYinSoldChartImg</code></th><td><a href="https://img.wufangtong.cn/71db57e1cacc4532aa819be77f7dc044.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/71db57e1cacc4532aa819be77f7dc044.png</a></td></tr><tr data-field="salePrice"><th scope="row"><span>均价</span><code>salePrice</code></th><td><span>8500.0</span></td></tr><tr data-field="soldNum"><th scope="row"><span>已售套数</span><code>soldNum</code></th><td><span>-1</span></td></tr><tr data-field="date"><th scope="row"><span>数据日期</span><code>date</code></th><td><span>2026-08-18</span></td></tr></tbody>
     </table>
   </div>
 </section>
-<section class="one-price empty" aria-label="一房一价">未获取一房一价数据</section>
-<section class="room-types empty" aria-label="户型图">未获取户型图数据</section>
+<section class="one-price" data-one-price-url="../../data/projects/334503202562130/one-price.json.gz" aria-labelledby="one-price-title">
+      <div class="one-price-head">
+        <div><h2 id="one-price-title">一房一价</h2><p>按预售证聚合房号、面积、单价、总价、销售与异常状态；支持明细表与真实楼层分布两种视图。</p></div>
+        <a href="../../data/projects/334503202562130/one-price.json.gz" download>JSON 明细</a>
+      </div>
+
+      <div class="one-price-summary" data-role="one-price-summary"><div class="one-price-metric "><span>预售证</span><strong>13</strong></div><div class="one-price-metric "><span>房源</span><strong>6,115</strong></div><div class="one-price-metric available"><span>可售</span><strong>1,044</strong></div><div class="one-price-metric sold"><span>已售</span><strong>5,071</strong></div><div class="one-price-metric abnormal"><span>异常</span><strong>1,105</strong></div></div>
+      <div class="room-controls">
+        <div class="view-switch" role="group" aria-label="一房一价视图">
+          <button type="button" data-role="view-mode" data-mode="table" aria-pressed="true">明细表</button>
+          <button type="button" data-role="view-mode" data-mode="floor" aria-pressed="false">楼层分布</button>
+        </div>
+        <label>预售证<select data-role="certificate-filter" aria-label="筛选预售证"><option value="all">全部预售证</option></select></label>
+        <label>楼栋<select data-role="building-filter" aria-label="筛选楼栋"><option value="all">全部楼栋</option></select></label>
+        <label>单元<select data-role="unit-filter" aria-label="筛选单元"><option value="all">全部单元</option></select></label>
+        <label>搜索<input data-role="room-search" type="search" placeholder="楼栋 / 单元 / 楼层 / 房号 / 户型" autocomplete="off"></label>
+        <div class="room-filters" role="group" aria-label="房源状态筛选">
+          <button type="button" data-role="room-filter" data-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-role="room-filter" data-filter="available" aria-pressed="false">可售</button>
+          <button type="button" data-role="room-filter" data-filter="sold" aria-pressed="false">已售</button>
+          <button type="button" data-role="room-filter" data-filter="abnormal" aria-pressed="false">异常</button>
+        </div>
+        <div class="numeric-filters" aria-label="价格筛选">
+          <label>单价下限<input data-role="price-min" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
+          <label>单价上限<input data-role="price-max" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
+          <label>总价下限<input data-role="total-min" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
+          <label>总价上限<input data-role="total-max" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
+        </div>
+      </div>
+      <p class="floor-note">楼层分布按楼栋从左到右、楼层从上到下整体排布；已售为红色，可售为绿色并展示单价、总价；可售房源相同单价使用同一色块。</p>
+      <div class="room-table-wrap">
+        <table class="room-table">
+          <caption class="sr-only">一房一价房源明细</caption>
+          <thead><tr><th>楼栋</th><th>单元</th><th>楼层</th><th>房号</th><th>户型</th><th>面积</th><th>单价</th><th>总价</th><th>状态</th><th>标记</th><th>交付</th></tr></thead>
+          <tbody data-role="room-results"><tr><td colspan="11" class="loading">正在载入房源明细…</td></tr></tbody>
+        </table>
+      </div>
+      <div class="floor-results" data-role="floor-results" hidden aria-live="polite"><p class="loading">正在载入楼层分布…</p></div>
+      <div class="room-foot"><p data-role="room-count" role="status" aria-live="polite">等待载入</p><button type="button" data-role="room-more" hidden>显示更多房源</button></div>
+      <div class="certificate-list"><article class="certificate-card">
+              <h3>武房开预售[2021]835号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>605</dd></div>
+                <div><dt>可售</dt><dd>344</dd></div>
+                <div><dt>已售</dt><dd>261</dd></div>
+                <div><dt>去化</dt><dd>0.4314</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]658号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>540</dd></div>
+                <div><dt>可售</dt><dd>85</dd></div>
+                <div><dt>已售</dt><dd>455</dd></div>
+                <div><dt>去化</dt><dd>0.8426</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]468号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>649</dd></div>
+                <div><dt>可售</dt><dd>136</dd></div>
+                <div><dt>已售</dt><dd>513</dd></div>
+                <div><dt>去化</dt><dd>0.7904</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]394号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>271</dd></div>
+                <div><dt>可售</dt><dd>106</dd></div>
+                <div><dt>已售</dt><dd>165</dd></div>
+                <div><dt>去化</dt><dd>0.6089</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]237号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>271</dd></div>
+                <div><dt>可售</dt><dd>15</dd></div>
+                <div><dt>已售</dt><dd>256</dd></div>
+                <div><dt>去化</dt><dd>0.9446</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]044号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>543</dd></div>
+                <div><dt>可售</dt><dd>18</dd></div>
+                <div><dt>已售</dt><dd>525</dd></div>
+                <div><dt>去化</dt><dd>0.9669</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]937号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>1,035</dd></div>
+                <div><dt>可售</dt><dd>8</dd></div>
+                <div><dt>已售</dt><dd>1,027</dd></div>
+                <div><dt>去化</dt><dd>0.9923</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]784号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>378</dd></div>
+                <div><dt>可售</dt><dd>11</dd></div>
+                <div><dt>已售</dt><dd>367</dd></div>
+                <div><dt>去化</dt><dd>0.9709</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]719号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>715</dd></div>
+                <div><dt>可售</dt><dd>32</dd></div>
+                <div><dt>已售</dt><dd>683</dd></div>
+                <div><dt>去化</dt><dd>0.9552</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]547号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>150</dd></div>
+                <div><dt>可售</dt><dd>31</dd></div>
+                <div><dt>已售</dt><dd>119</dd></div>
+                <div><dt>去化</dt><dd>0.7933</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]548号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>550</dd></div>
+                <div><dt>可售</dt><dd>17</dd></div>
+                <div><dt>已售</dt><dd>533</dd></div>
+                <div><dt>去化</dt><dd>0.9691</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]388号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>268</dd></div>
+                <div><dt>可售</dt><dd>105</dd></div>
+                <div><dt>已售</dt><dd>163</dd></div>
+                <div><dt>去化</dt><dd>0.6082</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]291号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>140</dd></div>
+                <div><dt>可售</dt><dd>136</dd></div>
+                <div><dt>已售</dt><dd>4</dd></div>
+                <div><dt>去化</dt><dd>0.0286</dd></div>
+              </dl>
+            </article></div>
+    </section>
+<section class="room-types" data-room-type-url="../../data/projects/334503202562130/room-types.json" aria-labelledby="room-types-title">
+      <div class="one-price-head">
+        <div><h2 id="room-types-title">户型图</h2><p>点击户型卡片查看大图、面积、可售数量与楼栋分布。</p></div>
+        <a href="../../data/projects/334503202562130/room-types.json" download>JSON 明细</a>
+      </div>
+
+      <div class="room-type-grid"><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-0" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/85ea205b971e4f1396cfb41bec051c79.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>98.00 ㎡ · 可售 82 套</span>
+                <span>一江赋二期</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-1" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/a37b0b13f74f402385e8c3fc5c1dc0ba.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>115.00 ㎡ · 可售 50 套</span>
+                <span>一江赋二期</span>
+                <em>点击查看大图</em>
+              </span>
+            </button></div>
+      <dialog id="room-type-dialog-0" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-0-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-0-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/85ea205b971e4f1396cfb41bec051c79.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>98.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>82 套</dd></div>
+                  <div><dt>编号</dt><dd>337641826742341</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>5#</strong>
+              <span>/ 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 6 / 已售 62</span>
+            </li><li>
+              <strong>15#</strong>
+              <span>1 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 2 / 已售 66</span>
+            </li><li>
+              <strong>15#</strong>
+              <span>2 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 1 / 已售 67</span>
+            </li><li>
+              <strong>17#</strong>
+              <span>1 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 1 / 已售 67</span>
+            </li><li>
+              <strong>17#</strong>
+              <span>2 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 3 / 已售 65</span>
+            </li><li>
+              <strong>18#,S2#</strong>
+              <span>1 单元 · 34 层 · 高层</span>
+              <span>总 67 / 可售 2 / 已售 65</span>
+            </li><li>
+              <strong>18#,S2#</strong>
+              <span>2 单元 · 34 层 · 高层</span>
+              <span>总 67 / 可售 4 / 已售 63</span>
+            </li><li>
+              <strong>19#</strong>
+              <span>1 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 43 / 已售 25</span>
+            </li><li>
+              <strong>19#</strong>
+              <span>2 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 20 / 已售 48</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-1" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-1-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-1-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/a37b0b13f74f402385e8c3fc5c1dc0ba.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>115.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>50 套</dd></div>
+                  <div><dt>编号</dt><dd>337641826742342</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>1#,6#,S3#</strong>
+              <span>1号楼 单元 · 34 层 · 高层</span>
+              <span>总 66 / 可售 16 / 已售 50</span>
+            </li><li>
+              <strong>1#,6#,S3#</strong>
+              <span>6号楼 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 13 / 已售 55</span>
+            </li><li>
+              <strong>5#</strong>
+              <span>/ 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 9 / 已售 59</span>
+            </li><li>
+              <strong>7#</strong>
+              <span>/ 单元 · 34 层 · 高层</span>
+              <span>总 68 / 可售 12 / 已售 56</span>
+            </li><li>
+              <strong>4#</strong>
+              <span>1 单元 · 46 层 · 超高层</span>
+              <span>总 45 / 可售 0 / 已售 45</span>
+            </li><li>
+              <strong>4#</strong>
+              <span>2 单元 · 46 层 · 超高层</span>
+              <span>总 42 / 可售 0 / 已售 42</span>
+            </li><li>
+              <strong>7#</strong>
+              <span>2 单元 · 34 层 · 高层</span>
+              <span>总 33 / 可售 0 / 已售 33</span>
+            </li></ul>
+              </article>
+            </dialog>
+    </section>
 <details class="raw-data">
   <summary>完整原始 JSON</summary>
   <pre><code>{
-  &quot;date&quot;: &quot;2026-08-27&quot;,
-  &quot;douYinSoldChartImg&quot;: &quot;https://img.wufangtong.cn/e78faa3739054e71ab0863ee80d19dac.png&quot;,
+  &quot;date&quot;: &quot;2026-08-18&quot;,
+  &quot;douYinSoldChartImg&quot;: &quot;https://img.wufangtong.cn/71db57e1cacc4532aa819be77f7dc044.png&quot;,
   &quot;id&quot;: 334503202562130,
   &quot;name&quot;: &quot;融创首创国际智慧生态城市&quot;,
   &quot;salePrice&quot;: 8500.0,
-  &quot;soldChartImg&quot;: &quot;https://img.wufangtong.cn/c3631f2efeca4d3ea8eed42678aeb459.png&quot;,
+  &quot;soldChartImg&quot;: &quot;https://img.wufangtong.cn/3a2e0865cd804d0692577e035a5a2278.png&quot;,
   &quot;soldNum&quot;: -1
 }</code></pre>
 </details>
 <h2>全部销控图</h2>
-<section class="charts" aria-label="全部销控图"><a class="chart" href="https://img.wufangtong.cn/c3631f2efeca4d3ea8eed42678aeb459.png" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.wufangtong.cn/c3631f2efeca4d3ea8eed42678aeb459.png" alt="融创首创国际智慧生态城市 标准销控图" loading="lazy" decoding="async">
-          <span>标准销控图 · 2026-08-27</span>
-        </a><a class="chart" href="https://img.wufangtong.cn/e78faa3739054e71ab0863ee80d19dac.png" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.wufangtong.cn/e78faa3739054e71ab0863ee80d19dac.png" alt="融创首创国际智慧生态城市 抖音版销控图" loading="lazy" decoding="async">
-          <span>抖音版销控图 · 2026-08-27</span>
+<section class="charts" aria-label="全部销控图"><a class="chart" href="https://img.wufangtong.cn/3a2e0865cd804d0692577e035a5a2278.png" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.wufangtong.cn/3a2e0865cd804d0692577e035a5a2278.png" alt="融创首创国际智慧生态城市 标准销控图" loading="lazy" decoding="async">
+          <span>标准销控图 · 2026-08-18</span>
+        </a><a class="chart" href="https://img.wufangtong.cn/71db57e1cacc4532aa819be77f7dc044.png" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.wufangtong.cn/71db57e1cacc4532aa819be77f7dc044.png" alt="融创首创国际智慧生态城市 抖音版销控图" loading="lazy" decoding="async">
+          <span>抖音版销控图 · 2026-08-18</span>
         </a></section>
-<nav class="footer-nav" aria-label="项目导航"><span></span><a class="next" href="../../projects/334503298535510/"><span>下一个楼盘</span><span>地铁时代云上城</span></a></nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 18:00:27；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<nav class="footer-nav" aria-label="项目导航"><a class="previous" href="../../projects/334502133780556/"><span>上一个楼盘</span><span>天纵时代天樾</span></a><a class="next" href="../../projects/334501415100526/"><span>下一个楼盘</span><span>信达天纵第五园</span></a></nav>
+<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 18:26:03；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 (function(){
@@ -269,7 +537,14 @@
     input.addEventListener('input',function(){bounds[pair[1]]=input.value===''?null:Number(input.value);if(input.value!==''&&!isFinite(bounds[pair[1]]))bounds[pair[1]]=null;limit=100;render()});
   });
   more.addEventListener('click',function(){limit+=200;render()});
-  fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()}).then(function(data){
+  function loadJSON(url){
+    if(!/\.json\.gz$/.test(url))return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()});
+    if(typeof DecompressionStream==='undefined')return Promise.reject(new Error('当前浏览器不支持解压静态 JSON'));
+    return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.arrayBuffer()}).then(function(buffer){
+      var stream=new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'));return new Response(stream).json();
+    });
+  }
+  loadJSON(url).then(function(data){
     if(data&&data.status&&data.status!=='complete')throw new Error(data.message||'接口返回错误');
     rooms=[];
     (data.certificates||[]).forEach(function(certificate){

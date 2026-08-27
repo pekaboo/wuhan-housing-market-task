@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 531543610749024,
+  "status": "complete",
+  "types": [
+    {
+      "area": 148.0,
+      "availableRoomNum": 40,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 29,
+          "buildId": 678720352206917,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（二期）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 681522503364677,
+          "evidenceName": "武房开预售[2025]143号",
+          "floorTotal": 25,
+          "oldUnitName": "2",
+          "roomTotal": 44,
+          "soldNum": 15,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 11,
+          "buildId": 678720352206917,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（二期）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 681522503364677,
+          "evidenceName": "武房开预售[2025]143号",
+          "floorTotal": 25,
+          "oldUnitName": "3",
+          "roomTotal": 22,
+          "soldNum": 11,
+          "unitId": 0,
+          "unitName": "3"
+        }
+      ],
+      "effectImage": null,
+      "id": 675227223257158,
+      "img": "https://img.wufangtong.cn/0112ce5be01e4eb5a948343aa174a925.png",
+      "name": "二期D1户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 172.0,
+      "availableRoomNum": 14,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 14,
+          "buildId": 678720352206917,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（二期）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 681522503364677,
+          "evidenceName": "武房开预售[2025]143号",
+          "floorTotal": 25,
+          "oldUnitName": "3",
+          "roomTotal": 22,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "3"
+        }
+      ],
+      "effectImage": null,
+      "id": 735023303921791,
+      "img": "https://img.wufangtong.cn/99d13d03ca1248f0944e0409cfdb6614.png",
+      "name": "2厨，172平米",
+      "roomLayout": "5室2厅2卫",
+      "sectionNum": 5
+    },
+    {
+      "area": 128.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 678720352206917,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（二期）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 681522503364677,
+          "evidenceName": "武房开预售[2025]143号",
+          "floorTotal": 25,
+          "oldUnitName": "1",
+          "roomTotal": 22,
+          "soldNum": 20,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 810421710688339,
+      "img": "https://img.wufangtong.cn/0c37f1bcef4e435ca4a7afab3d04c06d.png",
+      "name": "1厨，128平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 130.0,
+      "availableRoomNum": 14,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 14,
+          "buildId": 678720352206917,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（二期）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 681522503364677,
+          "evidenceName": "武房开预售[2025]143号",
+          "floorTotal": 25,
+          "oldUnitName": "1",
+          "roomTotal": 22,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 817480870867025,
+      "img": "https://img.wufangtong.cn/e6ff5b16e1314ae2b03d8fdb2b54a2cf.png",
+      "name": "1厨，130平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 133.0,
+      "availableRoomNum": 24,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 551664895967301,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（一期）4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 627377509822533,
+          "evidenceName": "武房开预售[2024]400号",
+          "floorTotal": 17,
+          "oldUnitName": "2",
+          "roomTotal": 11,
+          "soldNum": 10,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 551664895967301,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（一期）4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 627377509822533,
+          "evidenceName": "武房开预售[2024]400号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 15,
+          "soldNum": 14,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 12,
+          "buildId": 678720352206918,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（二期）2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 681522503364677,
+          "evidenceName": "武房开预售[2025]143号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 15,
+          "soldNum": 3,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 678720352206918,
+          "buildName": "新建居住、商业设施、商务设施、地下室复合社会停车场项目（二期）2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 681522503364677,
+          "evidenceName": "武房开预售[2025]143号",
+          "floorTotal": 17,
+          "oldUnitName": "2",
+          "roomTotal": 15,
+          "soldNum": 5,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 818896635646031,
+      "img": "https://img.wufangtong.cn/8bbb6cf53d6349f9b4ce90914153f5be.png",
+      "name": "1厨，133平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

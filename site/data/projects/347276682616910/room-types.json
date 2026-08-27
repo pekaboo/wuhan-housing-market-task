@@ -1,0 +1,244 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 347276682616910,
+  "status": "complete",
+  "types": [
+    {
+      "area": 113.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481184403526,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 409023285882949,
+          "evidenceName": "武房开预售[2023]150号",
+          "floorTotal": 42,
+          "oldUnitName": "/",
+          "roomTotal": 74,
+          "soldNum": 74,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312481184403532,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）8",
+          "buildShortName": "8#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473925,
+          "evidenceName": "武房开预售[2021]803号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 76,
+          "soldNum": 75,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 408366695362658,
+      "img": "https://img.wufangtong.cn/750a38dc79d64ce9b577592dfe243c7d.png",
+      "name": "E户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 123.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481184403528,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）4",
+          "buildShortName": "4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 430965114253381,
+          "evidenceName": "武房开预售[2023]265号",
+          "floorTotal": 49,
+          "oldUnitName": "/",
+          "roomTotal": 88,
+          "soldNum": 88,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 441419239350370,
+      "img": "https://img.wufangtong.cn/9bec3f860d4b451882bb4727f21150f8.png",
+      "name": "F2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 111.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481184403528,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）4",
+          "buildShortName": "4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 430965114253381,
+          "evidenceName": "武房开预售[2023]265号",
+          "floorTotal": 49,
+          "oldUnitName": "/",
+          "roomTotal": 176,
+          "soldNum": 176,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 441419239350371,
+      "img": "https://img.wufangtong.cn/7457ce06d26d442b9a7d42b28d41e81f.png",
+      "name": "E3户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481184403526,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 409023285882949,
+          "evidenceName": "武房开预售[2023]150号",
+          "floorTotal": 42,
+          "oldUnitName": "/",
+          "roomTotal": 74,
+          "soldNum": 74,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 441419239350372,
+      "img": "https://img.wufangtong.cn/9f9b21fc7b8848eaabe6d784b33e679f.png",
+      "name": "G户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 121.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481184403530,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）6",
+          "buildShortName": "6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875067351112,
+          "evidenceName": "武房开预售[2022]004号",
+          "floorTotal": 36,
+          "oldUnitName": "/",
+          "roomTotal": 66,
+          "soldNum": 66,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481184403531,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）7",
+          "buildShortName": "7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473925,
+          "evidenceName": "武房开预售[2021]803号",
+          "floorTotal": 50,
+          "oldUnitName": "/",
+          "roomTotal": 91,
+          "soldNum": 91,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 441419239350374,
+      "img": "https://img.wufangtong.cn/40aa477434054a1a945e7c1ac91ea53a.png",
+      "name": "C户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 115.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312481184403527,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）3",
+          "buildShortName": "3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 528288792035397,
+          "evidenceName": "武房开预售[2024]062号",
+          "floorTotal": 42,
+          "oldUnitName": "/",
+          "roomTotal": 74,
+          "soldNum": 73,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 534131830550610,
+      "img": "https://img.wufangtong.cn/3728e683e08f4b12a80c76eab055f5d4.png",
+      "name": "3号楼E2户",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 127.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481184403527,
+          "buildName": "新建居住项目（唐家墩村城中村改造K8地块及扩大地块）3",
+          "buildShortName": "3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 528288792035397,
+          "evidenceName": "武房开预售[2024]062号",
+          "floorTotal": 42,
+          "oldUnitName": "/",
+          "roomTotal": 74,
+          "soldNum": 74,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 534131830550611,
+      "img": "https://img.wufangtong.cn/4168e7760224412ea1d306e6a98f4e4c.png",
+      "name": "3号楼F2户",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

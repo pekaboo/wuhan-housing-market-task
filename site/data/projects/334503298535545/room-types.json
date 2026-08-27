@@ -1,0 +1,218 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503298535545,
+  "status": "complete",
+  "types": [
+    {
+      "area": 139.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337706500608072,
+      "img": "https://img.wufangtong.cn/f0147be013d446ffa5128d3c6a886b0a.png",
+      "name": "F户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 88.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337706500608073,
+      "img": "https://img.wufangtong.cn/9f73be56ec5b48b8addcc960ce10040f.png",
+      "name": "G户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 108.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337706500608074,
+      "img": "https://img.wufangtong.cn/720fa14c2fbd42aa9f5c52620c6dcc17.png",
+      "name": "E户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 128.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312484330717256,
+          "buildName": "武汉碧云天5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873531256903,
+          "evidenceName": "武房开预售[2019]686号",
+          "floorTotal": 27,
+          "oldUnitName": "/",
+          "roomTotal": 54,
+          "soldNum": 54,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 808649484914758,
+      "img": "https://img.wufangtong.cn/77778380c3c546cfb0e1640abdb81ac5.png",
+      "name": "1厨，128平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 106.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 808649484914759,
+      "img": "https://img.wufangtong.cn/4ffe6b6c9ffc437db63d41ff3c0bb7be.png",
+      "name": "1厨，106平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 134.0,
+      "availableRoomNum": 18,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312484330717259,
+          "buildName": "武汉碧云天8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115023,
+          "evidenceName": "武房开预售[2021]069号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 14,
+          "buildId": 312484330717259,
+          "buildName": "武汉碧云天8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115023,
+          "evidenceName": "武房开预售[2021]069号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 18,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 826799893393725,
+      "img": "https://img.wufangtong.cn/30e4219e5e2b43278edbb402e5214c1d.png",
+      "name": "1厨，134平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 108.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312484330717259,
+          "buildName": "武汉碧云天8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115023,
+          "evidenceName": "武房开预售[2021]069号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312484330717259,
+          "buildName": "武汉碧云天8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115023,
+          "evidenceName": "武房开预售[2021]069号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 826799893393726,
+      "img": "https://img.wufangtong.cn/8d384236b50c46dcbd576a0085741a21.png",
+      "name": "1厨，108平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 112.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312484330717259,
+          "buildName": "武汉碧云天8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115023,
+          "evidenceName": "武房开预售[2021]069号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312484330717259,
+          "buildName": "武汉碧云天8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115023,
+          "evidenceName": "武房开预售[2021]069号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 840367786955070,
+      "img": "https://img.wufangtong.cn/bb1c5d3d42b04b5d9ff9e99d1ea9aba2.png",
+      "name": "1厨，112平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

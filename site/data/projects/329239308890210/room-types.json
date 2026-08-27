@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 329239308890210,
+  "status": "complete",
+  "types": [
+    {
+      "area": 89.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 565169076891744,
+      "img": "https://img.wufangtong.cn/e135682c63164b23a0875a6a2669fcad.png",
+      "name": "B璟樾户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 89.0,
+      "availableRoomNum": 49,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 28,
+          "buildId": 312479110279237,
+          "buildName": "居住、商业、社会福利项目（南山樾府）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875077255248,
+          "evidenceName": "武房开预售[2022]016号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 120,
+          "soldNum": 92,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 20,
+          "buildId": 312479110279237,
+          "buildName": "居住、商业、社会福利项目（南山樾府）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875077255248,
+          "evidenceName": "武房开预售[2022]016号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 120,
+          "soldNum": 100,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312479110279239,
+          "buildName": "居住、商业、社会福利项目（南山樾府）3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 565094324187205,
+          "evidenceName": "武房开现售[2024]037号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 124,
+          "soldNum": 123,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 755593680007241,
+      "img": "https://img.wufangtong.cn/a43fadcf608449c7b087e511cd582d25.png",
+      "name": "1厨，89平米",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    }
+  ]
+}

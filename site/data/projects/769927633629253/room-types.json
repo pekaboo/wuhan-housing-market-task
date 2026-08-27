@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 769927633629253,
+  "status": "complete",
+  "types": [
+    {
+      "area": 156.0,
+      "availableRoomNum": 3,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 732510696554571,
+          "buildName": "麓洲国际项目（万华武汉R2地块一期）6",
+          "buildShortName": "6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 810242284716101,
+          "evidenceName": "武房开预售[2026]130号",
+          "floorTotal": 40,
+          "oldUnitName": "1",
+          "roomTotal": 9,
+          "soldNum": 7,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 732510696554573,
+          "buildName": "麓洲国际项目（万华武汉R2地块一期）8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 763625768718405,
+          "evidenceName": "武房开预售[2026]005号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 7,
+          "soldNum": 6,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 831480312422677,
+      "img": "https://img.wufangtong.cn/7a21409fdf2e426590ded2b2b0eb7322.png",
+      "name": "1厨，156平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 136.0,
+      "availableRoomNum": 14,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 11,
+          "buildId": 732510696554571,
+          "buildName": "麓洲国际项目（万华武汉R2地块一期）6",
+          "buildShortName": "6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 810242284716101,
+          "evidenceName": "武房开预售[2026]130号",
+          "floorTotal": 40,
+          "oldUnitName": "1",
+          "roomTotal": 35,
+          "soldNum": 24,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 732510696554573,
+          "buildName": "麓洲国际项目（万华武汉R2地块一期）8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 763625768718405,
+          "evidenceName": "武房开预售[2026]005号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 28,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 831480312422678,
+      "img": "https://img.wufangtong.cn/942db45631984f4d98b33df71fa51496.png",
+      "name": "1厨，136平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 124.0,
+      "availableRoomNum": 39,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 35,
+          "buildId": 732510696554571,
+          "buildName": "麓洲国际项目（万华武汉R2地块一期）6",
+          "buildShortName": "6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 810242284716101,
+          "evidenceName": "武房开预售[2026]130号",
+          "floorTotal": 40,
+          "oldUnitName": "1",
+          "roomTotal": 35,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 732510696554573,
+          "buildName": "麓洲国际项目（万华武汉R2地块一期）8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 763625768718405,
+          "evidenceName": "武房开预售[2026]005号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 28,
+          "soldNum": 24,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 831480312422679,
+      "img": "https://img.wufangtong.cn/296aedae03574d5aa3ba82c08d14d955.png",
+      "name": "1厨，124平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 246.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 831480312422680,
+      "img": "https://img.wufangtong.cn/2043b37f04a04ff7b89ec1a036d49603.png",
+      "name": "1厨，246平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 201.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 831480312422681,
+      "img": "https://img.wufangtong.cn/d7f683fbda3f4013bec3abd24b128f16.png",
+      "name": "1厨，201平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    }
+  ]
+}

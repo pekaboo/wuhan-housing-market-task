@@ -1,0 +1,238 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 679146930683973,
+  "status": "complete",
+  "types": [
+    {
+      "area": 97.0,
+      "availableRoomNum": 30,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 30,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 30,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 679147163455559,
+      "img": "https://img.wufangtong.cn/8f4e2f9b580c491f9d48062985d40132.png",
+      "name": "F户型3室2厅2卫",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 72.0,
+      "availableRoomNum": 29,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 29,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 30,
+          "soldNum": 1,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 679147163455562,
+      "img": "https://img.wufangtong.cn/205f442e539d4569aa8b2fe176d56f57.png",
+      "name": "C户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 65.0,
+      "availableRoomNum": 26,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 26,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 30,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 679147163455563,
+      "img": "https://img.wufangtong.cn/7c9f498cda844c6dacc6e45a763c939d.png",
+      "name": "B户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 45.0,
+      "availableRoomNum": 19,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 19,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 11,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 679147163455564,
+      "img": "https://img.wufangtong.cn/134af5aed57340aabbae35be2162567f.png",
+      "name": "A户型",
+      "roomLayout": "1室1厅1卫",
+      "sectionNum": 1
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 735495658713196,
+      "img": "https://img.wufangtong.cn/27d2577004734c219e4cb7a086edaa18.png",
+      "name": "1厨，125平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 60,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 30,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 30,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 30,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 770172040093805,
+      "img": "https://img.wufangtong.cn/81fba443f75042cbaaa51e908700530d.png",
+      "name": "1厨，125平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 83.0,
+      "availableRoomNum": 30,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 30,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 770172040093807,
+      "img": "https://img.wufangtong.cn/05dde700e3674fc88d96d327eea06113.png",
+      "name": "1厨，83平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 116.0,
+      "availableRoomNum": 30,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 30,
+          "buildId": 611111538499653,
+          "buildName": "青山区21街危旧房合作化改造项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 678336977391685,
+          "evidenceName": "武房开预售[2025]132号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 801749375242350,
+      "img": "https://img.wufangtong.cn/9089623e76af416e9a3fb89a587c205b.png",
+      "name": "1厨，116平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

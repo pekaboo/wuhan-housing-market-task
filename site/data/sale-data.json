@@ -1,34 +1,7 @@
 {
   "count": 390,
-  "generatedAt": "2026-08-27 18:00:27",
+  "generatedAt": "2026-08-27 18:26:03",
   "projects": [
-    {
-      "date": "2026-08-27",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/e78faa3739054e71ab0863ee80d19dac.png",
-      "id": 334503202562130,
-      "name": "融创首创国际智慧生态城市",
-      "salePrice": 8500.0,
-      "soldChartImg": "https://img.wufangtong.cn/c3631f2efeca4d3ea8eed42678aeb459.png",
-      "soldNum": -1
-    },
-    {
-      "date": "2026-08-27",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/0dd52d67b7684f069c977d6b80b79b37.png",
-      "id": 334503298535510,
-      "name": "地铁时代云上城",
-      "salePrice": 8800.0,
-      "soldChartImg": "https://img.wufangtong.cn/a85d32a575b441b3a743f42be7035155.png",
-      "soldNum": 40
-    },
-    {
-      "date": "2026-08-27",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/7c6dba34a6314914a72399c1e86bc199.png",
-      "id": 334502133780550,
-      "name": "保利悦公馆",
-      "salePrice": 7500.0,
-      "soldChartImg": "https://img.wufangtong.cn/94bdb95d60724844bdf67130f040be46.png",
-      "soldNum": 3
-    },
     {
       "date": "2026-08-27",
       "douYinSoldChartImg": "https://img.wufangtong.cn/10e3b4bef7ac418aa2e5ff11ae37eca2.png",
@@ -679,6 +652,15 @@
     },
     {
       "date": "2026-08-26",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/0a32b68462e347ab87857488f21262d0.png",
+      "id": 334503298535510,
+      "name": "地铁时代云上城",
+      "salePrice": 8800.0,
+      "soldChartImg": "https://img.wufangtong.cn/a9654f4672a1464285ed0bfc027c9959.png",
+      "soldNum": 40
+    },
+    {
+      "date": "2026-08-26",
       "douYinSoldChartImg": "https://img.wufangtong.cn/a38027005e9648be9144228af6512a07.png",
       "id": 334503250387022,
       "name": "状元府",
@@ -1117,6 +1099,15 @@
       "salePrice": 5600.0,
       "soldChartImg": "https://img.wufangtong.cn/5c8c4c54e738447c90756dc7e9bb1493.png",
       "soldNum": 1
+    },
+    {
+      "date": "2026-08-24",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/877fca61cdb24b318a9e4db892e92cbb.png",
+      "id": 334502133780550,
+      "name": "保利悦公馆",
+      "salePrice": 7500.0,
+      "soldChartImg": "https://img.wufangtong.cn/2eecb16afa0c479d8542e23a1bfbf1ce.png",
+      "soldNum": 3
     },
     {
       "date": "2026-08-24",
@@ -2215,6 +2206,15 @@
       "salePrice": 11000.0,
       "soldChartImg": "https://img.wufangtong.cn/f76cfb429d9f43159ecb81af870514ae.png",
       "soldNum": 2
+    },
+    {
+      "date": "2026-08-18",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/71db57e1cacc4532aa819be77f7dc044.png",
+      "id": 334503202562130,
+      "name": "融创首创国际智慧生态城市",
+      "salePrice": 8500.0,
+      "soldChartImg": "https://img.wufangtong.cn/3a2e0865cd804d0692577e035a5a2278.png",
+      "soldNum": -1
     },
     {
       "date": "2026-08-18",

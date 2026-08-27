@@ -1,0 +1,391 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503154655302,
+  "status": "complete",
+  "types": [
+    {
+      "area": 140.0,
+      "availableRoomNum": 8,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 8,
+          "buildId": 462473099583557,
+          "buildName": "新建居住项目（电影制片厂一期A地块）1",
+          "buildShortName": "A-1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 466001261723717,
+          "evidenceName": "武房开预售[2023]400号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 34,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 547256724688984,
+      "img": "https://img.wufangtong.cn/d9ac191e080d4cae9e6d50d37db21a91.png",
+      "name": "A区B户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 144.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 547256724688985,
+      "img": "https://img.wufangtong.cn/0ce8f9ed909d4fa68ad245f758d594a4.png",
+      "name": "A区C1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 155.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 462473099583558,
+          "buildName": "新建居住项目（电影制片厂一期A地块）2",
+          "buildShortName": "A-2#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 541380164902981,
+          "evidenceName": "武房开预售[2024]103号",
+          "floorTotal": 9,
+          "oldUnitName": "1",
+          "roomTotal": 8,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 462473099583558,
+          "buildName": "新建居住项目（电影制片厂一期A地块）2",
+          "buildShortName": "A-2#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 541380164902981,
+          "evidenceName": "武房开预售[2024]103号",
+          "floorTotal": 9,
+          "oldUnitName": "2",
+          "roomTotal": 8,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 547256724688986,
+      "img": "https://img.wufangtong.cn/359b9d4f089c4d8f873819564585dc01.png",
+      "name": "A区G户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 161.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 462473099583558,
+          "buildName": "新建居住项目（电影制片厂一期A地块）2",
+          "buildShortName": "A-2#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 541380164902981,
+          "evidenceName": "武房开预售[2024]103号",
+          "floorTotal": 9,
+          "oldUnitName": "1",
+          "roomTotal": 8,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 462473099583558,
+          "buildName": "新建居住项目（电影制片厂一期A地块）2",
+          "buildShortName": "A-2#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 541380164902981,
+          "evidenceName": "武房开预售[2024]103号",
+          "floorTotal": 9,
+          "oldUnitName": "2",
+          "roomTotal": 8,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 547256724688987,
+      "img": "https://img.wufangtong.cn/4ad954e548eb44eba943d0321b6dca9b.png",
+      "name": "A区F户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 148.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 462473099583557,
+          "buildName": "新建居住项目（电影制片厂一期A地块）1",
+          "buildShortName": "A-1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 466001261723717,
+          "evidenceName": "武房开预售[2023]400号",
+          "floorTotal": 45,
+          "oldUnitName": "2",
+          "roomTotal": 41,
+          "soldNum": 34,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 547256724688988,
+      "img": "https://img.wufangtong.cn/2ce1462a68e0482a84a4440da3ab1b83.png",
+      "name": "A区C3户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 145.0,
+      "availableRoomNum": 22,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 462473099583557,
+          "buildName": "新建居住项目（电影制片厂一期A地块）1",
+          "buildShortName": "A-1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 466001261723717,
+          "evidenceName": "武房开预售[2023]400号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 12,
+          "buildId": 462473099583557,
+          "buildName": "新建居住项目（电影制片厂一期A地块）1",
+          "buildShortName": "A-1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 466001261723717,
+          "evidenceName": "武房开预售[2023]400号",
+          "floorTotal": 45,
+          "oldUnitName": "2",
+          "roomTotal": 42,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 547256724688989,
+      "img": "https://img.wufangtong.cn/ad7e1bde40b941c294da5829c0a0dbde.png",
+      "name": "A区C2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 128.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 462473099583557,
+          "buildName": "新建居住项目（电影制片厂一期A地块）1",
+          "buildShortName": "A-1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 466001261723717,
+          "evidenceName": "武房开预售[2023]400号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 547256724688990,
+      "img": "https://img.wufangtong.cn/011e3e6e12c24e14ab5301900d580fdc.png",
+      "name": "A区A户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 197.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 547256724688991,
+      "img": "https://img.wufangtong.cn/68dbc9d7deee47f0b613044645193a98.png",
+      "name": "B区A户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 240.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 547256724688992,
+      "img": "https://img.wufangtong.cn/91f8ee9b48fe49778c2ac3060569e127.png",
+      "name": "B区E户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 238.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 547256724688993,
+      "img": "https://img.wufangtong.cn/23fcffce9b0b49eeab73cea73337b199.png",
+      "name": "B区B户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 192.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 547256724688994,
+      "img": "https://img.wufangtong.cn/9aa930eb7f7b4f88b92e8554b4d359b5.png",
+      "name": "B区D户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 181.0,
+      "availableRoomNum": 62,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 62,
+          "buildId": 462473099583559,
+          "buildName": "新建居住项目（电影制片厂一期A地块）3",
+          "buildShortName": "A-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 572171689115717,
+          "evidenceName": "武房开预售[2024]196号",
+          "floorTotal": 50,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 579488439603270,
+      "img": "https://img.wufangtong.cn/ea2f5e4c91a748f6b40de8d45eda6029.png",
+      "name": "A区H户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 155.0,
+      "availableRoomNum": 11,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 11,
+          "buildId": 462473099583560,
+          "buildName": "新建居住项目（电影制片厂一期A地块）4",
+          "buildShortName": "A-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 621713917247557,
+          "evidenceName": "武房开预售[2024]364号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 620922626789459,
+      "img": "https://img.wufangtong.cn/11e1d7cd8e1c4e00af676b99b7faa715.png",
+      "name": "A区C6户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 150.0,
+      "availableRoomNum": 40,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 11,
+          "buildId": 462473099583560,
+          "buildName": "新建居住项目（电影制片厂一期A地块）4",
+          "buildShortName": "A-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 621713917247557,
+          "evidenceName": "武房开预售[2024]364号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 29,
+          "buildId": 462473099583560,
+          "buildName": "新建居住项目（电影制片厂一期A地块）4",
+          "buildShortName": "A-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 621713917247557,
+          "evidenceName": "武房开预售[2024]364号",
+          "floorTotal": 45,
+          "oldUnitName": "2",
+          "roomTotal": 42,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 620922626789460,
+      "img": "https://img.wufangtong.cn/7909d7c5b82d4e5398146852a98616a0.png",
+      "name": "A区C5户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503154655303,
+  "status": "complete",
+  "types": [
+    {
+      "area": 120.0,
+      "availableRoomNum": 16,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 16,
+          "buildId": 312230547390533,
+          "buildName": "新建居住用地、商务用地、公园绿地、小学用地项目（A-1、A-2、B-1、B-2、C、D-1、D-2地块）D-1地块-1",
+          "buildShortName": "1-1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 530762990821445,
+          "evidenceName": "武房开预售[2024]071号",
+          "floorTotal": 30,
+          "oldUnitName": "/",
+          "roomTotal": 29,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337594574340165,
+      "img": "https://img.wufangtong.cn/5cb2e3c0484349ff9587bb3e7d0fcdbb.png",
+      "name": "A3户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 140.0,
+      "availableRoomNum": 8,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 8,
+          "buildId": 312230547390533,
+          "buildName": "新建居住用地、商务用地、公园绿地、小学用地项目（A-1、A-2、B-1、B-2、C、D-1、D-2地块）D-1地块-1",
+          "buildShortName": "1-1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 530762990821445,
+          "evidenceName": "武房开预售[2024]071号",
+          "floorTotal": 30,
+          "oldUnitName": "/",
+          "roomTotal": 29,
+          "soldNum": 21,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337594574340167,
+      "img": "https://img.wufangtong.cn/35d5bf3cfc6d4e7bae3c108027768b6a.png",
+      "name": "A4户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 79.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 770209138511947,
+      "img": "https://img.wufangtong.cn/9749c6518ec04d489ac9cf682dbb7a0b.png",
+      "name": "1厨，79平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 99.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 784353852522570,
+      "img": "https://img.wufangtong.cn/70b3695fd72a4245ae2b240d1f24f711.png",
+      "name": "1厨，99平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

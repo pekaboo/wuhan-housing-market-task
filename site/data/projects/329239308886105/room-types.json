@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 329239308886105,
+  "status": "complete",
+  "types": [
+    {
+      "area": 137.0,
+      "availableRoomNum": 6,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 793338922451017,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）19",
+          "buildShortName": "19#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 793338737381445,
+          "evidenceName": "武房开预售[2026]062号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 31,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 801762959339593,
+      "img": "https://img.wufangtong.cn/575bdcabe59a42619b8b41355252651f.png",
+      "name": "1厨，137平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 793338922451017,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）19",
+          "buildShortName": "19#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 793338737381445,
+          "evidenceName": "武房开预售[2026]062号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 27,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 793338922451018,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）21",
+          "buildShortName": "21#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 809888159240261,
+          "evidenceName": "武房开预售[2026]128号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 31,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 801762959339594,
+      "img": "https://img.wufangtong.cn/9cc5a8da8b81405a97973f8f143b986a.png",
+      "name": "1厨，125平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 112.0,
+      "availableRoomNum": 3,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 793338922451017,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）19",
+          "buildShortName": "19#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 793338737381445,
+          "evidenceName": "武房开预售[2026]062号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 793338922451018,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）21",
+          "buildShortName": "21#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 809888159240261,
+          "evidenceName": "武房开预售[2026]128号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 31,
+          "soldNum": 29,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 801762959339595,
+      "img": "https://img.wufangtong.cn/3bb87546915d441b9a64d074fc15d2b5.png",
+      "name": "1厨，112平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 157.0,
+      "availableRoomNum": 31,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 31,
+          "buildId": 793338922451017,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）19",
+          "buildShortName": "19#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 793338737381445,
+          "evidenceName": "武房开预售[2026]062号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 31,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 801762959339596,
+      "img": "https://img.wufangtong.cn/30b83afe6ab04e708569dcdde4a7fc01.png",
+      "name": "1厨，157平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 98.0,
+      "availableRoomNum": 37,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 793338922451017,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）19",
+          "buildShortName": "19#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 793338737381445,
+          "evidenceName": "武房开预售[2026]062号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 58,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 33,
+          "buildId": 793338922451018,
+          "buildName": "新建居住项目（十大家村城中村改造K1及北侧地块项目）（变更）21",
+          "buildShortName": "21#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 809888159240261,
+          "evidenceName": "武房开预售[2026]128号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 62,
+          "soldNum": 29,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 801762959339597,
+      "img": "https://img.wufangtong.cn/f9135a884b9d4be6b7b968f6dafe95bd.png",
+      "name": "1厨，98平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

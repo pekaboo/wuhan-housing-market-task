@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 806156386697319,
+  "status": "complete",
+  "types": [
+    {
+      "area": 138.0,
+      "availableRoomNum": 14,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 14,
+          "buildId": 816699369234505,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）6",
+          "buildShortName": "6#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 820149801263173,
+          "evidenceName": "武房开预售[2026]175号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 33,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 807949952311398,
+      "img": "https://img.wufangtong.cn/e0113c6548f145c1bb4c163b5769d8d5.png",
+      "name": "1厨，138平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 119.0,
+      "availableRoomNum": 30,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 16,
+          "buildId": 832535122809093,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 832535098159365,
+          "evidenceName": "武房开预售[2026]208号",
+          "floorTotal": 18,
+          "oldUnitName": "2",
+          "roomTotal": 18,
+          "soldNum": 2,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 14,
+          "buildId": 832535122809093,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 832535098159365,
+          "evidenceName": "武房开预售[2026]208号",
+          "floorTotal": 18,
+          "oldUnitName": "1",
+          "roomTotal": 18,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 807949952311399,
+      "img": "https://img.wufangtong.cn/39a6b9b971634c2993074f35f49ea6e0.png",
+      "name": "1厨，119平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 117.0,
+      "availableRoomNum": 15,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 8,
+          "buildId": 816699369234504,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）3",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 820149801263173,
+          "evidenceName": "武房开预售[2026]175号",
+          "floorTotal": 11,
+          "oldUnitName": "2",
+          "roomTotal": 22,
+          "soldNum": 14,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 816699369234504,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）3",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 820149801263173,
+          "evidenceName": "武房开预售[2026]175号",
+          "floorTotal": 11,
+          "oldUnitName": "1",
+          "roomTotal": 11,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 807949952311400,
+      "img": "https://img.wufangtong.cn/329175f19b0046c599522e9dc2501ded.png",
+      "name": "1厨，117平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 104.0,
+      "availableRoomNum": 12,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 832535122809093,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 832535098159365,
+          "evidenceName": "武房开预售[2026]208号",
+          "floorTotal": 18,
+          "oldUnitName": "1",
+          "roomTotal": 18,
+          "soldNum": 15,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 9,
+          "buildId": 832535122809093,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 832535098159365,
+          "evidenceName": "武房开预售[2026]208号",
+          "floorTotal": 18,
+          "oldUnitName": "2",
+          "roomTotal": 18,
+          "soldNum": 9,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 807949952311401,
+      "img": "https://img.wufangtong.cn/fad8907f5dac4c189c72c318d8dd1d5f.png",
+      "name": "1厨，104平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 101.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 816699369234504,
+          "buildName": "洪山区板桥小区A地块开发项目（变更）3",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 820149801263173,
+          "evidenceName": "武房开预售[2026]175号",
+          "floorTotal": 11,
+          "oldUnitName": "1",
+          "roomTotal": 11,
+          "soldNum": 9,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 807949952311402,
+      "img": "https://img.wufangtong.cn/115eeede55094010a3692f1282158e9e.png",
+      "name": "1厨，101平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

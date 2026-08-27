@@ -1,0 +1,255 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334502236393550,
+  "status": "complete",
+  "types": [
+    {
+      "area": 173.0,
+      "availableRoomNum": 92,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 92,
+          "buildId": 312481917194314,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）14",
+          "buildShortName": "K3-14#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875156443207,
+          "evidenceName": "武房开预售[2022]224号",
+          "floorTotal": 48,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337536306872389,
+      "img": "https://img.wufangtong.cn/5b4c31b5612a462db292c1c761b5593a.png",
+      "name": "E户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 111.0,
+      "availableRoomNum": 88,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 88,
+          "buildId": 312481917194315,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）15",
+          "buildShortName": "K3-15#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874821791815,
+          "evidenceName": "武房开预售[2021]975号",
+          "floorTotal": 48,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337536306872390,
+      "img": "https://img.wufangtong.cn/bf4d0d5409cb4ba0a2628f85e44cdb99.png",
+      "name": "B4户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 127.0,
+      "availableRoomNum": 4,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312481917194321,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）3",
+          "buildShortName": "K3-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874514055238,
+          "evidenceName": "武房开预售[2021]211号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 84,
+          "soldNum": 80,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337536306872391,
+      "img": "https://img.wufangtong.cn/5b2d370b84184116a92680f5ec699faf.png",
+      "name": "C2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 97.0,
+      "availableRoomNum": 3,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 312481917194321,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）3",
+          "buildShortName": "K3-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874514055238,
+          "evidenceName": "武房开预售[2021]211号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 84,
+          "soldNum": 81,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337536306872392,
+      "img": "https://img.wufangtong.cn/efd04d4ec2af48819748a718b62f52a9.png",
+      "name": "A户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337536306876485,
+      "img": "https://img.wufangtong.cn/8ef8f767471f49b2a0dcddc8c562f9f6.png",
+      "name": "D2户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 111.0,
+      "availableRoomNum": 4,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312481917194323,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）5",
+          "buildShortName": "K3-5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874650562648,
+          "evidenceName": "武房开预售[2021]527号",
+          "floorTotal": 48,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 88,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337536306876486,
+      "img": "https://img.wufangtong.cn/750854e96a4e433287a197c90166c484.png",
+      "name": "B2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312481917194309,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）1",
+          "buildShortName": "K3-1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874497962065,
+          "evidenceName": "武房开预售[2021]161号",
+          "floorTotal": 34,
+          "oldUnitName": "/",
+          "roomTotal": 68,
+          "soldNum": 64,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 312481917194322,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）4",
+          "buildShortName": "K3-4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874497962065,
+          "evidenceName": "武房开预售[2021]161号",
+          "floorTotal": 34,
+          "oldUnitName": "/",
+          "roomTotal": 68,
+          "soldNum": 65,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337536306876487,
+      "img": "https://img.wufangtong.cn/a6a790129b3c46339f9ce974a3b5e7a3.png",
+      "name": "C户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 48,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 17,
+          "buildId": 312481917194324,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）6",
+          "buildShortName": "K3-6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874608832589,
+          "evidenceName": "武房开预售[2021]455号",
+          "floorTotal": 43,
+          "oldUnitName": "1",
+          "roomTotal": 68,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 31,
+          "buildId": 312481917194324,
+          "buildName": "新建居住、商业服务业设施项目（塔子湖村城中村改造K3地块）6",
+          "buildShortName": "K3-6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874608832589,
+          "evidenceName": "武房开预售[2021]455号",
+          "floorTotal": 43,
+          "oldUnitName": "2",
+          "roomTotal": 82,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337536306876488,
+      "img": "https://img.wufangtong.cn/48ed7dd3e17f4e0dad1aa97ad73715e2.png",
+      "name": "D1户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

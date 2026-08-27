@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334502133780595,
+  "status": "complete",
+  "types": [
+    {
+      "area": 105.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 312477495644229,
+          "buildName": "新建居住、商业服务业设施项目（烽火村城中村改造K14地块）1",
+          "buildShortName": "K141#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 391682766766149,
+          "evidenceName": "武房开预售[2023]042号",
+          "floorTotal": 41,
+          "oldUnitName": "/",
+          "roomTotal": 78,
+          "soldNum": 73,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 389431118680159,
+      "img": "https://img.wufangtong.cn/d3067d2cb06c472297595fd7b7139b49.png",
+      "name": "C5户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 79.0,
+      "availableRoomNum": 130,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 130,
+          "buildId": 312477495644229,
+          "buildName": "新建居住、商业服务业设施项目（烽火村城中村改造K14地块）1",
+          "buildShortName": "K141#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 391682766766149,
+          "evidenceName": "武房开预售[2023]042号",
+          "floorTotal": 41,
+          "oldUnitName": "/",
+          "roomTotal": 156,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 389431118680160,
+      "img": "https://img.wufangtong.cn/bb1f38799cb54f92ac674966080e830f.png",
+      "name": "A1户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 92.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312477495644232,
+          "buildName": "新建居住、商业服务业设施项目（烽火村城中村改造K14地块）2",
+          "buildShortName": "K142#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 396991025127493,
+          "evidenceName": "武房开预售[2023]090号",
+          "floorTotal": 31,
+          "oldUnitName": "/",
+          "roomTotal": 61,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 399325715624033,
+      "img": "https://img.wufangtong.cn/f7a8ed764d074c38acc02954e51431b3.png",
+      "name": "B4户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 119.0,
+      "availableRoomNum": 8,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 8,
+          "buildId": 312477495644232,
+          "buildName": "新建居住、商业服务业设施项目（烽火村城中村改造K14地块）2",
+          "buildShortName": "K142#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 396991025127493,
+          "evidenceName": "武房开预售[2023]090号",
+          "floorTotal": 31,
+          "oldUnitName": "/",
+          "roomTotal": 61,
+          "soldNum": 53,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 399325715624034,
+      "img": "https://img.wufangtong.cn/4ef8c75eb32c425fadb012961c85353c.png",
+      "name": "D1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 104.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 666779804487754,
+      "img": "https://img.wufangtong.cn/c15dbfd80dc44e31837978fb86b3d295.png",
+      "name": "104平户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 138.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 666779804487755,
+      "img": "https://img.wufangtong.cn/08d09b60976147ddb7adf6898703f774.png",
+      "name": "138平户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

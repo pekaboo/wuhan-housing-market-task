@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334501415100515,
+  "status": "complete",
+  "types": [
+    {
+      "area": 126.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312482884210761,
+          "buildName": "新建居住、娱乐、图书展览设施项目二期（中建铂公馆K1地块）K1-4",
+          "buildShortName": "K1-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 395575491944517,
+          "evidenceName": "武房开预售[2023]076号",
+          "floorTotal": 47,
+          "oldUnitName": "/",
+          "roomTotal": 88,
+          "soldNum": 87,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 428322741968996,
+      "img": "https://img.wufangtong.cn/b5a3b2a2ff5f4a288eee276b1ac826f7.png",
+      "name": "4栋B户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 165.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482884210761,
+          "buildName": "新建居住、娱乐、图书展览设施项目二期（中建铂公馆K1地块）K1-4",
+          "buildShortName": "K1-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 395575491944517,
+          "evidenceName": "武房开预售[2023]076号",
+          "floorTotal": 47,
+          "oldUnitName": "/",
+          "roomTotal": 88,
+          "soldNum": 88,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 428322741969005,
+      "img": "https://img.wufangtong.cn/1b1efc6acefb40028b8b1c5e303dc72c.png",
+      "name": "4栋A户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

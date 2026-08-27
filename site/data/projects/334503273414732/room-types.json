@@ -1,0 +1,273 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503273414732,
+  "status": "complete",
+  "types": [
+    {
+      "area": 109.0,
+      "availableRoomNum": 8,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 8,
+          "buildId": 312481283227719,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875067351109,
+          "evidenceName": "武房开预售[2022]008号",
+          "floorTotal": 33,
+          "oldUnitName": "/",
+          "roomTotal": 62,
+          "soldNum": 54,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337690181189701,
+      "img": "https://img.wufangtong.cn/33fc3bd61f53408390c98ad80eeccc34.png",
+      "name": "高层B户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 115.0,
+      "availableRoomNum": 10,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 312481283227720,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）6",
+          "buildShortName": "6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875131682896,
+          "evidenceName": "武房开预售[2022]146号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 64,
+          "soldNum": 54,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337690181189703,
+      "img": "https://img.wufangtong.cn/6b542707e8a642c8b1bf501e3df91117.png",
+      "name": "高层K户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 166.0,
+      "availableRoomNum": 4,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312481283227720,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）6",
+          "buildShortName": "6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875131682896,
+          "evidenceName": "武房开预售[2022]146号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 64,
+          "soldNum": 60,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337690181189704,
+      "img": "https://img.wufangtong.cn/f242e74be51046eea09f85d064f56444.png",
+      "name": "高层J户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 41,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 22,
+          "buildId": 312481283227717,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）3",
+          "buildShortName": "3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 471312988790853,
+          "evidenceName": "武房开预售[2023]417号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 82,
+          "soldNum": 60,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 19,
+          "buildId": 312481283227718,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）4",
+          "buildShortName": "4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 390975229542469,
+          "evidenceName": "武房开预售[2023]040号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 80,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337690181189706,
+      "img": "https://img.wufangtong.cn/77da557acde2475ebab477fd44ea323f.png",
+      "name": "高层F户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 266.0,
+      "availableRoomNum": 8,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 8,
+          "buildId": 355804740481093,
+          "buildName": "新建商服和居住项目（常阳东骏城二期）7",
+          "buildShortName": "7#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 396637138714693,
+          "evidenceName": "武房开预售[2023]085号",
+          "floorTotal": 17,
+          "oldUnitName": "/",
+          "roomTotal": 16,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 415429182595173,
+      "img": "https://img.wufangtong.cn/67ed14e1023549058c3d8741a04bd2a5.png",
+      "name": "建面约266",
+      "roomLayout": "4室2厅5卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 233.0,
+      "availableRoomNum": 12,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 12,
+          "buildId": 355804740481093,
+          "buildName": "新建商服和居住项目（常阳东骏城二期）7",
+          "buildShortName": "7#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 396637138714693,
+          "evidenceName": "武房开预售[2023]085号",
+          "floorTotal": 17,
+          "oldUnitName": "/",
+          "roomTotal": 16,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 415429182595174,
+      "img": "https://img.wufangtong.cn/dbe6147d07fe4342b4018488fe0ec9d5.png",
+      "name": "建面约233",
+      "roomLayout": "3室2厅4卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 120.0,
+      "availableRoomNum": 93,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 62,
+          "buildId": 312481283227717,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）3",
+          "buildShortName": "3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 471312988790853,
+          "evidenceName": "武房开预售[2023]417号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 78,
+          "soldNum": 16,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 31,
+          "buildId": 312481283227718,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）4",
+          "buildShortName": "4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 390975229542469,
+          "evidenceName": "武房开预售[2023]040号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 78,
+          "soldNum": 47,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 801911370420350,
+      "img": "https://img.wufangtong.cn/287a5d789d864f11a0fb3c9c99638a27.png",
+      "name": "1厨，120平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 126.0,
+      "availableRoomNum": 9,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 9,
+          "buildId": 312481283227719,
+          "buildName": "新建商服和居住项目（常阳东骏城一期）5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875067351109,
+          "evidenceName": "武房开预售[2022]008号",
+          "floorTotal": 33,
+          "oldUnitName": "/",
+          "roomTotal": 63,
+          "soldNum": 54,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 826797513175302,
+      "img": "https://img.wufangtong.cn/49b76f4c82fa4fd3b8d08036ba253a03.png",
+      "name": "1厨，126平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

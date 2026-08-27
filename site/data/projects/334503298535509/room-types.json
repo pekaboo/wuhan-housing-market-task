@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503298535509,
+  "status": "complete",
+  "types": [
+    {
+      "area": 122.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337698480967749,
+      "img": "https://img.wufangtong.cn/7bc24f68e4814929ad6de82781708925.png",
+      "name": "A7户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 87.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337698480967751,
+      "img": "https://img.wufangtong.cn/80acfafe4778446e87e180c9cff2cdfc.png",
+      "name": "A9户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 101.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 797666312880229,
+      "img": "https://img.wufangtong.cn/ddfbf7d852254481bad43d5977bd9df6.png",
+      "name": "1厨，101平米",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    }
+  ]
+}

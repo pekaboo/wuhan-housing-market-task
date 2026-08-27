@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503335022687,
+  "status": "complete",
+  "types": [
+    {
+      "area": 163.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 357893752492113,
+      "img": "https://img.wufangtong.cn/300618afa32e441590c99ef258ffb485.png",
+      "name": "5A户型",
+      "roomLayout": "5室2厅2卫",
+      "sectionNum": 5
+    },
+    {
+      "area": 138.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483639312456,
+          "buildName": "新建居住、商业、轨道交通（常青车辆段上盖物业）三期B区B-4",
+          "buildShortName": "B-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874321719370,
+          "evidenceName": "武房开预售[2020]872号",
+          "floorTotal": 44,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 42,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 357893752492114,
+      "img": "https://img.wufangtong.cn/9f279200661a4e5e8ba168cd7327f5f0.png",
+      "name": "4A户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 135.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 357893752492115,
+      "img": "https://img.wufangtong.cn/693ff10986b840b29284571c73f212f3.png",
+      "name": "3C户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 122.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483639312456,
+          "buildName": "新建居住、商业、轨道交通（常青车辆段上盖物业）三期B区B-4",
+          "buildShortName": "B-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874321719370,
+          "evidenceName": "武房开预售[2020]872号",
+          "floorTotal": 44,
+          "oldUnitName": "1",
+          "roomTotal": 40,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483639312456,
+          "buildName": "新建居住、商业、轨道交通（常青车辆段上盖物业）三期B区B-4",
+          "buildShortName": "B-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874321719370,
+          "evidenceName": "武房开预售[2020]872号",
+          "floorTotal": 44,
+          "oldUnitName": "2",
+          "roomTotal": 40,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 357893752492116,
+      "img": "https://img.wufangtong.cn/27d93c261d8b450f8cbf3d2cc159f65c.png",
+      "name": "3B4户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 105.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 357893752492117,
+      "img": "https://img.wufangtong.cn/3ed4dfc2d26e45098e1eb042d79387f6.png",
+      "name": "3A3户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 104.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 357893752492118,
+      "img": "https://img.wufangtong.cn/e7f24738d8f6455b9c40d8b77c6175b2.png",
+      "name": "3A2户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 107.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483639312456,
+          "buildName": "新建居住、商业、轨道交通（常青车辆段上盖物业）三期B区B-4",
+          "buildShortName": "B-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874321719370,
+          "evidenceName": "武房开预售[2020]872号",
+          "floorTotal": 44,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 42,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 357893752492119,
+      "img": "https://img.wufangtong.cn/850763ef21e944b6bdb5a02c8073c1db.png",
+      "name": "3A1户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 98.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 357893752492120,
+      "img": "https://img.wufangtong.cn/05a0f78f30bb4b63a9d0f7716e4518b2.png",
+      "name": "2B户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    }
+  ]
+}

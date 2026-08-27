@@ -1,3 +1,4 @@
+import gzip
 import json
 from pathlib import Path
 
@@ -205,12 +206,14 @@ def test_site_writes_one_price_json_detail_ui_and_wangqian_page(tmp_path):
     detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
     index = (site_dir / 'index.html').read_text(encoding='utf-8')
     wangqian_page = (site_dir / 'wangqian' / 'index.html').read_text(encoding='utf-8')
-    data = json.loads((site_dir / 'data' / 'projects' / '123' / 'one-price.json').read_text(encoding='utf-8'))
+    compressed = (site_dir / 'data' / 'projects' / '123' / 'one-price.json.gz').read_bytes()
+    data = json.loads(gzip.decompress(compressed).decode(encoding='utf-8'))
     wangqian_data = json.loads((site_dir / 'data' / 'wangqian' / '2026-08-26.json').read_text(encoding='utf-8'))
 
     assert data['status'] == 'complete'
     assert '一房一价' in detail
-    assert 'data-one-price-url="../../data/projects/123/one-price.json"' in detail
+    assert 'data-one-price-url="../../data/projects/123/one-price.json.gz"' in detail
+    assert "DecompressionStream('gzip')" in detail
     assert 'data-role="room-filter"' in detail
     assert '可售' in detail
     assert '已售' in detail

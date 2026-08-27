@@ -1,0 +1,198 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334530051637343,
+  "status": "complete",
+  "types": [
+    {
+      "area": 122.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312585097801803,
+          "buildName": "CBD楚世家5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311872960798789,
+          "evidenceName": "武房开现售[2018]011号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337883560206405,
+      "img": "https://img.wufangtong.cn/6493eac2eb4541748e5b854c07253bcd.png",
+      "name": "5#楼122.4",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 215.0,
+      "availableRoomNum": 4,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312585097801803,
+          "buildName": "CBD楚世家5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311872960798789,
+          "evidenceName": "武房开现售[2018]011号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 30,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337883560206407,
+      "img": "https://img.wufangtong.cn/9ede4b0ca7c543b29253ecbf5d6ae7f6.png",
+      "name": "5#楼215.2",
+      "roomLayout": "4室3厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 188.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312585097801800,
+          "buildName": "CBD楚世家2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311871833280589,
+          "evidenceName": "武房开预售[2016]673号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 1,
+          "soldNum": 1,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312585097801802,
+          "buildName": "CBD楚世家4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311872151498830,
+          "evidenceName": "武房开现售[2018]001号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337883560206408,
+      "img": "https://img.wufangtong.cn/8ef7c71457fd40f9a150b3991d21d929.png",
+      "name": "4#楼188.2",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 157.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312585097801802,
+          "buildName": "CBD楚世家4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311872151498830,
+          "evidenceName": "武房开现售[2018]001号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337883560206409,
+      "img": "https://img.wufangtong.cn/6dbd4fd1d8304c11840c0f10a5287b1b.png",
+      "name": "4#楼156.9",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312585097801802,
+          "buildName": "CBD楚世家4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311872151498830,
+          "evidenceName": "武房开现售[2018]001号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 30,
+          "soldNum": 29,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337883560206410,
+      "img": "https://img.wufangtong.cn/2dd7692066a94b9fbd3a80b492a98a7f.png",
+      "name": "4#楼124.7",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 162.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312585097801803,
+          "buildName": "CBD楚世家5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311872960798789,
+          "evidenceName": "武房开现售[2018]011号",
+          "floorTotal": 32,
+          "oldUnitName": "/",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 770239266639947,
+      "img": "https://img.wufangtong.cn/b5f8086898a8472cb631b08e67203e6a.png",
+      "name": "1厨，162平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

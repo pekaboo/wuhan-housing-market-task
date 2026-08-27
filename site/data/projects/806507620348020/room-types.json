@@ -1,0 +1,134 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 806507620348020,
+  "status": "complete",
+  "types": [
+    {
+      "area": 105.0,
+      "availableRoomNum": 18,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 18,
+          "buildId": 826957828391175,
+          "buildName": "洪山区委党校西侧地块项目4 ",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 835367445864709,
+          "evidenceName": "武房开预售[2026]219号",
+          "floorTotal": 26,
+          "oldUnitName": "1",
+          "roomTotal": 52,
+          "soldNum": 34,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 826728447889699,
+      "img": "https://img.wufangtong.cn/3255585b5e6a49cea86c145fd9beb793.png",
+      "name": "1厨，105平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 122.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 826957828391174,
+          "buildName": "洪山区委党校西侧地块项目3",
+          "buildShortName": "3#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 835367445885189,
+          "evidenceName": "武房开预售[2026]218号",
+          "floorTotal": 17,
+          "oldUnitName": "2",
+          "roomTotal": 16,
+          "soldNum": 16,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 826728447889700,
+      "img": "https://img.wufangtong.cn/6bef54f34f2a4fc6a98000234abab1c6.png",
+      "name": "1厨，122平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 102.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 826957828391175,
+          "buildName": "洪山区委党校西侧地块项目4 ",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 835367445864709,
+          "evidenceName": "武房开预售[2026]219号",
+          "floorTotal": 26,
+          "oldUnitName": "1",
+          "roomTotal": 51,
+          "soldNum": 46,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 826728447889701,
+      "img": "https://img.wufangtong.cn/1c6187aebbe046f9ab9b1269f7831fc0.png",
+      "name": "1厨，102平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 126.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 826728447889702,
+      "img": "https://img.wufangtong.cn/7ff2d5a0481f4e6bbdcccbefd46c8e18.png",
+      "name": "1厨，126平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 138.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 826957828391174,
+          "buildName": "洪山区委党校西侧地块项目3",
+          "buildShortName": "3#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 835367445885189,
+          "evidenceName": "武房开预售[2026]218号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 16,
+          "soldNum": 14,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 826728447889703,
+      "img": "https://img.wufangtong.cn/93a346a51da644d99b000c9116776c55.png",
+      "name": "1厨，138平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

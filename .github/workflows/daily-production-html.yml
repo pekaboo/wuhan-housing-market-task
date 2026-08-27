@@ -18,7 +18,7 @@ permissions:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -48,16 +48,29 @@ jobs:
           python -m sale_dashboard \
             --site-output site \
             --page-size 50 \
-            --room-page-size 500
+            --room-page-size 500 \
+            --fetch-one-price \
+            --enrichment-batch-size 80
 
       - name: Ensure token is absent from generated artifacts
         env:
           WFT_TOKEN: ${{ secrets.WFT_TOKEN }}
         run: |
-          if grep -R --binary-files=text -F "$WFT_TOKEN" site; then
-            echo "::error::Generated artifacts contain the upstream token."
-            exit 1
-          fi
+          python - <<'PY'
+          import gzip
+          import os
+          from pathlib import Path
+
+          token = os.environ["WFT_TOKEN"].encode("utf-8")
+          for path in Path("site").rglob("*"):
+              if not path.is_file():
+                  continue
+              content = path.read_bytes()
+              if content.startswith(b"\x1f\x8b"):
+                  content = gzip.decompress(content)
+              if token in content:
+                  raise SystemExit(f"Generated artifacts contain the upstream token: {path}")
+          PY
 
       - name: Commit production snapshot
         run: |

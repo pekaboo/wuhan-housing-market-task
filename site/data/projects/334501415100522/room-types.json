@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334501415100522,
+  "status": "complete",
+  "types": [
+    {
+      "area": 195.0,
+      "availableRoomNum": 24,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 312481260994631,
+          "buildName": "新建住宅项目（武汉绿城·黄浦湾C地块）6",
+          "buildShortName": "C-6#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874770370647,
+          "evidenceName": "武房开预售[2021]863号",
+          "floorTotal": 45,
+          "oldUnitName": "2",
+          "roomTotal": 28,
+          "soldNum": 22,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 18,
+          "buildId": 312481260994632,
+          "buildName": "新建住宅项目（武汉绿城·黄浦湾C地块）7",
+          "buildShortName": "C-7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875156443224,
+          "evidenceName": "武房开预售[2022]211号",
+          "floorTotal": 50,
+          "oldUnitName": "1",
+          "roomTotal": 43,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337463453040711,
+      "img": "https://img.wufangtong.cn/36b8ec4ef6934c86a40a66e9ce6de774.png",
+      "name": "B户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 128.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 738916034453622,
+      "img": "https://img.wufangtong.cn/1ca7216166834d8f84ff21ef9149f3f5.png",
+      "name": "1厨，128平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 517.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 769704238080070,
+      "img": "https://img.wufangtong.cn/ff37d3329b6044dcb009d960c7e0b7a0.png",
+      "name": "2厨，517平米",
+      "roomLayout": "6室2厅6卫",
+      "sectionNum": 6
+    },
+    {
+      "area": 263.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 771120717328499,
+      "img": "https://img.wufangtong.cn/949973619d284aa7959a562310e92b66.png",
+      "name": "2厨，263平米",
+      "roomLayout": "4室2厅4卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 217.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 771120717328503,
+      "img": "https://img.wufangtong.cn/57dfbfb176cb42be8e2355b2f11eefbf.png",
+      "name": "2厨，217平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 140.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 775367908765816,
+      "img": "https://img.wufangtong.cn/4298efaeb20e490989fc14e410c2d2d0.png",
+      "name": "1厨，140平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 176.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 780673116180597,
+      "img": "https://img.wufangtong.cn/5dc95cb1418a45ea9f7f0f620306e0aa.png",
+      "name": "1厨，176平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 246.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 833482447671604,
+      "img": "https://img.wufangtong.cn/e0a6fcdd78084244bcf9d4bc2ff22fa7.png",
+      "name": "2厨，246平米",
+      "roomLayout": "4室2厅4卫",
+      "sectionNum": 4
+    }
+  ]
+}

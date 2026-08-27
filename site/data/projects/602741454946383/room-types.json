@@ -1,0 +1,316 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 602741454946383,
+  "status": "complete",
+  "types": [
+    {
+      "area": 122.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 619237364973641,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目9",
+          "buildShortName": "9#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 619236974166085,
+          "evidenceName": "武房开预售[2024]356号",
+          "floorTotal": 22,
+          "oldUnitName": "1",
+          "roomTotal": 21,
+          "soldNum": 20,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 604133270487109,
+      "img": "https://img.wufangtong.cn/9af94686decf4b6d88724d81ab10fb4c.png",
+      "name": "雲逸户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 135.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 619237364973641,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目9",
+          "buildShortName": "9#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 619236974166085,
+          "evidenceName": "武房开预售[2024]356号",
+          "floorTotal": 22,
+          "oldUnitName": "1",
+          "roomTotal": 20,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 604133270487111,
+      "img": "https://img.wufangtong.cn/61c90b5d4eb24ee198774b77085ac804.png",
+      "name": "",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 133.0,
+      "availableRoomNum": 52,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 15,
+          "buildId": 312481236635717,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目 1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874740473931,
+          "evidenceName": "武房开预售[2021]798号",
+          "floorTotal": 30,
+          "oldUnitName": "/",
+          "roomTotal": 28,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 37,
+          "buildId": 312481236635719,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473931,
+          "evidenceName": "武房开预售[2021]798号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 39,
+          "soldNum": 2,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 712538390769753,
+      "img": "https://img.wufangtong.cn/f21ca7b19fb642fa92818017b28c4f0f.png",
+      "name": "1厨，133平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 228.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 740797314383969,
+      "img": "https://img.wufangtong.cn/3f1bb88b3e4a46f787189ea53937127c.png",
+      "name": "别墅，228平米",
+      "roomLayout": "0室",
+      "sectionNum": 0
+    },
+    {
+      "area": 107.0,
+      "availableRoomNum": 3,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 619237364973641,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目9",
+          "buildShortName": "9#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 619236974166085,
+          "evidenceName": "武房开预售[2024]356号",
+          "floorTotal": 22,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 39,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 755572738613339,
+      "img": "https://img.wufangtong.cn/7684a787b91040c18ff6a45705d65206.png",
+      "name": "1厨，107平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 180.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 755572738613343,
+      "img": "https://img.wufangtong.cn/d0ecc6449c494962bcea71ee4a1c68b5.png",
+      "name": "别墅，180平米",
+      "roomLayout": "0室",
+      "sectionNum": 0
+    },
+    {
+      "area": 168.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 755572738613344,
+      "img": "https://img.wufangtong.cn/2040a33eb5ca4bee841ba01fee00bb13.png",
+      "name": "别墅，168平米",
+      "roomLayout": "0室",
+      "sectionNum": 0
+    },
+    {
+      "area": 176.0,
+      "availableRoomNum": 82,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 17,
+          "buildId": 312481236635717,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目 1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874740473931,
+          "evidenceName": "武房开预售[2021]798号",
+          "floorTotal": 30,
+          "oldUnitName": "/",
+          "roomTotal": 21,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 65,
+          "buildId": 312481236635719,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473931,
+          "evidenceName": "武房开预售[2021]798号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 65,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 755572738613345,
+      "img": "https://img.wufangtong.cn/db3810df210d4b60bf20503da4532641.png",
+      "name": "1厨，176平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 47,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 21,
+          "buildId": 312481236635717,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目 1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874740473931,
+          "evidenceName": "武房开预售[2021]798号",
+          "floorTotal": 30,
+          "oldUnitName": "/",
+          "roomTotal": 21,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 26,
+          "buildId": 312481236635719,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473931,
+          "evidenceName": "武房开预售[2021]798号",
+          "floorTotal": 43,
+          "oldUnitName": "/",
+          "roomTotal": 26,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 779351327981681,
+      "img": "https://img.wufangtong.cn/99be444432e9445c895cf7708ba1e1bc.png",
+      "name": "1厨，139平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 173.0,
+      "availableRoomNum": 28,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 28,
+          "buildId": 312481236635717,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目 1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874740473931,
+          "evidenceName": "武房开预售[2021]798号",
+          "floorTotal": 30,
+          "oldUnitName": "/",
+          "roomTotal": 28,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 779351327981682,
+      "img": "https://img.wufangtong.cn/ee135de1cd714bd880fac9f9bf485501.png",
+      "name": "1厨，173平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 167.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 779351327981684,
+      "img": "https://img.wufangtong.cn/777b1a8099f048c9924294a634981bc8.png",
+      "name": "1厨，167平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 138.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 808481840742527,
+      "img": "https://img.wufangtong.cn/980609316ef6494b91f2d3312a661d99.png",
+      "name": "1厨，138平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

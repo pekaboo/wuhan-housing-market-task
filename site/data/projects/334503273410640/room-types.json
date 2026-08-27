@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503273410640,
+  "status": "complete",
+  "types": [
+    {
+      "area": 116.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337681791488069,
+      "img": "https://img.wufangtong.cn/e351b7af21054833aacb1d7319921868.png",
+      "name": "21#C户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 85.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337681791488070,
+      "img": "https://img.wufangtong.cn/8d38aecca4fd49a285ba9ef4cf478313.png",
+      "name": "21#B户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 142.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337681791488073,
+      "img": "https://img.wufangtong.cn/ddd7848c5b064a848f394942a2c6019d.png",
+      "name": "I户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 127.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337681791488074,
+      "img": "https://img.wufangtong.cn/73078a5d6ea14723b12ab8825947ce9a.png",
+      "name": "G户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 122.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 774656948486258,
+      "img": "https://img.wufangtong.cn/600231ac03ad4765a28ed46688e530fc.png",
+      "name": "1厨，122平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 108.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 800490168803446,
+      "img": "https://img.wufangtong.cn/965fe42f6d6141afac511f68ddc6b407.png",
+      "name": "1厨，108平米",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 114.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 833486906818867,
+      "img": "https://img.wufangtong.cn/a61a915fe6ce4b02b8c328fc3059c516.png",
+      "name": "1厨，114平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

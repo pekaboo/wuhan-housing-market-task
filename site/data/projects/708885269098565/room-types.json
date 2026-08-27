@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 708885269098565,
+  "status": "complete",
+  "types": [
+    {
+      "area": 240.0,
+      "availableRoomNum": 20,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 20,
+          "buildId": 683991192170565,
+          "buildName": "新建商业服务业设施、居住、公园绿地项目（二七沿江商务核心区北片30号地块）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 723635723083845,
+          "evidenceName": "武房开预售[2025]262号",
+          "floorTotal": 35,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 11,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 780325334487110,
+      "img": "https://img.wufangtong.cn/d953259498a54587b6fd2bed45500951.png",
+      "name": "0厨，240平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 320.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 783159623737416,
+      "img": "https://img.wufangtong.cn/9db654ba987d4cdfaddec3000b1bce73.png",
+      "name": "1厨，320平米",
+      "roomLayout": "4室2厅4卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 270.0,
+      "availableRoomNum": 40,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 40,
+          "buildId": 683991192170566,
+          "buildName": "新建商业服务业设施、居住、公园绿地项目（二七沿江商务核心区北片30号地块）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 781928000352325,
+          "evidenceName": "武房开预售[2026]031号",
+          "floorTotal": 48,
+          "oldUnitName": "1",
+          "roomTotal": 44,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 784569712541767,
+      "img": "https://img.wufangtong.cn/6cda359d71024aa49fdfc4e3d3d721a4.png",
+      "name": "1厨，270平米",
+      "roomLayout": "4室2厅4卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 270.0,
+      "availableRoomNum": 21,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 21,
+          "buildId": 683991192170565,
+          "buildName": "新建商业服务业设施、居住、公园绿地项目（二七沿江商务核心区北片30号地块）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 723635723083845,
+          "evidenceName": "武房开预售[2025]262号",
+          "floorTotal": 35,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 11,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 825979203768607,
+      "img": "https://img.wufangtong.cn/debdcf8051224c3886fba04c96d41796.png",
+      "name": "0厨，270平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    }
+  ]
+}

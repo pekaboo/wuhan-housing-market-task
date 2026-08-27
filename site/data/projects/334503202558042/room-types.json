@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503202558042,
+  "status": "complete",
+  "types": [
+    {
+      "area": 121.0,
+      "availableRoomNum": 46,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 312481720954949,
+          "buildName": "商住楼（金马长江凯旋城）三期10#、13-17#楼、商业D-8及配电房项目10",
+          "buildShortName": "10#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874634866759,
+          "evidenceName": "武房开预售[2021]505号",
+          "floorTotal": 23,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 36,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 36,
+          "buildId": 312481720954950,
+          "buildName": "商住楼（金马长江凯旋城）三期10#、13-17#楼、商业D-8及配电房项目13",
+          "buildShortName": "13#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875120009298,
+          "evidenceName": "武房开预售[2022]107号",
+          "floorTotal": 33,
+          "oldUnitName": "/",
+          "roomTotal": 66,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337630744649797,
+      "img": "https://img.wufangtong.cn/30b0ddd24a1843219bf2e7acf53f08a2.png",
+      "name": "121平户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 38,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 312481720954949,
+          "buildName": "商住楼（金马长江凯旋城）三期10#、13-17#楼、商业D-8及配电房项目10",
+          "buildShortName": "10#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874634866759,
+          "evidenceName": "武房开预售[2021]505号",
+          "floorTotal": 23,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 32,
+          "buildId": 312481720954950,
+          "buildName": "商住楼（金马长江凯旋城）三期10#、13-17#楼、商业D-8及配电房项目13",
+          "buildShortName": "13#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875120009298,
+          "evidenceName": "武房开预售[2022]107号",
+          "floorTotal": 33,
+          "oldUnitName": "/",
+          "roomTotal": 66,
+          "soldNum": 34,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337630744653893,
+      "img": "https://img.wufangtong.cn/8e36090808d6456cae4b73a8bae8b599.png",
+      "name": "138平户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 92.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483381243973,
+          "buildName": "商住楼（金马长江凯旋城）二期4#、8#楼项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874074292312,
+          "evidenceName": "武房开预售[2020]305号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 58,
+          "soldNum": 58,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483381243973,
+          "buildName": "商住楼（金马长江凯旋城）二期4#、8#楼项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874074292312,
+          "evidenceName": "武房开预售[2020]305号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 58,
+          "soldNum": 58,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337630744653894,
+      "img": "https://img.wufangtong.cn/dcb1ba1d16cd46358ab49c1236d7e4bc.png",
+      "name": "4号楼A2户",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 115.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483381243973,
+          "buildName": "商住楼（金马长江凯旋城）二期4#、8#楼项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874074292312,
+          "evidenceName": "武房开预售[2020]305号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 58,
+          "soldNum": 58,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483381243973,
+          "buildName": "商住楼（金马长江凯旋城）二期4#、8#楼项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874074292312,
+          "evidenceName": "武房开预售[2020]305号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 58,
+          "soldNum": 57,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337630744653895,
+      "img": "https://img.wufangtong.cn/1722eb7a8cac41f5bfae74d974e497e1.png",
+      "name": "4号楼A1户",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

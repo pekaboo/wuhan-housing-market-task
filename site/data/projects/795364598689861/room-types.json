@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 795364598689861,
+  "status": "complete",
+  "types": [
+    {
+      "area": 133.0,
+      "availableRoomNum": 28,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 28,
+          "buildId": 312481879474257,
+          "buildName": "武汉经开23R2项目（二期）变更3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 820149801062469,
+          "evidenceName": "武房开预售[2026]179号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 60,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 821139362349354,
+      "img": "https://img.wufangtong.cn/9ec80f9eb3a7493f93d9e80ae505f76b.png",
+      "name": "1厨，133平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 107.0,
+      "availableRoomNum": 16,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 12,
+          "buildId": 312481879474256,
+          "buildName": "武汉经开23R2项目（二期）变更2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 820149801222213,
+          "evidenceName": "武房开预售[2026]177号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312481879474256,
+          "buildName": "武汉经开23R2项目（二期）变更2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 820149801222213,
+          "evidenceName": "武房开预售[2026]177号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 31,
+          "soldNum": 27,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 821139362349355,
+      "img": "https://img.wufangtong.cn/8774260083524347b163ac35a92a98d8.png",
+      "name": "1厨，107平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 97.0,
+      "availableRoomNum": 13,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 8,
+          "buildId": 312481879474256,
+          "buildName": "武汉经开23R2项目（二期）变更2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 820149801222213,
+          "evidenceName": "武房开预售[2026]177号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 23,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 312481879474256,
+          "buildName": "武汉经开23R2项目（二期）变更2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 820149801222213,
+          "evidenceName": "武房开预售[2026]177号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 31,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 821139362349356,
+      "img": "https://img.wufangtong.cn/4ca7f3f6a3ac495bb29fe1b5d0a00617.png",
+      "name": "1厨，97平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 97.0,
+      "availableRoomNum": 27,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 19,
+          "buildId": 312481879474254,
+          "buildName": "武汉经开23R2项目（二期）变更5",
+          "buildShortName": "5#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 820149801201733,
+          "evidenceName": "武房开预售[2026]178号",
+          "floorTotal": 15,
+          "oldUnitName": "1",
+          "roomTotal": 28,
+          "soldNum": 9,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 312481879474254,
+          "buildName": "武汉经开23R2项目（二期）变更5",
+          "buildShortName": "5#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 820149801201733,
+          "evidenceName": "武房开预售[2026]178号",
+          "floorTotal": 15,
+          "oldUnitName": "2",
+          "roomTotal": 28,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 312481879474254,
+          "buildName": "武汉经开23R2项目（二期）变更5",
+          "buildShortName": "5#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 820149801201733,
+          "evidenceName": "武房开预售[2026]178号",
+          "floorTotal": 15,
+          "oldUnitName": "3",
+          "roomTotal": 28,
+          "soldNum": 23,
+          "unitId": 0,
+          "unitName": "3"
+        }
+      ],
+      "effectImage": null,
+      "id": 821139362349357,
+      "img": "https://img.wufangtong.cn/1e7bf1783e014a0b8c2ca5e10d072b6d.png",
+      "name": "1厨，97平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

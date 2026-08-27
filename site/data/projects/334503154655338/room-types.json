@@ -1,0 +1,307 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503154655338,
+  "status": "complete",
+  "types": [
+    {
+      "area": 123.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312488710787141,
+          "buildName": "长青壹号南区201",
+          "buildShortName": "201#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873275064408,
+          "evidenceName": "武房开预售[2019]061号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312488710787141,
+          "buildName": "长青壹号南区201",
+          "buildShortName": "201#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873275064408,
+          "evidenceName": "武房开预售[2019]061号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169285,
+      "img": "https://img.wufangtong.cn/776c3b68fa9e4a82bf17276c3f69d292.png",
+      "name": "I户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 106.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312488710787142,
+          "buildName": "长青壹号南区202",
+          "buildShortName": "202#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873275064407,
+          "evidenceName": "武房开预售[2019]062号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 82,
+          "soldNum": 80,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169286,
+      "img": "https://img.wufangtong.cn/1b5bce77b5444dbcbcbb50cc2a6e7b5b.png",
+      "name": "H户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 133.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312488710787142,
+          "buildName": "长青壹号南区202",
+          "buildShortName": "202#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873275064407,
+          "evidenceName": "武房开预售[2019]062号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 41,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169287,
+      "img": "https://img.wufangtong.cn/d4c2140d050849e1bc4f5ac1e6d02eec.png",
+      "name": "G户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312488710787143,
+          "buildName": "长青壹号南区203",
+          "buildShortName": "203#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873275064406,
+          "evidenceName": "武房开预售[2019]063号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 82,
+          "soldNum": 81,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169288,
+      "img": "https://img.wufangtong.cn/c20f420954c94524985007be452b1010.png",
+      "name": "F户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 127.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312488710787143,
+          "buildName": "长青壹号南区203",
+          "buildShortName": "203#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873275064406,
+          "evidenceName": "武房开预售[2019]063号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 82,
+          "soldNum": 81,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169289,
+      "img": "https://img.wufangtong.cn/5d75e673640e4acd95321218660ab159.png",
+      "name": "E户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 114.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312488710787141,
+          "buildName": "长青壹号南区201",
+          "buildShortName": "201#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873275064408,
+          "evidenceName": "武房开预售[2019]061号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312488710787141,
+          "buildName": "长青壹号南区201",
+          "buildShortName": "201#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873275064408,
+          "evidenceName": "武房开预售[2019]061号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169290,
+      "img": "https://img.wufangtong.cn/bc02eb5e059d497ea5baf642f6b89bfd.png",
+      "name": "B1户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 93.0,
+      "availableRoomNum": 6,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312488710787141,
+          "buildName": "长青壹号南区201",
+          "buildShortName": "201#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873275064408,
+          "evidenceName": "武房开预售[2019]061号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 60,
+          "soldNum": 56,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312488710787141,
+          "buildName": "长青壹号南区201",
+          "buildShortName": "201#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873275064408,
+          "evidenceName": "武房开预售[2019]061号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 60,
+          "soldNum": 58,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169291,
+      "img": "https://img.wufangtong.cn/df63045125444b5caa9a2d2a9f85870e.png",
+      "name": "A户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 135.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312488710787144,
+          "buildName": "长青壹号南区204",
+          "buildShortName": "204#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873141104720,
+          "evidenceName": "武房开预售[2018]641号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312488710787145,
+          "buildName": "长青壹号南区205",
+          "buildShortName": "205#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873141104720,
+          "evidenceName": "武房开预售[2018]641号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337615564169292,
+      "img": "https://img.wufangtong.cn/2527f01a433a42babf4b199dfd8d29e4.png",
+      "name": "D户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

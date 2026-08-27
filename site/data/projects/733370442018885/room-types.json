@@ -1,0 +1,226 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 733370442018885,
+  "status": "complete",
+  "types": [
+    {
+      "area": 118.0,
+      "availableRoomNum": 38,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 38,
+          "buildId": 782023741169733,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 788384289198149,
+          "evidenceName": "武房开预售[2026]050号",
+          "floorTotal": 26,
+          "oldUnitName": "1",
+          "roomTotal": 49,
+          "soldNum": 11,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 779347305504872,
+      "img": "https://img.wufangtong.cn/bfcb3371119f4fe198ca35015b5bb4a8.png",
+      "name": "1厨，118平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 100.0,
+      "availableRoomNum": 40,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 40,
+          "buildId": 782023741169733,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 788384289198149,
+          "evidenceName": "武房开预售[2026]050号",
+          "floorTotal": 26,
+          "oldUnitName": "1",
+          "roomTotal": 50,
+          "soldNum": 10,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 779347305504873,
+      "img": "https://img.wufangtong.cn/fc13961c9eeb4a2fa66056bf4e0699e5.png",
+      "name": "1厨，100平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 779347305504875,
+      "img": "https://img.wufangtong.cn/1dfba2f6a0eb46988ac80b17f84638f4.png",
+      "name": "1厨，139平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 13,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 13,
+          "buildId": 782023741169734,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）6",
+          "buildShortName": "6#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 799623420379205,
+          "evidenceName": "武房开预售[2026]087号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 826730054938922,
+      "img": "https://img.wufangtong.cn/c5c724346e944cac94b296762254261b.png",
+      "name": "1厨，139平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 118.0,
+      "availableRoomNum": 17,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 782023741165640,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）3",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 827955308130565,
+          "evidenceName": "武房开预售[2026]197号",
+          "floorTotal": 10,
+          "oldUnitName": "1",
+          "roomTotal": 10,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 782023741165640,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）3",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 827955308130565,
+          "evidenceName": "武房开预售[2026]197号",
+          "floorTotal": 10,
+          "oldUnitName": "2",
+          "roomTotal": 10,
+          "soldNum": 3,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 831478645109036,
+      "img": "https://img.wufangtong.cn/b38e5a7a61c445a18e623784fb25d74f.png",
+      "name": "1厨，118平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 115.0,
+      "availableRoomNum": 20,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 782023741165640,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）3",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 827955308130565,
+          "evidenceName": "武房开预售[2026]197号",
+          "floorTotal": 10,
+          "oldUnitName": "1",
+          "roomTotal": 10,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 782023741165640,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）3",
+          "buildShortName": "3#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 827955308130565,
+          "evidenceName": "武房开预售[2026]197号",
+          "floorTotal": 10,
+          "oldUnitName": "2",
+          "roomTotal": 10,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 831478645109037,
+      "img": "https://img.wufangtong.cn/780f387196104818822d34d6ab893e36.png",
+      "name": "1厨，115平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 782023741157447,
+          "buildName": "新建居住项目（黄陂区P(2024)154号地块）11",
+          "buildShortName": "11#",
+          "buildType": "洋房",
+          "buildTypeId": 2,
+          "evidenceId": 788384289198149,
+          "evidenceName": "武房开预售[2026]050号",
+          "floorTotal": 10,
+          "oldUnitName": "1",
+          "roomTotal": 18,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 840325646725425,
+      "img": "https://img.wufangtong.cn/0eab6e83c27f4652bbc3c4f4af330573.png",
+      "name": "1厨，139平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import gzip
 import json
 import os
 import re
@@ -20,11 +21,11 @@ def china_timestamp(now: datetime | None = None) -> str:
     return current.strftime('%Y-%m-%d %H:%M:%S')
 
 
-def _atomic_write(path: Path, content: str) -> None:
+def _atomic_write_bytes(path: Path, content: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    descriptor, temporary_name = tempfile.mkstemp(prefix=f'.{path.name}.', dir=path.parent, text=True)
+    descriptor, temporary_name = tempfile.mkstemp(prefix=f'.{path.name}.', dir=path.parent)
     try:
-        with os.fdopen(descriptor, 'w', encoding='utf-8') as handle:
+        with os.fdopen(descriptor, 'wb') as handle:
             handle.write(content)
             handle.flush()
             os.fsync(handle.fileno())
@@ -34,8 +35,17 @@ def _atomic_write(path: Path, content: str) -> None:
             os.unlink(temporary_name)
 
 
+def _atomic_write(path: Path, content: str) -> None:
+    _atomic_write_bytes(path, content.encode('utf-8'))
+
+
 def _write_json(path: Path, value: Any) -> None:
     _atomic_write(path, json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + '\n')
+
+
+def _write_gzip_json(path: Path, value: Any) -> None:
+    payload = json.dumps(value, ensure_ascii=False, separators=(',', ':'), sort_keys=True).encode('utf-8')
+    _atomic_write_bytes(path, gzip.compress(payload, compresslevel=9, mtime=0))
 
 
 def safe_project_id(project: dict[str, Any], index: int) -> str:
@@ -79,6 +89,7 @@ def write_site(
     one_price_snapshots: dict[Any, dict[str, Any]] | None = None,
     room_type_snapshots: dict[Any, dict[str, Any]] | None = None,
     wangqian_snapshot: dict[str, Any] | None = None,
+    enrichment_state: dict[str, Any] | None = None,
 ) -> list[Path]:
     timestamp = generated_at or china_timestamp(now)
     root = Path(site_dir)
@@ -103,12 +114,12 @@ def write_site(
         safe_id = safe_project_id(project, index)
         relative_path = Path('projects', safe_id, 'index.html')
         snapshot = _project_snapshot(project, snapshots)
-        data_relative_path = Path('data', 'projects', safe_id, 'one-price.json')
+        data_relative_path = Path('data', 'projects', safe_id, 'one-price.json.gz')
         if snapshot is not None:
             enriched_snapshot = dict(snapshot)
             enriched_snapshot.setdefault('projectId', project.get('id'))
             enriched_snapshot.setdefault('generatedAt', timestamp)
-            _write_json(root / data_relative_path, enriched_snapshot)
+            _write_gzip_json(root / data_relative_path, enriched_snapshot)
         room_snapshot = _project_snapshot(project, room_snapshots)
         room_data_relative_path = Path('data', 'projects', safe_id, 'room-types.json')
         if room_snapshot is not None:
@@ -141,6 +152,11 @@ def write_site(
         _atomic_write(root / relative_path, render_wangqian_page(wangqian_snapshot, generated_at=timestamp))
         output_paths.append(relative_path)
         _write_json(root / 'data' / 'wangqian' / f'{_wangqian_slug(wangqian_snapshot)}.json', wangqian_snapshot)
+
+    if enrichment_state is not None:
+        state = dict(enrichment_state)
+        state.setdefault('lastRunAt', timestamp)
+        _write_json(root / 'data' / 'enrichment-state.json', state)
 
     snapshot_data = {'generatedAt': timestamp, 'count': len(projects), 'projects': projects}
     _write_json(root / 'data' / 'sale-data.json', snapshot_data)

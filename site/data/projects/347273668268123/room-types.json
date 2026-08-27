@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 347273668268123,
+  "status": "complete",
+  "types": [
+    {
+      "area": 116.0,
+      "availableRoomNum": 100,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 60,
+          "buildId": 312230555869253,
+          "buildName": "新建居住、商业、商务及绿地项目(倒口湖A6地块)1",
+          "buildShortName": "A6-1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 334619166380102,
+          "evidenceName": "武房开预售[2022]346号",
+          "floorTotal": 47,
+          "oldUnitName": "/",
+          "roomTotal": 88,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 40,
+          "buildId": 312230555869255,
+          "buildName": "新建居住、商业、商务及绿地项目(倒口湖A6地块)3",
+          "buildShortName": "A6-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875131682885,
+          "evidenceName": "武房开预售[2022]157号",
+          "floorTotal": 40,
+          "oldUnitName": "/",
+          "roomTotal": 72,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 347316497924168,
+      "img": "https://img.wufangtong.cn/b4a3281241d040efa54a70607c86f92b.png",
+      "name": "115平户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 109.0,
+      "availableRoomNum": 96,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 64,
+          "buildId": 312230555869254,
+          "buildName": "新建居住、商业、商务及绿地项目(倒口湖A6地块)2",
+          "buildShortName": "A6-2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 334619166380102,
+          "evidenceName": "武房开预售[2022]346号",
+          "floorTotal": 48,
+          "oldUnitName": "/",
+          "roomTotal": 90,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 32,
+          "buildId": 312230555869257,
+          "buildName": "新建居住、商业、商务及绿地项目(倒口湖A6地块)4",
+          "buildShortName": "A6-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875131682885,
+          "evidenceName": "武房开预售[2022]157号",
+          "floorTotal": 40,
+          "oldUnitName": "/",
+          "roomTotal": 74,
+          "soldNum": 42,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 347316497924169,
+      "img": "https://img.wufangtong.cn/b6c821164899489694371427751b0806.png",
+      "name": "109平户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 70.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 649711996477553,
+      "img": "https://img.wufangtong.cn/f1a3fcc5cde44b6c8f6453bf11f66cb9.png",
+      "name": "70平户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 130.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 765101500719211,
+      "img": "https://img.wufangtong.cn/b2887575aec54e8c8455962a06d10159.png",
+      "name": "1厨，130平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 127.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 823140242428204,
+      "img": "https://img.wufangtong.cn/129d1325a0d34809b684e0b0ec44997a.png",
+      "name": "1厨，127平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

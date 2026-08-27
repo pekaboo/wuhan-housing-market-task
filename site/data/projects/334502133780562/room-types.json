@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334502133780562,
+  "status": "complete",
+  "types": [
+    {
+      "area": 105.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312479137370186,
+          "buildName": "武汉雅居乐国际花园五期（住宅及地下等）5-6",
+          "buildShortName": "5-6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 488651665227845,
+          "evidenceName": "武房开预售[2023]482号",
+          "floorTotal": 34,
+          "oldUnitName": "/",
+          "roomTotal": 99,
+          "soldNum": 98,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 613997335744635,
+      "img": "https://img.wufangtong.cn/0d0e22f475b94b929a4a8a66c3dfda62.png",
+      "name": "B1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 129.0,
+      "availableRoomNum": 3,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 312479137370186,
+          "buildName": "武汉雅居乐国际花园五期（住宅及地下等）5-6",
+          "buildShortName": "5-6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 488651665227845,
+          "evidenceName": "武房开预售[2023]482号",
+          "floorTotal": 34,
+          "oldUnitName": "/",
+          "roomTotal": 34,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 613997335744636,
+      "img": "https://img.wufangtong.cn/d5b71a1a9d044412b9d3b37d2c5b2167.png",
+      "name": "D户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

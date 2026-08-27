@@ -1,0 +1,179 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 585686524457038,
+  "status": "complete",
+  "types": [
+    {
+      "area": 135.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 601563164323910,
+          "buildName": "新建居住、防护绿地项目（B2地块变更）12",
+          "buildShortName": "12#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 604373005811781,
+          "evidenceName": "武房开预售[2024]298号",
+          "floorTotal": 28,
+          "oldUnitName": "1",
+          "roomTotal": 52,
+          "soldNum": 50,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 602069294354503,
+      "img": "https://img.wufangtong.cn/939a544c30024414a1de52f5ed0022cd.png",
+      "name": "",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 107.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 601563164323909,
+          "buildName": "新建居住、防护绿地项目（B2地块变更）10",
+          "buildShortName": "10#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 604373005811781,
+          "evidenceName": "武房开预售[2024]298号",
+          "floorTotal": 29,
+          "oldUnitName": "1",
+          "roomTotal": 56,
+          "soldNum": 56,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 601563164323910,
+          "buildName": "新建居住、防护绿地项目（B2地块变更）12",
+          "buildShortName": "12#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 604373005811781,
+          "evidenceName": "武房开预售[2024]298号",
+          "floorTotal": 28,
+          "oldUnitName": "1",
+          "roomTotal": 52,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 779350999203925,
+      "img": "https://img.wufangtong.cn/f5643b7304c6455fbc906f8b1233063c.png",
+      "name": "1厨，107平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 123.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 814489734594629,
+          "buildName": "新建居住、防护绿地项目（B2地块变更）9",
+          "buildShortName": "9#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 814488999891013,
+          "evidenceName": "武房开预售[2026]149号",
+          "floorTotal": 29,
+          "oldUnitName": "1",
+          "roomTotal": 56,
+          "soldNum": 53,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 814489734594629,
+          "buildName": "新建居住、防护绿地项目（B2地块变更）9",
+          "buildShortName": "9#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 814488999891013,
+          "evidenceName": "武房开预售[2026]149号",
+          "floorTotal": 29,
+          "oldUnitName": "2",
+          "roomTotal": 56,
+          "soldNum": 52,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 808481765670998,
+      "img": "https://img.wufangtong.cn/1265d0cfac09474db5af6389f635476e.png",
+      "name": "1厨，123平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 163.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 840327611678998,
+      "img": "https://img.wufangtong.cn/2dbbb51968614c538d200a908eda9439.png",
+      "name": "1厨，163平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 134.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 840327611678999,
+      "img": "https://img.wufangtong.cn/e444957346f24751a6213044fa2468da.png",
+      "name": "1厨，134平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 601563164323909,
+          "buildName": "新建居住、防护绿地项目（B2地块变更）10",
+          "buildShortName": "10#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 604373005811781,
+          "evidenceName": "武房开预售[2024]298号",
+          "floorTotal": 29,
+          "oldUnitName": "1",
+          "roomTotal": 28,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 840327611679000,
+      "img": "https://img.wufangtong.cn/8071692120bd46c2a04a9123632fb47d.png",
+      "name": "1厨，143平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

@@ -2,13 +2,16 @@
 
 这个仓库包含两条链路：
 
-1. GitHub Actions 每天 **08:00（Asia/Shanghai）** 生成轻量静态总览，发布到 GitHub Pages；
-2. FastAPI 实时服务按楼盘点击获取户型图与一房一价，并使用 SQLite 缓存支持预热中断后继续。
+1. GitHub Actions 每天 **08:00（Asia/Shanghai）** 生成静态总览，并分批补齐户型图与一房一价，发布到 GitHub Pages；
+2. FastAPI 实时服务按楼盘点击获取户型图与一房一价，并使用 SQLite 缓存支持预热中断后继续；静态链路会复用已提交 JSON 继续轮转抓取。
 
 静态输出：
 
 - `site/index.html` — 包含全部楼盘的单页仪表盘；
-- `site/projects/{id}/` — 基础楼盘详情、全部字段、标准/抖音/历史销控图；
+- `site/projects/{id}/` — 楼盘详情、全部字段、销控图，以及已抓取批次的户型图与一房一价双视图；
+- `site/data/projects/{id}/one-price.json.gz` — 该楼盘一房一价持久 gzip JSON；浏览器端自动解压，显著控制仓库体积；
+- `site/data/projects/{id}/room-types.json` — 该楼盘户型图持久 JSON；
+- `site/data/enrichment-state.json` — 下一批增量抓取游标；
 - `site/data/sale-data.json` — 楼盘列表生产快照。
 
 实时输出：
@@ -23,8 +26,9 @@
 GitHub Actions schedule (00:00 UTC = 08:00 CST)
   → pytest
   → 分页请求 GetLouPanSaleImages（短页不终止，null/空列表终止，按 ID 去重）
-  → 生成全部楼盘单页总览与基础详情
-  → token 扫描、提交快照、部署 GitHub Pages
+  → 每次轮转抓取 80 个楼盘的预售证、房号、户型图与昨日网签
+  → 复用 site/data 中未轮到楼盘的既有 JSON，生成全部楼盘总览与详情
+  → 写入 enrichment-state.json、token 扫描、提交快照、部署 GitHub Pages
 
 FastAPI
   → / 与 /projects/{id}/ 复用同一套渲染层
@@ -46,7 +50,9 @@ export WFT_TOKEN='你的 wfTToken'
 .venv/bin/python -m sale_dashboard \
   --site-output site \
   --page-size 50 \
-  --room-page-size 500
+  --room-page-size 500 \
+  --fetch-one-price \
+  --enrichment-batch-size 80
 ```
 
 ## 实时 FastAPI 运行
@@ -83,7 +89,8 @@ export WFT_TOKEN='你的 wfTToken'
 | `--city-id` | `WFT_CITY_ID` | `4201` |
 | `--page-size` | `WFT_PAGE_SIZE` | `50` |
 | `--room-page-size` | `WFT_ROOM_PAGE_SIZE` | `500` |
-| `--fetch-one-price` | 无 | 关闭；开启后补齐户型图、一房一价与昨日网签 |
+| `--fetch-one-price` | 无 | 关闭；开启后分批补齐户型图、一房一价与昨日网签 |
+| `--enrichment-batch-size` | `WFT_ENRICHMENT_BATCH_SIZE` | `80`；按项目列表游标轮转，未轮到的项目复用已提交 JSON |
 | `--max-pages` | `WFT_MAX_PAGES` | `100` |
 | `--timeout` | `WFT_REQUEST_TIMEOUT_SECONDS` | `20` |
 | `--site-output` | `WFT_SITE_OUTPUT` | `site` |
@@ -104,10 +111,12 @@ export WFT_TOKEN='你的 wfTToken'
 - 使用 `max_pages` 防止上游异常导致无限分页。
 - 项目按 `id` 去重，避免分页期间数据移动造成重复。
 - HTML 对项目名、预售证名、房号、地址、图片地址等做 HTML 转义；房号表由 DOM API 渲染，避免二次注入。
-- 一房一价按“楼盘 → 预售证 → 房号”聚合，保留销售状态与异常状态；单项目失败会写入错误快照，不阻塞其他楼盘。
+- 一房一价按“楼盘 → 预售证 → 房号”聚合，保留销售状态与异常状态；单项目失败不阻塞其他楼盘。
+- 静态增量抓取每次处理 80 个项目；未轮到的项目复用上次提交的 JSON。若上游临时失败且本地已有成功快照，则保留旧成功快照，不用错误占位覆盖。约 5 次运行覆盖全部 390 个项目，之后继续按游标轮转刷新。
 - 昨日网签接口失败时仍生成当日销控总览，并在网签页显示明确错误。
-- Action 只生成楼盘总览，不再批量拉取全量一房一价；实时详情由 FastAPI 按点击获取并缓存。
-- Action 生成后会反向扫描整个 `site/` 目录，确保 token 没有落盘。
+- Action 会分批拉取全量一房一价与户型图；实时详情仍由 FastAPI 提供最新点击数据与 SQLite 断点缓存。
+- Action 生成后会反向扫描整个 `site/` 目录，并对 gzip JSON 解压后检查，确保 token 没有落盘。
+- 一房一价 JSON 使用 minify + gzip + 确定性 mtime 写入；避免数百 MB 明文 JSON 直接进入 Git 历史。
 - 输出文件使用同目录临时文件 + `os.replace` 原子写入。
 
 ## 测试
@@ -116,7 +125,7 @@ export WFT_TOKEN='你的 wfTToken'
 .venv/bin/pytest -q
 ```
 
-测试覆盖分页停止条件、去重、进度日志、持久缓存与断点恢复、FastAPI JSON/HTML 路由、安全转义、历史图列表选择、全字段动态展示、双销控图、一房一价双视图、原始 JSON 和单页 HTML 生成。
+测试覆盖分页停止条件、去重、进度日志、静态增量批次轮转、旧快照保留、持久缓存与断点恢复、FastAPI JSON/HTML 路由、安全转义、历史图列表选择、全字段动态展示、双销控图、一房一价双视图、原始 JSON 和单页 HTML 生成。
 
 ## 一房一价接口链路
 

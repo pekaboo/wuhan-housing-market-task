@@ -1,0 +1,122 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334520358039629,
+  "status": "complete",
+  "types": [
+    {
+      "area": 118.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337858956353605,
+      "img": "https://img.wufangtong.cn/e2d23245cbe3441d9cc9c073f6f7b0ac.png",
+      "name": "E户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 98.0,
+      "availableRoomNum": 4,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 312484791689291,
+          "buildName": "汉口澎湃城A、B地块7",
+          "buildShortName": "B-7#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873498775623,
+          "evidenceName": "武房开预售[2019]605号",
+          "floorTotal": 34,
+          "oldUnitName": "1",
+          "roomTotal": 68,
+          "soldNum": 64,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337858956353606,
+      "img": "https://img.wufangtong.cn/db6c46ff04d44e1bb79c8e6abfc13231.png",
+      "name": "D户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 118.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312484791689290,
+          "buildName": "汉口澎湃城A、B地块6",
+          "buildShortName": "B-6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873480745047,
+          "evidenceName": "武房开预售[2019]531号",
+          "floorTotal": 22,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337858956353607,
+      "img": "https://img.wufangtong.cn/e06732e4b02c47769f60ab70b4dc2c03.png",
+      "name": "B户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 127.0,
+      "availableRoomNum": 8,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312484791689288,
+          "buildName": "汉口澎湃城A、B地块4",
+          "buildShortName": "B-4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873515401301,
+          "evidenceName": "武房开预售[2019]633号",
+          "floorTotal": 29,
+          "oldUnitName": "1",
+          "roomTotal": 58,
+          "soldNum": 56,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 312484791689293,
+          "buildName": "汉口澎湃城A、B地块9",
+          "buildShortName": "B-9#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873480745047,
+          "evidenceName": "武房开预售[2019]531号",
+          "floorTotal": 26,
+          "oldUnitName": "1",
+          "roomTotal": 52,
+          "soldNum": 46,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337858956353608,
+      "img": "https://img.wufangtong.cn/2e3c4638854a492083fbdcd7b403fe1d.png",
+      "name": "A户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

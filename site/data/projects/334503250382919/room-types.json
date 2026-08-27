@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503250382919,
+  "status": "complete",
+  "types": [
+    {
+      "area": 129.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482474283078,
+          "buildName": "住宅项目（明想·青年汇）2号住宅楼",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874662887512,
+          "evidenceName": "武房开预售[2021]567号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337660982403141,
+      "img": "https://img.wufangtong.cn/ce0d94e24d0a428c818eb0314e57f18d.png",
+      "name": "E户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 102.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337660982403142,
+      "img": "https://img.wufangtong.cn/3611a0ca85cd4c63b9b85d90a29ec6a7.png",
+      "name": "D户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 102.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482474283077,
+          "buildName": "住宅项目（明想·青年汇）1号住宅楼",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874413195352,
+          "evidenceName": "武房开预售[2020]1070号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482474283079,
+          "buildName": "住宅项目（明想·青年汇）3号住宅楼",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874497962059,
+          "evidenceName": "武房开预售[2021]169号",
+          "floorTotal": 30,
+          "oldUnitName": "1",
+          "roomTotal": 87,
+          "soldNum": 87,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 357879190413411,
+      "img": "https://img.wufangtong.cn/b83ec9bc5ab94516a44cb767de563edf.png",
+      "name": "C户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 99.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482474283077,
+          "buildName": "住宅项目（明想·青年汇）1号住宅楼",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874413195352,
+          "evidenceName": "武房开预售[2020]1070号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 357879190413412,
+      "img": "https://img.wufangtong.cn/462de701ecf04e9590ea71162b42afe4.png",
+      "name": "B户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 85.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482474283077,
+          "buildName": "住宅项目（明想·青年汇）1号住宅楼",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874413195352,
+          "evidenceName": "武房开预售[2020]1070号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 357879190413413,
+      "img": "https://img.wufangtong.cn/021b7089f3cb4310b2a34adbc9368a4d.png",
+      "name": "A户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 113.0,
+      "availableRoomNum": 23,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 11,
+          "buildId": 312482474283078,
+          "buildName": "住宅项目（明想·青年汇）2号住宅楼",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874662887512,
+          "evidenceName": "武房开预售[2021]567号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 60,
+          "soldNum": 49,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 12,
+          "buildId": 312482474283079,
+          "buildName": "住宅项目（明想·青年汇）3号住宅楼",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874497962059,
+          "evidenceName": "武房开预售[2021]169号",
+          "floorTotal": 30,
+          "oldUnitName": "1",
+          "roomTotal": 29,
+          "soldNum": 17,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 389456973070438,
+      "img": "https://img.wufangtong.cn/25e282d8ceaa4476b93c8d5b9261b917.png",
+      "name": "A4B1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

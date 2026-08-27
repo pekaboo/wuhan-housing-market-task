@@ -36,8 +36,518 @@
     </table>
   </div>
 </section>
-<section class="one-price empty" aria-label="一房一价">未获取一房一价数据</section>
-<section class="room-types empty" aria-label="户型图">未获取户型图数据</section>
+<section class="one-price" data-one-price-url="../../data/projects/334501106552909/one-price.json.gz" aria-labelledby="one-price-title">
+      <div class="one-price-head">
+        <div><h2 id="one-price-title">一房一价</h2><p>按预售证聚合房号、面积、单价、总价、销售与异常状态；支持明细表与真实楼层分布两种视图。</p></div>
+        <a href="../../data/projects/334501106552909/one-price.json.gz" download>JSON 明细</a>
+      </div>
+
+      <div class="one-price-summary" data-role="one-price-summary"><div class="one-price-metric "><span>预售证</span><strong>48</strong></div><div class="one-price-metric "><span>房源</span><strong>12,293</strong></div><div class="one-price-metric available"><span>可售</span><strong>1,163</strong></div><div class="one-price-metric sold"><span>已售</span><strong>11,130</strong></div><div class="one-price-metric abnormal"><span>异常</span><strong>596</strong></div></div>
+      <div class="room-controls">
+        <div class="view-switch" role="group" aria-label="一房一价视图">
+          <button type="button" data-role="view-mode" data-mode="table" aria-pressed="true">明细表</button>
+          <button type="button" data-role="view-mode" data-mode="floor" aria-pressed="false">楼层分布</button>
+        </div>
+        <label>预售证<select data-role="certificate-filter" aria-label="筛选预售证"><option value="all">全部预售证</option></select></label>
+        <label>楼栋<select data-role="building-filter" aria-label="筛选楼栋"><option value="all">全部楼栋</option></select></label>
+        <label>单元<select data-role="unit-filter" aria-label="筛选单元"><option value="all">全部单元</option></select></label>
+        <label>搜索<input data-role="room-search" type="search" placeholder="楼栋 / 单元 / 楼层 / 房号 / 户型" autocomplete="off"></label>
+        <div class="room-filters" role="group" aria-label="房源状态筛选">
+          <button type="button" data-role="room-filter" data-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-role="room-filter" data-filter="available" aria-pressed="false">可售</button>
+          <button type="button" data-role="room-filter" data-filter="sold" aria-pressed="false">已售</button>
+          <button type="button" data-role="room-filter" data-filter="abnormal" aria-pressed="false">异常</button>
+        </div>
+        <div class="numeric-filters" aria-label="价格筛选">
+          <label>单价下限<input data-role="price-min" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
+          <label>单价上限<input data-role="price-max" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
+          <label>总价下限<input data-role="total-min" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
+          <label>总价上限<input data-role="total-max" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
+        </div>
+      </div>
+      <p class="floor-note">楼层分布按楼栋从左到右、楼层从上到下整体排布；已售为红色，可售为绿色并展示单价、总价；可售房源相同单价使用同一色块。</p>
+      <div class="room-table-wrap">
+        <table class="room-table">
+          <caption class="sr-only">一房一价房源明细</caption>
+          <thead><tr><th>楼栋</th><th>单元</th><th>楼层</th><th>房号</th><th>户型</th><th>面积</th><th>单价</th><th>总价</th><th>状态</th><th>标记</th><th>交付</th></tr></thead>
+          <tbody data-role="room-results"><tr><td colspan="11" class="loading">正在载入房源明细…</td></tr></tbody>
+        </table>
+      </div>
+      <div class="floor-results" data-role="floor-results" hidden aria-live="polite"><p class="loading">正在载入楼层分布…</p></div>
+      <div class="room-foot"><p data-role="room-count" role="status" aria-live="polite">等待载入</p><button type="button" data-role="room-more" hidden>显示更多房源</button></div>
+      <div class="certificate-list"><article class="certificate-card">
+              <h3>武房开预售[2026]182号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>496</dd></div>
+                <div><dt>可售</dt><dd>441</dd></div>
+                <div><dt>已售</dt><dd>55</dd></div>
+                <div><dt>去化</dt><dd>0.1109</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2025]035号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>66</dd></div>
+                <div><dt>可售</dt><dd>15</dd></div>
+                <div><dt>已售</dt><dd>51</dd></div>
+                <div><dt>去化</dt><dd>0.7727</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2025]018号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>252</dd></div>
+                <div><dt>可售</dt><dd>4</dd></div>
+                <div><dt>已售</dt><dd>248</dd></div>
+                <div><dt>去化</dt><dd>0.9841</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2024]234号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>432</dd></div>
+                <div><dt>可售</dt><dd>2</dd></div>
+                <div><dt>已售</dt><dd>430</dd></div>
+                <div><dt>去化</dt><dd>0.9954</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2024]187号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>64</dd></div>
+                <div><dt>可售</dt><dd>15</dd></div>
+                <div><dt>已售</dt><dd>49</dd></div>
+                <div><dt>去化</dt><dd>0.7656</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2024]186号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>220</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>220</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2024]114号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>148</dd></div>
+                <div><dt>可售</dt><dd>13</dd></div>
+                <div><dt>已售</dt><dd>135</dd></div>
+                <div><dt>去化</dt><dd>0.9122</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2024]052号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>180</dd></div>
+                <div><dt>可售</dt><dd>1</dd></div>
+                <div><dt>已售</dt><dd>179</dd></div>
+                <div><dt>去化</dt><dd>0.9944</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2024]051号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>66</dd></div>
+                <div><dt>可售</dt><dd>4</dd></div>
+                <div><dt>已售</dt><dd>62</dd></div>
+                <div><dt>去化</dt><dd>0.9394</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]491号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>156</dd></div>
+                <div><dt>可售</dt><dd>6</dd></div>
+                <div><dt>已售</dt><dd>150</dd></div>
+                <div><dt>去化</dt><dd>0.9615</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]432号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>66</dd></div>
+                <div><dt>可售</dt><dd>5</dd></div>
+                <div><dt>已售</dt><dd>61</dd></div>
+                <div><dt>去化</dt><dd>0.9242</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]411号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>44</dd></div>
+                <div><dt>可售</dt><dd>3</dd></div>
+                <div><dt>已售</dt><dd>41</dd></div>
+                <div><dt>去化</dt><dd>0.9318</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]289号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>234</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>234</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]272号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>208</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>208</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]238号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>60</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>60</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]158号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>96</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>96</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]114号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>452</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>452</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2023]007号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>127</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>127</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]477号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>340</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>340</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]429号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>130</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>130</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]416号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>57</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>57</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]397号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>127</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>127</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]371号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>239</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>239</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]372号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>60</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>60</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]329号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>188</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>188</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]261号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>112</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>112</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2022]132号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>118</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>118</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]972号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>408</dd></div>
+                <div><dt>可售</dt><dd>307</dd></div>
+                <div><dt>已售</dt><dd>101</dd></div>
+                <div><dt>去化</dt><dd>0.2475</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]914号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>126</dd></div>
+                <div><dt>可售</dt><dd>90</dd></div>
+                <div><dt>已售</dt><dd>36</dd></div>
+                <div><dt>去化</dt><dd>0.2857</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]636号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>504</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>504</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]473号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>310</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>310</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]836号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>264</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>264</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]595号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>484</dd></div>
+                <div><dt>可售</dt><dd>1</dd></div>
+                <div><dt>已售</dt><dd>483</dd></div>
+                <div><dt>去化</dt><dd>0.9979</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]238号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>115</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>115</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]015号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>152</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>152</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2019]558号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>540</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>540</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2019]239号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>556</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>556</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2018]707号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>932</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>932</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2018]520号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>490</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>490</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2018]519号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>326</dd></div>
+                <div><dt>可售</dt><dd>256</dd></div>
+                <div><dt>已售</dt><dd>70</dd></div>
+                <div><dt>去化</dt><dd>0.2147</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2018]518号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>370</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>370</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2018]517号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>204</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>204</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2017]548号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>183</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>183</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2017]196号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>126</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>126</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2017]140号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>365</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>365</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2017]046号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>310</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>310</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2016]356号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>326</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>326</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2016]296号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>464</dd></div>
+                <div><dt>可售</dt><dd>0</dd></div>
+                <div><dt>已售</dt><dd>464</dd></div>
+                <div><dt>去化</dt><dd>1.0</dd></div>
+              </dl>
+            </article></div>
+    </section>
+<section class="room-types" data-room-type-url="../../data/projects/334501106552909/room-types.json" aria-labelledby="room-types-title">
+      <div class="one-price-head">
+        <div><h2 id="room-types-title">户型图</h2><p>点击户型卡片查看大图、面积、可售数量与楼栋分布。</p></div>
+        <a href="../../data/projects/334501106552909/room-types.json" download>JSON 明细</a>
+      </div>
+
+      <div class="room-type-grid"><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-0" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/0d53dbf086ae4985897c3ded9e73ebd0.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>99.00 ㎡ · 可售 0 套</span>
+                <span>1厨，99平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-1" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/07c4487bc14d4e979c0e7fd3297fdedc.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>132.00 ㎡ · 可售 0 套</span>
+                <span>1厨，132平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-2" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/a1a1e281d99141c0bd4946adede778cc.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>137.00 ㎡ · 可售 0 套</span>
+                <span>1厨，137平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button></div>
+      <dialog id="room-type-dialog-0" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-0-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-0-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/0d53dbf086ae4985897c3ded9e73ebd0.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>99.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>808500073640033</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog><dialog id="room-type-dialog-1" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-1-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-1-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/07c4487bc14d4e979c0e7fd3297fdedc.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>132.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>808500073640034</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog><dialog id="room-type-dialog-2" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-2-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-2-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/a1a1e281d99141c0bd4946adede778cc.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>137.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>808500073640035</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog>
+    </section>
 <details class="raw-data">
   <summary>完整原始 JSON</summary>
   <pre><code>{
@@ -59,7 +569,7 @@
           <span>抖音版销控图 · 2026-08-23</span>
         </a></section>
 <nav class="footer-nav" aria-label="项目导航"><a class="previous" href="../../projects/793086526021757/"><span>上一个楼盘</span><span>通派龙湖·江上云启</span></a><a class="next" href="../../projects/704747788468293/"><span>下一个楼盘</span><span>华发外滩玺</span></a></nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 18:00:27；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 18:26:03；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 (function(){
@@ -269,7 +779,14 @@
     input.addEventListener('input',function(){bounds[pair[1]]=input.value===''?null:Number(input.value);if(input.value!==''&&!isFinite(bounds[pair[1]]))bounds[pair[1]]=null;limit=100;render()});
   });
   more.addEventListener('click',function(){limit+=200;render()});
-  fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()}).then(function(data){
+  function loadJSON(url){
+    if(!/\.json\.gz$/.test(url))return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()});
+    if(typeof DecompressionStream==='undefined')return Promise.reject(new Error('当前浏览器不支持解压静态 JSON'));
+    return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.arrayBuffer()}).then(function(buffer){
+      var stream=new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'));return new Response(stream).json();
+    });
+  }
+  loadJSON(url).then(function(data){
     if(data&&data.status&&data.status!=='complete')throw new Error(data.message||'接口返回错误');
     rooms=[];
     (data.certificates||[]).forEach(function(certificate){

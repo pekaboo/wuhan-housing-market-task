@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 654429259935818,
+  "status": "complete",
+  "types": [
+    {
+      "area": 166.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 663141937918021,
+          "buildName": "新建居住、商业、商务、公园绿地项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 670905139957829,
+          "evidenceName": "武房开预售[2025]105号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 663141937918021,
+          "buildName": "新建居住、商业、商务、公园绿地项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 670905139957829,
+          "evidenceName": "武房开预售[2025]105号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 62,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 662955926188138,
+      "img": "https://img.wufangtong.cn/c5f050bceb144be2b58e71ff13460a52.png",
+      "name": "嘉誉户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 663141937918021,
+          "buildName": "新建居住、商业、商务、公园绿地项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 670905139957829,
+          "evidenceName": "武房开预售[2025]105号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 662955926188139,
+      "img": "https://img.wufangtong.cn/7d3c1068b43c452e8bd75bd1b8690761.png",
+      "name": "嘉境户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 175.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 663141937918021,
+          "buildName": "新建居住、商业、商务、公园绿地项目1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 670905139957829,
+          "evidenceName": "武房开预售[2025]105号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 29,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 735497123307622,
+      "img": "https://img.wufangtong.cn/b29be75957df4b569834a9b42406e178.png",
+      "name": "1厨，175平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    }
+  ]
+}

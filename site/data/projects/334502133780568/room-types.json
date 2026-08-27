@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334502133780568,
+  "status": "complete",
+  "types": [
+    {
+      "area": 155.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 651822784458821,
+          "buildName": "新建居住、图书展览用地项目（武昌滨江商务核心区B2二期地块）2",
+          "buildShortName": "R9",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 653920370241605,
+          "evidenceName": "武房开预售[2025]043号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 29,
+          "soldNum": 29,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 651822784458821,
+          "buildName": "新建居住、图书展览用地项目（武昌滨江商务核心区B2二期地块）2",
+          "buildShortName": "R9",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 653920370241605,
+          "evidenceName": "武房开预售[2025]043号",
+          "floorTotal": 31,
+          "oldUnitName": "2",
+          "roomTotal": 29,
+          "soldNum": 29,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 646677907292231,
+      "img": "https://img.wufangtong.cn/0f4e08e9b3c849b0a1ed9c038b978b08.png",
+      "name": "155平户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 180.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 651822784458821,
+          "buildName": "新建居住、图书展览用地项目（武昌滨江商务核心区B2二期地块）2",
+          "buildShortName": "R9",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 653920370241605,
+          "evidenceName": "武房开预售[2025]043号",
+          "floorTotal": 31,
+          "oldUnitName": "1",
+          "roomTotal": 29,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 651822784458821,
+          "buildName": "新建居住、图书展览用地项目（武昌滨江商务核心区B2二期地块）2",
+          "buildShortName": "R9",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 653920370241605,
+          "evidenceName": "武房开预售[2025]043号",
+          "floorTotal": 31,
+          "oldUnitName": "2",
+          "roomTotal": 29,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 646677907292232,
+      "img": "https://img.wufangtong.cn/5f97d5cd025c457fbaeb2bc78b5059d9.png",
+      "name": "180平户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 215.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 679399088853061,
+          "buildName": "新建居住、图书展览用地项目（武昌滨江商务核心区B2二期地块）1",
+          "buildShortName": "R8",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 679398620106821,
+          "evidenceName": "武房开预售[2025]134号",
+          "floorTotal": 52,
+          "oldUnitName": "2",
+          "roomTotal": 14,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 679399088853061,
+          "buildName": "新建居住、图书展览用地项目（武昌滨江商务核心区B2二期地块）1",
+          "buildShortName": "R8",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 679398620106821,
+          "evidenceName": "武房开预售[2025]134号",
+          "floorTotal": 52,
+          "oldUnitName": "1",
+          "roomTotal": 14,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 820307857887302,
+      "img": "https://img.wufangtong.cn/5957a04f16ad48d1bba2cd7b7bc1e25d.png",
+      "name": "1厨，215平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 230.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 820307857887303,
+      "img": "https://img.wufangtong.cn/46b76a19250541019f92ba84f3e3ab07.png",
+      "name": "1厨，230平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 285.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 820307857887304,
+      "img": "https://img.wufangtong.cn/737fdfc0c01d4c4fa278599951fc6d05.png",
+      "name": "1厨，285平米",
+      "roomLayout": "4室2厅4卫",
+      "sectionNum": 4
+    }
+  ]
+}

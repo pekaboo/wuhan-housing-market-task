@@ -1,0 +1,307 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 616819003899981,
+  "status": "complete",
+  "types": [
+    {
+      "area": 155.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 634113103618120,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-1（A-1-1地块）4",
+          "buildShortName": "4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 634809039405125,
+          "evidenceName": "武房开预售[2025]015号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 82,
+          "soldNum": 82,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 624292884648029,
+      "img": "https://img.wufangtong.cn/e24afefb6b5546dd911c72eb1c8bd28c.png",
+      "name": "",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 155.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 669514809839687,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-2（A-1-2地块）5",
+          "buildShortName": "5",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 670905139937349,
+          "evidenceName": "武房开预售[2025]107号",
+          "floorTotal": 44,
+          "oldUnitName": "1",
+          "roomTotal": 41,
+          "soldNum": 41,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 649465790996605,
+      "img": "https://img.wufangtong.cn/28e08dd702e54c31ac9b1780d4e8b3c1.png",
+      "name": "誉湖户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 185.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 649465790996606,
+      "img": "https://img.wufangtong.cn/0d18097a9d6546a2b5ad9b8283f95435.png",
+      "name": "雲湖户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 205.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 669514809839686,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-2（A-1-2地块）1",
+          "buildShortName": "1",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 670905139925061,
+          "evidenceName": "武房开预售[2025]108号",
+          "floorTotal": 30,
+          "oldUnitName": "1",
+          "roomTotal": 22,
+          "soldNum": 22,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 649465791000646,
+      "img": "https://img.wufangtong.cn/6738604e807d4033b50e5880fa0bf9c4.png",
+      "name": "隐湖户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 189.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 669514809839687,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-2（A-1-2地块）5",
+          "buildShortName": "5",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 670905139937349,
+          "evidenceName": "武房开预售[2025]107号",
+          "floorTotal": 44,
+          "oldUnitName": "1",
+          "roomTotal": 41,
+          "soldNum": 41,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 735498044579920,
+      "img": "https://img.wufangtong.cn/078a56b996934fa49161cb033f54bee7.png",
+      "name": "1厨，189平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 155.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 735498044579922,
+      "img": "https://img.wufangtong.cn/4ed598591bd547e1a0c8523653049f85.png",
+      "name": "1厨，155平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 155.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 669514809839686,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-2（A-1-2地块）1",
+          "buildShortName": "1",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 670905139925061,
+          "evidenceName": "武房开预售[2025]108号",
+          "floorTotal": 30,
+          "oldUnitName": "1",
+          "roomTotal": 22,
+          "soldNum": 22,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 669514809839686,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-2（A-1-2地块）1",
+          "buildShortName": "1",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 670905139925061,
+          "evidenceName": "武房开预售[2025]108号",
+          "floorTotal": 30,
+          "oldUnitName": "2",
+          "roomTotal": 29,
+          "soldNum": 29,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 735498044579926,
+      "img": "https://img.wufangtong.cn/889ec580fa35453287a68c406ffd1d51.png",
+      "name": "1厨，155平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 193.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 634113103618119,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-1（A-1-1地块）3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 634809039446085,
+          "evidenceName": "武房开预售[2025]014号",
+          "floorTotal": 27,
+          "oldUnitName": "1",
+          "roomTotal": 26,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 826733623124230,
+      "img": "https://img.wufangtong.cn/7b827a1dfe54465bb648fce7646b8c40.png",
+      "name": "1厨，193平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 160.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 634113103618119,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-1（A-1-1地块）3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 634809039446085,
+          "evidenceName": "武房开预售[2025]014号",
+          "floorTotal": 27,
+          "oldUnitName": "1",
+          "roomTotal": 26,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 831472152576281,
+      "img": "https://img.wufangtong.cn/c21ea15914914344bc86deeb7903d9d1.png",
+      "name": "1厨，160平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 190.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 634113103618118,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-1（A-1-1地块）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 634809039458373,
+          "evidenceName": "武房开预售[2025]013号",
+          "floorTotal": 27,
+          "oldUnitName": "1",
+          "roomTotal": 26,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 831472152576282,
+      "img": "https://img.wufangtong.cn/992c23782bc9406a8f22ca95eaee2006.png",
+      "name": "1厨，190平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 224.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 634113103618118,
+          "buildName": "新建居住、商业、商务、中学（复合公交首末站）项目一期-1（A-1-1地块）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 634809039458373,
+          "evidenceName": "武房开预售[2025]013号",
+          "floorTotal": 27,
+          "oldUnitName": "1",
+          "roomTotal": 26,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 831472152576283,
+      "img": "https://img.wufangtong.cn/5263e0640abd4b2db14059697d2ea9e2.png",
+      "name": "1厨，224平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    }
+  ]
+}

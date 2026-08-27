@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503298535517,
+  "status": "complete",
+  "types": [
+    {
+      "area": 111.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483399852103,
+          "buildName": "香澜水岸住宅小区（三期）2-1",
+          "buildShortName": "2-1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874090524756,
+          "evidenceName": "武房开预售[2020]347号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 30,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483399852104,
+          "buildName": "香澜水岸住宅小区（三期）2-2",
+          "buildShortName": "2-2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874580774999,
+          "evidenceName": "武房开预售[2021]370号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337700594475077,
+      "img": "https://img.wufangtong.cn/670fdbc6ec364ab5b451895f75b192ea.png",
+      "name": "C2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 120.0,
+      "availableRoomNum": 4,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483399852103,
+          "buildName": "香澜水岸住宅小区（三期）2-1",
+          "buildShortName": "2-1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874090524756,
+          "evidenceName": "武房开预售[2020]347号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 312483399852104,
+          "buildName": "香澜水岸住宅小区（三期）2-2",
+          "buildShortName": "2-2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874580774999,
+          "evidenceName": "武房开预售[2021]370号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 64,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337700594475078,
+      "img": "https://img.wufangtong.cn/fb374d40847148ba9be7af9aaaa2e767.png",
+      "name": "B2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 127.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483399852101,
+          "buildName": "香澜水岸住宅小区（三期）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874256056404,
+          "evidenceName": "武房开预售[2020]702号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337700594475079,
+      "img": "https://img.wufangtong.cn/ad352e829a804cab8d28c31876b59b6d.png",
+      "name": "B1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 129.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483399852103,
+          "buildName": "香澜水岸住宅小区（三期）2-1",
+          "buildShortName": "2-1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874090524756,
+          "evidenceName": "武房开预售[2020]347号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 62,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483399852104,
+          "buildName": "香澜水岸住宅小区（三期）2-2",
+          "buildShortName": "2-2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874580774999,
+          "evidenceName": "武房开预售[2021]370号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 64,
+          "soldNum": 63,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337700594475080,
+      "img": "https://img.wufangtong.cn/a63c73645bcb4527910e992510d60701.png",
+      "name": "A2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483399852101,
+          "buildName": "香澜水岸住宅小区（三期）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874256056404,
+          "evidenceName": "武房开预售[2020]702号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 62,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337700594475081,
+      "img": "https://img.wufangtong.cn/624865614b1d47ce8582aa156e3fcd2e.png",
+      "name": "A1户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

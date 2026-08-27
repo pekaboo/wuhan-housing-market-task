@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503202558038,
+  "status": "complete",
+  "types": [
+    {
+      "area": 98.0,
+      "availableRoomNum": 30,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 19,
+          "buildId": 312230573207621,
+          "buildName": "居住、商服项目（南山·悦拾光项目）ABC地块A-5",
+          "buildShortName": "A-5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875137986638,
+          "evidenceName": "武房开预售[2022]168号",
+          "floorTotal": 25,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 27,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312230573207622,
+          "buildName": "居住、商服项目（南山·悦拾光项目）ABC地块A-6",
+          "buildShortName": "A-6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875137986638,
+          "evidenceName": "武房开预售[2022]168号",
+          "floorTotal": 25,
+          "oldUnitName": "/",
+          "roomTotal": 44,
+          "soldNum": 44,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 11,
+          "buildId": 411854941376581,
+          "buildName": "居住、商服项目（南山·悦拾光项目）ABC地块A-3",
+          "buildShortName": "A-3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 411854437257285,
+          "evidenceName": "武房开预售[2023]190号",
+          "floorTotal": 25,
+          "oldUnitName": "/",
+          "roomTotal": 44,
+          "soldNum": 33,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337631874273349,
+      "img": "https://img.wufangtong.cn/3bbc067d57014400a4044c5335a4993d.png",
+      "name": "98平米户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 110.0,
+      "availableRoomNum": 82,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 23,
+          "buildId": 312230573207621,
+          "buildName": "居住、商服项目（南山·悦拾光项目）ABC地块A-5",
+          "buildShortName": "A-5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875137986638,
+          "evidenceName": "武房开预售[2022]168号",
+          "floorTotal": 25,
+          "oldUnitName": "/",
+          "roomTotal": 48,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 21,
+          "buildId": 312230573207622,
+          "buildName": "居住、商服项目（南山·悦拾光项目）ABC地块A-6",
+          "buildShortName": "A-6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875137986638,
+          "evidenceName": "武房开预售[2022]168号",
+          "floorTotal": 25,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 38,
+          "buildId": 411854941376581,
+          "buildName": "居住、商服项目（南山·悦拾光项目）ABC地块A-3",
+          "buildShortName": "A-3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 411854437257285,
+          "evidenceName": "武房开预售[2023]190号",
+          "floorTotal": 25,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337631874273350,
+      "img": "https://img.wufangtong.cn/22606e9d6cbb4d3686d7f40596751e52.png",
+      "name": "110平米户",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

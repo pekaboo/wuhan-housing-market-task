@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334501106552908,
+  "status": "complete",
+  "types": [
+    {
+      "area": 220.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483881656389,
+          "buildName": "新建商业服务业设施、居住及公园绿地项目(武汉华润万象城)1、2号楼及商业街一区",
+          "buildShortName": "#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874298306643,
+          "evidenceName": "武房开预售[2020]804号",
+          "floorTotal": 49,
+          "oldUnitName": "1号楼二",
+          "roomTotal": 16,
+          "soldNum": 16,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483881656390,
+          "buildName": "新建商业服务业设施、居住及公园绿地项目(武汉华润万象城)3、5号楼及商业街二区",
+          "buildShortName": "#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874009858118,
+          "evidenceName": "武房开预售[2020]147号",
+          "floorTotal": 52,
+          "oldUnitName": "5号楼一",
+          "roomTotal": 24,
+          "soldNum": 24,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337441325994055,
+      "img": "https://img.wufangtong.cn/13a99daee470408c9e307755d7f0774d.png",
+      "name": "C户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 260.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483881656389,
+          "buildName": "新建商业服务业设施、居住及公园绿地项目(武汉华润万象城)1、2号楼及商业街一区",
+          "buildShortName": "#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874298306643,
+          "evidenceName": "武房开预售[2020]804号",
+          "floorTotal": 49,
+          "oldUnitName": "1号楼一",
+          "roomTotal": 27,
+          "soldNum": 27,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337441325994056,
+      "img": "https://img.wufangtong.cn/796eb36503884bc7992fbc8abb024225.png",
+      "name": "B1户型",
+      "roomLayout": "4室2厅4卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 330.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337441325994057,
+      "img": "https://img.wufangtong.cn/ae70ccde4ff54e61a7c3522112cbf660.png",
+      "name": "A户型",
+      "roomLayout": "5室3厅5卫",
+      "sectionNum": 5
+    },
+    {
+      "area": 210.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 784332650537040,
+      "img": "https://img.wufangtong.cn/e05a82f963d8438987ada32d4458a6fd.png",
+      "name": "1厨，210平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 180.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 826750090707215,
+      "img": "https://img.wufangtong.cn/90698cf4a8ae4c5e91d85e2d286f455d.png",
+      "name": "1厨，180平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

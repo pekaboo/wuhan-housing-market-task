@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334501415104582,
+  "status": "complete",
+  "types": [
+    {
+      "area": 125.0,
+      "availableRoomNum": 15,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 15,
+          "buildId": 312481278152775,
+          "buildName": "新建商业、商务、居住、公园绿地项目2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 329873115832394,
+          "evidenceName": "武房开预售[2022]328号",
+          "floorTotal": 61,
+          "oldUnitName": "/",
+          "roomTotal": 110,
+          "soldNum": 95,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 354344785395781,
+      "img": "https://img.wufangtong.cn/17fec95d431443cb996ba103cc7ed70a.png",
+      "name": "B1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312481278152775,
+          "buildName": "新建商业、商务、居住、公园绿地项目2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 329873115832394,
+          "evidenceName": "武房开预售[2022]328号",
+          "floorTotal": 61,
+          "oldUnitName": "/",
+          "roomTotal": 55,
+          "soldNum": 53,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 354344785395782,
+      "img": "https://img.wufangtong.cn/3c5f5b3b6bc44f5d977ef3d3c703daa9.png",
+      "name": "C1户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 186.0,
+      "availableRoomNum": 26,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 26,
+          "buildId": 312481278152775,
+          "buildName": "新建商业、商务、居住、公园绿地项目2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 329873115832394,
+          "evidenceName": "武房开预售[2022]328号",
+          "floorTotal": 61,
+          "oldUnitName": "/",
+          "roomTotal": 54,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 354344785399877,
+      "img": "https://img.wufangtong.cn/be0aaaf9b36041c69003b2f89dbc6baf.png",
+      "name": "C户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 138.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 354344785399878,
+      "img": "https://img.wufangtong.cn/1e3aa4c7111144a0a47f35097d97b3fd.png",
+      "name": "C3户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 120.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 354344785399881,
+      "img": "https://img.wufangtong.cn/f971d194519e49568011a3d81643a81e.png",
+      "name": "B3户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 119.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481278152777,
+          "buildName": "新建商业、商务、居住、公园绿地项目4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311875120009303,
+          "evidenceName": "武房开预售[2022]102号",
+          "floorTotal": 16,
+          "oldUnitName": "1",
+          "roomTotal": 28,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481278152777,
+          "buildName": "新建商业、商务、居住、公园绿地项目4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311875120009303,
+          "evidenceName": "武房开预售[2022]102号",
+          "floorTotal": 16,
+          "oldUnitName": "2",
+          "roomTotal": 42,
+          "soldNum": 42,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 354344785399882,
+      "img": "https://img.wufangtong.cn/34cc3baff86f41a19f1b72c1d9a15aa6.png",
+      "name": "B2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 137.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312481278152777,
+          "buildName": "新建商业、商务、居住、公园绿地项目4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 311875120009303,
+          "evidenceName": "武房开预售[2022]102号",
+          "floorTotal": 16,
+          "oldUnitName": "1",
+          "roomTotal": 28,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 779373711880274,
+      "img": "https://img.wufangtong.cn/b4ceef3999724caa93bd6237f7796446.png",
+      "name": "1厨，137平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

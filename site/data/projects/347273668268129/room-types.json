@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 347273668268129,
+  "status": "complete",
+  "types": [
+    {
+      "area": 115.0,
+      "availableRoomNum": 58,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 52,
+          "buildId": 312479083249733,
+          "buildName": "车都·外校城（C-1、A-2地块）C1",
+          "buildShortName": "C1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 332612818513992,
+          "evidenceName": "武房开预售[2022]339号",
+          "floorTotal": 26,
+          "oldUnitName": "/",
+          "roomTotal": 52,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 312479083249735,
+          "buildName": "车都·外校城（C-1、A-2地块）C3",
+          "buildShortName": "C3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 332612818513992,
+          "evidenceName": "武房开预售[2022]339号",
+          "floorTotal": 30,
+          "oldUnitName": "一",
+          "roomTotal": 30,
+          "soldNum": 24,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 347317195108421,
+      "img": "https://img.wufangtong.cn/b863c6e73e72442faaba01bdbde2b092.png",
+      "name": "A户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 130.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312479083249735,
+          "buildName": "车都·外校城（C-1、A-2地块）C3",
+          "buildShortName": "C3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 332612818513992,
+          "evidenceName": "武房开预售[2022]339号",
+          "floorTotal": 30,
+          "oldUnitName": "一",
+          "roomTotal": 30,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 347317195108423,
+      "img": "https://img.wufangtong.cn/9c9fdf383d054da6862b752f488b933e.png",
+      "name": "C户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 100.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 773240162779208,
+      "img": "https://img.wufangtong.cn/bb4d98e0ea9e4451bb3ecdb3616db22a.png",
+      "name": "1厨，100平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 87.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 812522349133900,
+      "img": "https://img.wufangtong.cn/e608f5a0b902480984c69a350e6dc9cc.png",
+      "name": "1厨，87平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

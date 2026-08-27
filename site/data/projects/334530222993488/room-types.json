@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334530222993488,
+  "status": "complete",
+  "types": [
+    {
+      "area": 140.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 338008686010437,
+      "img": "https://img.wufangtong.cn/11d5821453d04cc6a72c73db67e18a95.png",
+      "name": "A户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503273410635,
+  "status": "complete",
+  "types": [
+    {
+      "area": 179.0,
+      "availableRoomNum": 16,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312484648935494,
+          "buildName": "新建住宅（蓝天湖岸）3号楼",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874183647305,
+          "evidenceName": "武房开预售[2020]559号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 27,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "2"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 15,
+          "buildId": 312484648935494,
+          "buildName": "新建住宅（蓝天湖岸）3号楼",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874183647305,
+          "evidenceName": "武房开预售[2020]559号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 15,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 717476513890377,
+      "img": "https://img.wufangtong.cn/cd0e2f70e1e6420fbd6d076e9a0ba23c.png",
+      "name": "1厨，179平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 174.0,
+      "availableRoomNum": 9,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 312484648935494,
+          "buildName": "新建住宅（蓝天湖岸）3号楼",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874183647305,
+          "evidenceName": "武房开预售[2020]559号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 30,
+          "soldNum": 23,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312484648935494,
+          "buildName": "新建住宅（蓝天湖岸）3号楼",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874183647305,
+          "evidenceName": "武房开预售[2020]559号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 27,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 826796570968328,
+      "img": "https://img.wufangtong.cn/ab8867f305c44b9aa59b690d7ff1c9c6.png",
+      "name": "1厨，174平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

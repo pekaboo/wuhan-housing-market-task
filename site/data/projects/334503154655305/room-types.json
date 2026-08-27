@@ -1,0 +1,592 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503154655305,
+  "status": "complete",
+  "types": [
+    {
+      "area": 124.0,
+      "availableRoomNum": 26,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 26,
+          "buildId": 312483084148810,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期8",
+          "buildShortName": "8#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875120009292,
+          "evidenceName": "武房开预售[2022]113号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 42,
+          "soldNum": 16,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063557,
+      "img": "https://img.wufangtong.cn/0244ab7c973c435bb880fd04e65f8437.png",
+      "name": "8栋B户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 162.0,
+      "availableRoomNum": 76,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 76,
+          "buildId": 312483084148810,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期8",
+          "buildShortName": "8#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875120009292,
+          "evidenceName": "武房开预售[2022]113号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 84,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063558,
+      "img": "https://img.wufangtong.cn/58c300d568894d43acb720b221060f88.png",
+      "name": "8栋AC户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 205.0,
+      "availableRoomNum": 49,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 49,
+          "buildId": 312483084148809,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期7",
+          "buildShortName": "7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875120009292,
+          "evidenceName": "武房开预售[2022]113号",
+          "floorTotal": 44,
+          "oldUnitName": "/",
+          "roomTotal": 82,
+          "soldNum": 33,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063559,
+      "img": "https://img.wufangtong.cn/2a3177a378324e73bda658a1443c6fb9.png",
+      "name": "7栋AB户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 114.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483084148806,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875120009292,
+          "evidenceName": "武房开预售[2022]113号",
+          "floorTotal": 27,
+          "oldUnitName": "/",
+          "roomTotal": 54,
+          "soldNum": 53,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063560,
+      "img": "https://img.wufangtong.cn/f1e6c98f5c2849d5930ad2ed175e71b3.png",
+      "name": "3栋BC户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 137.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483084148806,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875120009292,
+          "evidenceName": "武房开预售[2022]113号",
+          "floorTotal": 27,
+          "oldUnitName": "/",
+          "roomTotal": 27,
+          "soldNum": 27,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063561,
+      "img": "https://img.wufangtong.cn/0030d943de5245e1b46e3081b511e973.png",
+      "name": "3栋AD户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 106.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483084148808,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期6",
+          "buildShortName": "6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874624606290,
+          "evidenceName": "武房开预售[2021]475号",
+          "floorTotal": 33,
+          "oldUnitName": "/",
+          "roomTotal": 66,
+          "soldNum": 65,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063562,
+      "img": "https://img.wufangtong.cn/77de368a6749463c96bcdfe86d8bfafe.png",
+      "name": "6栋BC户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 126.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312483084148808,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期6",
+          "buildShortName": "6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874624606290,
+          "evidenceName": "武房开预售[2021]475号",
+          "floorTotal": 33,
+          "oldUnitName": "/",
+          "roomTotal": 66,
+          "soldNum": 64,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063563,
+      "img": "https://img.wufangtong.cn/92dfd9e9beb5476b908c1528692897a0.png",
+      "name": "6栋AD户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 153.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483084148807,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期5",
+          "buildShortName": "5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874540658768,
+          "evidenceName": "武房开预售[2021]264号",
+          "floorTotal": 46,
+          "oldUnitName": "/",
+          "roomTotal": 43,
+          "soldNum": 42,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595424063564,
+      "img": "https://img.wufangtong.cn/c59a59dfe5084a27aa77de3ea1d0276f.png",
+      "name": "5栋C户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 170.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483084148807,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期5",
+          "buildShortName": "5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874540658768,
+          "evidenceName": "武房开预售[2021]264号",
+          "floorTotal": 46,
+          "oldUnitName": "/",
+          "roomTotal": 43,
+          "soldNum": 42,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595436691526,
+      "img": "https://img.wufangtong.cn/038c8f5d3cd34331a220e5de76b07433.png",
+      "name": "5栋A户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 133.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483084148805,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874230218839,
+          "evidenceName": "武房开预售[2020]644号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483084148805,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874230218839,
+          "evidenceName": "武房开预售[2020]644号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595436691527,
+      "img": "https://img.wufangtong.cn/f273f8ab39004a31be47abc3f96d9093.png",
+      "name": "1栋AH户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 247.0,
+      "availableRoomNum": 20,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 20,
+          "buildId": 312580326867015,
+          "buildName": "华鼎·尚都国际K1地块一期11",
+          "buildShortName": "11#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311871889547347,
+          "evidenceName": "武房开预售[2017]076号",
+          "floorTotal": 44,
+          "oldUnitName": "/",
+          "roomTotal": 39,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337595436691529,
+      "img": "https://img.wufangtong.cn/f050ddf07d684f4ca5960fd2308c2835.png",
+      "name": "11栋G1户型",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 131.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312477558476869,
+          "buildName": "华鼎·尚都国际汉西村K1地块三期9",
+          "buildShortName": "9#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 411854433108037,
+          "evidenceName": "武房开预售[2023]193号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 42,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 415280716832868,
+      "img": "https://img.wufangtong.cn/0a109bddc0604f8b8d43bd6d23786a07.png",
+      "name": "9栋D户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 110.0,
+      "availableRoomNum": 12,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 12,
+          "buildId": 312477558476869,
+          "buildName": "华鼎·尚都国际汉西村K1地块三期9",
+          "buildShortName": "9#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 411854433108037,
+          "evidenceName": "武房开预售[2023]193号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 84,
+          "soldNum": 72,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 415280716832869,
+      "img": "https://img.wufangtong.cn/0185b9fc1ce54ff08e25f3e16bfc8607.png",
+      "name": "9栋BC户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 142.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312477558476869,
+          "buildName": "华鼎·尚都国际汉西村K1地块三期9",
+          "buildShortName": "9#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 411854433108037,
+          "evidenceName": "武房开预售[2023]193号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 42,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 415280716832870,
+      "img": "https://img.wufangtong.cn/c51bc8f14923439ab9aede286c2c1924.png",
+      "name": "9栋A户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 124.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 312483084148807,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期5",
+          "buildShortName": "5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874540658768,
+          "evidenceName": "武房开预售[2021]264号",
+          "floorTotal": 46,
+          "oldUnitName": "/",
+          "roomTotal": 43,
+          "soldNum": 36,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 747194624708693,
+      "img": "https://img.wufangtong.cn/46f959db5c9c444cac73e27134431f14.png",
+      "name": "1厨，124平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483084148805,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874230218839,
+          "evidenceName": "武房开预售[2020]644号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483084148805,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874230218839,
+          "evidenceName": "武房开预售[2020]644号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 32,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 747194624708703,
+      "img": "https://img.wufangtong.cn/3539dbbb7e3b4c9ca40f8f22b7e7ac0c.png",
+      "name": "1厨，125平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 112.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312483084148805,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874230218839,
+          "evidenceName": "武房开预售[2020]644号",
+          "floorTotal": 33,
+          "oldUnitName": "2",
+          "roomTotal": 63,
+          "soldNum": 62,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 747194624708704,
+      "img": "https://img.wufangtong.cn/747aeb75d5ca4c5989db8ae7b3b8b321.png",
+      "name": "1厨，112平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 103.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312483084148805,
+          "buildName": "华鼎·尚都国际汉西村K1地块二期1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874230218839,
+          "evidenceName": "武房开预售[2020]644号",
+          "floorTotal": 33,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 62,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 770209132433503,
+      "img": "https://img.wufangtong.cn/30e707ef33734ee48035a37aefa0ed81.png",
+      "name": "1厨，103平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 236.0,
+      "availableRoomNum": 21,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 21,
+          "buildId": 312580326867015,
+          "buildName": "华鼎·尚都国际K1地块一期11",
+          "buildShortName": "11#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311871889547347,
+          "evidenceName": "武房开预售[2017]076号",
+          "floorTotal": 44,
+          "oldUnitName": "/",
+          "roomTotal": 39,
+          "soldNum": 18,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 784354743197784,
+      "img": "https://img.wufangtong.cn/e3b27cd4de3f46029ade25b959e9b509.png",
+      "name": "1厨，236平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    }
+  ]
+}

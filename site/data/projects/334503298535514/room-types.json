@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503298535514,
+  "status": "complete",
+  "types": [
+    {
+      "area": 132.0,
+      "availableRoomNum": 12,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 12,
+          "buildId": 312483924824133,
+          "buildName": "中新盛景项目（居住、商务服务设施用地）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873735520330,
+          "evidenceName": "武房开预售[2020]045号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337701301125189,
+      "img": "https://img.wufangtong.cn/b804cfbed2a3440d88197969c8db8dc2.png",
+      "name": "G户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 80.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337701301125190,
+      "img": "https://img.wufangtong.cn/c70163c3c72b4db0bd066f93b46fc8ca.png",
+      "name": "F户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 81.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 312483924824133,
+          "buildName": "中新盛景项目（居住、商务服务设施用地）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873735520330,
+          "evidenceName": "武房开预售[2020]045号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 57,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337701301125191,
+      "img": "https://img.wufangtong.cn/f88097f924a2428ba9f5ab499a94f34a.png",
+      "name": "E户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 126.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337701301125193,
+      "img": "https://img.wufangtong.cn/219b0a5bf51b43ba9e1ec0c4cb04a2c3.png",
+      "name": "C户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 100.0,
+      "availableRoomNum": 13,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 13,
+          "buildId": 312483924824133,
+          "buildName": "中新盛景项目（居住、商务服务设施用地）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873735520330,
+          "evidenceName": "武房开预售[2020]045号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 62,
+          "soldNum": 49,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337701301125194,
+      "img": "https://img.wufangtong.cn/fe26382e903d4a1da366ae4a8d71ef38.png",
+      "name": "B户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 136.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 628849084129376,
+      "img": "https://img.wufangtong.cn/0b99697bca304e658484db23948fdfe4.png",
+      "name": "A户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 122.0,
+      "availableRoomNum": 15,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 15,
+          "buildId": 312483924824133,
+          "buildName": "中新盛景项目（居住、商务服务设施用地）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311873735520330,
+          "evidenceName": "武房开预售[2020]045号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 31,
+          "soldNum": 16,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 779408868806754,
+      "img": "https://img.wufangtong.cn/94ad9390418948949f7ece7ff3632e7b.png",
+      "name": "1厨，122平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

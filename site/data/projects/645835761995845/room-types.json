@@ -1,0 +1,244 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 645835761995845,
+  "status": "complete",
+  "types": [
+    {
+      "area": 110.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 631630710538309,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 657103375892549,
+          "evidenceName": "武房开预售[2025]047号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 631630710538310,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 664181141372997,
+          "evidenceName": "武房开预售[2025]077号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 62,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 711789101453439,
+      "img": "https://img.wufangtong.cn/fe2d7979a7a549b8bcb2569d04fbe073.png",
+      "name": "1厨，110平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 116.0,
+      "availableRoomNum": 10,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 631630710538311,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）3",
+          "buildShortName": "3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 721582613942341,
+          "evidenceName": "武房开预售[2025]246号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 168,
+          "soldNum": 158,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 724845798240325,
+      "img": "https://img.wufangtong.cn/ef7cb249157b405f850d02d1705456d1.png",
+      "name": "1厨，116平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 133.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 631630710538311,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）3",
+          "buildShortName": "3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 721582613942341,
+          "evidenceName": "武房开预售[2025]246号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 41,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 834203023311166,
+      "img": "https://img.wufangtong.cn/62e02fd1dab346debe4a34863b251cab.png",
+      "name": "1厨，133平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 631630710538311,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）3",
+          "buildShortName": "3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 721582613942341,
+          "evidenceName": "武房开预售[2025]246号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 41,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 834203023311167,
+      "img": "https://img.wufangtong.cn/2dec71132b7d4d11b0aa00f558bd84d0.png",
+      "name": "1厨，125平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 119.0,
+      "availableRoomNum": 13,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 13,
+          "buildId": 631630710538312,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）7",
+          "buildShortName": "7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 664181141372997,
+          "evidenceName": "武房开预售[2025]077号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 84,
+          "soldNum": 71,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 834203023315206,
+      "img": "https://img.wufangtong.cn/8c96603a8a9640f7bcb9128d9a783750.png",
+      "name": "1厨，119平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 631630710538312,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）7",
+          "buildShortName": "7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 664181141372997,
+          "evidenceName": "武房开预售[2025]077号",
+          "floorTotal": 45,
+          "oldUnitName": "1",
+          "roomTotal": 84,
+          "soldNum": 82,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 834203023315207,
+      "img": "https://img.wufangtong.cn/2f60b56313724775b0e418585e77b116.png",
+      "name": "1厨，143平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 128.0,
+      "availableRoomNum": 3,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 631630710538309,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 657103375892549,
+          "evidenceName": "武房开预售[2025]047号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 60,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 631630710538310,
+          "buildName": "新建居住项目（毛坦村城中村改造K6地块）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 664181141372997,
+          "evidenceName": "武房开预售[2025]077号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 62,
+          "soldNum": 61,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 834203023315209,
+      "img": "https://img.wufangtong.cn/75b836e65439411eac090f258d75fe9c.png",
+      "name": "1厨，128平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

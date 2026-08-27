@@ -1,0 +1,217 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503250387043,
+  "status": "complete",
+  "types": [
+    {
+      "area": 100.0,
+      "availableRoomNum": 34,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 34,
+          "buildId": 312488112287816,
+          "buildName": "汉阳区江城大道与汉阳大道交叉处A-2地块4、5",
+          "buildShortName": "24#,5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473929,
+          "evidenceName": "武房开预售[2021]800号",
+          "floorTotal": 54,
+          "oldUnitName": "5号楼",
+          "roomTotal": 34,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "5号楼"
+        }
+      ],
+      "effectImage": null,
+      "id": 337676179583045,
+      "img": "https://img.wufangtong.cn/4a94e22fc6ed4849b93a2b3a3ae8e330.png",
+      "name": "5栋100户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 137.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 367433661755493,
+      "img": "https://img.wufangtong.cn/e2d60d2d477b4cc1b15b55709e94c9d2.png",
+      "name": "5栋137户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 17,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 17,
+          "buildId": 312488112287816,
+          "buildName": "汉阳区江城大道与汉阳大道交叉处A-2地块4、5",
+          "buildShortName": "24#,5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473929,
+          "evidenceName": "武房开预售[2021]800号",
+          "floorTotal": 54,
+          "oldUnitName": "4号楼",
+          "roomTotal": 17,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "4号楼"
+        }
+      ],
+      "effectImage": null,
+      "id": 367433661755494,
+      "img": "https://img.wufangtong.cn/b874ae17d0254c30aedeb26510eafce9.png",
+      "name": "4栋125户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 135.0,
+      "availableRoomNum": 19,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 19,
+          "buildId": 312488112287816,
+          "buildName": "汉阳区江城大道与汉阳大道交叉处A-2地块4、5",
+          "buildShortName": "24#,5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473929,
+          "evidenceName": "武房开预售[2021]800号",
+          "floorTotal": 54,
+          "oldUnitName": "5号楼",
+          "roomTotal": 19,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "5号楼"
+        }
+      ],
+      "effectImage": null,
+      "id": 367433661755495,
+      "img": "https://img.wufangtong.cn/d11525acde784d58a805512c904fa056.png",
+      "name": "4栋135户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 137.0,
+      "availableRoomNum": 118,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 65,
+          "buildId": 312488112287816,
+          "buildName": "汉阳区江城大道与汉阳大道交叉处A-2地块4、5",
+          "buildShortName": "24#,5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473929,
+          "evidenceName": "武房开预售[2021]800号",
+          "floorTotal": 54,
+          "oldUnitName": "4号楼",
+          "roomTotal": 65,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "4号楼"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 53,
+          "buildId": 312488112287816,
+          "buildName": "汉阳区江城大道与汉阳大道交叉处A-2地块4、5",
+          "buildShortName": "24#,5#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311874740473929,
+          "evidenceName": "武房开预售[2021]800号",
+          "floorTotal": 54,
+          "oldUnitName": "5号楼",
+          "roomTotal": 53,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "5号楼"
+        }
+      ],
+      "effectImage": null,
+      "id": 367433661755496,
+      "img": "https://img.wufangtong.cn/270f98a173a342199bbd700359286b2f.png",
+      "name": "4栋137户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 150.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 585314653044830,
+      "img": "https://img.wufangtong.cn/97534a7b04ad4ad58a933eb1e3a692a4.png",
+      "name": "K2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 99.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 675333376696411,
+      "img": "https://img.wufangtong.cn/2c0387e265f344c28fd85c979e4482ed.png",
+      "name": "Q户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 137.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 675333376696412,
+      "img": "https://img.wufangtong.cn/b1d5386113664def9ab866f574826824.png",
+      "name": "L户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 139.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 675333376696414,
+      "img": "https://img.wufangtong.cn/fb8ddaef43244b328195573d1869eca0.png",
+      "name": "K1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 136.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 675333376696415,
+      "img": "https://img.wufangtong.cn/c4ff14c4658b4d5ab794d4c5b1c563bc.png",
+      "name": "P户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 131.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 840364896227608,
+      "img": "https://img.wufangtong.cn/229372a690854f64b883e775abc6346b.png",
+      "name": "1厨，131平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

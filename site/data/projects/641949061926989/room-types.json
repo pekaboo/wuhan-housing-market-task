@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 641949061926989,
+  "status": "complete",
+  "types": [
+    {
+      "area": 145.0,
+      "availableRoomNum": 54,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 30,
+          "buildId": 711603262038086,
+          "buildName": "新建居住、商业项目（汉阳渔场地块）4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 748761904803909,
+          "evidenceName": "武房开预售[2025]336号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 34,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 24,
+          "buildId": 711603262038087,
+          "buildName": "新建居住、商业项目（汉阳渔场地块）5",
+          "buildShortName": "5#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 786882774343749,
+          "evidenceName": "武房开预售[2026]041号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 34,
+          "soldNum": 10,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 642410171703397,
+      "img": "https://img.wufangtong.cn/5aa4a2d1a66d4722afff9e22bbb9a47d.png",
+      "name": "145平户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 21,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 11,
+          "buildId": 661370449113157,
+          "buildName": "新建居住、商业项目（汉阳渔场地块）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 667012313976901,
+          "evidenceName": "武房开预售[2025]087号",
+          "floorTotal": 28,
+          "oldUnitName": "1",
+          "roomTotal": 56,
+          "soldNum": 45,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 661370449113158,
+          "buildName": "新建居住、商业项目（汉阳渔场地块）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 667012313964613,
+          "evidenceName": "武房开预售[2025]088号",
+          "floorTotal": 34,
+          "oldUnitName": "1",
+          "roomTotal": 68,
+          "soldNum": 58,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 642410171703398,
+      "img": "https://img.wufangtong.cn/5a1e43b146064683a6565fed1dff2b87.png",
+      "name": "125平户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 125.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 717795865657421,
+      "img": "https://img.wufangtong.cn/18b4f609a2584a71a755b5212e1c7032.png",
+      "name": "1厨，125平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 99.0,
+      "availableRoomNum": 11,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 661370449113157,
+          "buildName": "新建居住、商业项目（汉阳渔场地块）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 667012313976901,
+          "evidenceName": "武房开预售[2025]087号",
+          "floorTotal": 28,
+          "oldUnitName": "1",
+          "roomTotal": 56,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 661370449113158,
+          "buildName": "新建居住、商业项目（汉阳渔场地块）2",
+          "buildShortName": "2#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 667012313964613,
+          "evidenceName": "武房开预售[2025]088号",
+          "floorTotal": 34,
+          "oldUnitName": "1",
+          "roomTotal": 68,
+          "soldNum": 62,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 826733050712356,
+      "img": "https://img.wufangtong.cn/676c219f9eaf4c82b0d2ba5191332f2e.png",
+      "name": "1厨，99平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

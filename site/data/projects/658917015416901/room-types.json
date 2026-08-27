@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 658917015416901,
+  "status": "complete",
+  "types": [
+    {
+      "area": 201.0,
+      "availableRoomNum": 6,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 666682405855301,
+          "buildName": "居住、商业项目A、G-1、G-2地块1",
+          "buildShortName": "1",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 671259048480837,
+          "evidenceName": "武房开预售[2025]110号",
+          "floorTotal": 25,
+          "oldUnitName": "1",
+          "roomTotal": 46,
+          "soldNum": 40,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 662955320516697,
+      "img": "https://img.wufangtong.cn/2b1985cdfcd94f9d99189d8f1e0bc0ce.png",
+      "name": "岭颂",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 161.0,
+      "availableRoomNum": 10,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 10,
+          "buildId": 666682405855310,
+          "buildName": "居住、商业项目A、G-1、G-2地块3",
+          "buildShortName": "3",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 671259048480837,
+          "evidenceName": "武房开预售[2025]110号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 34,
+          "soldNum": 24,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 755570829213788,
+      "img": "https://img.wufangtong.cn/8a8b989f6df14bbbb07145ac7ef03824.png",
+      "name": "1厨，152平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 160.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 666682405855309,
+          "buildName": "居住、商业项目A、G-1、G-2地块2",
+          "buildShortName": "2",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 671259048480837,
+          "evidenceName": "武房开预售[2025]110号",
+          "floorTotal": 20,
+          "oldUnitName": "1",
+          "roomTotal": 38,
+          "soldNum": 31,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 755570829213789,
+      "img": "https://img.wufangtong.cn/4f92c2cd77b34521824c8c35d9fb8c7c.png",
+      "name": "1厨，150平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}

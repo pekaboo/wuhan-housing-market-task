@@ -1,0 +1,381 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 467025054097483,
+  "status": "complete",
+  "types": [
+    {
+      "area": 83.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 472101811552325,
+      "img": "https://img.wufangtong.cn/627c494ca6584649a6775a3ec2ce46cc.png",
+      "name": "T1一5户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 74.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 491128225951813,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）1",
+          "buildShortName": "1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 44,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552327,
+      "img": "https://img.wufangtong.cn/f5458dcd94804231b4018ef9a4461f05.png",
+      "name": "T1一7户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 51.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 491128225951813,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）1",
+          "buildShortName": "1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 38,
+          "soldNum": 38,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552329,
+      "img": "https://img.wufangtong.cn/ad1c4b49b7b248dc99d639f7e3fd482e.png",
+      "name": "T1一10户型",
+      "roomLayout": "2室1厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 62.0,
+      "availableRoomNum": 3,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 3,
+          "buildId": 479823616839749,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 39,
+          "soldNum": 36,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552330,
+      "img": "https://img.wufangtong.cn/ba69b0001c2b4799ac7a2db1a27a81f8.png",
+      "name": "T2一2户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 80.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 472101811552331,
+      "img": "https://img.wufangtong.cn/6f48ba01237c473e81ca3cf193da78ad.png",
+      "name": "T2一3户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 68.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 479823616839749,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 87,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552332,
+      "img": "https://img.wufangtong.cn/fc5722c7e4674b7287eac95ec0c196a2.png",
+      "name": "T2一6户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 107.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 479823616839749,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 87,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552333,
+      "img": "https://img.wufangtong.cn/3e9d2362ee274f52be788c2a0cd6f67c.png",
+      "name": "T2一7户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 134.0,
+      "availableRoomNum": 38,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 38,
+          "buildId": 479823616839749,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 8,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552335,
+      "img": "https://img.wufangtong.cn/abd55fe122bb4dbab45c1a380700cfcd.png",
+      "name": "T2一10户型3室2厅1卫",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 79.0,
+      "availableRoomNum": 36,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 36,
+          "buildId": 479823616839749,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 10,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552336,
+      "img": "https://img.wufangtong.cn/4d95fb3198cb4663b4755cd638b207a4.png",
+      "name": "T2一8户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 145.0,
+      "availableRoomNum": 27,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 27,
+          "buildId": 479823616839749,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 19,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552337,
+      "img": "https://img.wufangtong.cn/43f026bb272e4e6dbf1a73f03b938cbe.png",
+      "name": "T2一1户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 99.0,
+      "availableRoomNum": 66,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 66,
+          "buildId": 491128225951813,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）1",
+          "buildShortName": "1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 472101811552338,
+      "img": "https://img.wufangtong.cn/65aed333cf0a489ba8d12917879015e7.png",
+      "name": "T1一4户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 84.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 491128225951813,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）1",
+          "buildShortName": "1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 92,
+          "soldNum": 87,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 755575885770861,
+      "img": "https://img.wufangtong.cn/4a0a2625bc0a47e295cec5db7a46d1b9.png",
+      "name": "1厨，84平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 94.0,
+      "availableRoomNum": 5,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 5,
+          "buildId": 491128225951813,
+          "buildName": "新建商业、商务、居住、防护绿地项目（一期）1",
+          "buildShortName": "1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 491127826124869,
+          "evidenceName": "武房开预售[2023]492号",
+          "floorTotal": 53,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 41,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 755575885770862,
+      "img": "https://img.wufangtong.cn/e333e54fb58f4ca6a0525e58bce7f5fd.png",
+      "name": "1厨，94平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 146.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 801753900466289,
+      "img": "https://img.wufangtong.cn/97d93623e6284b9680a31a7ef7de55c0.png",
+      "name": "1厨，146平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 138.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 801753900466290,
+      "img": "https://img.wufangtong.cn/8f88c4fb443646079aa4201de922816e.png",
+      "name": "1厨，138平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 133.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 801753900466291,
+      "img": "https://img.wufangtong.cn/c96b1a4c4eca43aa90abbe94d1702c83.png",
+      "name": "1厨，133平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

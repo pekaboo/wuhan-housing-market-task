@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503154651207,
+  "status": "complete",
+  "types": [
+    {
+      "area": 124.0,
+      "availableRoomNum": 70,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 70,
+          "buildId": 312477541040199,
+          "buildName": "新建居住项目（东风村城中村改造K4地块）3",
+          "buildShortName": "K4-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875125764182,
+          "evidenceName": "武房开预售[2022]123号",
+          "floorTotal": 38,
+          "oldUnitName": "/",
+          "roomTotal": 70,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337587839311941,
+      "img": "https://img.wufangtong.cn/602263cc70e947f9bce64c322deb94bd.png",
+      "name": "B户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 109.0,
+      "availableRoomNum": 70,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 70,
+          "buildId": 312477541040199,
+          "buildName": "新建居住项目（东风村城中村改造K4地块）3",
+          "buildShortName": "K4-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875125764182,
+          "evidenceName": "武房开预售[2022]123号",
+          "floorTotal": 38,
+          "oldUnitName": "/",
+          "roomTotal": 70,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337587839311942,
+      "img": "https://img.wufangtong.cn/f0bf227d46264edb8ee81b4821e9e7a5.png",
+      "name": "A户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

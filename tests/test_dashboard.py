@@ -286,5 +286,30 @@ class TestSinglePageSite(unittest.TestCase):
             self.assertEqual(snapshot['generatedAt'], '2026-08-27 08:00:00')
 
 
+    def test_writes_incremental_enrichment_progress_for_the_next_action_run(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            site_dir = Path(temporary_directory)
+            state = {
+                'version': 1,
+                'nextIndex': 4,
+                'batchSize': 2,
+                'lastBatchProjectIds': [3, 4],
+            }
+
+            write_site(
+                [project(1, '壹号院'), project(2, '江岸府')],
+                site_dir=site_dir,
+                generated_at='2026-08-27 08:00:00',
+                enrichment_state=state,
+            )
+
+            saved = json.loads((site_dir / 'data' / 'enrichment-state.json').read_text(encoding='utf-8'))
+            self.assertEqual(saved['version'], 1)
+            self.assertEqual(saved['nextIndex'], 4)
+            self.assertEqual(saved['batchSize'], 2)
+            self.assertEqual(saved['lastBatchProjectIds'], [3, 4])
+            self.assertEqual(saved['lastRunAt'], '2026-08-27 08:00:00')
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,181 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503298535526,
+  "status": "complete",
+  "types": [
+    {
+      "area": 137.0,
+      "availableRoomNum": 9,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 9,
+          "buildId": 312482258800709,
+          "buildName": "居住项目(嘉兴园)3号",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115025,
+          "evidenceName": "武房开预售[2021]067号",
+          "floorTotal": 34,
+          "oldUnitName": "1",
+          "roomTotal": 34,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 441393415290966,
+      "img": "https://img.wufangtong.cn/62cd78152b7646789e1cf50e8fed10d6.png",
+      "name": "A户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 124.0,
+      "availableRoomNum": 14,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 14,
+          "buildId": 312482258800709,
+          "buildName": "居住项目(嘉兴园)3号",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115025,
+          "evidenceName": "武房开预售[2021]067号",
+          "floorTotal": 34,
+          "oldUnitName": "1",
+          "roomTotal": 67,
+          "soldNum": 53,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 441393415290967,
+      "img": "https://img.wufangtong.cn/eac8f511469c41879bec42d567144ca7.png",
+      "name": "B户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 77.0,
+      "availableRoomNum": 6,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 6,
+          "buildId": 312482258800709,
+          "buildName": "居住项目(嘉兴园)3号",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115025,
+          "evidenceName": "武房开预售[2021]067号",
+          "floorTotal": 34,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 441393415290969,
+      "img": "https://img.wufangtong.cn/137beb572d4a4ff6b7b79afc074ec455.png",
+      "name": "D户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 104.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 312482258800709,
+          "buildName": "居住项目(嘉兴园)3号",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115025,
+          "evidenceName": "武房开预售[2021]067号",
+          "floorTotal": 34,
+          "oldUnitName": "3",
+          "roomTotal": 33,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "3"
+        }
+      ],
+      "effectImage": null,
+      "id": 441393415290971,
+      "img": "https://img.wufangtong.cn/30c8de35959049d3825e417ac635a326.png",
+      "name": "F户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 81.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 312482258800709,
+          "buildName": "居住项目(嘉兴园)3号",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115025,
+          "evidenceName": "武房开预售[2021]067号",
+          "floorTotal": 34,
+          "oldUnitName": "3",
+          "roomTotal": 33,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "3"
+        }
+      ],
+      "effectImage": null,
+      "id": 747226932244594,
+      "img": "https://img.wufangtong.cn/b2c78e3be1314b03a123abc7ae9796e0.png",
+      "name": "1厨，81平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 117.0,
+      "availableRoomNum": 7,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 7,
+          "buildId": 312482258800709,
+          "buildName": "居住项目(嘉兴园)3号",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874460115025,
+          "evidenceName": "武房开预售[2021]067号",
+          "floorTotal": 34,
+          "oldUnitName": "2",
+          "roomTotal": 33,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 755658386387054,
+      "img": "https://img.wufangtong.cn/593eb36c6ca04bbe8b1db410d3187dfe.png",
+      "name": "1厨，117平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

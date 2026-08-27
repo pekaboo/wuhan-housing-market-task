@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334520358039642,
+  "status": "complete",
+  "types": [
+    {
+      "area": 172.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312487438839882,
+          "buildName": "唐家墩城中村改造K4地块3",
+          "buildShortName": "K4-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873185878095,
+          "evidenceName": "武房开预售[2018]757号",
+          "floorTotal": 55,
+          "oldUnitName": "/",
+          "roomTotal": 51,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337860720607301,
+      "img": "https://img.wufangtong.cn/9c26fc0d2642447ea6cd735b4be2aaf9.png",
+      "name": "C户型",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 142.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312487438839882,
+          "buildName": "唐家墩城中村改造K4地块3",
+          "buildShortName": "K4-3#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873185878095,
+          "evidenceName": "武房开预售[2018]757号",
+          "floorTotal": 55,
+          "oldUnitName": "/",
+          "roomTotal": 50,
+          "soldNum": 50,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312487438839884,
+          "buildName": "唐家墩城中村改造K4地块4",
+          "buildShortName": "K4-4#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873185878095,
+          "evidenceName": "武房开预售[2018]757号",
+          "floorTotal": 55,
+          "oldUnitName": "/",
+          "roomTotal": 102,
+          "soldNum": 102,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312487438839887,
+          "buildName": "唐家墩城中村改造K4地块7",
+          "buildShortName": "K4-7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873185878095,
+          "evidenceName": "武房开预售[2018]757号",
+          "floorTotal": 47,
+          "oldUnitName": "/",
+          "roomTotal": 43,
+          "soldNum": 43,
+          "unitId": 0,
+          "unitName": "/"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312487438839888,
+          "buildName": "唐家墩城中村改造K4地块8",
+          "buildShortName": "K4-8#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311873185878095,
+          "evidenceName": "武房开预售[2018]757号",
+          "floorTotal": 47,
+          "oldUnitName": "/",
+          "roomTotal": 44,
+          "soldNum": 44,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 337860720607302,
+      "img": "https://img.wufangtong.cn/f96a7a697f0d4b21add1eec5ff75a5f2.png",
+      "name": "A户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

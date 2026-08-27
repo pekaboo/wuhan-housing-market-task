@@ -1,0 +1,157 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 334503227465836,
+  "status": "complete",
+  "types": [
+    {
+      "area": 110.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312482078154824,
+          "buildName": "住宅楼（汉北玺园）4#-6#、9#-11#、17#-18#、20#-21#楼、幼儿园、配电房及开闭所项目18",
+          "buildShortName": "18#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874702454869,
+          "evidenceName": "武房开预售[2021]689号",
+          "floorTotal": 24,
+          "oldUnitName": "1",
+          "roomTotal": 46,
+          "soldNum": 45,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337656013037637,
+      "img": "https://img.wufangtong.cn/9e1e845b35254dc4b6b2efd76d393d61.png",
+      "name": "G户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 94.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312482078154824,
+          "buildName": "住宅楼（汉北玺园）4#-6#、9#-11#、17#-18#、20#-21#楼、幼儿园、配电房及开闭所项目18",
+          "buildShortName": "18#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874702454869,
+          "evidenceName": "武房开预售[2021]689号",
+          "floorTotal": 24,
+          "oldUnitName": "1",
+          "roomTotal": 46,
+          "soldNum": 45,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 337656013037638,
+      "img": "https://img.wufangtong.cn/138ce3aafac74afba29c3bef7003eae4.png",
+      "name": "B户型",
+      "roomLayout": "3室2厅1卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 114.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482078154827,
+          "buildName": "住宅楼（汉北玺园）4#-6#、9#-11#、17#-18#、20#-21#楼、幼儿园、配电房及开闭所项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874702454869,
+          "evidenceName": "武房开预售[2021]689号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 60,
+          "soldNum": 60,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 312482078154827,
+          "buildName": "住宅楼（汉北玺园）4#-6#、9#-11#、17#-18#、20#-21#楼、幼儿园、配电房及开闭所项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874702454869,
+          "evidenceName": "武房开预售[2021]689号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 60,
+          "soldNum": 58,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337656013037639,
+      "img": "https://img.wufangtong.cn/a6e6353083df4ccfbe2b04ac249ebfb1.png",
+      "name": "D户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 82.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482078154827,
+          "buildName": "住宅楼（汉北玺园）4#-6#、9#-11#、17#-18#、20#-21#楼、幼儿园、配电房及开闭所项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874702454869,
+          "evidenceName": "武房开预售[2021]689号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 60,
+          "soldNum": 60,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482078154827,
+          "buildName": "住宅楼（汉北玺园）4#-6#、9#-11#、17#-18#、20#-21#楼、幼儿园、配电房及开闭所项目4",
+          "buildShortName": "4#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311874702454869,
+          "evidenceName": "武房开预售[2021]689号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 60,
+          "soldNum": 60,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 337656013037640,
+      "img": "https://img.wufangtong.cn/d163c1796e6e4f239a3a78732787bcbf.png",
+      "name": "A户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    }
+  ]
+}

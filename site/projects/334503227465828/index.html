@@ -36,8 +36,476 @@
     </table>
   </div>
 </section>
-<section class="one-price empty" aria-label="一房一价">未获取一房一价数据</section>
-<section class="room-types empty" aria-label="户型图">未获取户型图数据</section>
+<section class="one-price" data-one-price-url="../../data/projects/334503227465828/one-price.json.gz" aria-labelledby="one-price-title">
+      <div class="one-price-head">
+        <div><h2 id="one-price-title">一房一价</h2><p>按预售证聚合房号、面积、单价、总价、销售与异常状态；支持明细表与真实楼层分布两种视图。</p></div>
+        <a href="../../data/projects/334503227465828/one-price.json.gz" download>JSON 明细</a>
+      </div>
+
+      <div class="one-price-summary" data-role="one-price-summary"><div class="one-price-metric "><span>预售证</span><strong>5</strong></div><div class="one-price-metric "><span>房源</span><strong>651</strong></div><div class="one-price-metric available"><span>可售</span><strong>58</strong></div><div class="one-price-metric sold"><span>已售</span><strong>593</strong></div><div class="one-price-metric abnormal"><span>异常</span><strong>0</strong></div></div>
+      <div class="room-controls">
+        <div class="view-switch" role="group" aria-label="一房一价视图">
+          <button type="button" data-role="view-mode" data-mode="table" aria-pressed="true">明细表</button>
+          <button type="button" data-role="view-mode" data-mode="floor" aria-pressed="false">楼层分布</button>
+        </div>
+        <label>预售证<select data-role="certificate-filter" aria-label="筛选预售证"><option value="all">全部预售证</option></select></label>
+        <label>楼栋<select data-role="building-filter" aria-label="筛选楼栋"><option value="all">全部楼栋</option></select></label>
+        <label>单元<select data-role="unit-filter" aria-label="筛选单元"><option value="all">全部单元</option></select></label>
+        <label>搜索<input data-role="room-search" type="search" placeholder="楼栋 / 单元 / 楼层 / 房号 / 户型" autocomplete="off"></label>
+        <div class="room-filters" role="group" aria-label="房源状态筛选">
+          <button type="button" data-role="room-filter" data-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-role="room-filter" data-filter="available" aria-pressed="false">可售</button>
+          <button type="button" data-role="room-filter" data-filter="sold" aria-pressed="false">已售</button>
+          <button type="button" data-role="room-filter" data-filter="abnormal" aria-pressed="false">异常</button>
+        </div>
+        <div class="numeric-filters" aria-label="价格筛选">
+          <label>单价下限<input data-role="price-min" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
+          <label>单价上限<input data-role="price-max" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
+          <label>总价下限<input data-role="total-min" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
+          <label>总价上限<input data-role="total-max" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
+        </div>
+      </div>
+      <p class="floor-note">楼层分布按楼栋从左到右、楼层从上到下整体排布；已售为红色，可售为绿色并展示单价、总价；可售房源相同单价使用同一色块。</p>
+      <div class="room-table-wrap">
+        <table class="room-table">
+          <caption class="sr-only">一房一价房源明细</caption>
+          <thead><tr><th>楼栋</th><th>单元</th><th>楼层</th><th>房号</th><th>户型</th><th>面积</th><th>单价</th><th>总价</th><th>状态</th><th>标记</th><th>交付</th></tr></thead>
+          <tbody data-role="room-results"><tr><td colspan="11" class="loading">正在载入房源明细…</td></tr></tbody>
+        </table>
+      </div>
+      <div class="floor-results" data-role="floor-results" hidden aria-live="polite"><p class="loading">正在载入楼层分布…</p></div>
+      <div class="room-foot"><p data-role="room-count" role="status" aria-live="polite">等待载入</p><button type="button" data-role="room-more" hidden>显示更多房源</button></div>
+      <div class="certificate-list"><article class="certificate-card">
+              <h3>武房开预售[2021]449号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>52</dd></div>
+                <div><dt>可售</dt><dd>36</dd></div>
+                <div><dt>已售</dt><dd>16</dd></div>
+                <div><dt>去化</dt><dd>0.3077</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]405号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>128</dd></div>
+                <div><dt>可售</dt><dd>9</dd></div>
+                <div><dt>已售</dt><dd>119</dd></div>
+                <div><dt>去化</dt><dd>0.9297</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2021]242号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>68</dd></div>
+                <div><dt>可售</dt><dd>1</dd></div>
+                <div><dt>已售</dt><dd>67</dd></div>
+                <div><dt>去化</dt><dd>0.9853</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]838号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>167</dd></div>
+                <div><dt>可售</dt><dd>6</dd></div>
+                <div><dt>已售</dt><dd>161</dd></div>
+                <div><dt>去化</dt><dd>0.9641</dd></div>
+              </dl>
+            </article><article class="certificate-card">
+              <h3>武房开预售[2020]691号</h3>
+              <dl>
+                <div><dt>房源</dt><dd>236</dd></div>
+                <div><dt>可售</dt><dd>6</dd></div>
+                <div><dt>已售</dt><dd>230</dd></div>
+                <div><dt>去化</dt><dd>0.9746</dd></div>
+              </dl>
+            </article></div>
+    </section>
+<section class="room-types" data-room-type-url="../../data/projects/334503227465828/room-types.json" aria-labelledby="room-types-title">
+      <div class="one-price-head">
+        <div><h2 id="room-types-title">户型图</h2><p>点击户型卡片查看大图、面积、可售数量与楼栋分布。</p></div>
+        <a href="../../data/projects/334503227465828/room-types.json" download>JSON 明细</a>
+      </div>
+
+      <div class="room-type-grid"><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-0" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/abcb8fd10a6c4cc8be9aafe1f02e52d1.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>125.00 ㎡ · 可售 9 套</span>
+                <span>C2户型</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-1" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/c9afb1f5c5fc4c63b0ae996effc2cf51.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>140.00 ㎡ · 可售 0 套</span>
+                <span>E户型</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-2" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/3a91c66c9ea74d04b680837e52ad2089.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>140.00 ㎡ · 可售 3 套</span>
+                <span>D户型</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-3" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/9247fd0c905e4b6caa39bc0cc6b3c8a9.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>125.00 ㎡ · 可售 6 套</span>
+                <span>C1户型</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-4" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/85d9dde041b640f2bd531befadf6ff15.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>105.00 ㎡ · 可售 2 套</span>
+                <span>A1户型</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-5" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/62b5d3ea671d4635b13436cd2806ba27.png" alt="0室 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>0室</strong>
+                <span>177.00 ㎡ · 可售 8 套</span>
+                <span>H户型联排别墅</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-6" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/7fd9c0c0de6640a797c0304f3dff3d17.png" alt="0室 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>0室</strong>
+                <span>147.00 ㎡ · 可售 0 套</span>
+                <span>G2户型联排别墅</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-7" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/aa96db3618584039888771aa6723967f.png" alt="0室 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>0室</strong>
+                <span>155.00 ㎡ · 可售 25 套</span>
+                <span>G1户型联排别墅</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-8" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/2e798f8baebd4da7b99ec838fe412fdb.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>160.00 ㎡ · 可售 0 套</span>
+                <span>1厨，160平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-9" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/dfd897fc4d694495b39a1bbe7c111740.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>115.00 ㎡ · 可售 0 套</span>
+                <span>1厨，115平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button></div>
+      <dialog id="room-type-dialog-0" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-0-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-0-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/abcb8fd10a6c4cc8be9aafe1f02e52d1.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>125.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>9 套</dd></div>
+                  <div><dt>编号</dt><dd>337652546146373</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>13#</strong>
+              <span>1 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 4 / 已售 30</span>
+            </li><li>
+              <strong>13#</strong>
+              <span>2 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 2 / 已售 32</span>
+            </li><li>
+              <strong>8#</strong>
+              <span>1 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 2 / 已售 32</span>
+            </li><li>
+              <strong>8#</strong>
+              <span>2 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 1 / 已售 33</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-1" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-1-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-1-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/c9afb1f5c5fc4c63b0ae996effc2cf51.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>140.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>337652546146375</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog><dialog id="room-type-dialog-2" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-2-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-2-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/3a91c66c9ea74d04b680837e52ad2089.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>140.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>3 套</dd></div>
+                  <div><dt>编号</dt><dd>337652546150469</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>11#</strong>
+              <span>2 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 1 / 已售 33</span>
+            </li><li>
+              <strong>12#</strong>
+              <span>1 单元 · 16 层 · 小高层</span>
+              <span>总 15 / 可售 0 / 已售 15</span>
+            </li><li>
+              <strong>12#</strong>
+              <span>2 单元 · 16 层 · 小高层</span>
+              <span>总 15 / 可售 2 / 已售 13</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-3" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-3-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-3-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/9247fd0c905e4b6caa39bc0cc6b3c8a9.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>125.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>6 套</dd></div>
+                  <div><dt>编号</dt><dd>337652546150470</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>10#</strong>
+              <span>2 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 1 / 已售 33</span>
+            </li><li>
+              <strong>14#</strong>
+              <span>/ 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 3 / 已售 31</span>
+            </li><li>
+              <strong>7#</strong>
+              <span>2 单元 · 11 层 · 洋房</span>
+              <span>总 11 / 可售 1 / 已售 10</span>
+            </li><li>
+              <strong>9#</strong>
+              <span>/ 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 1 / 已售 33</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-4" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-4-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-4-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/85d9dde041b640f2bd531befadf6ff15.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>105.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>2 套</dd></div>
+                  <div><dt>编号</dt><dd>337652546150472</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>10#</strong>
+              <span>1 单元 · 17 层 · 小高层</span>
+              <span>总 48 / 可售 0 / 已售 48</span>
+            </li><li>
+              <strong>11#</strong>
+              <span>1 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 0 / 已售 34</span>
+            </li><li>
+              <strong>14#</strong>
+              <span>/ 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 2 / 已售 32</span>
+            </li><li>
+              <strong>7#</strong>
+              <span>1 单元 · 11 层 · 洋房</span>
+              <span>总 22 / 可售 0 / 已售 22</span>
+            </li><li>
+              <strong>9#</strong>
+              <span>/ 单元 · 17 层 · 小高层</span>
+              <span>总 34 / 可售 0 / 已售 34</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-5" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-5-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-5-title">0室</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/62b5d3ea671d4635b13436cd2806ba27.png" alt="0室 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>177.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>0室</dd></div>
+                  <div><dt>可售</dt><dd>8 套</dd></div>
+                  <div><dt>编号</dt><dd>337652546150473</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>2#</strong>
+              <span>/ 单元 · 3 层 · 别墅</span>
+              <span>总 4 / 可售 4 / 已售 0</span>
+            </li><li>
+              <strong>3#</strong>
+              <span>/ 单元 · 3 层 · 别墅</span>
+              <span>总 4 / 可售 4 / 已售 0</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-6" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-6-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-6-title">0室</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/7fd9c0c0de6640a797c0304f3dff3d17.png" alt="0室 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>147.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>0室</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>367422520279145</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog><dialog id="room-type-dialog-7" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-7-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-7-title">0室</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/aa96db3618584039888771aa6723967f.png" alt="0室 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>155.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>0室</dd></div>
+                  <div><dt>可售</dt><dd>25 套</dd></div>
+                  <div><dt>编号</dt><dd>367422520279146</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>4#</strong>
+              <span>1 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 3 / 已售 0</span>
+            </li><li>
+              <strong>4#</strong>
+              <span>2 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 2 / 已售 1</span>
+            </li><li>
+              <strong>4#</strong>
+              <span>3 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 3 / 已售 0</span>
+            </li><li>
+              <strong>4#</strong>
+              <span>4 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 3 / 已售 0</span>
+            </li><li>
+              <strong>5#</strong>
+              <span>1 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 3 / 已售 0</span>
+            </li><li>
+              <strong>5#</strong>
+              <span>2 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 2 / 已售 1</span>
+            </li><li>
+              <strong>5#</strong>
+              <span>3 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 2 / 已售 1</span>
+            </li><li>
+              <strong>5#</strong>
+              <span>4 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 1 / 已售 2</span>
+            </li><li>
+              <strong>6#</strong>
+              <span>1 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 1 / 已售 2</span>
+            </li><li>
+              <strong>6#</strong>
+              <span>2 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 3 / 已售 0</span>
+            </li><li>
+              <strong>6#</strong>
+              <span>3 单元 · 4 层 · 别墅</span>
+              <span>总 3 / 可售 2 / 已售 1</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-8" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-8-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-8-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/2e798f8baebd4da7b99ec838fe412fdb.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>160.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>784371481272408</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog><dialog id="room-type-dialog-9" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-9-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-9-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/dfd897fc4d694495b39a1bbe7c111740.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>115.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>801806733381724</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>11#</strong>
+              <span>1 单元 · 17 层 · 小高层</span>
+              <span>总 17 / 可售 0 / 已售 17</span>
+            </li></ul>
+              </article>
+            </dialog>
+    </section>
 <details class="raw-data">
   <summary>完整原始 JSON</summary>
   <pre><code>{
@@ -59,7 +527,7 @@
           <span>抖音版销控图 · 2026-08-25</span>
         </a></section>
 <nav class="footer-nav" aria-label="项目导航"><a class="previous" href="../../projects/347277914910810/"><span>上一个楼盘</span><span>幸福湾·星语</span></a><a class="next" href="../../projects/689726184955981/"><span>下一个楼盘</span><span>汉阳·澍</span></a></nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 18:00:27；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 18:26:03；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 (function(){
@@ -269,7 +737,14 @@
     input.addEventListener('input',function(){bounds[pair[1]]=input.value===''?null:Number(input.value);if(input.value!==''&&!isFinite(bounds[pair[1]]))bounds[pair[1]]=null;limit=100;render()});
   });
   more.addEventListener('click',function(){limit+=200;render()});
-  fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()}).then(function(data){
+  function loadJSON(url){
+    if(!/\.json\.gz$/.test(url))return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()});
+    if(typeof DecompressionStream==='undefined')return Promise.reject(new Error('当前浏览器不支持解压静态 JSON'));
+    return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.arrayBuffer()}).then(function(buffer){
+      var stream=new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'));return new Response(stream).json();
+    });
+  }
+  loadJSON(url).then(function(data){
     if(data&&data.status&&data.status!=='complete')throw new Error(data.message||'接口返回错误');
     rooms=[];
     (data.certificates||[]).forEach(function(certificate){

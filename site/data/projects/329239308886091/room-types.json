@@ -1,0 +1,338 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 329239308886091,
+  "status": "complete",
+  "types": [
+    {
+      "area": 99.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482389864521,
+          "buildName": "新建居住项目(红桥村城中村改造K15地块)5",
+          "buildShortName": "K155#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 354556380700743,
+          "evidenceName": "武房开预售[2022]435号",
+          "floorTotal": 24,
+          "oldUnitName": "2",
+          "roomTotal": 27,
+          "soldNum": 27,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 357844618444902,
+      "img": "https://img.wufangtong.cn/00d6984a45e84273884f635fd739342b.png",
+      "name": "K15D2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 135.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482389864521,
+          "buildName": "新建居住项目(红桥村城中村改造K15地块)5",
+          "buildShortName": "K155#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 354556380700743,
+          "evidenceName": "武房开预售[2022]435号",
+          "floorTotal": 24,
+          "oldUnitName": "2",
+          "roomTotal": 9,
+          "soldNum": 9,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 357844618444903,
+      "img": "https://img.wufangtong.cn/5e2e4de370a348cb90f7271e66e86a71.png",
+      "name": "K15E1户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312482389864521,
+          "buildName": "新建居住项目(红桥村城中村改造K15地块)5",
+          "buildShortName": "K155#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 354556380700743,
+          "evidenceName": "武房开预售[2022]435号",
+          "floorTotal": 24,
+          "oldUnitName": "1",
+          "roomTotal": 42,
+          "soldNum": 42,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 357844618444904,
+      "img": "https://img.wufangtong.cn/90c244eb328945509cd8fb1bbc16bfc7.png",
+      "name": "K15E2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 88.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 312482389864520,
+          "buildName": "新建居住项目(红桥村城中村改造K15地块)4",
+          "buildShortName": "K154#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 354556380700742,
+          "evidenceName": "武房开预售[2022]436号",
+          "floorTotal": 58,
+          "oldUnitName": "/",
+          "roomTotal": 216,
+          "soldNum": 215,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 357844618444910,
+      "img": "https://img.wufangtong.cn/ab876bf2915e4a4a8b201afb1b97761c.png",
+      "name": "K15B2户型",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 141.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 399295962792041,
+      "img": "https://img.wufangtong.cn/a7f60838453840d188b27a9dc56dd63d.png",
+      "name": "B2户型",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 58.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 755585631449187,
+      "img": "https://img.wufangtong.cn/298152d23d964d80a6ad28266590882e.png",
+      "name": "1厨，58平米",
+      "roomLayout": "1室2厅1卫",
+      "sectionNum": 1
+    },
+    {
+      "area": 70.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 755585631449188,
+      "img": "https://img.wufangtong.cn/3d5be84ffdb54a8487fe73957e8ef034.png",
+      "name": "1厨，70平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 128.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 755585631449189,
+      "img": "https://img.wufangtong.cn/bf48a6b3fb4549c5ad93d2e3fa3f335f.png",
+      "name": "1厨，128平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 142.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312477551992903,
+          "buildName": "新建商业服务业 、居住项目（红桥村城中村改造K6地块）7",
+          "buildShortName": "K6-7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875110416464,
+          "evidenceName": "武房开预售[2022]089号",
+          "floorTotal": 55,
+          "oldUnitName": "/",
+          "roomTotal": 51,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 755585631449191,
+      "img": "https://img.wufangtong.cn/9d0b2f9199e94fdfb48fa0f5bb1f3dc2.png",
+      "name": "1厨，142平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 122.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312477551992902,
+          "buildName": "新建商业服务业 、居住项目（红桥村城中村改造K6地块）6",
+          "buildShortName": "K6-6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875110416464,
+          "evidenceName": "武房开预售[2022]089号",
+          "floorTotal": 24,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 46,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 755585631449192,
+      "img": "https://img.wufangtong.cn/b612ee4a9a9d4d6fb40ff032d5d61cee.png",
+      "name": "1厨，122平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 122.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 755585631449193,
+      "img": "https://img.wufangtong.cn/488913af0fc54ff48c2ae44d40331966.png",
+      "name": "1厨，122平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 105.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312477551992902,
+          "buildName": "新建商业服务业 、居住项目（红桥村城中村改造K6地块）6",
+          "buildShortName": "K6-6#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 311875110416464,
+          "evidenceName": "武房开预售[2022]089号",
+          "floorTotal": 24,
+          "oldUnitName": "/",
+          "roomTotal": 46,
+          "soldNum": 46,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 755585631449194,
+      "img": "https://img.wufangtong.cn/2f699d8c8ab245c5b06063657f8dcccf.png",
+      "name": "1厨，105平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 134.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 312477551992903,
+          "buildName": "新建商业服务业 、居住项目（红桥村城中村改造K6地块）7",
+          "buildShortName": "K6-7#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 311875110416464,
+          "evidenceName": "武房开预售[2022]089号",
+          "floorTotal": 55,
+          "oldUnitName": "/",
+          "roomTotal": 51,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 770182779363432,
+      "img": "https://img.wufangtong.cn/b2024ac2f1e0435abb614913fd1d323a.png",
+      "name": "1厨，134平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 141.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 801761030586467,
+      "img": "https://img.wufangtong.cn/8d62398c041b44e3817cf97f7e5ff830.png",
+      "name": "1厨，141平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 82.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 808490738626652,
+      "img": "https://img.wufangtong.cn/b11e2f9c204745b7b5a308985853cff3.png",
+      "name": "1厨，82平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    },
+    {
+      "area": 120.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 808490738626653,
+      "img": "https://img.wufangtong.cn/0d4d542c04cc4f29bc3f1a0b01954b31.png",
+      "name": "1厨，120平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 88.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 808490738626658,
+      "img": "https://img.wufangtong.cn/8e33da7885ad4a4db862b71d47a909aa.png",
+      "name": "1厨，88平米",
+      "roomLayout": "2室2厅1卫",
+      "sectionNum": 2
+    }
+  ]
+}

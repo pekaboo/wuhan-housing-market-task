@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 721728421519466,
+  "status": "complete",
+  "types": [
+    {
+      "area": 128.0,
+      "availableRoomNum": 42,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 14,
+          "buildId": 621703264202824,
+          "buildName": "A地块居住、中小学、公园绿地项目4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 722927868776517,
+          "evidenceName": "武房开预售[2025]257号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 18,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 28,
+          "buildId": 621703264202824,
+          "buildName": "A地块居住、中小学、公园绿地项目4",
+          "buildShortName": "4#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 722927868776517,
+          "evidenceName": "武房开预售[2025]257号",
+          "floorTotal": 17,
+          "oldUnitName": "2",
+          "roomTotal": 32,
+          "soldNum": 4,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 721746292514895,
+      "img": "https://img.wufangtong.cn/bfc1fcbe185a4caaa30a1b84396c2dfd.png",
+      "name": "1厨，128平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 117.0,
+      "availableRoomNum": 32,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 32,
+          "buildId": 621703264202823,
+          "buildName": "A地块居住、中小学、公园绿地项目3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 722927868792901,
+          "evidenceName": "武房开预售[2025]256号",
+          "floorTotal": 27,
+          "oldUnitName": "1",
+          "roomTotal": 52,
+          "soldNum": 20,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 735494054490189,
+      "img": "https://img.wufangtong.cn/a4e74c569b394adbb8315ba6f0ea6897.png",
+      "name": "1厨，117平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 117.0,
+      "availableRoomNum": 52,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 32,
+          "buildId": 621703264202821,
+          "buildName": "A地块居住、中小学、公园绿地项目1",
+          "buildShortName": "1#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 815570906865733,
+          "evidenceName": "武房开预售[2026]153号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 0,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 20,
+          "buildId": 621703264202822,
+          "buildName": "A地块居住、中小学、公园绿地项目2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 722927868792901,
+          "evidenceName": "武房开预售[2025]256号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 12,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 735494054490190,
+      "img": "https://img.wufangtong.cn/78ccf8a375d4425ba89b97966f79cbaf.png",
+      "name": "1厨，117平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 96.0,
+      "availableRoomNum": 26,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 22,
+          "buildId": 621703264202821,
+          "buildName": "A地块居住、中小学、公园绿地项目1",
+          "buildShortName": "1#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 815570906865733,
+          "evidenceName": "武房开预售[2026]153号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 10,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 4,
+          "buildId": 621703264202822,
+          "buildName": "A地块居住、中小学、公园绿地项目2",
+          "buildShortName": "2#",
+          "buildType": "小高层",
+          "buildTypeId": 3,
+          "evidenceId": 722927868792901,
+          "evidenceName": "武房开预售[2025]256号",
+          "floorTotal": 17,
+          "oldUnitName": "1",
+          "roomTotal": 32,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 735494054490192,
+      "img": "https://img.wufangtong.cn/7d65f3063ff54d87b7fada1cba9b7062.png",
+      "name": "1厨，96平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    },
+    {
+      "area": 97.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 621703264202823,
+          "buildName": "A地块居住、中小学、公园绿地项目3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 722927868792901,
+          "evidenceName": "武房开预售[2025]256号",
+          "floorTotal": 27,
+          "oldUnitName": "1",
+          "roomTotal": 52,
+          "soldNum": 51,
+          "unitId": 0,
+          "unitName": "1"
+        }
+      ],
+      "effectImage": null,
+      "id": 821732184936722,
+      "img": "https://img.wufangtong.cn/c649b0febfcc45e7a034e10e8ac7af1a.png",
+      "name": "1厨，97平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

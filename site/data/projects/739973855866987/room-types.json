@@ -1,0 +1,195 @@
+{
+  "generatedAt": "2026-08-27 18:26:03",
+  "projectId": 739973855866987,
+  "status": "complete",
+  "types": [
+    {
+      "area": 189.0,
+      "availableRoomNum": 2,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 2,
+          "buildId": 744862935760966,
+          "buildName": "新建居住、商业、交通枢纽、防护绿地项目（积玉桥站地块）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 748761904779333,
+          "evidenceName": "武房开预售[2025]338号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 28,
+          "soldNum": 26,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 752842984317016,
+      "img": "https://img.wufangtong.cn/68cda6981db543ada21535b419ea4f9c.png",
+      "name": "1厨，189平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 149.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 744862935760966,
+          "buildName": "新建居住、商业、交通枢纽、防护绿地项目（积玉桥站地块）2",
+          "buildShortName": "2#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 748761904779333,
+          "evidenceName": "武房开预售[2025]338号",
+          "floorTotal": 45,
+          "oldUnitName": "/",
+          "roomTotal": 55,
+          "soldNum": 55,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 752842984317018,
+      "img": "https://img.wufangtong.cn/a879ab4790c44f0db4cbeab7cd09e549.png",
+      "name": "1厨，149平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 189.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 752842984317019,
+      "img": "https://img.wufangtong.cn/11ab8a7e0eff48d0877d040a52bec7e2.png",
+      "name": "1厨，189平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 153.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 752842984317020,
+      "img": "https://img.wufangtong.cn/0e88a610434c44d88419bc00eb2ff25d.png",
+      "name": "1厨，153平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 153.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 774664957911133,
+      "img": "https://img.wufangtong.cn/cbdca8db83854db397badbc77594eafd.png",
+      "name": "1厨，153平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 143.0,
+      "availableRoomNum": 0,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 744862935760967,
+          "buildName": "新建居住、商业、交通枢纽、防护绿地项目（积玉桥站地块）3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 783428867498053,
+          "evidenceName": "武房开预售[2026]036号",
+          "floorTotal": 32,
+          "oldUnitName": "1",
+          "roomTotal": 24,
+          "soldNum": 24,
+          "unitId": 0,
+          "unitName": "1"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 0,
+          "buildId": 744862935760967,
+          "buildName": "新建居住、商业、交通枢纽、防护绿地项目（积玉桥站地块）3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 783428867498053,
+          "evidenceName": "武房开预售[2026]036号",
+          "floorTotal": 32,
+          "oldUnitName": "2",
+          "roomTotal": 28,
+          "soldNum": 28,
+          "unitId": 0,
+          "unitName": "2"
+        }
+      ],
+      "effectImage": null,
+      "id": 784565854462044,
+      "img": "https://img.wufangtong.cn/17e789b4ef3c42e7ab59eef3c6c221b9.png",
+      "name": "1厨，143平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 153.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 784565854462045,
+      "img": "https://img.wufangtong.cn/a18f6d2b8c4d4c9aa3b05094c53133f7.png",
+      "name": "1厨，153平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 189.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 784565854462046,
+      "img": "https://img.wufangtong.cn/73e0e977a5c5445db99d2aaaa993b5a3.png",
+      "name": "1厨，189平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 149.0,
+      "availableRoomNum": 1,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 1,
+          "buildId": 744862935760965,
+          "buildName": "新建居住、商业、交通枢纽、防护绿地项目（积玉桥站地块）1",
+          "buildShortName": "1#",
+          "buildType": "超高层",
+          "buildTypeId": 5,
+          "evidenceId": 748761904791621,
+          "evidenceName": "武房开预售[2025]337号",
+          "floorTotal": 52,
+          "oldUnitName": "/",
+          "roomTotal": 26,
+          "soldNum": 25,
+          "unitId": 0,
+          "unitName": "/"
+        }
+      ],
+      "effectImage": null,
+      "id": 819603232645220,
+      "img": "https://img.wufangtong.cn/b5b25c782590418292e6d63e28e85aa7.png",
+      "name": "1厨，149平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    }
+  ]
+}
