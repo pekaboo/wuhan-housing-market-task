@@ -18,7 +18,7 @@ permissions:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -48,7 +48,6 @@ jobs:
           python -m sale_dashboard \
             --site-output site \
             --page-size 50 \
-            --fetch-one-price \
             --room-page-size 500
 
       - name: Ensure token is absent from generated artifacts
