@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import math
 import os
 import re
 import shutil
@@ -76,7 +75,6 @@ def write_site(
     *,
     site_dir: Path | str,
     generated_at: str | None = None,
-    per_page: int = 6,
     now: datetime | None = None,
     one_price_snapshots: dict[Any, dict[str, Any]] | None = None,
     room_type_snapshots: dict[Any, dict[str, Any]] | None = None,
@@ -90,24 +88,16 @@ def write_site(
     snapshots = one_price_snapshots or {}
     room_snapshots = room_type_snapshots or {}
 
-    page_count = max(1, math.ceil(len(projects) / per_page))
     output_paths: list[Path] = []
-    for page_number in range(1, page_count + 1):
-        page_projects = projects[(page_number - 1) * per_page : page_number * per_page]
-        relative_path = Path('index.html') if page_number == 1 else Path('page', str(page_number), 'index.html')
-        _atomic_write(
-            root / relative_path,
-            render_html(
-                page_projects,
-                generated_at=timestamp,
-                summary_projects=projects,
-                current_page=page_number,
-                page_count=page_count,
-                root_prefix='' if page_number == 1 else '../../',
-                one_price_snapshots=snapshots or None,
-            ),
-        )
-        output_paths.append(relative_path)
+    _atomic_write(
+        root / 'index.html',
+        render_html(
+            projects,
+            generated_at=timestamp,
+            one_price_snapshots=snapshots or None,
+        ),
+    )
+    output_paths.append(Path('index.html'))
 
     for index, project in enumerate(projects):
         safe_id = safe_project_id(project, index)

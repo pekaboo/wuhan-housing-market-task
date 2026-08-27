@@ -30,11 +30,6 @@ def positive_int(value: str) -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Generate the Wuhan sale-control static dashboard')
     parser.add_argument('--site-output', default=os.getenv('WFT_SITE_OUTPUT', 'site'))
-    parser.add_argument(
-        '--projects-per-page',
-        type=positive_int,
-        default=int(os.getenv('WFT_PROJECTS_PER_PAGE', '6')),
-    )
     parser.add_argument('--api-url', default=os.getenv('WFT_API_URL', DEFAULT_API_URL))
     parser.add_argument('--city-id', default=os.getenv('WFT_CITY_ID', DEFAULT_CITY_ID))
     parser.add_argument('--page-size', type=positive_int, default=int(os.getenv('WFT_PAGE_SIZE', DEFAULT_PAGE_SIZE)))
@@ -110,12 +105,11 @@ def main() -> int:
     output_paths = write_site(
         projects,
         site_dir=Path(args.site_output),
-        per_page=args.projects_per_page,
         one_price_snapshots=one_price_snapshots,
         room_type_snapshots=room_type_snapshots,
         wangqian_snapshot=wangqian_snapshot,
     )
-    print(f'Generated {len(projects)} projects and {len(output_paths)} pages')
+    print(f'Generated {len(projects)} projects and {len(output_paths)} files')
     return 0
 
 

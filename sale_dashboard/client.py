@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 
 DEFAULT_API_URL = 'https://xcx.wufangtong.com/api/v1/data/GetLouPanSaleImages'
 DEFAULT_CITY_ID = '4201'
-DEFAULT_PAGE_SIZE = 10
+DEFAULT_PAGE_SIZE = 50
 DEFAULT_ROOM_PAGE_SIZE = 500
 DEFAULT_MAX_PAGES = 100
 DEFAULT_TIMEOUT_SECONDS = 20.0
@@ -136,7 +136,7 @@ class SaleApiClient:
                 key = project_id if project_id is not None else f'missing-id-{len(projects_by_id)}'
                 projects_by_id.setdefault(key, item)
 
-            if len(result) < self.page_size:
+            if not result:
                 return list(projects_by_id.values())
 
         raise SaleApiError(
@@ -164,6 +164,8 @@ class SaleApiClient:
             raise SaleApiError(f'Upstream API error on page {page_int}: {message}')
 
         result = payload.get('result')
+        if result is None:
+            return []
         if not isinstance(result, list):
             raise SaleApiError(f'Upstream API result is not a list on page {page_int}.')
 

@@ -39,12 +39,13 @@ class SequenceTransport:
 
 
 class TestSaleApiClient(unittest.TestCase):
-    def test_paginates_until_short_page_and_deduplicates_ids(self):
+    def test_paginates_past_short_pages_until_the_upstream_ends_and_deduplicates_ids(self):
         transport = SequenceTransport(
             [
                 {'result': [project(1, '壹号院'), project(2, '江岸府')], 'success': True, 'code': 0},
-                {'result': [project(3, '光谷项目'), project(1, '重复项目')], 'success': True, 'code': 0},
-                {'result': [project(4, '最后项目')], 'success': True, 'code': 0},
+                {'result': [project(3, '光谷项目')], 'success': True, 'code': 0},
+                {'result': [project(4, '最后项目'), project(1, '重复项目')], 'success': True, 'code': 0},
+                {'result': None, 'success': True, 'code': 0},
             ]
         )
         client = SaleApiClient(token=TOKEN, api_url=API_URL, page_size=2, transport=transport)
@@ -52,7 +53,7 @@ class TestSaleApiClient(unittest.TestCase):
         projects = client.fetch_all_projects()
 
         self.assertEqual([item['id'] for item in projects], [1, 2, 3, 4])
-        self.assertEqual([request.payload['pageInt'] for request in transport.requests], [1, 2, 3])
+        self.assertEqual([request.payload['pageInt'] for request in transport.requests], [1, 2, 3, 4])
         self.assertEqual(transport.requests[0].headers['wfTToken'], TOKEN)
         self.assertEqual(transport.requests[0].headers['X-City-Id'], '4201')
 
@@ -211,9 +212,8 @@ class TestWriteOutputs(unittest.TestCase):
             self.assertEqual(snapshot['generatedAt'], generated_at)
 
 
-
-class TestMultiPageSite(unittest.TestCase):
-    def test_generates_paginated_overview_and_every_project_detail_page(self):
+class TestSinglePageSite(unittest.TestCase):
+    def test_generates_one_overview_with_every_project_and_no_pager(self):
         projects = [
             project(1, '第一楼盘', soldNum=10, salePrice=10000),
             project(2, '第二楼盘', soldNum=20, salePrice=12000),
@@ -226,6 +226,8 @@ class TestMultiPageSite(unittest.TestCase):
                     {'img': 'https://img.example.test/5-new.png', 'time': '2026-08-27'},
                 ],
             },
+            project(6, '第六楼盘', soldNum=60, salePrice=16000),
+            project(7, '第七楼盘', soldNum=70, salePrice=17000),
         ]
 
         with tempfile.TemporaryDirectory() as temporary_directory:
@@ -237,44 +239,33 @@ class TestMultiPageSite(unittest.TestCase):
                 projects,
                 site_dir=site_dir,
                 generated_at='2026-08-27 08:00:00',
-                per_page=2,
             )
 
             self.assertEqual(
                 paths,
                 [
                     Path('index.html'),
-                    Path('page/2/index.html'),
-                    Path('page/3/index.html'),
                     Path('projects/1/index.html'),
                     Path('projects/2/index.html'),
                     Path('projects/3/index.html'),
                     Path('projects/4/index.html'),
                     Path('projects/5/index.html'),
+                    Path('projects/6/index.html'),
+                    Path('projects/7/index.html'),
                 ],
             )
             self.assertFalse((site_dir / 'stale').exists())
+            self.assertFalse((site_dir / 'page').exists())
 
-            first_page = (site_dir / 'index.html').read_text(encoding='utf-8')
-            second_page = (site_dir / 'page' / '2' / 'index.html').read_text(encoding='utf-8')
-            third_page = (site_dir / 'page' / '3' / 'index.html').read_text(encoding='utf-8')
+            overview = (site_dir / 'index.html').read_text(encoding='utf-8')
             fifth_detail = (site_dir / 'projects' / '5' / 'index.html').read_text(encoding='utf-8')
 
-            self.assertIn('第一楼盘', first_page)
-            self.assertIn('第二楼盘', first_page)
-            self.assertNotIn('第三楼盘', first_page)
-            self.assertIn('href="page/2/"', first_page)
-            self.assertIn('aria-current="page"', first_page)
-
-            self.assertIn('第三楼盘', second_page)
-            self.assertIn('第四楼盘', second_page)
-            self.assertNotIn('第五楼盘', second_page)
-            self.assertIn('href="../3/"', second_page)
-            self.assertIn('href="../../projects/3/"', second_page)
-
-            self.assertIn('第五楼盘', third_page)
-            self.assertIn('href="../../projects/5/"', third_page)
-            self.assertIn('第 3 / 3 页', third_page)
+            for name in ('第一楼盘', '第二楼盘', '第三楼盘', '第四楼盘', '第五楼盘', '第六楼盘', '第七楼盘'):
+                self.assertIn(name, overview)
+            self.assertNotIn('class="pager"', overview)
+            self.assertNotIn('楼盘分页', overview)
+            self.assertNotIn('aria-current="page"', overview)
+            self.assertIn('href="projects/5/"', overview)
 
             self.assertIn('第五楼盘', fifth_detail)
             self.assertIn('https://img.example.test/5-old.png', fifth_detail)
@@ -283,7 +274,7 @@ class TestMultiPageSite(unittest.TestCase):
             self.assertIn('全部销控图', fifth_detail)
 
             snapshot = json.loads((site_dir / 'data' / 'sale-data.json').read_text(encoding='utf-8'))
-            self.assertEqual(snapshot['count'], 5)
+            self.assertEqual(snapshot['count'], 7)
             self.assertEqual(snapshot['generatedAt'], '2026-08-27 08:00:00')
 
 

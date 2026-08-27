@@ -2,8 +2,7 @@
 
 这个仓库每天 **08:00（Asia/Shanghai）** 调用五房通生产接口，拉取武汉全部在售楼盘销控数据，生成：
 
-- `site/index.html` — 第 1 页生产仪表盘
-- `site/page/2/`、`site/page/3/` … — 后续楼盘分页
+- `site/index.html` — 包含全部楼盘的单页生产仪表盘
 - `site/projects/{id}/` — 每个楼盘独立详情页，包含全部字段、原始 JSON、标准销控图、抖音版销控图、历史销控图、可放大查看的户型图与“一房一价”房号明细
 - `site/wangqian/` — 昨日网签楼盘与房号变化
 - `site/data/sale-data.json` — 楼盘原始生产数据快照
@@ -12,7 +11,7 @@
 - `site/data/wangqian/{date}.json` — 昨日网签原始快照
 - GitHub Pages 生产站点
 
-概览卡片直接展开“全部字段”表格并支持全字段搜索；页面包含最新销控图、已售套数、均价、分页、排序、暗色模式和响应式布局。未来上游新增字段会自动显示，无需修改模板。
+概览卡片直接展开“全部字段”表格并支持全字段搜索；页面包含最新销控图、已售套数、均价、排序、暗色模式和响应式布局。未来上游新增字段会自动显示，无需修改模板。
 
 ## 架构
 
@@ -42,7 +41,7 @@ python3 -m venv .venv
 export WFT_TOKEN='你的 wfTToken'
 .venv/bin/python -m sale_dashboard \
   --site-output site \
-  --projects-per-page 6 \
+  --page-size 50 \
   --fetch-one-price \
   --room-page-size 500
 ```
@@ -53,13 +52,12 @@ export WFT_TOKEN='你的 wfTToken'
 |---|---|---|
 | `--api-url` | `WFT_API_URL` | 五房通 `GetLouPanSaleImages` |
 | `--city-id` | `WFT_CITY_ID` | `4201` |
-| `--page-size` | `WFT_PAGE_SIZE` | `10` |
+| `--page-size` | `WFT_PAGE_SIZE` | `50` |
 | `--room-page-size` | `WFT_ROOM_PAGE_SIZE` | `500` |
 | `--fetch-one-price` | 无 | 关闭；开启后补齐户型图、一房一价与昨日网签 |
 | `--max-pages` | `WFT_MAX_PAGES` | `100` |
 | `--timeout` | `WFT_REQUEST_TIMEOUT_SECONDS` | `20` |
 | `--site-output` | `WFT_SITE_OUTPUT` | `site` |
-| `--projects-per-page` | `WFT_PROJECTS_PER_PAGE` | `6` |
 
 ## GitHub 配置
 
@@ -73,7 +71,7 @@ export WFT_TOKEN='你的 wfTToken'
 
 ## 可靠性与安全
 
-- 逐页请求；当返回数量小于 `page_size` 时停止。
+- 逐页请求；短页不代表结束，直到上游返回空列表或 `null` 才停止，并按楼盘 ID 去重。
 - 使用 `max_pages` 防止上游异常导致无限分页。
 - 项目按 `id` 去重，避免分页期间数据移动造成重复。
 - HTML 对项目名、预售证名、房号、地址、图片地址等做 HTML 转义；房号表由 DOM API 渲染，避免二次注入。
@@ -88,7 +86,7 @@ export WFT_TOKEN='你的 wfTToken'
 .venv/bin/pytest -q
 ```
 
-测试覆盖分页停止条件、去重、上游错误、安全转义、历史图列表选择、全字段动态展示、双销控图、原始 JSON、多页 HTML 生成和 JSON 原子输出。
+测试覆盖分页停止条件、去重、上游错误、安全转义、历史图列表选择、全字段动态展示、双销控图、原始 JSON、单页 HTML 生成和 JSON 原子输出。
 
 ## 一房一价接口链路
 
