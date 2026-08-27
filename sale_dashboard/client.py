@@ -179,6 +179,16 @@ class SaleApiClient:
             raise SaleApiError(f'Upstream presale certificate result is not a list for project {project_id}.')
         return result
 
+    def fetch_room_types(self, project_id: int | str) -> list[dict[str, Any]]:
+        result = self._post(
+            'GetLouPanRoomType',
+            {'houseid': project_id},
+            context=f'room types for project {project_id}',
+        )
+        if not isinstance(result, list):
+            raise SaleApiError(f'Upstream room type result is not a list for project {project_id}.')
+        return result
+
     def fetch_room_items(self, project_id: int | str, evidence_id: int | str) -> list[dict[str, Any]]:
         rooms: list[dict[str, Any]] = []
         observed_pages: int | None = None

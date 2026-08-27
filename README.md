@@ -4,10 +4,11 @@
 
 - `site/index.html` — 第 1 页生产仪表盘
 - `site/page/2/`、`site/page/3/` … — 后续楼盘分页
-- `site/projects/{id}/` — 每个楼盘独立详情页，包含全部字段、原始 JSON、标准销控图、抖音版销控图、历史销控图与“一房一价”房号明细
+- `site/projects/{id}/` — 每个楼盘独立详情页，包含全部字段、原始 JSON、标准销控图、抖音版销控图、历史销控图、可放大查看的户型图与“一房一价”房号明细
 - `site/wangqian/` — 昨日网签楼盘与房号变化
 - `site/data/sale-data.json` — 楼盘原始生产数据快照
 - `site/data/projects/{id}/one-price.json` — 预售证与房号级一房一价快照
+- `site/data/projects/{id}/room-types.json` — 户型图、户型、面积与楼栋分布快照
 - `site/data/wangqian/{date}.json` — 昨日网签原始快照
 - GitHub Pages 生产站点
 
@@ -19,6 +20,7 @@
 GitHub Actions schedule (00:00 UTC = 08:00 CST)
   → pytest
   → Python 标准库分页请求 GetLouPanSaleImages
+  → 每个楼盘请求 GetLouPanRoomType 获取户型图
   → 每个楼盘请求 GetLouPanPreSaleCertificates
   → 每张预售证分页请求 GetLouPanRoomItems
   → 请求 GetWangQianHouseData 获取昨日网签
@@ -53,7 +55,7 @@ export WFT_TOKEN='你的 wfTToken'
 | `--city-id` | `WFT_CITY_ID` | `4201` |
 | `--page-size` | `WFT_PAGE_SIZE` | `10` |
 | `--room-page-size` | `WFT_ROOM_PAGE_SIZE` | `500` |
-| `--fetch-one-price` | 无 | 关闭；开启后补齐一房一价与昨日网签 |
+| `--fetch-one-price` | 无 | 关闭；开启后补齐户型图、一房一价与昨日网签 |
 | `--max-pages` | `WFT_MAX_PAGES` | `100` |
 | `--timeout` | `WFT_REQUEST_TIMEOUT_SECONDS` | `20` |
 | `--site-output` | `WFT_SITE_OUTPUT` | `site` |
@@ -93,8 +95,9 @@ export WFT_TOKEN='你的 wfTToken'
 | 步骤 | 接口 | 输入 | 展示用途 |
 |---|---|---|---|
 | 1 | `GetLouPanSaleImages` | 城市 ID 分页 | 楼盘列表、销控图、总览 KPI |
-| 2 | `GetLouPanPreSaleCertificates` | 楼盘 `id` | 预售证编号、房源/已售/可售/去化摘要 |
-| 3 | `GetLouPanRoomItems` | 楼盘 `id` + 预售证 `id` 作为 `evidenceId` | 楼栋、单元、楼层、房号、户型、面积、单价、总价、交付与状态 |
-| 4 | `GetWangQianHouseData` | 昨日日期分页 | 昨日网签总量、楼盘变化与房号明细 |
+| 2 | `GetLouPanRoomType` | 楼盘 `id` 作为 `houseid` | 户型图、面积、户型、可售数量、楼栋分布；点击卡片弹出大图 |
+| 3 | `GetLouPanPreSaleCertificates` | 楼盘 `id` | 预售证编号、房源/已售/可售/去化摘要 |
+| 4 | `GetLouPanRoomItems` | 楼盘 `id` + 预售证 `id` 作为 `evidenceId` | 楼栋、单元、楼层、房号、户型、面积、单价、总价、交付与状态 |
+| 5 | `GetWangQianHouseData` | 昨日日期分页 | 昨日网签总量、楼盘变化与房号明细 |
 
 房号状态按上游枚举展示：`saleStatus=1` 为已售，`saleStatus=2` 为可售；`abnormalStatus=1` 追加“异常”标记。

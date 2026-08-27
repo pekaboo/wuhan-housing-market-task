@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-27 14:21:29",
+  "projectId": 334503202558026,
+  "status": "complete",
+  "types": [
+    {
+      "area": 135.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 337629631144005,
+      "img": "https://img.wufangtong.cn/07a487258e804fa1b53da2c01cc015ac.png",
+      "name": "建面约135",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 105.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 784360798019687,
+      "img": "https://img.wufangtong.cn/248c65e750144527bd0d860974aca375.png",
+      "name": "1厨，105平米",
+      "roomLayout": "3室2厅2卫",
+      "sectionNum": 3
+    }
+  ]
+}

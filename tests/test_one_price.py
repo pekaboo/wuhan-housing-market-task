@@ -221,3 +221,19 @@ def test_site_writes_one_price_json_detail_ui_and_wangqian_page(tmp_path):
     assert '昨日网签' in wangqian_page
     assert 'href="../projects/123/"' in wangqian_page
     assert wangqian_data['totalSoldNum'] == 1
+
+
+def test_site_renders_one_price_error_and_room_types_without_crashing(tmp_path):
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
+        site_dir=site_dir,
+        generated_at='2026-08-27 14:00:00',
+        one_price_snapshots={123: {'status': 'error', 'message': 'Upstream unavailable', 'certificates': []}},
+        room_type_snapshots={123: {'status': 'complete', 'types': []}},
+    )
+
+    detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
+    assert '接口获取失败：Upstream unavailable' in detail
+    assert '户型图' in detail

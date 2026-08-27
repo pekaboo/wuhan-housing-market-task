@@ -1,0 +1,139 @@
+{
+  "generatedAt": "2026-08-27 14:21:29",
+  "projectId": 756992061558853,
+  "status": "complete",
+  "types": [
+    {
+      "area": 200.0,
+      "availableRoomNum": 76,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 22,
+          "buildId": 752308546019408,
+          "buildName": "华美饲料地块及青山滨江西片F地块（邦泰·璟和）8",
+          "buildShortName": "8#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 763625768644677,
+          "evidenceName": "武房开预售[2026]009号",
+          "floorTotal": 29,
+          "oldUnitName": "一",
+          "roomTotal": 56,
+          "soldNum": 34,
+          "unitId": 0,
+          "unitName": "一"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 54,
+          "buildId": 752308546019409,
+          "buildName": "华美饲料地块及青山滨江西片F地块（邦泰·璟和）9",
+          "buildShortName": "9#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 813091570667589,
+          "evidenceName": "武房开预售[2026]143号",
+          "floorTotal": 29,
+          "oldUnitName": "一",
+          "roomTotal": 56,
+          "soldNum": 2,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 769076352684101,
+      "img": "https://img.wufangtong.cn/e3239849c5a3493487e421740205b525.png",
+      "name": "1厨，200平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 171.0,
+      "availableRoomNum": 62,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 20,
+          "buildId": 752308546019403,
+          "buildName": "华美饲料地块及青山滨江西片F地块（邦泰·璟和）3",
+          "buildShortName": "3#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 763625768661061,
+          "evidenceName": "武房开预售[2026]008号",
+          "floorTotal": 29,
+          "oldUnitName": "一",
+          "roomTotal": 56,
+          "soldNum": 36,
+          "unitId": 0,
+          "unitName": "一"
+        },
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 42,
+          "buildId": 752308546019405,
+          "buildName": "华美饲料地块及青山滨江西片F地块（邦泰·璟和）5",
+          "buildShortName": "5#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 799623420354629,
+          "evidenceName": "武房开预售[2026]088号",
+          "floorTotal": 29,
+          "oldUnitName": "一",
+          "roomTotal": 55,
+          "soldNum": 13,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 769076352684102,
+      "img": "https://img.wufangtong.cn/fc5abaa37b4346e087bc6abfeecf04bd.png",
+      "name": "1厨，171平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 140.0,
+      "availableRoomNum": 19,
+      "buildList": [
+        {
+          "abnormalRoomNum": 0,
+          "availableRoomNum": 19,
+          "buildId": 752308546015302,
+          "buildName": "华美饲料地块及青山滨江西片F地块（邦泰·璟和）1",
+          "buildShortName": "1#",
+          "buildType": "高层",
+          "buildTypeId": 4,
+          "evidenceId": 813091570692165,
+          "evidenceName": "武房开预售[2026]142号",
+          "floorTotal": 23,
+          "oldUnitName": "一",
+          "roomTotal": 42,
+          "soldNum": 23,
+          "unitId": 0,
+          "unitName": "一"
+        }
+      ],
+      "effectImage": null,
+      "id": 769076352684103,
+      "img": "https://img.wufangtong.cn/ba6d83ab7867443980d4448bf971eb90.png",
+      "name": "1厨，140平米",
+      "roomLayout": "4室2厅2卫",
+      "sectionNum": 4
+    },
+    {
+      "area": 171.0,
+      "availableRoomNum": 0,
+      "buildList": [],
+      "effectImage": null,
+      "id": 769076352684104,
+      "img": "https://img.wufangtong.cn/1b25234ddf564ccd810fcadd09548534.png",
+      "name": "1厨，171平米",
+      "roomLayout": "4室2厅3卫",
+      "sectionNum": 4
+    }
+  ]
+}

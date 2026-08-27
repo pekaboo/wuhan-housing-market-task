@@ -12,7 +12,7 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
     certificates = snapshot.get('certificates') if isinstance(snapshot, dict) else None
     certificates = certificates if isinstance(certificates, list) else []
     summary = summarize_public_one_price(snapshot or {})
-    if summary is None:
+    if summary is None or summary.get('status') == 'error':
         values = ('—', '—', '—', '—', '—')
     else:
         values = (

@@ -9,8 +9,8 @@
 <style>
 :root{--surface:#f4f7fb;--panel:#fff;--panel-soft:#eef3f9;--ink:#132233;--muted:#556879;--line:#d8e1ea;--brand:#0068a8;--brand-ink:#014d7d;--accent:#b98511;--focus:#2b7fd1;--shadow:0 12px 32px #17324d14}
 @media (prefers-color-scheme:dark){:root{--surface:#0a121b;--panel:#121d28;--panel-soft:#182633;--ink:#edf4fa;--muted:#a5b6c4;--line:#293b4a;--brand:#69b6e8;--brand-ink:#a9d8f6;--accent:#dfae4e;--focus:#8ccbf7;--shadow:0 12px 32px #00000059}}
-*{box-sizing:border-box}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}body{margin:0;background:var(--surface);color:var(--ink);font:15px/1.58 "Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}.shell{max-width:1120px;margin:0 auto;padding:0 clamp(15px,3vw,36px) 72px}.breadcrumb{display:flex;gap:9px;align-items:center;padding:26px 0 12px;color:var(--muted);font-size:13px}.breadcrumb a{color:var(--brand-ink);font-weight:750;text-decoration:none}.hero{padding:12px 0 22px;border-bottom:1px solid var(--line)}.eyebrow{display:flex;gap:8px;color:var(--brand-ink);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:2px;background:var(--accent)}h1{margin:8px 0 8px;font-size:clamp(28px,4.5vw,50px);line-height:1.05;letter-spacing:-.055em}.description{max-width:650px;margin:0;color:var(--muted)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0}.metric{padding:15px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;margin-top:3px;font-size:20px;letter-spacing:-.04em}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:0 0 22px;background:var(--panel-soft);border:1px solid var(--line);border-radius:18px;overflow:hidden}.fact{padding:14px 16px;background:var(--panel)}.fact span{display:block;color:var(--muted);font-size:11px}.fact strong{display:block;margin-top:3px;font-size:14px;overflow-wrap:anywhere}h2{margin:32px 0 13px;font-size:20px;letter-spacing:-.04em}.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:15px}.chart{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow);text-decoration:none}.chart img{display:block;width:100%;height:auto;background:var(--panel-soft)}.chart span{display:block;padding:11px 13px;color:var(--brand-ink);font-size:12px;font-weight:750}.field-panel{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.field-wrap{overflow-x:auto}.field-table{width:100%;min-width:430px;border-collapse:collapse;font-size:13px}.field-table tr{display:table-row}.field-table th,.field-table td{display:table-cell;padding:12px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top}.field-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px;white-space:nowrap}.field-table tbody th{min-width:150px;background:var(--panel);font-weight:750}.field-table tbody th span{display:block}.field-table tbody th code{display:block;margin-top:2px;color:var(--muted);font-size:11px;overflow-wrap:anywhere}.field-table td{min-width:220px;max-width:520px;background:var(--panel)}.field-table td span,.field-table td a{display:block;color:var(--ink);overflow-wrap:anywhere}.field-table td a{color:var(--brand-ink)}.raw-data{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink)}.raw-data summary{min-height:46px;padding:0 15px;color:var(--brand-ink);font-weight:800;cursor:pointer;list-style:none;line-height:46px}.raw-data summary::-webkit-details-marker{display:none}.raw-data pre{max-height:420px;margin:0;padding:15px;overflow:auto;border-top:1px solid var(--line);background:var(--panel-soft);font-size:12px;line-height:1.6}.empty{display:grid;min-height:230px;.empty{display:grid;min-height:230px;place-items:center;border:1px dashed var(--line);border-radius:18px;background:var(--panel);color:var(--muted)}.footer-nav{display:flex;justify-content:space-between;gap:10px;margin-top:30px}.footer-nav a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:190px;padding:14px 16px;border:1px solid var(--line);border-radius:15px;background:var(--panel);color:var(--ink);font-weight:750;text-decoration:none;box-shadow:var(--shadow)}.footer-nav span:first-child{color:var(--muted);font-size:11px}.footer-nav .next{margin-left:auto;text-align:right}.footer-nav a:hover{border-color:var(--brand)}:is(a,input,button):focus-visible{outline:3px solid var(--focus);outline-offset:3px}@media (max-width:760px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.facts{grid-template-columns:1fr}.footer-nav{align-items:stretch;flex-direction:column}.footer-nav a{width:100%}.footer-nav .next{text-align:left}}@media (max-width:430px){.metrics{grid-template-columns:1fr}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}}
-.one-price{overflow:hidden;margin:0 0 24px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.one-price.empty{display:grid;min-height:170px;place-items:center;color:var(--muted)}.one-price-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding:18px 18px 14px}.one-price-head h2{margin:0}.one-price-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.one-price-head a{display:inline-flex;min-height:36px;align-items:center;padding:0 12px;border-radius:10px;background:var(--panel-soft);color:var(--brand-ink);font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}.one-price-error{margin:0;padding:13px 18px;background:color-mix(in srgb,#b42318 10%,var(--panel));color:#b42318;font-weight:750}.one-price-note{margin:0;padding:14px 18px;color:var(--muted)}.one-price-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--panel-soft)}.one-price-metric{min-width:0;padding:13px;background:var(--panel)}.one-price-metric span{display:block;color:var(--muted);font-size:11px}.one-price-metric strong{display:block;margin-top:2px;font-size:21px;letter-spacing:-.045em}.one-price-metric.available strong{color:#137a4b}.one-price-metric.sold strong{color:#a35613}.one-price-metric.abnormal strong{color:#a33815}@media (prefers-color-scheme:dark){.one-price-metric.available strong{color:#75d9a5}.one-price-metric.sold strong{color:#f0b76a}.one-price-metric.abnormal strong{color:#ff9d7a}.one-price-error{background:#43110c;color:#ffab94}}.room-controls{display:grid;grid-template-columns:minmax(180px,230px) minmax(220px,1fr) auto;gap:9px;padding:13px 14px;border-top:1px solid var(--line);background:var(--panel-soft)}.room-controls label,.room-filters{display:flex;min-width:0;align-items:center;gap:7px;color:var(--muted);font-size:12px;font-weight:750}.room-controls select,.room-controls input{min-width:0;flex:1;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit;font-size:13px;outline:none}.room-filters{flex-wrap:nowrap;justify-content:flex-end;overflow:auto;scrollbar-width:none}.room-filters::-webkit-scrollbar{display:none}.room-filters button{height:38px;padding:0 10px;border:0;border-radius:10px;background:var(--panel);color:var(--muted);font:inherit;font-size:12px;font-weight:800;cursor:pointer}.room-filters button[aria-pressed=true]{background:var(--brand);color:#fff}@media (prefers-color-scheme:dark){.room-filters button[aria-pressed=true]{color:#07131d}}.room-table-wrap{overflow-x:auto;border-top:1px solid var(--line)}.room-table{width:100%;min-width:1030px;border-collapse:collapse;font-size:13px}.room-table th,.room-table td{padding:11px 13px;border-top:1px solid var(--line);text-align:left;vertical-align:top;white-space:nowrap}.room-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px}.room-table td.loading{color:var(--muted)}.status{display:inline-flex;height:24px;align-items:center;padding:0 8px;border-radius:999px;background:var(--panel-soft);color:var(--muted);font-size:11px;font-weight:800}.status.available{color:#137a4b;background:color-mix(in srgb,#137a4b 12%,var(--panel))}.status.sold{color:#a35613;background:color-mix(in srgb,#a35613 12%,var(--panel))}.status.abnormal{margin-left:5px;color:#a33815;background:color-mix(in srgb,#a33815 12%,var(--panel))}@media (prefers-color-scheme:dark){.status.available{color:#75d9a5}.status.sold{color:#f0b76a}.status.abnormal{color:#ff9d7a}}.room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.room-foot p{margin:0}.room-foot button{height:36px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-foot button{color:#07131d}}.certificate-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft);border-top:1px solid var(--line)}.certificate-card{min-width:0;padding:14px;background:var(--panel)}.certificate-card h3{margin:0 0 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.certificate-card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}.certificate-card div{min-width:0}.certificate-card dt{color:var(--muted);font-size:10px}.certificate-card dd{margin:2px 0 0;font-size:14px;font-weight:800}@media (max-width:760px){.one-price-head{align-items:start;flex-direction:column}.one-price-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.one-price-metric:last-child{grid-column:1/-1}.room-controls{grid-template-columns:1fr}.room-filters{justify-content:flex-start}.room-foot{align-items:stretch;flex-direction:column}.room-foot button{width:100%}.certificate-card dl{grid-template-columns:repeat(2,1fr)}}</style>
+*{box-sizing:border-box}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}body{margin:0;background:var(--surface);color:var(--ink);font:15px/1.58 "Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}.shell{max-width:1120px;margin:0 auto;padding:0 clamp(15px,3vw,36px) 72px}.breadcrumb{display:flex;gap:9px;align-items:center;padding:26px 0 12px;color:var(--muted);font-size:13px}.breadcrumb a{color:var(--brand-ink);font-weight:750;text-decoration:none}.hero{padding:12px 0 22px;border-bottom:1px solid var(--line)}.eyebrow{display:flex;gap:8px;color:var(--brand-ink);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:2px;background:var(--accent)}h1{margin:8px 0 8px;font-size:clamp(28px,4.5vw,50px);line-height:1.05;letter-spacing:-.055em}.description{max-width:650px;margin:0;color:var(--muted)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0}.metric{padding:15px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;margin-top:3px;font-size:20px;letter-spacing:-.04em}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:0 0 22px;background:var(--panel-soft);border:1px solid var(--line);border-radius:18px;overflow:hidden}.fact{padding:14px 16px;background:var(--panel)}.fact span{display:block;color:var(--muted);font-size:11px}.fact strong{display:block;margin-top:3px;font-size:14px;overflow-wrap:anywhere}h2{margin:32px 0 13px;font-size:20px;letter-spacing:-.04em}.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:15px}.chart{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow);text-decoration:none}.chart img{display:block;width:100%;height:auto;background:var(--panel-soft)}.chart span{display:block;padding:11px 13px;color:var(--brand-ink);font-size:12px;font-weight:750}.field-panel{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.field-wrap{overflow-x:auto}.field-table{width:100%;min-width:430px;border-collapse:collapse;font-size:13px}.field-table tr{display:table-row}.field-table th,.field-table td{display:table-cell;padding:12px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top}.field-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px;white-space:nowrap}.field-table tbody th{min-width:150px;background:var(--panel);font-weight:750}.field-table tbody th span{display:block}.field-table tbody th code{display:block;margin-top:2px;color:var(--muted);font-size:11px;overflow-wrap:anywhere}.field-table td{min-width:220px;max-width:520px;background:var(--panel)}.field-table td span,.field-table td a{display:block;color:var(--ink);overflow-wrap:anywhere}.field-table td a{color:var(--brand-ink)}.raw-data{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink)}.raw-data summary{min-height:46px;padding:0 15px;color:var(--brand-ink);font-weight:800;cursor:pointer;list-style:none;line-height:46px}.raw-data summary::-webkit-details-marker{display:none}.raw-data pre{max-height:420px;margin:0;padding:15px;overflow:auto;border-top:1px solid var(--line);background:var(--panel-soft);font-size:12px;line-height:1.6}.empty{display:grid;min-height:230px;place-items:center;border:1px dashed var(--line);border-radius:18px;background:var(--panel);color:var(--muted)}.footer-nav{display:flex;justify-content:space-between;gap:10px;margin-top:30px}.footer-nav a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:190px;padding:14px 16px;border:1px solid var(--line);border-radius:15px;background:var(--panel);color:var(--ink);font-weight:750;text-decoration:none;box-shadow:var(--shadow)}.footer-nav span:first-child{color:var(--muted);font-size:11px}.footer-nav .next{margin-left:auto;text-align:right}.footer-nav a:hover{border-color:var(--brand)}:is(a,input,button):focus-visible{outline:3px solid var(--focus);outline-offset:3px}@media (max-width:760px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.facts{grid-template-columns:1fr}.footer-nav{align-items:stretch;flex-direction:column}.footer-nav a{width:100%}.footer-nav .next{text-align:left}}@media (max-width:430px){.metrics{grid-template-columns:1fr}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}}
+.one-price{overflow:hidden;margin:0 0 24px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.one-price.empty{display:grid;min-height:170px;place-items:center;color:var(--muted)}.one-price-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding:18px 18px 14px}.one-price-head h2{margin:0}.one-price-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.one-price-head a{display:inline-flex;min-height:36px;align-items:center;padding:0 12px;border-radius:10px;background:var(--panel-soft);color:var(--brand-ink);font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}.one-price-error{margin:0;padding:13px 18px;background:color-mix(in srgb,#b42318 10%,var(--panel));color:#b42318;font-weight:750}.one-price-note{margin:0;padding:14px 18px;color:var(--muted)}.one-price-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--panel-soft)}.one-price-metric{min-width:0;padding:13px;background:var(--panel)}.one-price-metric span{display:block;color:var(--muted);font-size:11px}.one-price-metric strong{display:block;margin-top:2px;font-size:21px;letter-spacing:-.045em}.one-price-metric.available strong{color:#137a4b}.one-price-metric.sold strong{color:#a35613}.one-price-metric.abnormal strong{color:#a33815}@media (prefers-color-scheme:dark){.one-price-metric.available strong{color:#75d9a5}.one-price-metric.sold strong{color:#f0b76a}.one-price-metric.abnormal strong{color:#ff9d7a}.one-price-error{background:#43110c;color:#ffab94}}.room-controls{display:grid;grid-template-columns:minmax(180px,230px) minmax(220px,1fr) auto;gap:9px;padding:13px 14px;border-top:1px solid var(--line);background:var(--panel-soft)}.room-controls label,.room-filters{display:flex;min-width:0;align-items:center;gap:7px;color:var(--muted);font-size:12px;font-weight:750}.room-controls select,.room-controls input{min-width:0;flex:1;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit;font-size:13px;outline:none}.room-filters{flex-wrap:nowrap;justify-content:flex-end;overflow:auto;scrollbar-width:none}.room-filters::-webkit-scrollbar{display:none}.room-filters button{height:38px;padding:0 10px;border:0;border-radius:10px;background:var(--panel);color:var(--muted);font:inherit;font-size:12px;font-weight:800;cursor:pointer}.room-filters button[aria-pressed=true]{background:var(--brand);color:#fff}@media (prefers-color-scheme:dark){.room-filters button[aria-pressed=true]{color:#07131d}}.room-table-wrap{overflow-x:auto;border-top:1px solid var(--line)}.room-table{width:100%;min-width:1030px;border-collapse:collapse;font-size:13px}.room-table th,.room-table td{padding:11px 13px;border-top:1px solid var(--line);text-align:left;vertical-align:top;white-space:nowrap}.room-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px}.room-table td.loading{color:var(--muted)}.status{display:inline-flex;height:24px;align-items:center;padding:0 8px;border-radius:999px;background:var(--panel-soft);color:var(--muted);font-size:11px;font-weight:800}.status.available{color:#137a4b;background:color-mix(in srgb,#137a4b 12%,var(--panel))}.status.sold{color:#a35613;background:color-mix(in srgb,#a35613 12%,var(--panel))}.status.abnormal{margin-left:5px;color:#a33815;background:color-mix(in srgb,#a33815 12%,var(--panel))}@media (prefers-color-scheme:dark){.status.available{color:#75d9a5}.status.sold{color:#f0b76a}.status.abnormal{color:#ff9d7a}}.room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.room-foot p{margin:0}.room-foot button{height:36px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-foot button{color:#07131d}}.certificate-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft);border-top:1px solid var(--line)}.certificate-card{min-width:0;padding:14px;background:var(--panel)}.certificate-card h3{margin:0 0 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.certificate-card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}.certificate-card div{min-width:0}.certificate-card dt{color:var(--muted);font-size:10px}.certificate-card dd{margin:2px 0 0;font-size:14px;font-weight:800}@media (max-width:760px){.one-price-head{align-items:start;flex-direction:column}.one-price-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.one-price-metric:last-child{grid-column:1/-1}.room-controls{grid-template-columns:1fr}.room-filters{justify-content:flex-start}.room-foot{align-items:stretch;flex-direction:column}.room-foot button{width:100%}.certificate-card dl{grid-template-columns:repeat(2,1fr)}}.room-types{overflow:hidden;margin:0 0 24px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.room-types.empty{display:grid;min-height:170px;place-items:center;color:var(--muted)}.room-type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft)}.room-type-card{display:grid;grid-template-rows:auto 1fr;min-width:0;padding:0;border:0;background:var(--panel);color:var(--ink);font:inherit;text-align:left;cursor:pointer}.room-type-card:hover .room-type-body strong{color:var(--brand-ink)}.room-type-thumb{position:relative;display:grid;aspect-ratio:16/10;place-items:center;background:var(--panel-soft);overflow:hidden}.room-type-thumb img{width:100%;height:100%;object-fit:contain}.room-type-thumb>span{color:var(--muted);font-size:12px}.room-type-body{display:flex;flex-direction:column;gap:4px;min-width:0;padding:12px 13px}.room-type-body strong{font-size:14px;letter-spacing:-.03em}.room-type-body span{color:var(--muted);font-size:12px;overflow-wrap:anywhere}.room-type-body em{color:var(--brand-ink);font-size:11px;font-style:normal;font-weight:800}.room-type-note{margin:0;padding:14px 16px;color:var(--muted)}.room-type-dialog{width:min(920px,calc(100vw - 32px));max-width:100%;max-height:calc(100vh - 32px);padding:0;border:1px solid var(--line);border-radius:20px;background:var(--panel);color:var(--ink);box-shadow:0 30px 80px #00000038}.room-type-dialog::backdrop{background:#0b141ecc;backdrop-filter:blur(6px)}.room-type-dialog article{max-height:calc(100vh - 32px);overflow:auto}.room-type-dialog header{position:sticky;top:0;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:15px 17px;border-bottom:1px solid var(--line);background:var(--panel)}.room-type-dialog header p{margin:0;color:var(--brand-ink);font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.room-type-dialog h3{margin:2px 0 0;font-size:21px;letter-spacing:-.045em}.room-type-dialog header button{height:37px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-type-dialog header button{color:#07131d}}.room-type-images{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;padding:15px 17px;background:var(--panel-soft)}.room-type-images img{display:block;width:100%;max-width:100%;height:auto;background:var(--panel)}.room-type-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:0;background:var(--panel-soft);border-top:1px solid var(--line)}.room-type-meta div{min-width:0;padding:12px 14px;background:var(--panel)}.room-type-meta dt{color:var(--muted);font-size:11px}.room-type-meta dd{margin:2px 0 0;font-size:15px;font-weight:800;overflow-wrap:anywhere}.room-type-builds{display:grid;gap:9px;margin:0;padding:14px 17px 17px;list-style:none}.room-type-builds li{display:grid;gap:3px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel-soft)}.room-type-builds strong{font-size:13px}.room-type-builds span{color:var(--muted);font-size:12px}@media (max-width:760px){.room-type-grid{grid-template-columns:1fr}.room-type-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.room-type-dialog{width:calc(100vw - 20px);max-height:calc(100vh - 20px)}}</style>
 </head>
 <body>
 <div class="shell">
@@ -32,7 +32,7 @@
     <table class="field-table">
       <caption class="sr-only">接口返回的全部字段与值</caption>
       <thead><tr><th scope="col">字段</th><th scope="col">值</th></tr></thead>
-      <tbody><tr data-field="id"><th scope="row"><span>项目 ID</span><code>id</code></th><td><span>777681188491333</span></td></tr><tr data-field="name"><th scope="row"><span>楼盘名称</span><code>name</code></th><td><span>大家·玖宸</span></td></tr><tr data-field="soldChartImg"><th scope="row"><span>标准销控图</span><code>soldChartImg</code></th><td><a href="https://img.wufangtong.cn/665c3730e9954abcbfcc84b99256657f.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/665c3730e9954abcbfcc84b99256657f.png</a></td></tr><tr data-field="douYinSoldChartImg"><th scope="row"><span>抖音版销控图</span><code>douYinSoldChartImg</code></th><td><a href="https://img.wufangtong.cn/19368d6a140d4d56804e0e8950c32319.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/19368d6a140d4d56804e0e8950c32319.png</a></td></tr><tr data-field="salePrice"><th scope="row"><span>均价</span><code>salePrice</code></th><td><span>13000.0</span></td></tr><tr data-field="soldNum"><th scope="row"><span>已售套数</span><code>soldNum</code></th><td><span>34</span></td></tr><tr data-field="date"><th scope="row"><span>数据日期</span><code>date</code></th><td><span>2026-08-26</span></td></tr></tbody>
+      <tbody><tr data-field="date"><th scope="row"><span>数据日期</span><code>date</code></th><td><span>2026-08-26</span></td></tr><tr data-field="douYinSoldChartImg"><th scope="row"><span>抖音版销控图</span><code>douYinSoldChartImg</code></th><td><a href="https://img.wufangtong.cn/19368d6a140d4d56804e0e8950c32319.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/19368d6a140d4d56804e0e8950c32319.png</a></td></tr><tr data-field="id"><th scope="row"><span>项目 ID</span><code>id</code></th><td><span>777681188491333</span></td></tr><tr data-field="name"><th scope="row"><span>楼盘名称</span><code>name</code></th><td><span>大家·玖宸</span></td></tr><tr data-field="salePrice"><th scope="row"><span>均价</span><code>salePrice</code></th><td><span>13000.0</span></td></tr><tr data-field="soldChartImg"><th scope="row"><span>标准销控图</span><code>soldChartImg</code></th><td><a href="https://img.wufangtong.cn/665c3730e9954abcbfcc84b99256657f.png" target="_blank" rel="noopener noreferrer">https://img.wufangtong.cn/665c3730e9954abcbfcc84b99256657f.png</a></td></tr><tr data-field="soldNum"><th scope="row"><span>已售套数</span><code>soldNum</code></th><td><span>34</span></td></tr></tbody>
     </table>
   </div>
 </section>
@@ -127,6 +127,193 @@
               </dl>
             </article></div>
     </section>
+<section class="room-types" data-room-type-url="../../data/projects/777681188491333/room-types.json" aria-labelledby="room-types-title">
+      <div class="one-price-head">
+        <div><h2 id="room-types-title">户型图</h2><p>点击户型卡片查看大图、面积、可售数量与楼栋分布。</p></div>
+        <a href="../../data/projects/777681188491333/room-types.json" download>JSON 明细</a>
+      </div>
+
+      <div class="room-type-grid"><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-0" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/29fa714d34304656823257349f4f5df3.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>146.00 ㎡ · 可售 0 套</span>
+                <span>1厨，146平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-1" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/bcf49ea1971f41e48791c838d5aaaba6.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>130.00 ㎡ · 可售 0 套</span>
+                <span>1厨，130平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-2" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/a4d70eec8b9541b0bd143ee727e3c48c.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>146.00 ㎡ · 可售 53 套</span>
+                <span>1厨，146平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-3" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/8819215c8e2c46c882135f3c55b6d2cd.png" alt="3室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>3室2厅2卫</strong>
+                <span>106.00 ㎡ · 可售 93 套</span>
+                <span>1厨，106平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button><button type="button" class="room-type-card" data-role="room-type-trigger" data-dialog-id="room-type-dialog-4" aria-haspopup="dialog">
+              <span class="room-type-thumb"><img src="https://img.wufangtong.cn/ae138fc7caae4c35a4518fd78570d5d6.png" alt="4室2厅2卫 户型图" loading="lazy" decoding="async"></span>
+              <span class="room-type-body">
+                <strong>4室2厅2卫</strong>
+                <span>130.00 ㎡ · 可售 86 套</span>
+                <span>1厨，130平米</span>
+                <em>点击查看大图</em>
+              </span>
+            </button></div>
+      <dialog id="room-type-dialog-0" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-0-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-0-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/29fa714d34304656823257349f4f5df3.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>146.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>777681383563333</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog><dialog id="room-type-dialog-1" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-1-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-1-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/bcf49ea1971f41e48791c838d5aaaba6.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>130.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>0 套</dd></div>
+                  <div><dt>编号</dt><dd>794213651738693</dd></div>
+                </dl>
+                <p class="room-type-note">暂无楼栋分布。</p>
+              </article>
+            </dialog><dialog id="room-type-dialog-2" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-2-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-2-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/a4d70eec8b9541b0bd143ee727e3c48c.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>146.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>53 套</dd></div>
+                  <div><dt>编号</dt><dd>794213651738694</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>5#</strong>
+              <span>1 单元 · 25 层 · 高层</span>
+              <span>总 48 / 可售 13 / 已售 35</span>
+            </li><li>
+              <strong>6#</strong>
+              <span>1 单元 · 24 层 · 高层</span>
+              <span>总 46 / 可售 40 / 已售 6</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-3" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-3-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-3-title">3室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/8819215c8e2c46c882135f3c55b6d2cd.png" alt="3室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>106.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>3室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>93 套</dd></div>
+                  <div><dt>编号</dt><dd>794213651738696</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>1#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 50 / 可售 7 / 已售 43</span>
+            </li><li>
+              <strong>2#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 50 / 可售 1 / 已售 49</span>
+            </li><li>
+              <strong>4#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 48 / 可售 48 / 已售 0</span>
+            </li><li>
+              <strong>8#</strong>
+              <span>1 单元 · 25 层 · 高层</span>
+              <span>总 48 / 可售 7 / 已售 41</span>
+            </li><li>
+              <strong>9#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 50 / 可售 30 / 已售 20</span>
+            </li></ul>
+              </article>
+            </dialog><dialog id="room-type-dialog-4" class="room-type-dialog" data-role="room-type-dialog" aria-labelledby="room-type-dialog-4-title">
+              <article>
+                <header>
+                  <div><p>户型图</p><h3 id="room-type-dialog-4-title">4室2厅2卫</h3></div>
+                  <button type="button" data-role="room-type-close">关闭</button>
+                </header>
+                <div class="room-type-images">
+                  <img src="https://img.wufangtong.cn/ae138fc7caae4c35a4518fd78570d5d6.png" alt="4室2厅2卫 户型图大图">
+
+                </div>
+                <dl class="room-type-meta">
+                  <div><dt>面积</dt><dd>130.00 ㎡</dd></div>
+                  <div><dt>户型</dt><dd>4室2厅2卫</dd></div>
+                  <div><dt>可售</dt><dd>86 套</dd></div>
+                  <div><dt>编号</dt><dd>794213651738697</dd></div>
+                </dl>
+                <ul class="room-type-builds"><li>
+              <strong>1#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 25 / 可售 5 / 已售 20</span>
+            </li><li>
+              <strong>2#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 50 / 可售 3 / 已售 47</span>
+            </li><li>
+              <strong>4#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 24 / 可售 24 / 已售 0</span>
+            </li><li>
+              <strong>8#</strong>
+              <span>1 单元 · 25 层 · 高层</span>
+              <span>总 48 / 可售 16 / 已售 32</span>
+            </li><li>
+              <strong>9#</strong>
+              <span>1 单元 · 26 层 · 高层</span>
+              <span>总 50 / 可售 38 / 已售 12</span>
+            </li></ul>
+              </article>
+            </dialog>
+    </section>
 <details class="raw-data">
   <summary>完整原始 JSON</summary>
   <pre><code>{
@@ -148,7 +335,7 @@
           <span>抖音版销控图 · 2026-08-26</span>
         </a></section>
 <nav class="footer-nav" aria-label="项目导航"><a class="previous" href="../../projects/334502236393544/"><span>上一个楼盘</span><span>城投联投江南岸</span></a><a class="next" href="../../projects/721728421519439/"><span>下一个楼盘</span><span>建发·璟玥</span></a></nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 14:06:59；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-27 14:21:29；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 (function(){
@@ -233,6 +420,27 @@
     var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';
     cell.textContent='一房一价明细载入失败：'+error.message;tbody.firstChild.appendChild(cell);
     count.textContent='载入失败';more.hidden=true;
+  });
+})();
+
+(function(){
+  'use strict';
+  document.addEventListener('click',function(event){
+    var trigger=event.target.closest('[data-role="room-type-trigger"]');
+    if(trigger){
+      var dialog=document.getElementById(trigger.getAttribute('data-dialog-id'));
+      if(dialog && typeof dialog.showModal==='function')dialog.showModal();else if(dialog)dialog.setAttribute('open','');
+      return;
+    }
+    var close=event.target.closest('[data-role="room-type-close"]');
+    if(close){
+      var dialog=close.closest('dialog');
+      if(dialog)dialog.close();
+    }
+  });
+  document.addEventListener('click',function(event){
+    var dialog=event.target.closest('[data-role="room-type-dialog"]');
+    if(dialog && event.target===dialog)dialog.close();
   });
 })();
 

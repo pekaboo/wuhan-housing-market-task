@@ -51,3 +51,19 @@ def summarize_one_price(snapshot: dict[str, Any]) -> dict[str, int]:
         'available': sum(room.get('saleStatus') == 2 for room in rooms),
         'abnormal': sum(room.get('abnormalStatus') == 1 for room in rooms),
     }
+
+
+class RoomTypeClient(Protocol):
+    def fetch_room_types(self, project_id: int | str) -> list[dict[str, Any]]: ...
+
+
+def build_room_type_snapshot(client: RoomTypeClient, project_id: int | str) -> dict[str, Any]:
+    try:
+        room_types = client.fetch_room_types(project_id)
+    except SaleApiError as exc:
+        return {'status': 'error', 'message': str(exc), 'types': []}
+
+    return {
+        'status': 'complete' if room_types else 'empty',
+        'types': room_types,
+    }

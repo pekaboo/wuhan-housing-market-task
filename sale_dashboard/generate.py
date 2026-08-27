@@ -79,6 +79,7 @@ def write_site(
     per_page: int = 6,
     now: datetime | None = None,
     one_price_snapshots: dict[Any, dict[str, Any]] | None = None,
+    room_type_snapshots: dict[Any, dict[str, Any]] | None = None,
     wangqian_snapshot: dict[str, Any] | None = None,
 ) -> list[Path]:
     timestamp = generated_at or china_timestamp(now)
@@ -87,6 +88,7 @@ def write_site(
         shutil.rmtree(root)
     root.mkdir(parents=True, exist_ok=True)
     snapshots = one_price_snapshots or {}
+    room_snapshots = room_type_snapshots or {}
 
     page_count = max(1, math.ceil(len(projects) / per_page))
     output_paths: list[Path] = []
@@ -117,6 +119,13 @@ def write_site(
             enriched_snapshot.setdefault('projectId', project.get('id'))
             enriched_snapshot.setdefault('generatedAt', timestamp)
             _write_json(root / data_relative_path, enriched_snapshot)
+        room_snapshot = _project_snapshot(project, room_snapshots)
+        room_data_relative_path = Path('data', 'projects', safe_id, 'room-types.json')
+        if room_snapshot is not None:
+            enriched_room_snapshot = dict(room_snapshot)
+            enriched_room_snapshot.setdefault('projectId', project.get('id'))
+            enriched_room_snapshot.setdefault('generatedAt', timestamp)
+            _write_json(root / room_data_relative_path, enriched_room_snapshot)
         _atomic_write(
             root / relative_path,
             render_project_page(
@@ -127,6 +136,12 @@ def write_site(
                 next_project=projects[index + 1] if index + 1 < len(projects) else None,
                 one_price_snapshot=snapshot,
                 one_price_url=f'../../{data_relative_path.as_posix()}' if snapshot is not None else None,
+                room_type_snapshot=room_snapshot,
+                room_type_url=(
+                    f'../../{room_data_relative_path.as_posix()}'
+                    if room_snapshot is not None
+                    else None
+                ),
             ),
         )
         output_paths.append(relative_path)

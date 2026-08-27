@@ -16,7 +16,7 @@ from .client import (
     SaleApiClient,
     SaleApiError,
 )
-from .enrichment import build_one_price_snapshot
+from .enrichment import build_one_price_snapshot, build_room_type_snapshot
 from .generate import write_site
 
 
@@ -52,7 +52,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         '--fetch-one-price',
         action='store_true',
-        help='fetch presale certificates, room-level one-price data, and yesterday wangqian changes',
+        help='fetch room types, presale certificates, room-level one-price data, and yesterday wangqian changes',
     )
     return parser
 
@@ -80,15 +80,18 @@ def main() -> int:
     )
     projects = client.fetch_all_projects()
     one_price_snapshots: dict[str, dict] | None = None
+    room_type_snapshots: dict[str, dict] | None = None
     wangqian_snapshot: dict | None = None
 
     if args.fetch_one_price:
         one_price_snapshots = {}
+        room_type_snapshots = {}
         for project in projects:
             project_id = project.get('id')
             if project_id is None:
                 continue
             one_price_snapshots[str(project_id)] = build_one_price_snapshot(client, project_id)
+            room_type_snapshots[str(project_id)] = build_room_type_snapshot(client, project_id)
 
         request_date = _wangqian_request_date()
         try:
@@ -109,6 +112,7 @@ def main() -> int:
         site_dir=Path(args.site_output),
         per_page=args.projects_per_page,
         one_price_snapshots=one_price_snapshots,
+        room_type_snapshots=room_type_snapshots,
         wangqian_snapshot=wangqian_snapshot,
     )
     print(f'Generated {len(projects)} projects and {len(output_paths)} pages')
