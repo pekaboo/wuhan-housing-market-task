@@ -1,4 +1,6 @@
+import html
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -6,6 +8,7 @@ from pathlib import Path
 from sale_dashboard.client import ApiRequest, ApiResponse, SaleApiClient, SaleApiError
 from sale_dashboard.generate import write_outputs, write_site
 from sale_dashboard.render import render_html
+from sale_dashboard.site import render_project_page
 
 TOKEN = 'secret-token'
 API_URL = 'https://api.example.test/GetLouPanSaleImages'
@@ -94,7 +97,9 @@ class TestRenderHtml(unittest.TestCase):
         self.assertIn('光谷壹号院', page)
         self.assertIn('https://img.example.test/1.png', page)
         self.assertIn('https://img.example.test/new.png', page)
-        self.assertNotIn('https://img.example.test/old.png', page)
+        # 完整字段表会保留历史 URL；概览缩略图仍只使用最新一张。
+        self.assertIn('https://img.example.test/old.png', page)
+        self.assertNotIn('<img src="https://img.example.test/old.png"', page)
         self.assertNotIn('<script>unsafe</script>', page)
         self.assertIn('&lt;script&gt;unsafe&lt;/script&gt;', page)
         self.assertIn('暂无销控图', page)
@@ -109,6 +114,83 @@ class TestRenderHtml(unittest.TestCase):
         self.assertIn('data-role="project-search"', page)
         self.assertIn('data-role="sort-control"', page)
         self.assertIn('data-project-json=', page)
+
+    def test_overview_card_displays_and_searches_every_available_field(self):
+        rich_project = {
+            **project(4, '完整数据楼盘'),
+            'douYinSoldChartImg': 'https://img.example.test/4-douyin.png',
+            'companyName': '测试开发商',
+            'address': '武汉市测试区完整路 1 号',
+            'greeningArea': '3000㎡',
+            'roomTotal': 500,
+            'residenceSoldNum': 100,
+            'residenceRoomNum': 400,
+            'otherSoldNum': 8,
+            'otherRoomNum': 12,
+            'areaTotal': '10000㎡',
+            'bulidArea': '90000㎡',
+            'greeningRate': '35%',
+            'areaRate': '2.5',
+            'completionTime': '2027-06-30',
+            'deliveryTime': '2027-09-30',
+            'futureMetric': '测试字段',
+        }
+
+        page = render_html([rich_project], generated_at='2026-08-27 08:00:00')
+
+        self.assertIn('全部字段', page)
+        self.assertIn('data-field="futureMetric"', page)
+        self.assertIn('测试字段', page)
+        self.assertIn('data-field="deliveryTime"', page)
+        self.assertIn('2027-09-30', page)
+        search_value = html.unescape(re.search(r'data-search="([^"]+)"', page).group(1))
+        for expected in ('完整数据楼盘', '测试开发商', '武汉市测试区完整路 1 号', '测试字段', '4-douyin.png'):
+            self.assertIn(expected, search_value)
+
+    def test_detail_page_displays_both_chart_types_all_fields_and_raw_json(self):
+        rich_project = {
+            **project(4, '完整数据楼盘'),
+            'soldChartImg': 'https://img.example.test/4-standard.png',
+            'douYinSoldChartImg': 'https://img.example.test/4-douyin.png',
+            'companyName': '<开发商>测试</开发商>',
+            'address': '武汉市测试区完整路 1 号',
+            'greeningArea': '3000㎡',
+            'roomTotal': 500,
+            'residenceSoldNum': 100,
+            'residenceRoomNum': 400,
+            'otherSoldNum': 8,
+            'otherRoomNum': 12,
+            'areaTotal': '10000㎡',
+            'bulidArea': '90000㎡',
+            'greeningRate': '35%',
+            'areaRate': '2.5',
+            'completionTime': '2027-06-30',
+            'deliveryTime': '2027-09-30',
+            'soldChartList': [
+                {'img': 'https://img.example.test/4-old.png', 'time': '2026-08-01'},
+                {'img': 'https://img.example.test/4-new.png', 'time': '2026-08-27'},
+            ],
+            'futureMetric': '测试字段',
+        }
+
+        page = render_project_page(
+            rich_project,
+            generated_at='2026-08-27 08:00:00',
+            all_count=1,
+        )
+
+        self.assertIn('alt="完整数据楼盘 抖音版销控图"', page)
+        self.assertIn('https://img.example.test/4-standard.png', page)
+        self.assertIn('https://img.example.test/4-douyin.png', page)
+        self.assertIn('https://img.example.test/4-old.png', page)
+        self.assertIn('https://img.example.test/4-new.png', page)
+        self.assertIn('全部字段', page)
+        self.assertIn('data-field="futureMetric"', page)
+        self.assertIn('data-field="bulidArea"', page)
+        self.assertIn('建筑面积', page)
+        self.assertIn('完整原始 JSON', page)
+        self.assertIn('&lt;开发商&gt;测试&lt;/开发商&gt;', page)
+        self.assertNotIn('<开发商>测试</开发商>', page)
 
 
 class TestWriteOutputs(unittest.TestCase):
@@ -198,7 +280,7 @@ class TestMultiPageSite(unittest.TestCase):
             self.assertIn('https://img.example.test/5-old.png', fifth_detail)
             self.assertIn('https://img.example.test/5-new.png', fifth_detail)
             self.assertIn('href="../../"', fifth_detail)
-            self.assertIn('全部历史销控图', fifth_detail)
+            self.assertIn('全部销控图', fifth_detail)
 
             snapshot = json.loads((site_dir / 'data' / 'sale-data.json').read_text(encoding='utf-8'))
             self.assertEqual(snapshot['count'], 5)
