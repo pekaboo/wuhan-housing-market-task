@@ -237,3 +237,56 @@ def test_site_renders_one_price_error_and_room_types_without_crashing(tmp_path):
     detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
     assert '接口获取失败：Upstream unavailable' in detail
     assert '户型图' in detail
+
+
+def test_one_price_ui_offers_table_and_floor_distribution_modes(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [{**certificate(900), 'rooms': [room(1), room(2, saleStatus=1)]}],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
+        site_dir=site_dir,
+        generated_at='2026-08-27 16:00:00',
+        one_price_snapshots={123: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
+
+    assert 'data-role="view-mode" data-mode="table" aria-pressed="true"' in detail
+    assert 'data-role="view-mode" data-mode="floor" aria-pressed="false"' in detail
+    assert '明细表' in detail
+    assert '楼层分布' in detail
+    assert 'data-role="floor-results" hidden' in detail
+    assert 'data-role="building-filter"' in detail
+    assert 'data-role="unit-filter"' in detail
+    assert '可售房源相同单价使用同一色块' in detail
+
+    for control in ('price-min', 'price-max', 'total-min', 'total-max'):
+        assert f'data-role="{control}"' in detail
+
+    script = detail.split('<script>', 1)[1]
+    for behavior in (
+        'function numericValue',
+        'function priceKey',
+        'function buildPricePalette',
+        'function floorKey',
+        'function filterRooms',
+        'function renderFloorView',
+        'function roomCell',
+        'priceGroups.get(priceKey',
+        "style.setProperty('--price-color'",
+        'data-price',
+        'data-price-value',
+        'data-total-price',
+        'data-price-group',
+        'floor-meta',
+        "Number(room.abnormalStatus)===1",
+        "hsl('+hue.toFixed(2)+',72%,'+light+'%)')",
+        "data.status!=='complete'",
+        "view!=='table'",
+        'Number(room.saleStatus)',
+    ):
+        assert behavior in script
