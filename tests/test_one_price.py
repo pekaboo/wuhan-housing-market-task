@@ -272,7 +272,7 @@ def test_one_price_ui_offers_table_and_floor_distribution_modes(tmp_path):
         'function numericValue',
         'function priceKey',
         'function buildPricePalette',
-        'function floorKey',
+        'function matrixKey',
         'function filterRooms',
         'function renderFloorView',
         'function roomCell',
@@ -290,3 +290,45 @@ def test_one_price_ui_offers_table_and_floor_distribution_modes(tmp_path):
         'Number(room.saleStatus)',
     ):
         assert behavior in script
+
+
+def test_one_price_floor_view_uses_building_matrix_layout(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [
+            {
+                **certificate(900),
+                'rooms': [
+                    room(1, buildName='2', unitName='1', floor='3', roomName='0301'),
+                    room(2, buildName='10', unitName='1', floor='2', roomName='0201'),
+                    room(3, buildName='2', unitName='2', floor='3', roomName='0302'),
+                ],
+            }
+        ],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
+        site_dir=site_dir,
+        generated_at='2026-08-27 18:00:00',
+        one_price_snapshots={123: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
+
+    assert '楼栋从左到右、楼层从上到下' in detail
+    for marker in (
+        'floor-scroll',
+        'floor-matrix',
+        'floor-column-head',
+        'floor-missing',
+        '--floor-columns',
+        'floorHeader',
+        'matrixKey',
+        'floorRooms.get(column.key)',
+        'naturalCompare(left.building,right.building)',
+        'unitName:text(room.unitName)',
+        "text(column.unitName)",
+    ):
+        assert marker in detail
