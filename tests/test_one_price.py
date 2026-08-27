@@ -295,8 +295,7 @@ def test_one_price_ui_offers_table_and_floor_distribution_modes(tmp_path):
     ):
         assert behavior in script
 
-
-def test_one_price_floor_view_uses_building_matrix_layout(tmp_path):
+def test_one_price_floor_matrix_is_a_map_style_aligned_grid(tmp_path):
     one_price = {
         'status': 'complete',
         'certificates': [
@@ -306,6 +305,7 @@ def test_one_price_floor_view_uses_building_matrix_layout(tmp_path):
                     room(1, buildName='2', unitName='1', floor='3', roomName='0301'),
                     room(2, buildName='10', unitName='1', floor='2', roomName='0201'),
                     room(3, buildName='2', unitName='2', floor='3', roomName='0302'),
+                    room(4, floor='3', roomName='0303'),
                 ],
             }
         ],
@@ -313,9 +313,9 @@ def test_one_price_floor_view_uses_building_matrix_layout(tmp_path):
     site_dir = tmp_path / 'site'
 
     write_site(
-        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
+        [{'id': 123, 'name': '地图矩阵', 'date': '2026-08-27'}],
         site_dir=site_dir,
-        generated_at='2026-08-27 18:00:00',
+        generated_at='2026-08-27 23:00:00',
         one_price_snapshots={123: one_price},
     )
 
@@ -323,54 +323,45 @@ def test_one_price_floor_view_uses_building_matrix_layout(tmp_path):
 
     assert '楼栋从左到右、楼层从上到下、同一楼层横向一排' in detail
     for marker in (
-        'floor-scroll',
+        'floor-stage floor-map',
+        'floor-canvas',
         'floor-matrix',
+        'floor-axis-y',
+        'building-cell',
+        'floor-row',
         'floor-column-head',
         'floor-missing',
-        '--floor-columns',
-        'floorHeader',
         'matrixKey',
         'floorRooms.get(column.key)',
         'naturalCompare(left.building,right.building)',
         'unitName:text(room.unitName)',
-        "text(column.unitName)",
     ):
         assert marker in detail
 
+    matrix_rule = re.search(r'\.floor-matrix\{([^}]+)\}', detail)
+    assert matrix_rule
+    assert 'display:grid' in matrix_rule.group(1)
+    assert 'grid-template-columns:var(--floor-axis) repeat(var(--floor-columns),var(--building-width))' in matrix_rule.group(1)
+    assert 'grid-auto-rows:var(--floor-height)' in matrix_rule.group(1)
+    assert 'grid-template-rows:58px repeat(var(--floor-count),var(--floor-height))' in matrix_rule.group(1)
+    assert "style.setProperty('--floor-count'" in detail
+    assert 'flex-wrap:wrap' not in matrix_rule.group(1)
+    assert '.building-world{display:flex;flex-wrap:wrap' not in detail
 
-def test_one_price_floor_view_keeps_rooms_on_the_same_floor_in_one_row(tmp_path):
-    one_price = {
-        'status': 'complete',
-        'certificates': [
-            {
-                **certificate(900),
-                'rooms': [
-                    room(1, floor='8', roomName='0801'),
-                    room(2, floor='8', roomName='0802'),
-                    room(3, floor='7', roomName='0701'),
-                ],
-            }
-        ],
-    }
-    site_dir = tmp_path / 'site'
+    room_rule = re.search(r'\.room-cells\{([^}]+)\}', detail)
+    assert room_rule
+    assert 'grid-auto-flow:column' in room_rule.group(1)
+    assert 'grid-auto-columns:minmax(112px,1fr)' in room_rule.group(1)
+    assert 'grid-auto-rows:100%' in room_rule.group(1)
+    assert 'height:calc(var(--floor-height) - 10px)' in room_rule.group(1)
 
-    write_site(
-        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
-        site_dir=site_dir,
-        generated_at='2026-08-27 19:00:00',
-        one_price_snapshots={123: one_price},
-    )
-
-    detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
-    match = re.search(r'\.room-cells\{([^}]+)\}', detail)
-    assert match
-    style = match.group(1)
-    assert 'grid-auto-flow:column' in style
-    assert 'grid-auto-columns:minmax(112px,1fr)' in style
-    assert 'grid-template-columns:repeat(auto-fit' not in style
+    cell_rule = re.search(r'\.building-cell\{([^}]+)\}', detail)
+    assert cell_rule
+    assert 'height:var(--floor-height)' in cell_rule.group(1)
+    assert 'overflow:hidden' in cell_rule.group(1)
 
 
-def test_one_price_flat_floor_view_keeps_filtered_rooms_as_grey_blocks(tmp_path):
+def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overview(tmp_path):
     one_price = {
         'status': 'complete',
         'certificates': [
@@ -387,40 +378,34 @@ def test_one_price_flat_floor_view_keeps_filtered_rooms_as_grey_blocks(tmp_path)
     site_dir = tmp_path / 'site'
 
     write_site(
-        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
+        [{'id': 456, 'name': '筛选占位', 'date': '2026-08-27'}],
         site_dir=site_dir,
-        generated_at='2026-08-27 20:00:00',
-        one_price_snapshots={123: one_price},
+        generated_at='2026-08-28 08:00:00',
+        one_price_snapshots={456: one_price},
     )
 
-    detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
+    detail = (site_dir / 'projects' / '456' / 'index.html').read_text(encoding='utf-8')
 
     assert 'data-role="zoom-in"' in detail
-    assert 'data-role="zoom-out"' in detail
     assert '楼层从上到下、同一楼层横向一排' in detail
     assert 'function roomMatches(room)' in detail
     assert 'function scopedRooms()' in detail
     assert 'renderFloorView(visibleRooms)' in detail
     assert "article.classList.toggle('filtered-out',!roomMatches(room))" in detail
-    assert '.floor-stage' in detail
-    assert '.building-column' in detail
-    assert '.floor-slab' in detail
-    assert '.floor-room' in detail
     assert '.floor-room.filtered-out>*{display:none}' in detail
+    assert '.floor-room.filtered-out{width:100%;height:100%;min-height:100%' in detail
     assert 'priceGroups.get(priceKey(room))' in detail
-    assert 'var group=priceGroups.get(priceKey(room))' in detail
     assert "swatch.className='price-chip'" in detail
     assert 'DETAIL_BUILDING_LIMIT=16' in detail
-    assert '.building-world{display:flex;flex-wrap:wrap;width:100%;align-items:stretch}' in detail
     assert 'building-overview' in detail
     assert 'focusBuilding(column)' in detail
-    assert "if(view==='table'||!event.target.closest('.floor-stage'))return" in detail
     assert 'var columnFloors=floorRooms.get(column.key).size' in detail
     assert "block.style.setProperty('--floors',String(columnFloors))" in detail
     assert "columnFloors+' 层，'" in detail
+    assert "block.className='building-column building-overview'" in detail
 
 
-def test_one_price_flat_floor_view_supports_zoom_without_3d_transforms(tmp_path):
+def test_one_price_floor_map_has_apple_maps_style_proportional_gestures(tmp_path):
     one_price = {
         'status': 'complete',
         'certificates': [
@@ -437,36 +422,51 @@ def test_one_price_flat_floor_view_supports_zoom_without_3d_transforms(tmp_path)
     site_dir = tmp_path / 'site'
 
     write_site(
-        [{'id': 456, 'name': '平面楼栋', 'date': '2026-08-27'}],
+        [{'id': 789, 'name': '地图手势', 'date': '2026-08-27'}],
         site_dir=site_dir,
-        generated_at='2026-08-27 22:00:00',
-        one_price_snapshots={456: one_price},
+        generated_at='2026-08-28 09:00:00',
+        one_price_snapshots={789: one_price},
     )
 
-    detail = (site_dir / 'projects' / '456' / 'index.html').read_text(encoding='utf-8')
+    detail = (site_dir / 'projects' / '789' / 'index.html').read_text(encoding='utf-8')
 
     assert 'aria-label="楼层分布缩放控制"' in detail
-    assert 'data-role="zoom-in"' in detail
-    assert 'data-role="zoom-out"' in detail
-    assert 'data-role="reset-zoom"' in detail
-    assert 'data-role="zoom-range" type="range"' in detail
-    assert 'data-role="zoom-scale"' in detail
-    assert 'function setZoom(value)' in detail
-    assert 'Math.min(2.2,Math.max(.45' in detail
-    assert "floorResults.style.setProperty('--floor-scale'" in detail
-    assert '.floor-matrix{display:block;width:100%;zoom:var(--floor-scale,1)' in detail
-    assert '.floor-stage{position:relative;z-index:1;overflow:auto' in detail
-    assert "floorResults.addEventListener('wheel'" in detail
-    assert 'event.deltaY*.12' in detail
-    assert 'function panStage(stage,deltaX,deltaY)' in detail
-    assert 'stage.scrollLeft' in detail
-    assert 'stage.scrollTop' in detail
-    assert "floorResults.addEventListener('keydown'" in detail
-    assert "floorToolbar.hidden=view!=='floor'" in detail
-    assert '加号放大，减号缩小，0 复位' in detail
+    for control in ('zoom-in', 'zoom-out', 'reset-zoom', 'zoom-range', 'zoom-scale'):
+        assert f'data-role="{control}"' in detail
 
-    assert 'data-role="camera-preset"' not in detail
-    assert 'data-role="camera-zoom"' not in detail
+    for marker in (
+        'var viewState={scale:1,x:0,y:0}',
+        'function applyViewState(canvas)',
+        'function setZoom(value,anchorX,anchorY)',
+        'function zoomAt(anchorX,anchorY,nextScale)',
+        'var worldX=(anchorX-viewState.x)/viewState.scale',
+        'viewState.x=anchorX-worldX*viewState.scale',
+        "canvas.style.transform='translate3d('",
+        "floorResults.style.setProperty('--floor-scale'",
+        "floorResults.style.setProperty('--pan-x'",
+        "floorResults.style.setProperty('--pan-y'",
+        'Math.min(2.2,Math.max(.45',
+        '.floor-canvas{position:relative;',
+        'transform-origin:0 0',
+        'transform:translate3d(var(--pan-x),var(--pan-y),0) scale(var(--floor-scale))',
+        '.floor-stage.floor-map{position:relative;',
+        'overflow:hidden;',
+        'touch-action:none',
+        'activePointers',
+        'pointerdown',
+        'pointermove',
+        'pointercancel',
+        'wheel',
+        'pinchState',
+        'panBy(deltaX,deltaY)',
+        "floorToolbar.hidden=view!=='floor'",
+        '加号放大，减号缩小，0 复位',
+    ):
+        assert marker in detail
+
+    assert not re.search(r'(?:^|[;{])zoom:', detail)
+    assert 'camera-preset' not in detail
+    assert 'camera-zoom' not in detail
     assert 'setCameraPreset' not in detail
     assert 'moveCamera' not in detail
     assert 'rotateX(' not in detail
