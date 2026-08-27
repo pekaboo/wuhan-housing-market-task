@@ -1,5 +1,6 @@
 import gzip
 import json
+import re
 from pathlib import Path
 
 from sale_dashboard.client import ApiRequest, ApiResponse, SaleApiClient, SaleApiError
@@ -320,7 +321,7 @@ def test_one_price_floor_view_uses_building_matrix_layout(tmp_path):
 
     detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
 
-    assert '楼栋从左到右、楼层从上到下' in detail
+    assert '楼栋从左到右、楼层从上到下、同一楼层横向一排' in detail
     for marker in (
         'floor-scroll',
         'floor-matrix',
@@ -335,3 +336,35 @@ def test_one_price_floor_view_uses_building_matrix_layout(tmp_path):
         "text(column.unitName)",
     ):
         assert marker in detail
+
+
+def test_one_price_floor_view_keeps_rooms_on_the_same_floor_in_one_row(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [
+            {
+                **certificate(900),
+                'rooms': [
+                    room(1, floor='8', roomName='0801'),
+                    room(2, floor='8', roomName='0802'),
+                    room(3, floor='7', roomName='0701'),
+                ],
+            }
+        ],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
+        site_dir=site_dir,
+        generated_at='2026-08-27 19:00:00',
+        one_price_snapshots={123: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
+    match = re.search(r'\.room-cells\{([^}]+)\}', detail)
+    assert match
+    style = match.group(1)
+    assert 'grid-auto-flow:column' in style
+    assert 'grid-auto-columns:minmax(126px,1fr)' in style
+    assert 'grid-template-columns:repeat(auto-fit' not in style
