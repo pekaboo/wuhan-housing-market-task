@@ -55,7 +55,7 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
     elif not certificates:
         status_html = '<p class="one-price-note">该楼盘暂无可展示的预售证明细。</p>'
 
-    return f'''<section class="one-price" data-one-price-url="{esc(data_url)}" aria-labelledby="one-price-title">
+    return f'''<section id="one-price" class="one-price" data-one-price-url="{esc(data_url)}" aria-labelledby="one-price-title">
       <div class="one-price-head">
         <div><h2 id="one-price-title">一房一价</h2><p>按预售证聚合房号、面积、单价、总价、销售与异常状态；支持明细表与真实楼层分布两种视图。</p></div>
         <a href="{esc(data_url)}" download>JSON 明细</a>

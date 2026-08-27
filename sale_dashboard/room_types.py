@@ -89,7 +89,7 @@ def room_type_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
     elif not room_types:
         status_html = '<p class="room-type-note">该楼盘暂无户型图。</p>'
 
-    markup = f'''<section class="room-types" data-room-type-url="{esc(data_url)}" aria-labelledby="room-types-title">
+    markup = f'''<section id="room-types" class="room-types" data-room-type-url="{esc(data_url)}" aria-labelledby="room-types-title">
       <div class="one-price-head">
         <div><h2 id="room-types-title">户型图</h2><p>点击户型卡片查看大图、面积、可售数量与楼栋分布。</p></div>
         <a href="{esc(data_url)}" download>JSON 明细</a>

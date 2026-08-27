@@ -201,6 +201,36 @@ class TestRenderHtml(unittest.TestCase):
         self.assertIn('&lt;开发商&gt;测试&lt;/开发商&gt;', page)
         self.assertNotIn('<开发商>测试</开发商>', page)
 
+    def test_overview_prioritizes_dense_data_and_opens_charts_in_a_dialog(self):
+        rich_project = {
+            **project(4, '高密度楼盘'),
+            'companyName': '测试开发商',
+            'address': '武汉市测试区密集路 1 号',
+            'roomTotal': 500,
+            'residenceRoomNum': 120,
+            'completionTime': '2027-06-30',
+        }
+
+        page = render_html([rich_project], generated_at='2026-08-27 08:00:00')
+
+        self.assertIn('class="project-primary"', page)
+        self.assertIn('class="chart-thumb"', page)
+        self.assertIn('data-role="chart-trigger"', page)
+        self.assertIn('type="button"', page)
+        self.assertIn('id="chart-dialog"', page)
+        self.assertIn('data-role="chart-dialog-image"', page)
+        self.assertIn('data-role="close-chart-dialog"', page)
+        self.assertNotIn('class="chart" href="', page)
+        self.assertIn('<details class="fields">', page)
+        self.assertNotIn('<details class="fields" open>', page)
+        self.assertIn('href="projects/4/"', page)
+        self.assertIn('href="projects/4/#one-price"', page)
+        self.assertIn('href="projects/4/#room-types"', page)
+        self.assertIn('class="quick-link"', page)
+        self.assertIn('class="project-facts"', page)
+        self.assertIn('测试开发商', page)
+        self.assertIn('武汉市测试区密集路 1 号', page)
+
 
 class TestWriteOutputs(unittest.TestCase):
     def test_writes_html_and_atomic_json_snapshot(self):

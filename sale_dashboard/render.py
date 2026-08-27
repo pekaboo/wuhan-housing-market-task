@@ -94,9 +94,9 @@ def field_rows(project: dict[str, Any]) -> str:
     )
 
 
-def collapsible_fields(project: dict[str, Any]) -> str:
+def collapsible_fields(project: dict[str, Any], *, open: bool = True) -> str:
     return (
-        f'<details class="fields" open>'
+        f'<details class="fields"{" open" if open else ""}>'
         f'<summary>全部字段<span>{len(project)}</span></summary>'
         f'<div class="table-wrap"><table class="field-table"><caption class="sr-only">全部接口字段</caption>'
         f'<thead><tr><th scope="col">字段</th><th scope="col">值</th></tr></thead>'
@@ -214,12 +214,12 @@ def project_card(
     detail_url = f'{root_prefix}projects/{project.get("id")}/'
     search = search_value(project)
     image = (
-        f'''<a class="chart" href="{esc(chart['img'])}" target="_blank" rel="noopener noreferrer">
+        f'''<button type="button" class="chart-thumb" data-role="chart-trigger" data-chart-url="{esc(chart['img'])}" data-chart-title="{esc(project.get('name'))} 标准销控图" data-chart-date="{esc(chart.get('time'))}" aria-haspopup="dialog">
           <img src="{esc(chart['img'])}" alt="{esc(project.get('name'))} 标准销控图" loading="lazy" decoding="async">
-          <span>数据日期 {esc(chart.get('time'))}</span>
-        </a>'''
+          <span>{esc(chart.get('time'))}</span>
+        </button>'''
         if chart
-        else '<div class="chart chart-empty"><span>暂无销控图</span></div>'
+        else '<div class="chart-thumb chart-empty"><span>暂无销控图</span></div>'
     )
     metrics = ''.join(
         [
@@ -228,19 +228,36 @@ def project_card(
             _metric('总房源', integer(project.get('roomTotal'))),
         ]
     )
+    facts = ''.join(
+        f'<div><dt>{esc(label)}</dt><dd>{esc(project.get(key))}</dd></div>'
+        for key, label in (
+            ('companyName', '开发商'),
+            ('address', '地址'),
+            ('residenceRoomNum', '住宅可售'),
+            ('completionTime', '竣工'),
+        )
+    )
     return f'''<article class="project" role="listitem" data-name="{esc(project.get('name'))}" data-search="{esc(search)}" data-sold="{integer_value(project)}" data-price="{float_value(project)}" data-date="{esc(project.get('date') or '')}">
-      <header>
-        <h3><a class="detail-link" href="{esc(detail_url)}">{esc(project.get('name'))}</a></h3>
-        <span class="date">{esc(project.get('date') or project.get('time'))}</span>
-        {one_price_chip(one_price_summary)}
-      </header>
-      <div class="metrics">{metrics}</div>
-      {collapsible_fields(project)}
-      {image}
-      <footer>
-        <span>{esc(project.get('companyName'))}</span>
-        <span>{esc(project.get('address'))}</span>
-      </footer>
+      <div class="project-main">
+        {image}
+        <div class="project-primary">
+          <header>
+            <div>
+              <h3><a class="detail-link" href="{esc(detail_url)}">{esc(project.get('name'))}</a></h3>
+              <span class="date">{esc(project.get('date') or project.get('time'))}</span>
+            </div>
+            {one_price_chip(one_price_summary)}
+          </header>
+          <div class="metrics">{metrics}</div>
+          <dl class="project-facts">{facts}</dl>
+          <nav class="project-actions" aria-label="{esc(project.get('name'))}快捷入口">
+            <a class="quick-link" href="{esc(detail_url)}">详情</a>
+            <a class="quick-link" href="{esc(detail_url)}#one-price">一房一价</a>
+            <a class="quick-link" href="{esc(detail_url)}#room-types">户型</a>
+          </nav>
+        </div>
+      </div>
+      {collapsible_fields(project, open=False)}
     </article>'''
 
 
@@ -256,6 +273,205 @@ def float_value(project: dict[str, Any]) -> str:
         return str(float(project.get('salePrice') or 0))
     except (TypeError, ValueError):
         return '0'
+
+
+DASHBOARD_CSS = """
+:root {
+  color-scheme: light dark;
+  --surface: #eef3f8;
+  --panel: #fff;
+  --panel-soft: #f3f7fb;
+  --ink: #12212f;
+  --muted: #536677;
+  --line: #d6e0ea;
+  --brand: #0068a8;
+  --brand-ink: #014d7d;
+  --accent: #b98511;
+  --ok: #12805c;
+  --focus: #2b7fd1;
+  --shadow: 0 10px 28px #17324d12;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #08111a;
+    --panel: #111d28;
+    --panel-soft: #182634;
+    --ink: #edf4fa;
+    --muted: #a3b5c4;
+    --line: #293b4a;
+    --brand: #69b6e8;
+    --brand-ink: #a9d8f6;
+    --accent: #dfae4e;
+    --ok: #67c79c;
+    --focus: #8ccbf7;
+    --shadow: 0 12px 34px #00000066;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--brand) 11%, transparent), transparent 32%),
+    var(--surface);
+  color: var(--ink);
+  font: 13px/1.42 ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+body:has(dialog[open]) { overflow: hidden; }
+.shell { width: min(1520px, 100%); margin: 0 auto; padding: 14px clamp(10px, 2vw, 24px) 32px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 0 10px; }
+.eyebrow { margin: 0 0 2px; color: var(--brand); font-size: 10px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(19px, 2.4vw, 27px); line-height: 1.1; letter-spacing: -.035em; }
+.subtitle { display: none; margin: 3px 0 0; color: var(--muted); }
+.metadata { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; }
+.pill { padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--muted); font-size: 10px; font-weight: 700; white-space: nowrap; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.kpi { display: flex; align-items: center; gap: 8px; min-height: 52px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 11px; background: var(--panel); box-shadow: var(--shadow); }
+.kpi-icon { width: 20px; height: 20px; flex: 0 0 auto; color: var(--brand); }
+.kpi span { display: block; color: var(--muted); font-size: 10px; }
+.kpi strong { display: block; font-size: 16px; line-height: 1.15; letter-spacing: -.02em; }
+.coverage { display: grid; grid-template-columns: minmax(210px, 1fr) minmax(160px, 2fr) auto; align-items: center; gap: 10px; margin: 6px 0; padding: 7px 9px; border: 1px solid color-mix(in srgb, var(--brand) 24%, var(--line)); border-radius: 11px; background: color-mix(in srgb, var(--brand) 7%, var(--panel)); }
+.coverage p { margin: 0; color: var(--muted); font-size: 10px; font-weight: 700; }
+.coverage strong { font-size: 15px; }
+.coverage strong span { color: var(--muted); font-size: 11px; }
+.coverage > div:first-child > span { display: block; color: var(--muted); font-size: 10px; }
+.coverage-bar { height: 7px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--ink) 10%, transparent); }
+.coverage-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--brand), var(--ok)); }
+.wangqian-link { color: var(--brand-ink); font-size: 11px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.wangqian-link:hover { text-decoration: underline; }
+.controls { position: sticky; top: 0; z-index: 4; margin: 2px 0 8px; border: 1px solid var(--line); border-radius: 11px; background: color-mix(in srgb, var(--panel) 92%, transparent); backdrop-filter: blur(12px); box-shadow: var(--shadow); }
+.control-inner { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 6px; padding: 6px; }
+.search { position: relative; display: flex; align-items: center; }
+.search svg { position: absolute; left: 8px; width: 13px; height: 13px; color: var(--muted); pointer-events: none; }
+.search input { width: 100%; min-height: 31px; padding: 4px 8px 4px 27px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); color: var(--ink); font: inherit; }
+.search input:focus { outline: 2px solid var(--focus); outline-offset: 1px; }
+.sort { display: flex; flex-wrap: nowrap; gap: 3px; }
+.sort button { min-height: 31px; padding: 4px 8px; border: 0; border-radius: 8px; background: var(--panel-soft); color: var(--muted); font: inherit; font-size: 11px; font-weight: 750; cursor: pointer; transition: color .16s, background .16s; white-space: nowrap; }
+.sort button[aria-pressed="true"] { background: var(--brand); color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(365px, 1fr)); gap: 8px; align-items: start; }
+.project { min-width: 0; overflow: clip; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: var(--shadow); }
+.project-main { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 9px; padding: 8px; }
+.chart-thumb { position: relative; display: block; width: 88px; height: 116px; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-soft); color: var(--brand-ink); cursor: zoom-in; }
+.chart-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.chart-thumb span { position: absolute; right: 3px; bottom: 3px; max-width: calc(100% - 6px); padding: 2px 4px; overflow: hidden; border-radius: 5px; background: color-mix(in srgb, var(--panel) 86%, transparent); color: var(--ink); font-size: 8px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.chart-empty { display: grid; place-items: center; color: var(--muted); font-size: 10px; cursor: default; }
+.project-primary { min-width: 0; }
+.project header { display: flex; align-items: start; justify-content: space-between; gap: 6px; }
+.project h3 { margin: 0; font-size: 15px; line-height: 1.2; letter-spacing: -.025em; }
+.detail-link { color: inherit; text-decoration: none; }
+.detail-link::after { content: ""; position: absolute; inset: 0; }
+.detail-link:hover { color: var(--brand-ink); }
+.project header > div:first-child { position: relative; min-width: 0; }
+.date { display: block; margin-top: 1px; color: var(--muted); font-size: 10px; }
+.coverage-chip { flex: 0 0 auto; max-width: 135px; overflow: hidden; padding: 3px 5px; border-radius: 999px; color: var(--muted); background: var(--panel-soft); font-size: 9px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.coverage-chip.ready { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); }
+.metrics { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin: 6px 0; }
+.metric { min-width: 0; padding: 4px 5px; border-radius: 7px; background: var(--panel-soft); }
+.metric span { display: block; color: var(--muted); font-size: 9px; }
+.metric strong { display: block; overflow: hidden; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.project-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 8px; margin: 0; color: var(--muted); font-size: 10px; }
+.project-facts > div { min-width: 0; }
+.project-facts > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.project-facts dt { float: left; margin-right: 4px; color: color-mix(in srgb, var(--muted) 78%, transparent); }
+.project-facts dt::after { content: "·"; margin-left: 2px; color: var(--line); }
+.project-facts dd { display: inline; margin: 0; overflow-wrap: anywhere; }
+.project-actions { position: relative; z-index: 2; display: flex; gap: 4px; margin-top: 6px; }
+.quick-link { padding: 3px 6px; border-radius: 6px; background: color-mix(in srgb, var(--brand) 9%, transparent); color: var(--brand-ink); font-size: 10px; font-weight: 850; text-decoration: none; }
+.quick-link:hover { background: var(--brand); color: #fff; }
+.fields { position: relative; z-index: 2; border-top: 1px solid var(--line); background: var(--panel-soft); }
+.fields summary { padding: 5px 9px; color: var(--muted); font-size: 10px; font-weight: 800; cursor: pointer; list-style: none; }
+.fields summary::-webkit-details-marker { display: none; }
+.fields summary::after { content: "＋"; float: right; }
+.fields[open] summary::after { content: "－"; }
+.fields summary span { margin-left: 4px; color: var(--brand-ink); }
+.table-wrap { max-height: 260px; overflow: auto; border-top: 1px solid var(--line); }
+.field-table { width: 100%; border-collapse: collapse; background: var(--panel); font-size: 10px; }
+.field-table th, .field-table td { padding: 4px 6px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+.field-table th span { display: block; }
+.field-table code { color: var(--muted); font-size: 9px; }
+.field-table a { color: var(--brand-ink); overflow-wrap: anywhere; }
+.chart-dialog { width: min(94vw, 1000px); max-height: 92vh; padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); color: var(--ink); box-shadow: 0 24px 70px #00000040; }
+.chart-dialog::backdrop { background: #0b1724cc; backdrop-filter: blur(3px); }
+.chart-dialog article { display: grid; grid-template-rows: auto minmax(0, 1fr); max-height: 92vh; }
+.chart-dialog header { display: flex; align-items: start; justify-content: space-between; gap: 12px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.chart-dialog p { margin: 0; color: var(--brand); font-size: 10px; font-weight: 850; }
+.chart-dialog h2 { margin: 1px 0 0; font-size: 16px; }
+.chart-dialog [data-role="close-chart-dialog"] { min-height: 30px; padding: 4px 9px; border: 0; border-radius: 7px; background: var(--panel-soft); color: var(--ink); font: inherit; font-size: 11px; font-weight: 800; cursor: pointer; }
+.chart-dialog img { display: block; width: 100%; max-height: calc(92vh - 54px); object-fit: contain; background: var(--panel-soft); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.empty { display: grid; min-height: 220px; place-items: center; border: 1px dashed var(--line); border-radius: 12px; background: var(--panel); color: var(--muted); }
+a:hover, button:hover { transition: background-color .16s ease-out, color .16s ease-out, border-color .16s ease-out; }
+:is(a, button, input, summary):focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+@media (max-width: 1000px) { .grid { grid-template-columns: minmax(0, 1fr); } .subtitle { display: block; } }
+@media (max-width: 760px) {
+  .top { align-items: start; flex-direction: column; }
+  .metadata { justify-content: flex-start; }
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .coverage { grid-template-columns: minmax(0, 1fr) 58px auto; }
+  .coverage > div:first-child > span { display: none; }
+  .control-inner { grid-template-columns: minmax(0, 1fr); }
+  .sort { width: 100%; overflow-x: auto; padding-bottom: 1px; }
+  .chart-thumb { width: 78px; height: 106px; }
+  .project-main { grid-template-columns: 78px minmax(0, 1fr); gap: 7px; padding: 7px; }
+}
+@media (max-width: 430px) {
+  .shell { padding-inline: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+"""
+
+DASHBOARD_SCRIPT = """
+(function() {
+  'use strict';
+  const grid = document.querySelector('[role="list"]');
+  const cards = Array.from(grid.querySelectorAll('.project'));
+  const search = document.querySelector('[data-role="project-search"]');
+  const dialog = document.getElementById('chart-dialog');
+  const dialogImage = dialog.querySelector('[data-role="chart-dialog-image"]');
+  const dialogTitle = dialog.querySelector('[data-role="chart-dialog-title"]');
+  const closeButton = dialog.querySelector('[data-role="close-chart-dialog"]');
+  let sortMode = 'default';
+  let opener = null;
+  function apply() {
+    const words = search.value.trim().toLowerCase().split(/\\s+/).filter(Boolean);
+    cards.forEach(card => {
+      const value = (card.dataset.search || '').toLowerCase();
+      card.hidden = words.some(word => !value.includes(word));
+    });
+    if (sortMode === 'sold') cards.sort((a, b) => Number(b.dataset.sold) - Number(a.dataset.sold));
+    else if (sortMode === 'price-asc') cards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+    else if (sortMode === 'price-desc') cards.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+    else cards.sort((a, b) => Number(a.dataset.defaultIndex) - Number(b.dataset.defaultIndex));
+    cards.forEach(card => grid.append(card));
+  }
+  cards.forEach((card, index) => { card.dataset.defaultIndex = String(index); });
+  search.addEventListener('input', apply);
+  document.querySelectorAll('[data-role="sort-control"]').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('[data-role="sort-control"]').forEach(item => item.setAttribute('aria-pressed', 'false'));
+      button.setAttribute('aria-pressed', 'true');
+      sortMode = button.dataset.sort;
+      apply();
+    });
+  });
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', () => {
+    dialogImage.removeAttribute('src');
+    if (opener) { opener.focus(); opener = null; }
+  });
+  closeButton.addEventListener('click', () => dialog.close());
+  document.addEventListener('click', event => {
+    const trigger = event.target.closest('[data-role="chart-trigger"]');
+    if (!trigger) return;
+    event.preventDefault();
+    opener = trigger;
+    dialogImage.src = trigger.dataset.chartUrl || '';
+    dialogImage.alt = trigger.dataset.chartTitle || '标准销控图';
+    dialogTitle.textContent = trigger.dataset.chartTitle || '标准销控图';
+    dialog.showModal();
+  });
+})();
+"""
 
 
 def render_html(
@@ -291,19 +507,16 @@ def render_html(
         for item in projects
     ]
     embedded_projects = esc(json.dumps(public_projects, ensure_ascii=False, separators=(',', ':')))
-    return f'''<!doctype html>
+    return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="武汉楼盘销控数据每日快照，展示最新楼盘销售图、已售套数与均价。">
 <meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
 <title>武汉楼盘销控情报台</title>
-<style>
-:root{{--surface:#f4f7fb;--panel:#fff;--panel-soft:#eef3f9;--ink:#132233;--muted:#556879;--line:#d8e1ea;--brand:#0068a8;--brand-ink:#014d7d;--accent:#b98511;--focus:#2b7fd1;--shadow:0 12px 32px #17324d14}}
-@media (prefers-color-scheme:dark){{:root{{--surface:#0a121b;--panel:#121d28;--panel-soft:#182633;--ink:#edf4fa;--muted:#a5b6c4;--line:#293b4a;--brand:#69b6e8;--brand-ink:#a9d8f6;--accent:#dfae4e;--focus:#8ccbf7;--shadow:0 12px 32px #00000059}}}}
-*{{box-sizing:border-box}}html{{overflow-x:hidden}}body{{margin:0;background:var(--surface);color:var(--ink);font:15px/1.55 "Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;letter-spacing:.01em}}.shell{{max-width:1500px;margin:0 auto;padding:0 clamp(14px,3vw,38px) 72px}}.top{{display:flex;justify-content:space-between;gap:22px;align-items:flex-end;padding:clamp(28px,5vw,58px) 0 25px}}.eyebrow{{display:flex;gap:8px;color:var(--brand-ink);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}}.eyebrow:before{{content:"";width:26px;height:2px;background:var(--accent)}}h1{{margin:8px 0 9px;font-size:clamp(29px,4.8vw,58px);line-height:1.02;letter-spacing:-.055em}}.subtitle{{max-width:640px;margin:0;color:var(--muted)}}.metadata{{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}}.pill{{display:inline-flex;align-items:center;height:30px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);font-size:12px;font-weight:650}}.kpis{{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}}.kpi{{display:flex;min-height:103px;min-width:0;padding:17px;align-items:center;gap:13px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}}.kpi-icon{{width:27px;height:27px;flex:none;color:var(--brand)}}.kpi span{{display:block;color:var(--muted);font-size:12px}}.kpi strong{{display:block;margin-top:3px;font-size:clamp(20px,2vw,30px);line-height:1.12;letter-spacing:-.04em}}.coverage{{display:grid;grid-template-columns:minmax(190px,1fr) minmax(160px,2fr) auto;gap:16px;align-items:center;margin:0 0 16px;padding:15px 17px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}}.coverage p{{margin:0;color:var(--brand-ink);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}}.coverage>div:first-child strong{{display:block;margin:2px 0 3px;font-size:27px;letter-spacing:-.05em}}.coverage>div:first-child span{{color:var(--muted);font-size:12px}}.coverage-bar{{height:10px;min-width:0;border-radius:999px;background:var(--panel-soft);overflow:hidden}}.coverage-bar i{{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--brand),var(--accent));transition:width .4s ease}}.wangqian-link{{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:12px;background:var(--brand);color:#fff;font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap}}@media (prefers-color-scheme:dark){{.wangqian-link{{color:#07131d}}}}.controls{{position:sticky;top:0;z-index:10;padding:13px 0;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(15px);border-bottom:1px solid transparent}}.control-inner{{display:grid;grid-template-columns:minmax(210px,1fr) auto;gap:9px;padding:11px;border:1px solid var(--line);border-radius:17px;background:var(--panel);box-shadow:var(--shadow)}}.search{{display:flex;align-items:center;gap:9px;min-width:0;padding:0 12px;border-radius:12px;background:var(--panel-soft)}}.search svg{{width:18px;height:18px;flex:none;color:var(--muted)}}input{{min-width:0;flex:1;height:43px;border:0;background:transparent;color:var(--ink);font:inherit;outline:none}}input::placeholder{{color:var(--muted)}}.sort{{display:flex;gap:6px;overflow:auto;scrollbar-width:none}}.sort::-webkit-scrollbar{{display:none}}button{{height:43px;border:0;border-radius:11px;background:var(--panel-soft);color:var(--muted);padding:0 11px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:color .2s ease,background .2s ease}}button[aria-pressed=true]{{background:var(--brand);color:#fff}}@media (prefers-color-scheme:dark){{button[aria-pressed=true]{{color:#07131d}}}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:15px;margin-top:17px}}.project{{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:19px;background:var(--panel);box-shadow:var(--shadow);transition:border-color .2s ease}}.project:hover{{border-color:var(--brand)}}.project header{{display:flex;justify-content:space-between;gap:12px;align-items:start;padding:17px 17px 13px}}h3{{margin:0;font-size:17px;line-height:1.38;letter-spacing:-.03em;overflow-wrap:anywhere}}.date{{flex:none;margin-top:2px;color:var(--brand-ink);font-size:12px;font-weight:750}}.coverage-chip{{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-soft);color:var(--muted);font-size:11px;font-weight:750;white-space:nowrap}}.coverage-chip.ready{{color:var(--brand-ink);border-color:color-mix(in srgb,var(--brand) 32%,var(--line))}}@media (max-width:760px){{.coverage{{grid-template-columns:1fr;align-items:start}}.wangqian-link{{width:100%}}.project header{{align-items:start;flex-direction:column}}.coverage-chip{{margin-top:5px}}}}.metrics{{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;padding:0 12px 13px;background:var(--panel-soft)}}.metric{{min-width:0;padding:10px;background:var(--panel)}}.metric span{{display:block;color:var(--muted);font-size:11px}}.metric strong{{display:block;margin-top:2px;font-size:14px;letter-spacing:-.02em}}.fields{{margin:0 12px 13px;border:1px solid var(--line);border-radius:13px;background:var(--panel-soft);color:var(--ink)}}.fields summary{{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px;padding:0 11px;color:var(--brand-ink);font-size:12px;font-weight:800;cursor:pointer;list-style:none}}.fields summary::-webkit-details-marker{{display:none}}.fields summary span{{min-width:24px;padding:2px 6px;border-radius:999px;background:var(--panel);color:var(--muted);text-align:center;font-size:11px}}.table-wrap{{max-height:290px;overflow:auto;border-top:1px solid var(--line)}}.field-table{{width:100%;min-width:430px;border-collapse:collapse;font-size:11px}}.field-table tr{{display:table-row}}.field-table th,.field-table td{{display:table-cell;padding:8px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top}}.field-table thead th{{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:10px;white-space:nowrap}}.field-table tbody th{{min-width:112px;background:var(--panel);color:var(--ink);font-weight:750}}.field-table tbody th span{{display:block}}.field-table tbody th code{{display:block;margin-top:2px;color:var(--muted);font-size:10px;overflow-wrap:anywhere}}.field-table td{{min-width:150px;max-width:300px;background:var(--panel)}}.field-table td span,.field-table td a{{display:block;color:var(--ink);overflow-wrap:anywhere}}.field-table td a{{color:var(--brand-ink)}}.chart{{position:relative;display:block;aspect-ratio:792/1000;background:var(--panel-soft);color:var(--brand-ink)}}.chart img{{display:block;width:100%;height:100%;object-fit:contain}}.chart span{{position:absolute;right:8px;bottom:8px;padding:4px 8px;border-radius:999px;background:color-mix(in srgb,var(--panel) 82%,transparent);font-size:11px;font-weight:700}}.chart-empty{{display:grid;place-items:center;color:var(--muted)}}.project footer{{display:flex;flex-direction:column;gap:3px;min-height:64px;padding:12px 17px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}}.sr-only{{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}}.empty{{display:grid;min-height:250px;place-items:center;border:1px dashed var(--line);border-radius:20px;background:var(--panel);color:var(--muted)}}:is(a,button,input):focus-visible{{outline:3px solid var(--focus);outline-offset:3px}}@media (max-width:760px){{.top{{align-items:start;flex-direction:column}}.metadata{{justify-content:flex-start}}.kpis{{grid-template-columns:repeat(2,minmax(0,1fr))}}.control-inner{{grid-template-columns:1fr}}.sort{{width:100%}}}}@media (max-width:430px){{.kpis{{grid-template-columns:1fr}}.metrics{{grid-template-columns:1fr 1fr}}}}@media (prefers-reduced-motion:reduce){{*,*::before,*::after{{scroll-behavior:auto!important;transition-duration:.01ms!important}}}}
-</style>
+<style>{DASHBOARD_CSS}</style>
 </head>
 <body data-project-json="{embedded_projects}">
 <div class="shell">
@@ -311,7 +524,7 @@ def render_html(
   <div>
     <p class="eyebrow">Production Snapshot</p>
     <h1>武汉楼盘销控情报台</h1>
-    <p class="subtitle">每日 08:00 自动获取生产销控数据，生成可检索、可排序的静态 HTML 快照。</p>
+    <p class="subtitle">每日 08:00 自动获取生产数据；一房一价增量由手动全量任务维护。</p>
   </div>
   <div class="metadata"><span class="pill">城市 4201 · 武汉</span><span class="pill">生成 {esc(generated_at)}</span></div>
 </header>
@@ -324,7 +537,7 @@ def render_html(
 {one_price_coverage(projects, one_price_snapshots, root_prefix=root_prefix)}
 <section class="controls" aria-label="全部楼盘筛选与排序">
   <div class="control-inner">
-    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg><span class="sr-only">搜索楼盘、开发商或地址</span><input data-role="project-search" type="search" placeholder="搜索全部楼盘、开发商或地址" autocomplete="off"></label>
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg><span class="sr-only">搜索楼盘、开发商或地址</span><input data-role="project-search" type="search" placeholder="搜索楼盘、开发商、地址、全部接口字段" autocomplete="off"></label>
     <div class="sort" role="group" aria-label="排序">
       <button type="button" data-role="sort-control" data-sort="default" aria-pressed="true">默认</button>
       <button type="button" data-role="sort-control" data-sort="sold" aria-pressed="false">已售优先</button>
@@ -335,8 +548,15 @@ def render_html(
 </section>
 <main class="grid" role="list" aria-live="polite">{cards or '<section class="empty">暂无楼盘数据</section>'}</main>
 </div>
-<script>
-(function(){{'use strict';const grid=document.querySelector('[role="list"]');const cards=[...grid.querySelectorAll('.project')];const search=document.querySelector('[data-role="project-search"]');let sortMode='default';function apply(){{const words=search.value.trim().toLowerCase().split(/\\s+/).filter(Boolean);cards.forEach(card=>{{const value=(card.dataset.search||'').toLowerCase();card.hidden=words.some(word=>!value.includes(word));}});if(sortMode==='sold')cards.sort((a,b)=>Number(b.dataset.sold)-Number(a.dataset.sold));else if(sortMode==='price-asc')cards.sort((a,b)=>Number(a.dataset.price)-Number(b.dataset.price));else if(sortMode==='price-desc')cards.sort((a,b)=>Number(b.dataset.price)-Number(a.dataset.price));else cards.sort((a,b)=>a.dataset.defaultIndex-b.dataset.defaultIndex);cards.forEach(card=>grid.append(card));}}cards.forEach((card,index)=>card.dataset.defaultIndex=index);search.addEventListener('input',apply);document.querySelectorAll('[data-role="sort-control"]').forEach(button=>button.addEventListener('click',()=>{{document.querySelectorAll('[data-role="sort-control"]').forEach(item=>item.setAttribute('aria-pressed','false'));button.setAttribute('aria-pressed','true');sortMode=button.dataset.sort;apply();}}));}})();
-</script>
+<dialog id="chart-dialog" class="chart-dialog" aria-labelledby="chart-dialog-title">
+  <article>
+    <header>
+      <div><p>销控图查看</p><h2 id="chart-dialog-title" data-role="chart-dialog-title"></h2></div>
+      <button type="button" data-role="close-chart-dialog">关闭</button>
+    </header>
+    <img data-role="chart-dialog-image" alt="">
+  </article>
+</dialog>
+<script>{DASHBOARD_SCRIPT}</script>
 </body>
-</html>'''
+</html>"""

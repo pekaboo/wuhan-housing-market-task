@@ -153,3 +153,42 @@ def test_enrichment_batch_fetches_only_the_rotation_slice_and_keeps_old_data():
         assert state['nextIndex'] == 4
         assert state['lastBatchProjectIds'] == [3, 4]
         assert 'preserved the previous one-price snapshot' in '\n'.join(logs)
+
+
+def test_parser_supports_reusing_committed_enrichment_for_daily_runs():
+    args = build_parser().parse_args(['--reuse-enrichment'])
+
+    assert args.reuse_enrichment is True
+    assert args.fetch_one_price is False
+
+
+def test_reuse_existing_enrichment_loads_all_committed_json_without_fetching():
+    from sale_dashboard.__main__ import reuse_existing_enrichment
+
+    with tempfile.TemporaryDirectory() as temporary_directory:
+        root = Path(temporary_directory)
+        data_dir = root / 'data' / 'projects' / '123'
+        data_dir.mkdir(parents=True)
+        payload = json.dumps({'projectId': 123, 'status': 'complete'}, separators=(',', ':')).encode()
+        (data_dir / 'one-price.json.gz').write_bytes(gzip.compress(payload, mtime=0))
+        (data_dir / 'room-types.json').write_text(
+            json.dumps({'projectId': 123, 'status': 'complete', 'types': []}),
+            encoding='utf-8',
+        )
+        (root / 'data' / 'enrichment-state.json').write_text(
+            json.dumps({'version': 1, 'nextIndex': 120, 'batchSize': 100, 'lastBatchProjectIds': [123]}),
+            encoding='utf-8',
+        )
+        wangqian_dir = root / 'data' / 'wangqian'
+        wangqian_dir.mkdir(parents=True)
+        (wangqian_dir / '2026-08-26.json').write_text(
+            json.dumps({'date': '2026-08-26', 'totalSoldNum': 9, 'projects': []}),
+            encoding='utf-8',
+        )
+
+        one_price, room_types, state, wangqian = reuse_existing_enrichment(root)
+
+        assert one_price == {'123': {'projectId': 123, 'status': 'complete'}}
+        assert room_types == {'123': {'projectId': 123, 'status': 'complete', 'types': []}}
+        assert state['nextIndex'] == 120
+        assert wangqian == {'date': '2026-08-26', 'totalSoldNum': 9, 'projects': []}

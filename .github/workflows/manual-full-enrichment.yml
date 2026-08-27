@@ -1,10 +1,13 @@
-name: Daily Production HTML
+name: Manual Full Enrichment
 
 on:
-  schedule:
-    # 08:00 Asia/Shanghai = 00:00 UTC. GitHub may queue cron runs for a few minutes.
-    - cron: "0 0 * * *"
   workflow_dispatch:
+    inputs:
+      batch_size:
+        description: Number of projects to enrich incrementally in this run
+        required: true
+        default: 100
+        type: number
 
 concurrency:
   group: production-site
@@ -16,9 +19,9 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-publish:
+  enrich-and-publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -40,7 +43,7 @@ jobs:
           python -m pip install -r requirements-dev.txt
           pytest -q
 
-      - name: Generate homepage snapshot and reuse committed enrichment
+      - name: Generate enriched production snapshot
         env:
           WFT_TOKEN: ${{ secrets.WFT_TOKEN }}
         run: |
@@ -49,7 +52,8 @@ jobs:
             --site-output site \
             --page-size 50 \
             --room-page-size 500 \
-            --reuse-enrichment
+            --fetch-one-price \
+            --enrichment-batch-size ${{ inputs.batch_size }}
 
       - name: Ensure token is absent from generated artifacts
         env:
@@ -71,15 +75,15 @@ jobs:
                   raise SystemExit(f"Generated artifacts contain the upstream token: {path}")
           PY
 
-      - name: Commit production snapshot
+      - name: Commit enriched production snapshot
         run: |
           git config user.name "pekaboo-task[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A site
           if git diff --cached --quiet; then
-            echo "No production snapshot changes."
+            echo "No enriched production snapshot changes."
           else
-            git commit -m "chore: update daily sale-control snapshot"
+            git commit -m "chore: increment sale-control enrichment"
             git push
           fi
 

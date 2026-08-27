@@ -59,10 +59,16 @@ def build_parser() -> argparse.ArgumentParser:
         type=float,
         default=float(os.getenv('WFT_REQUEST_TIMEOUT_SECONDS', DEFAULT_TIMEOUT_SECONDS)),
     )
-    parser.add_argument(
+    enrichment_mode = parser.add_mutually_exclusive_group()
+    enrichment_mode.add_argument(
         '--fetch-one-price',
         action='store_true',
         help='fetch room types, presale certificates, room-level one-price data, and yesterday wangqian changes',
+    )
+    enrichment_mode.add_argument(
+        '--reuse-enrichment',
+        action='store_true',
+        help='reuse all committed one-price, room-type, and wangqian JSON during a homepage-only refresh',
     )
     parser.add_argument(
         '--enrichment-batch-size',
@@ -118,6 +124,42 @@ def load_existing_snapshots(
         if project_id is not None:
             room_types[str(project_id)] = snapshot
     return one_price, room_types
+
+
+def load_committed_enrichment_state(site_dir: Path | str) -> dict:
+    path = Path(site_dir) / 'data' / 'enrichment-state.json'
+    try:
+        value = json.loads(path.read_text(encoding='utf-8'))
+    except (OSError, json.JSONDecodeError):
+        return {'version': ENRICHMENT_STATE_VERSION, 'nextIndex': 0}
+    if not isinstance(value, dict) or value.get('version') != ENRICHMENT_STATE_VERSION:
+        return {'version': ENRICHMENT_STATE_VERSION, 'nextIndex': 0}
+    next_index = value.get('nextIndex')
+    if not isinstance(next_index, int) or next_index < 0:
+        return {'version': ENRICHMENT_STATE_VERSION, 'nextIndex': 0}
+    return value
+
+
+def load_existing_wangqian_snapshot(site_dir: Path | str) -> dict | None:
+    directory = Path(site_dir) / 'data' / 'wangqian'
+    for path in sorted(directory.glob('*.json'), key=lambda item: item.name, reverse=True):
+        try:
+            snapshot = json.loads(path.read_text(encoding='utf-8'))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(snapshot, dict):
+            return snapshot
+    return None
+
+
+def reuse_existing_enrichment(site_dir: Path | str) -> tuple[dict[str, dict], dict[str, dict], dict, dict | None]:
+    one_price_snapshots, room_type_snapshots = load_existing_snapshots(site_dir)
+    return (
+        one_price_snapshots,
+        room_type_snapshots,
+        load_committed_enrichment_state(site_dir),
+        load_existing_wangqian_snapshot(site_dir),
+    )
 
 
 def select_enrichment_batch(
@@ -243,6 +285,13 @@ def main() -> int:
                 'totalSoldNum': None,
                 'projects': [],
             }
+
+    elif args.reuse_enrichment:
+        one_price_snapshots, room_type_snapshots, enrichment_state, wangqian_snapshot = reuse_existing_enrichment(site_dir)
+        log(
+            f'reusing committed enrichment: {len(one_price_snapshots)} one-price snapshots, '
+            f'{len(room_type_snapshots)} room-type snapshots'
+        )
 
     output_paths = write_site(
         projects,
