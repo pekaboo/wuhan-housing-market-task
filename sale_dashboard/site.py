@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from .design import APPLE_DESIGN_CSS, APPLE_DETAIL_CSS
 from .one_price import ONE_PRICE_CSS, ONE_PRICE_JS, one_price_section
 from .room_types import ROOM_TYPE_CSS, ROOM_TYPE_JS, room_type_section
 from .render import esc, field_rows, integer, money, summarize
@@ -50,10 +51,31 @@ def all_charts(project: dict[str, Any]) -> list[dict[str, Any]]:
 DETAIL_CSS = '''
 :root{--surface:#f4f7fb;--panel:#fff;--panel-soft:#eef3f9;--ink:#132233;--muted:#556879;--line:#d8e1ea;--brand:#0068a8;--brand-ink:#014d7d;--accent:#b98511;--focus:#2b7fd1;--shadow:0 12px 32px #17324d14}
 @media (prefers-color-scheme:dark){:root{--surface:#0a121b;--panel:#121d28;--panel-soft:#182633;--ink:#edf4fa;--muted:#a5b6c4;--line:#293b4a;--brand:#69b6e8;--brand-ink:#a9d8f6;--accent:#dfae4e;--focus:#8ccbf7;--shadow:0 12px 32px #00000059}}
-*{box-sizing:border-box}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}body{margin:0;background:var(--surface);color:var(--ink);font:15px/1.58 "Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}.shell{max-width:1120px;margin:0 auto;padding:0 clamp(15px,3vw,36px) 72px}.breadcrumb{display:flex;gap:9px;align-items:center;padding:26px 0 12px;color:var(--muted);font-size:13px}.breadcrumb a{color:var(--brand-ink);font-weight:750;text-decoration:none}.hero{padding:12px 0 22px;border-bottom:1px solid var(--line)}.eyebrow{display:flex;gap:8px;color:var(--brand-ink);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:2px;background:var(--accent)}h1{margin:8px 0 8px;font-size:clamp(28px,4.5vw,50px);line-height:1.05;letter-spacing:-.055em}.description{max-width:650px;margin:0;color:var(--muted)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0}.metric{padding:15px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;margin-top:3px;font-size:20px;letter-spacing:-.04em}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:0 0 22px;background:var(--panel-soft);border:1px solid var(--line);border-radius:18px;overflow:hidden}.fact{padding:14px 16px;background:var(--panel)}.fact span{display:block;color:var(--muted);font-size:11px}.fact strong{display:block;margin-top:3px;font-size:14px;overflow-wrap:anywhere}h2{margin:32px 0 13px;font-size:20px;letter-spacing:-.04em}.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:15px}.chart{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow);text-decoration:none}.chart img{display:block;width:100%;height:auto;background:var(--panel-soft)}.chart span{display:block;padding:11px 13px;color:var(--brand-ink);font-size:12px;font-weight:750}.field-panel{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.field-wrap{overflow-x:auto}.field-table{width:100%;min-width:430px;border-collapse:collapse;font-size:13px}.field-table tr{display:table-row}.field-table th,.field-table td{display:table-cell;padding:12px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top}.field-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px;white-space:nowrap}.field-table tbody th{min-width:150px;background:var(--panel);font-weight:750}.field-table tbody th span{display:block}.field-table tbody th code{display:block;margin-top:2px;color:var(--muted);font-size:11px;overflow-wrap:anywhere}.field-table td{min-width:220px;max-width:520px;background:var(--panel)}.field-table td span,.field-table td a{display:block;color:var(--ink);overflow-wrap:anywhere}.field-table td a{color:var(--brand-ink)}.raw-data{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink)}.raw-data summary{min-height:46px;padding:0 15px;color:var(--brand-ink);font-weight:800;cursor:pointer;list-style:none;line-height:46px}.raw-data summary::-webkit-details-marker{display:none}.raw-data pre{max-height:420px;margin:0;padding:15px;overflow:auto;border-top:1px solid var(--line);background:var(--panel-soft);font-size:12px;line-height:1.6}.empty{display:grid;min-height:230px;place-items:center;border:1px dashed var(--line);border-radius:18px;background:var(--panel);color:var(--muted)}.footer-nav{display:flex;justify-content:space-between;gap:10px;margin-top:30px}.footer-nav a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:190px;padding:14px 16px;border:1px solid var(--line);border-radius:15px;background:var(--panel);color:var(--ink);font-weight:750;text-decoration:none;box-shadow:var(--shadow)}.footer-nav span:first-child{color:var(--muted);font-size:11px}.footer-nav .next{margin-left:auto;text-align:right}.footer-nav a:hover{border-color:var(--brand)}:is(a,input,button):focus-visible{outline:3px solid var(--focus);outline-offset:3px}@media (max-width:760px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.facts{grid-template-columns:1fr}.footer-nav{align-items:stretch;flex-direction:column}.footer-nav a{width:100%}.footer-nav .next{text-align:left}}@media (max-width:430px){.metrics{grid-template-columns:1fr}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}}
+*{box-sizing:border-box}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}body{margin:0;background:var(--surface);color:var(--ink);font:15px/1.58 "Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}.shell{max-width:1120px;margin:0 auto;padding:0 clamp(15px,3vw,36px) 72px}.breadcrumb{display:flex;gap:9px;align-items:center;padding:26px 0 12px;color:var(--muted);font-size:13px}.breadcrumb a{color:var(--brand-ink);font-weight:750;text-decoration:none}.hero{padding:12px 0 22px;border-bottom:1px solid var(--line)}.eyebrow{display:flex;gap:8px;color:var(--brand-ink);font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:2px;background:var(--accent)}h1{margin:8px 0 8px;font-size:clamp(28px,4.5vw,50px);line-height:1.05;letter-spacing:-.055em}.description{max-width:650px;margin:0;color:var(--muted)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0}.metric{padding:15px;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:var(--shadow)}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;margin-top:3px;font-size:20px;letter-spacing:-.04em}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:0 0 22px;background:var(--panel-soft);border:1px solid var(--line);border-radius:18px;overflow:hidden}.fact{padding:14px 16px;background:var(--panel)}.fact span{display:block;color:var(--muted);font-size:11px}.fact strong{display:block;margin-top:3px;font-size:14px;overflow-wrap:anywhere}h2{margin:32px 0 13px;font-size:20px;letter-spacing:-.04em}.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:15px}.chart{overflow:hidden;padding:0;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow);color:var(--ink);font:inherit;text-align:left;text-decoration:none;cursor:zoom-in}.chart img{display:block;width:100%;height:auto;background:var(--panel-soft)}.chart span{display:block;padding:11px 13px;color:var(--brand-ink);font-size:12px;font-weight:750}.field-panel{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.field-wrap{overflow-x:auto}.field-table{width:100%;min-width:430px;border-collapse:collapse;font-size:13px}.field-table tr{display:table-row}.field-table th,.field-table td{display:table-cell;padding:12px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top}.field-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px;white-space:nowrap}.field-table tbody th{min-width:150px;background:var(--panel);font-weight:750}.field-table tbody th span{display:block}.field-table tbody th code{display:block;margin-top:2px;color:var(--muted);font-size:11px;overflow-wrap:anywhere}.field-table td{min-width:220px;max-width:520px;background:var(--panel)}.field-table td span,.field-table td a{display:block;color:var(--ink);overflow-wrap:anywhere}.field-table td a{color:var(--brand-ink)}.chart-dialog-image{display:grid;place-items:center;padding:16px;background:var(--panel-soft)}.chart-dialog-image img{display:block;width:100%;max-width:100%;height:auto;background:var(--panel)}.raw-data{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink)}.raw-data summary{min-height:46px;padding:0 15px;color:var(--brand-ink);font-weight:800;cursor:pointer;list-style:none;line-height:46px}.raw-data summary::-webkit-details-marker{display:none}.raw-data pre{max-height:420px;margin:0;padding:15px;overflow:auto;border-top:1px solid var(--line);background:var(--panel-soft);font-size:12px;line-height:1.6}.empty{display:grid;min-height:230px;place-items:center;border:1px dashed var(--line);border-radius:18px;background:var(--panel);color:var(--muted)}.footer-nav{display:flex;justify-content:space-between;gap:10px;margin-top:30px}.footer-nav a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:190px;padding:14px 16px;border:1px solid var(--line);border-radius:15px;background:var(--panel);color:var(--ink);font-weight:750;text-decoration:none;box-shadow:var(--shadow)}.footer-nav span:first-child{color:var(--muted);font-size:11px}.footer-nav .next{margin-left:auto;text-align:right}.footer-nav a:hover{border-color:var(--brand)}:is(a,input,button):focus-visible{outline:3px solid var(--focus);outline-offset:3px}@media (max-width:760px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.facts{grid-template-columns:1fr}.footer-nav{align-items:stretch;flex-direction:column}.footer-nav a{width:100%}.footer-nav .next{text-align:left}}@media (max-width:430px){.metrics{grid-template-columns:1fr}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}}
 '''
 
 
+
+DETAIL_CHART_DIALOG_JS = r"""
+(function(){
+  'use strict';
+  var dialog=document.getElementById('chart-dialog');
+  if(!dialog)return;
+  var image=dialog.querySelector('[data-role="chart-dialog-image"]');
+  var title=dialog.querySelector('[data-role="chart-dialog-title"]');
+  var opener=null;
+  dialog.addEventListener('click',function(event){if(event.target===dialog)dialog.close()});
+  dialog.addEventListener('close',function(){image.removeAttribute('src');if(opener){opener.focus();opener=null}});
+  dialog.querySelector('[data-role="close-chart-dialog"]').addEventListener('click',function(){dialog.close()});
+  document.addEventListener('click',function(event){
+    var trigger=event.target.closest('[data-role="chart-trigger"]');
+    if(!trigger)return;
+    event.preventDefault();opener=trigger;image.src=trigger.getAttribute('data-chart-url')||'';
+    image.alt=trigger.getAttribute('data-chart-title')||'销控图';title.textContent=trigger.getAttribute('data-chart-title')||'销控图';
+    if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
+  });
+})();
+"""
 
 def render_project_page(
     project: dict[str, Any],
@@ -69,10 +91,10 @@ def render_project_page(
 ) -> str:
     charts = all_charts(project)
     charts_html = ''.join(
-        f'''<a class="chart" href="{esc(chart['img'])}" target="_blank" rel="noopener noreferrer">
+        f'''<button type="button" class="chart" data-role="chart-trigger" data-chart-url="{esc(chart['img'])}" data-chart-title="{esc(project.get('name') or '楼盘')} {esc(chart.get('title') or '销控图')}" aria-label="打开 {esc(project.get('name') or '楼盘')} {esc(chart.get('title') or '销控图')}">
           <img src="{esc(chart['img'])}" alt="{esc(project.get('name'))} {esc(chart.get('title') or '销控图')}" loading="lazy" decoding="async">
           <span>{esc(chart.get('title') or '销控图')} · {esc(chart.get('time') or '数据日期未知')}</span>
-        </a>'''
+        </button>'''
         for chart in charts
     ) or '<section class="empty">暂无销控图</section>'
     previous_html = (
@@ -95,7 +117,7 @@ def render_project_page(
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="{esc(project.get('name'))} 楼盘销控详情，包含接口全部字段、标准销控图、抖音版销控图与历史销控图。">
 <title>{esc(project.get('name'))} · 楼盘销控详情</title>
-<style>{DETAIL_CSS}{ONE_PRICE_CSS}{ROOM_TYPE_CSS}</style>
+<style>{DETAIL_CSS}{APPLE_DESIGN_CSS}{ONE_PRICE_CSS}{ROOM_TYPE_CSS}{APPLE_DETAIL_CSS}</style>
 </head>
 <body>
 <div class="shell">
@@ -129,12 +151,22 @@ def render_project_page(
 </details>
 <h2>全部销控图</h2>
 <section class="charts" aria-label="全部销控图">{charts_html}</section>
+<dialog id="chart-dialog" class="room-type-dialog chart-dialog" aria-labelledby="chart-dialog-title">
+  <article>
+    <header>
+      <div><p>销控图查看</p><h3 id="chart-dialog-title" data-role="chart-dialog-title"></h3></div>
+      <button type="button" data-role="close-chart-dialog">关闭</button>
+    </header>
+    <div class="chart-dialog-image"><img data-role="chart-dialog-image" alt=""></div>
+  </article>
+</dialog>
 <nav class="footer-nav" aria-label="项目导航">{previous_html}{next_html}</nav>
 <p class="description" style="margin-top:24px">生产快照生成时间：{esc(generated_at)}；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 {ONE_PRICE_JS}
 {ROOM_TYPE_JS}
+{DETAIL_CHART_DIALOG_JS}
 </script>
 </body>
 </html>'''

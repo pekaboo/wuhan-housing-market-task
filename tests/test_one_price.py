@@ -351,7 +351,8 @@ def test_one_price_floor_matrix_is_a_map_style_aligned_grid(tmp_path):
     room_rule = re.search(r'\.room-cells\{([^}]+)\}', detail)
     assert room_rule
     assert 'grid-auto-flow:column' in room_rule.group(1)
-    assert 'grid-auto-columns:minmax(112px,1fr)' in room_rule.group(1)
+    assert '--room-width:112px' in detail
+    assert 'grid-auto-columns:var(--room-width)' in room_rule.group(1)
     assert 'grid-auto-rows:100%' in room_rule.group(1)
     assert 'height:calc(var(--floor-height) - 10px)' in room_rule.group(1)
 
@@ -445,7 +446,10 @@ def test_one_price_floor_map_has_apple_maps_style_proportional_gestures(tmp_path
         "floorResults.style.setProperty('--floor-scale'",
         "floorResults.style.setProperty('--pan-x'",
         "floorResults.style.setProperty('--pan-y'",
-        'Math.min(2.2,Math.max(.45',
+        'Math.min(2.2,Math.max(.18',
+        'function fitView(canvas)',
+        'function resetView(canvas){fitView(canvas)}',
+        'fitView(canvas)',
         '.floor-canvas{position:relative;',
         'transform-origin:0 0',
         'transform:translate3d(var(--pan-x),var(--pan-y),0) scale(var(--floor-scale))',
