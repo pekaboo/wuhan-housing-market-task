@@ -47,7 +47,9 @@ jobs:
           test -n "$WFT_TOKEN" || { echo "::error::Set the WFT_TOKEN repository secret."; exit 1; }
           python -m sale_dashboard \
             --site-output site \
-            --projects-per-page 6
+            --projects-per-page 6 \
+            --fetch-one-price \
+            --room-page-size 500
 
       - name: Ensure token is absent from generated artifacts
         env:

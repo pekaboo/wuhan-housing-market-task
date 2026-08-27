@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import json
-import os
 import math
+import os
+import re
 import shutil
 import tempfile
 from datetime import datetime
@@ -12,6 +13,7 @@ from zoneinfo import ZoneInfo
 
 from .render import render_html
 from .site import render_project_page
+from .wangqian import render_wangqian_page
 
 
 def china_timestamp(now: datetime | None = None) -> str:
@@ -33,9 +35,40 @@ def _atomic_write(path: Path, content: str) -> None:
             os.unlink(temporary_name)
 
 
+def _write_json(path: Path, value: Any) -> None:
+    _atomic_write(path, json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + '\n')
+
+
 def safe_project_id(project: dict[str, Any], index: int) -> str:
-    raw_id = str(project.get("id") or f"missing-{index}")
-    return "".join(character if character.isalnum() else "-" for character in raw_id).strip("-") or f"project-{index}"
+    raw_id = str(project.get('id') or f'missing-{index}')
+    return ''.join(character if character.isalnum() else '-' for character in raw_id).strip('-') or f'project-{index}'
+
+
+def _project_snapshot(
+    project: dict[str, Any],
+    snapshots: dict[Any, dict[str, Any]],
+) -> dict[str, Any] | None:
+    project_id = project.get('id')
+    candidates: list[Any] = [project_id, str(project_id)]
+    if str(project_id).isdigit():
+        candidates.append(int(project_id))
+    for candidate in candidates:
+        snapshot = snapshots.get(candidate)
+        if isinstance(snapshot, dict):
+            return snapshot
+    return None
+
+
+def _wangqian_slug(snapshot: dict[str, Any]) -> str:
+    value = str(snapshot.get('date') or snapshot.get('time') or 'latest')
+    match = re.match(r'(\d{4})-(\d{1,2})-(\d{1,2})', value)
+    if match:
+        year, month, day = (int(part) for part in match.groups())
+        return f'{year:04d}-{month:02d}-{day:02d}'
+    try:
+        return datetime.fromisoformat(value).strftime('%Y-%m-%d')
+    except ValueError:
+        return ''.join(character if character.isalnum() else '-' for character in value[:10]).strip('-') or 'latest'
 
 
 def write_site(
@@ -45,34 +78,45 @@ def write_site(
     generated_at: str | None = None,
     per_page: int = 6,
     now: datetime | None = None,
+    one_price_snapshots: dict[Any, dict[str, Any]] | None = None,
+    wangqian_snapshot: dict[str, Any] | None = None,
 ) -> list[Path]:
     timestamp = generated_at or china_timestamp(now)
     root = Path(site_dir)
     if root.exists():
         shutil.rmtree(root)
     root.mkdir(parents=True, exist_ok=True)
+    snapshots = one_price_snapshots or {}
 
     page_count = max(1, math.ceil(len(projects) / per_page))
     output_paths: list[Path] = []
     for page_number in range(1, page_count + 1):
         page_projects = projects[(page_number - 1) * per_page : page_number * per_page]
-        relative_path = Path("index.html") if page_number == 1 else Path("page", str(page_number), "index.html")
-        absolute_path = root / relative_path
+        relative_path = Path('index.html') if page_number == 1 else Path('page', str(page_number), 'index.html')
         _atomic_write(
-            absolute_path,
+            root / relative_path,
             render_html(
                 page_projects,
                 generated_at=timestamp,
                 summary_projects=projects,
                 current_page=page_number,
                 page_count=page_count,
-                root_prefix="" if page_number == 1 else "../../",
+                root_prefix='' if page_number == 1 else '../../',
+                one_price_snapshots=snapshots or None,
             ),
         )
         output_paths.append(relative_path)
 
     for index, project in enumerate(projects):
-        relative_path = Path("projects", safe_project_id(project, index), "index.html")
+        safe_id = safe_project_id(project, index)
+        relative_path = Path('projects', safe_id, 'index.html')
+        snapshot = _project_snapshot(project, snapshots)
+        data_relative_path = Path('data', 'projects', safe_id, 'one-price.json')
+        if snapshot is not None:
+            enriched_snapshot = dict(snapshot)
+            enriched_snapshot.setdefault('projectId', project.get('id'))
+            enriched_snapshot.setdefault('generatedAt', timestamp)
+            _write_json(root / data_relative_path, enriched_snapshot)
         _atomic_write(
             root / relative_path,
             render_project_page(
@@ -81,15 +125,20 @@ def write_site(
                 all_count=len(projects),
                 previous_project=projects[index - 1] if index > 0 else None,
                 next_project=projects[index + 1] if index + 1 < len(projects) else None,
+                one_price_snapshot=snapshot,
+                one_price_url=f'../../{data_relative_path.as_posix()}' if snapshot is not None else None,
             ),
         )
         output_paths.append(relative_path)
 
-    snapshot = {"generatedAt": timestamp, "count": len(projects), "projects": projects}
-    _atomic_write(
-        root / "data" / "sale-data.json",
-        json.dumps(snapshot, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-    )
+    if wangqian_snapshot is not None:
+        relative_path = Path('wangqian', 'index.html')
+        _atomic_write(root / relative_path, render_wangqian_page(wangqian_snapshot, generated_at=timestamp))
+        output_paths.append(relative_path)
+        _write_json(root / 'data' / 'wangqian' / f'{_wangqian_slug(wangqian_snapshot)}.json', wangqian_snapshot)
+
+    snapshot_data = {'generatedAt': timestamp, 'count': len(projects), 'projects': projects}
+    _write_json(root / 'data' / 'sale-data.json', snapshot_data)
     return output_paths
 
 
@@ -105,8 +154,5 @@ def write_outputs(
     snapshot = {'generatedAt': timestamp, 'count': len(projects), 'projects': projects}
 
     _atomic_write(Path(html_path), render_html(projects, generated_at=timestamp))
-    _atomic_write(
-        Path(data_path),
-        json.dumps(snapshot, ensure_ascii=False, indent=2, sort_keys=True) + '\n',
-    )
+    _write_json(Path(data_path), snapshot)
     return timestamp

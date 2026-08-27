@@ -1,0 +1,1734 @@
+{
+  "date": "2026-8-26",
+  "list": [
+    {
+      "allRoomList": [],
+      "id": 334503298535534,
+      "name": "佳兆业浣溪璞园",
+      "roomList": [
+        {
+          "area": 85.08,
+          "buildId": 757835325366351,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))22",
+          "floor": "10",
+          "id": 841465600119045,
+          "price": 9761.15,
+          "roomName": "1001",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "22#",
+          "totalPrice": 830478.64,
+          "unitName": "1"
+        },
+        {
+          "area": 117.0,
+          "buildId": 757835325366342,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))13",
+          "floor": "7",
+          "id": 757835810332772,
+          "price": 4982.0,
+          "roomName": "701",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "13#",
+          "totalPrice": 582894.0,
+          "unitName": "1"
+        },
+        {
+          "area": 106.66,
+          "buildId": 757835325366346,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))17",
+          "floor": "8",
+          "id": 757835830108266,
+          "price": 5002.0,
+          "roomName": "802",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "17#",
+          "totalPrice": 533513.32,
+          "unitName": "1"
+        },
+        {
+          "area": 107.34,
+          "buildId": 757835325366350,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))21",
+          "floor": "9",
+          "id": 757835896828010,
+          "price": 5022.0,
+          "roomName": "902",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "21#",
+          "totalPrice": 539061.48,
+          "unitName": "1"
+        },
+        {
+          "area": 108.9,
+          "buildId": 757835325366349,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))20",
+          "floor": "6",
+          "id": 841492048105735,
+          "price": 9358.79,
+          "roomName": "602",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "20#",
+          "totalPrice": 1019172.23,
+          "unitName": "1"
+        },
+        {
+          "area": 108.9,
+          "buildId": 757835325366349,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))20",
+          "floor": "6",
+          "id": 841492048105736,
+          "price": 9358.79,
+          "roomName": "603",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "20#",
+          "totalPrice": 1019172.23,
+          "unitName": "1"
+        },
+        {
+          "area": 107.04,
+          "buildId": 757835325366352,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))23",
+          "floor": "7",
+          "id": 757835945193573,
+          "price": 4982.0,
+          "roomName": "702",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "23#",
+          "totalPrice": 533273.28,
+          "unitName": "1"
+        },
+        {
+          "area": 107.33,
+          "buildId": 757835325366354,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))25",
+          "floor": "8",
+          "id": 757835954278522,
+          "price": 4952.0,
+          "roomName": "803",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "25#",
+          "totalPrice": 531498.16,
+          "unitName": "1"
+        },
+        {
+          "area": 107.33,
+          "buildId": 757835325366354,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))25",
+          "floor": "8",
+          "id": 757835954282618,
+          "price": 4952.0,
+          "roomName": "802",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "25#",
+          "totalPrice": 531498.16,
+          "unitName": "2"
+        },
+        {
+          "area": 107.33,
+          "buildId": 757835325366354,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))25",
+          "floor": "8",
+          "id": 757835954282619,
+          "price": 4952.0,
+          "roomName": "803",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "25#",
+          "totalPrice": 531498.16,
+          "unitName": "2"
+        },
+        {
+          "area": 85.38,
+          "buildId": 757835325366355,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))26",
+          "floor": "3",
+          "id": 757835971801193,
+          "price": 4752.0,
+          "roomName": "304",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "26#",
+          "totalPrice": 405725.76,
+          "unitName": "1"
+        },
+        {
+          "area": 107.89,
+          "buildId": 757835325366355,
+          "buildName": "临江熙园(原佳兆业浣溪璞园(二期))26",
+          "floor": "5",
+          "id": 757835971801202,
+          "price": 4792.0,
+          "roomName": "503",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "26#",
+          "totalPrice": 517008.88,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 12
+    },
+    {
+      "allRoomList": [],
+      "id": 334502236389464,
+      "name": "孔雀城航天府",
+      "roomList": [
+        {
+          "area": 98.78,
+          "buildId": 312484029026376,
+          "buildName": "居住项目（孔雀城航天府·滨江苑二期项目）12",
+          "floor": "11",
+          "id": 313316460388475,
+          "price": 6918.97,
+          "roomName": "1102",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "12#",
+          "totalPrice": 683455.86,
+          "unitName": "1"
+        },
+        {
+          "area": 91.97,
+          "buildId": 312484029026379,
+          "buildName": "居住项目（孔雀城航天府·滨江苑二期项目）15",
+          "floor": "9",
+          "id": 313316476158060,
+          "price": 6414.8,
+          "roomName": "902",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "15#",
+          "totalPrice": 589969.16,
+          "unitName": "一"
+        },
+        {
+          "area": 91.97,
+          "buildId": 312484029026379,
+          "buildName": "居住项目（孔雀城航天府·滨江苑二期项目）15",
+          "floor": "9",
+          "id": 313316476158061,
+          "price": 6414.8,
+          "roomName": "903",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "15#",
+          "totalPrice": 589969.16,
+          "unitName": "一"
+        },
+        {
+          "area": 107.18,
+          "buildId": 312484029026379,
+          "buildName": "居住项目（孔雀城航天府·滨江苑二期项目）15",
+          "floor": "16",
+          "id": 313316476162134,
+          "price": 6445.99,
+          "roomName": "1604",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "15#",
+          "totalPrice": 690881.21,
+          "unitName": "一"
+        },
+        {
+          "area": 107.18,
+          "buildId": 312484029026379,
+          "buildName": "居住项目（孔雀城航天府·滨江苑二期项目）15",
+          "floor": "21",
+          "id": 313316476162159,
+          "price": 6601.91,
+          "roomName": "2104",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "15#",
+          "totalPrice": 707592.71,
+          "unitName": "一"
+        }
+      ],
+      "soldNum": 5
+    },
+    {
+      "allRoomList": [],
+      "id": 329239308890196,
+      "name": "保利庭瑞阅江台",
+      "roomList": [
+        {
+          "area": 133.33,
+          "buildId": 312484209336394,
+          "buildName": "新建居住项目（燎原村城中村改造K14地块）14-6号楼",
+          "floor": "44",
+          "id": 313318897328231,
+          "price": 15480.0,
+          "roomName": "4401",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "14-6#",
+          "totalPrice": 2063948.4,
+          "unitName": "/"
+        },
+        {
+          "area": 138.0,
+          "buildId": 312484918714438,
+          "buildName": "新建居住项目（燎原村城中村改造K8地块）02号楼",
+          "floor": "2",
+          "id": 313328334454876,
+          "price": 15085.0,
+          "roomName": "201",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "K802#",
+          "totalPrice": 2081730.0,
+          "unitName": "2"
+        },
+        {
+          "area": 128.11,
+          "buildId": 312484918714439,
+          "buildName": "新建居住项目（燎原村城中村改造K8地块）03号楼",
+          "floor": "12",
+          "id": 313328337080433,
+          "price": 15130.0,
+          "roomName": "1204",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "K803#",
+          "totalPrice": 1938304.3,
+          "unitName": "1"
+        },
+        {
+          "area": 139.97,
+          "buildId": 312484918714444,
+          "buildName": "新建居住项目（燎原村城中村改造K8地块）08号楼",
+          "floor": "19",
+          "id": 313328368787532,
+          "price": 15420.0,
+          "roomName": "1904",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "K808#",
+          "totalPrice": 2158337.4,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 4
+    },
+    {
+      "allRoomList": [],
+      "id": 334503202558026,
+      "name": "融创光谷壹号院",
+      "roomList": [
+        {
+          "area": 140.09,
+          "buildId": 312479060275274,
+          "buildName": "居住项目（武汉凯喜雅飞翔房地产开发有限公司)G1-3",
+          "floor": "2",
+          "id": 313168379994189,
+          "price": 24360.0,
+          "roomName": "201",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "G1-3#",
+          "totalPrice": 3412592.4,
+          "unitName": "/"
+        },
+        {
+          "area": 108.55,
+          "buildId": 312479060275274,
+          "buildName": "居住项目（武汉凯喜雅飞翔房地产开发有限公司)G1-3",
+          "floor": "3",
+          "id": 313168380002375,
+          "price": 21689.0,
+          "roomName": "302",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "G1-3#",
+          "totalPrice": 2354340.95,
+          "unitName": "/"
+        },
+        {
+          "area": 108.55,
+          "buildId": 312479060275274,
+          "buildName": "居住项目（武汉凯喜雅飞翔房地产开发有限公司)G1-3",
+          "floor": "26",
+          "id": 313168380063816,
+          "price": 23189.0,
+          "roomName": "2603",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "G1-3#",
+          "totalPrice": 2517165.95,
+          "unitName": "/"
+        },
+        {
+          "area": 94.45,
+          "buildId": 312479060275279,
+          "buildName": "居住项目（武汉凯喜雅飞翔房地产开发有限公司)G1-9",
+          "floor": "7",
+          "id": 313168510513222,
+          "price": 21422.0,
+          "roomName": "703",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "G1-9#",
+          "totalPrice": 2023307.9,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 4
+    },
+    {
+      "allRoomList": [],
+      "id": 334503298535510,
+      "name": "地铁时代云上城",
+      "roomList": [
+        {
+          "area": 105.24,
+          "buildId": 312482788520009,
+          "buildName": "新建轨道交通复合居住及中小学设施项目（三金潭车辆段上盖物业综合开发项目B区一期）B5-1、B5-2",
+          "floor": "13",
+          "id": 313299988426847,
+          "price": 15770.0,
+          "roomName": "1301",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "B5",
+          "totalPrice": 1659634.8,
+          "unitName": "2"
+        },
+        {
+          "area": 105.24,
+          "buildId": 312482788520009,
+          "buildName": "新建轨道交通复合居住及中小学设施项目（三金潭车辆段上盖物业综合开发项目B区一期）B5-1、B5-2",
+          "floor": "24",
+          "id": 313299988430934,
+          "price": 15900.0,
+          "roomName": "2401",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "B5",
+          "totalPrice": 1673316.0,
+          "unitName": "2"
+        },
+        {
+          "area": 105.24,
+          "buildId": 312482788520009,
+          "buildName": "新建轨道交通复合居住及中小学设施项目（三金潭车辆段上盖物业综合开发项目B区一期）B5-1、B5-2",
+          "floor": "22",
+          "id": 313299988443258,
+          "price": 15890.0,
+          "roomName": "2204",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "B5",
+          "totalPrice": 1672263.6,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 3
+    },
+    {
+      "allRoomList": [],
+      "id": 814651876638817,
+      "name": "邦泰悦九章",
+      "roomList": [
+        {
+          "area": 113.06,
+          "buildId": 820234721681477,
+          "buildName": "新建居住项目（陶家岭公交停保场地块）1",
+          "floor": "13",
+          "id": 820235604770934,
+          "price": 15886.36,
+          "roomName": "1304",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1#",
+          "totalPrice": 1796111.86,
+          "unitName": "1"
+        },
+        {
+          "area": 138.06,
+          "buildId": 820234721681483,
+          "buildName": "新建居住项目（陶家岭公交停保场地块）3",
+          "floor": "5",
+          "id": 820235991134308,
+          "price": 17590.91,
+          "roomName": "501",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 2428601.03,
+          "unitName": "2"
+        },
+        {
+          "area": 122.61,
+          "buildId": 820234721681485,
+          "buildName": "新建居住项目（陶家岭公交停保场地块）5",
+          "floor": "4",
+          "id": 820236942962764,
+          "price": 17000.0,
+          "roomName": "401",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "5#",
+          "totalPrice": 2084370.0,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 3
+    },
+    {
+      "allRoomList": [],
+      "id": 781406555324511,
+      "name": "汉阳城更·一方砚",
+      "roomList": [
+        {
+          "area": 113.03,
+          "buildId": 752308548304967,
+          "buildName": "新建居住项目（复印机厂一期地块）2",
+          "floor": "26",
+          "id": 752309002289247,
+          "price": 15738.49,
+          "roomName": "2601",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 1778921.52,
+          "unitName": "1"
+        },
+        {
+          "area": 112.77,
+          "buildId": 752308548304970,
+          "buildName": "新建居住项目（复印机厂一期地块）5",
+          "floor": "12",
+          "id": 752309030723695,
+          "price": 16055.94,
+          "roomName": "1201",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "5#",
+          "totalPrice": 1810628.35,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 797101074624610,
+      "name": "绿城·武汉沁百合",
+      "roomList": [
+        {
+          "area": 143.07,
+          "buildId": 806786740060230,
+          "buildName": "新建居住项目（球场横路地块）2",
+          "floor": "2",
+          "id": 806789756854356,
+          "price": 27756.22,
+          "roomName": "202",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 3971082.4,
+          "unitName": "1"
+        },
+        {
+          "area": 131.48,
+          "buildId": 806786740060231,
+          "buildName": "新建居住项目（球场横路地块）3",
+          "floor": "3",
+          "id": 806796641202279,
+          "price": 29960.52,
+          "roomName": "301",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 3939209.17,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 456076562452552,
+      "name": "中建壹品汉芯公馆",
+      "roomList": [
+        {
+          "area": 178.81,
+          "buildId": 594463965360199,
+          "buildName": "新建居住、商业、防护绿地项目7",
+          "floor": "14",
+          "id": 594464081846380,
+          "price": 32779.0,
+          "roomName": "1401",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "7#",
+          "totalPrice": 5861212.99,
+          "unitName": "/"
+        },
+        {
+          "area": 178.81,
+          "buildId": 594463965360199,
+          "buildName": "新建居住、商业、防护绿地项目7",
+          "floor": "17",
+          "id": 594464081846389,
+          "price": 33105.0,
+          "roomName": "1701",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "7#",
+          "totalPrice": 5919505.05,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 721728421519450,
+      "name": "汉阳城更·花木深",
+      "roomList": [
+        {
+          "area": 127.99,
+          "buildId": 720123146424391,
+          "buildName": "新建居住项目（省农垦地块）3",
+          "floor": "18",
+          "id": 720123260461133,
+          "price": 15274.97,
+          "roomName": "1803",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1955043.41,
+          "unitName": "1"
+        },
+        {
+          "area": 127.99,
+          "buildId": 720123146424391,
+          "buildName": "新建居住项目（省农垦地块）3",
+          "floor": "27",
+          "id": 720123260461169,
+          "price": 15123.08,
+          "roomName": "2703",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1935603.01,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334503202562127,
+      "name": "联投悦西湖",
+      "roomList": [
+        {
+          "area": 119.17,
+          "buildId": 419287330140231,
+          "buildName": "居住项目（花山12号地）3",
+          "floor": "14",
+          "id": 419287966748753,
+          "price": 14420.03,
+          "roomName": "1404",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1718434.98,
+          "unitName": "/"
+        },
+        {
+          "area": 119.08,
+          "buildId": 419287330140233,
+          "buildName": "居住项目（花山12号地）5",
+          "floor": "16",
+          "id": 419288121938008,
+          "price": 13860.97,
+          "roomName": "1601",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "5#",
+          "totalPrice": 1650564.31,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334503154655319,
+      "name": "保利明玥晨光",
+      "roomList": [
+        {
+          "area": 89.86,
+          "buildId": 312481397018698,
+          "buildName": "居住项目（保利明玥晨光）14",
+          "floor": "22",
+          "id": 313231423328359,
+          "price": 15855.0,
+          "roomName": "2203",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "14#",
+          "totalPrice": 1424730.3,
+          "unitName": "/"
+        },
+        {
+          "area": 74.74,
+          "buildId": 312481397018706,
+          "buildName": "居住项目（保利明玥晨光）9",
+          "floor": "16",
+          "id": 313231512436826,
+          "price": 10064.45,
+          "roomName": "1603",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "9#",
+          "totalPrice": 752216.99,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334502236393544,
+      "name": "城投联投江南岸",
+      "roomList": [
+        {
+          "area": 111.41,
+          "buildId": 790283908853831,
+          "buildName": "新建居住、商业、小学、防护绿地和公园绿地项目三期(C)地块(变更)3",
+          "floor": "5",
+          "id": 790284879761494,
+          "price": 12545.0,
+          "roomName": "502",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1397638.45,
+          "unitName": "1"
+        },
+        {
+          "area": 111.41,
+          "buildId": 790283908853831,
+          "buildName": "新建居住、商业、小学、防护绿地和公园绿地项目三期(C)地块(变更)3",
+          "floor": "19",
+          "id": 790284879765587,
+          "price": 13340.0,
+          "roomName": "1902",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1486209.4,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334501106548845,
+      "name": "万科华生公园大道",
+      "roomList": [
+        {
+          "area": 92.23,
+          "buildId": 312482835468363,
+          "buildName": "新建居住、公园绿地项目（东风村城中村改造K1地块）D07",
+          "floor": "5",
+          "id": 313300496146502,
+          "price": 13237.5,
+          "roomName": "503",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "D07#",
+          "totalPrice": 1220894.63,
+          "unitName": "2"
+        },
+        {
+          "area": 92.23,
+          "buildId": 312482835468363,
+          "buildName": "新建居住、公园绿地项目（东风村城中村改造K1地块）D07",
+          "floor": "21",
+          "id": 313300496150618,
+          "price": 14012.5,
+          "roomName": "2102",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "D07#",
+          "totalPrice": 1292372.88,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334503227465799,
+      "name": "光谷翡丽天玺",
+      "roomList": [
+        {
+          "area": 140.91,
+          "buildId": 312481874731079,
+          "buildName": "居住项目（德商·彰泰·佳兆业翡丽天玺）11",
+          "floor": "26",
+          "id": 313289793454205,
+          "price": 29601.0,
+          "roomName": "2602",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "11#",
+          "totalPrice": 4171076.91,
+          "unitName": "/"
+        },
+        {
+          "area": 182.52,
+          "buildId": 312481874731083,
+          "buildName": "居住项目（德商·彰泰·佳兆业翡丽天玺）6",
+          "floor": "9",
+          "id": 313289811648613,
+          "price": 28531.0,
+          "roomName": "901",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "6#",
+          "totalPrice": 5207478.12,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 347273668268131,
+      "name": "中粮祥云地铁小镇",
+      "roomList": [
+        {
+          "area": 124.58,
+          "buildId": 312481829638216,
+          "buildName": "商住项目（中粮·国际营养健康城二期（中粮祥云·地铁小镇）A2、B1地块）13",
+          "floor": "10",
+          "id": 313289430945918,
+          "price": 9428.3,
+          "roomName": "1004",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "A2#,B113#",
+          "totalPrice": 1174577.61,
+          "unitName": "1"
+        },
+        {
+          "area": 94.66,
+          "buildId": 312481829638216,
+          "buildName": "商住项目（中粮·国际营养健康城二期（中粮祥云·地铁小镇）A2、B1地块）13",
+          "floor": "30",
+          "id": 313289430954091,
+          "price": 9969.28,
+          "roomName": "3003",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "A2#,B113#",
+          "totalPrice": 943692.04,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 800133710762053,
+      "name": "锦宸府",
+      "roomList": [
+        {
+          "area": 124.89,
+          "buildId": 794753605525576,
+          "buildName": "经开152项目（A地块）一期3",
+          "floor": "10",
+          "id": 794754872574073,
+          "price": 16193.19,
+          "roomName": "1001",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 2022367.5,
+          "unitName": "2"
+        },
+        {
+          "area": 124.89,
+          "buildId": 794753605525576,
+          "buildName": "经开152项目（A地块）一期3",
+          "floor": "13",
+          "id": 794754872574067,
+          "price": 16394.33,
+          "roomName": "1301",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 2047487.87,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334502236389479,
+      "name": "正商书香华府",
+      "roomList": [
+        {
+          "area": 87.51,
+          "buildId": 312484573093958,
+          "buildName": "居住项目（武汉正商书香华府）2",
+          "floor": "13",
+          "id": 313324419428426,
+          "price": 8388.0,
+          "roomName": "1302",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 734033.88,
+          "unitName": "1"
+        },
+        {
+          "area": 116.17,
+          "buildId": 312484573093959,
+          "buildName": "居住项目（武汉正商书香华府）3",
+          "floor": "32",
+          "id": 313324420911206,
+          "price": 8262.0,
+          "roomName": "3201",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 959796.54,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334503154655331,
+      "name": "中国电建地产泷悦长安",
+      "roomList": [
+        {
+          "area": 143.33,
+          "buildId": 312477497831494,
+          "buildName": "新建居住项目（建（2021）-055号）2",
+          "floor": "22",
+          "id": 313060769529947,
+          "price": 15469.97,
+          "roomName": "2203",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 2217310.8,
+          "unitName": "/"
+        },
+        {
+          "area": 143.33,
+          "buildId": 312477497831494,
+          "buildName": "新建居住项目（建（2021）-055号）2",
+          "floor": "25",
+          "id": 313060769529959,
+          "price": 15753.63,
+          "roomName": "2503",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 2257967.79,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 602741454946383,
+      "name": "绿城·桂湖雲翠",
+      "roomList": [
+        {
+          "area": 133.26,
+          "buildId": 312481236635717,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目 1",
+          "floor": "11",
+          "id": 313229723041861,
+          "price": 35898.0,
+          "roomName": "1102",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1#",
+          "totalPrice": 4783767.48,
+          "unitName": "/"
+        },
+        {
+          "area": 111.52,
+          "buildId": 619237364973640,
+          "buildName": "新建居住项目（当代·南湖壹品）地块二项目6",
+          "floor": "29",
+          "id": 619237624528986,
+          "price": 24505.34,
+          "roomName": "2903",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "6#",
+          "totalPrice": 2732835.52,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334503154655331,
+      "name": "中国电建地产泷悦长安",
+      "roomList": [
+        {
+          "area": 143.33,
+          "buildId": 312477497831494,
+          "buildName": "新建居住项目（建（2021）-055号）2",
+          "floor": "22",
+          "id": 313060769529947,
+          "price": 15469.97,
+          "roomName": "2203",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 2217310.8,
+          "unitName": "/"
+        },
+        {
+          "area": 143.33,
+          "buildId": 312477497831494,
+          "buildName": "新建居住项目（建（2021）-055号）2",
+          "floor": "25",
+          "id": 313060769529959,
+          "price": 15753.63,
+          "roomName": "2503",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 2257967.79,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 2
+    },
+    {
+      "allRoomList": [],
+      "id": 334503154659411,
+      "name": "华生国土郡城",
+      "roomList": [
+        {
+          "area": 104.71,
+          "buildId": 811655237378118,
+          "buildName": "华生·国土郡城（坛山旧改）二期二区变更1-11",
+          "floor": "33",
+          "id": 811655336878170,
+          "price": 6768.0,
+          "roomName": "3301",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1-11#",
+          "totalPrice": 708677.28,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 329239308886096,
+      "name": "方岛金茂观棠",
+      "roomList": [
+        {
+          "area": 105.08,
+          "buildId": 560164657045576,
+          "buildName": "新建居住、商业服务业设施、绿地与广场项目(汉阳区四新方岛地区A2地块)3",
+          "floor": "31",
+          "id": 560165024223322,
+          "price": 17773.75,
+          "roomName": "3103",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1867665.65,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 329239308886102,
+      "name": "武汉瑞府",
+      "roomList": [
+        {
+          "area": 186.45,
+          "buildId": 528289146503237,
+          "buildName": "新建居住、公园绿地项目8",
+          "floor": "37",
+          "id": 528291396247678,
+          "price": 55343.31,
+          "roomName": "3701",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "8#",
+          "totalPrice": 10318760.15,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334501106552917,
+      "name": "大华公园城市",
+      "roomList": [
+        {
+          "area": 113.86,
+          "buildId": 631623668494408,
+          "buildName": "新建居住、公园绿地项目（大华公园城市）二期一组团2-4号楼、S2号楼、S3号楼",
+          "floor": "4",
+          "id": 631624351289424,
+          "price": 8888.0,
+          "roomName": "401",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "4#",
+          "totalPrice": 1011987.68,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334501415100489,
+      "name": "长江广电·光谷家",
+      "roomList": [
+        {
+          "area": 140.95,
+          "buildId": 625960950575176,
+          "buildName": "湖北广电基地生活配套项目16",
+          "floor": "5",
+          "id": 625961095794784,
+          "price": 18880.0,
+          "roomName": "501",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "16#",
+          "totalPrice": 2661136.0,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334502133780565,
+      "name": "海天幸福天地和悦",
+      "roomList": [
+        {
+          "area": 117.43,
+          "buildId": 312483903774789,
+          "buildName": "商业、居住用地（海天·幸福天地二期）5、6、7",
+          "floor": "23",
+          "id": 313314667290751,
+          "price": 11505.0,
+          "roomName": "2301",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "5#,6#,7#",
+          "totalPrice": 1351032.15,
+          "unitName": "5号楼1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 539756198498373,
+      "name": "武汉城建汉江云宸",
+      "roomList": [
+        {
+          "area": 123.07,
+          "buildId": 531834284814417,
+          "buildName": "新建居住、公园绿地项目古田四路131号地块7",
+          "floor": "3",
+          "id": 531835270312047,
+          "price": 14901.0,
+          "roomName": "302",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "7#",
+          "totalPrice": 1833866.07,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 588507312242760,
+      "name": "绿城光谷桂府",
+      "roomList": [
+        {
+          "area": 104.79,
+          "buildId": 592007658025034,
+          "buildName": "居住、社会福利项目（赛达锦城）一期3",
+          "floor": "20",
+          "id": 592007804846188,
+          "price": 14376.85,
+          "roomName": "2003",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1506550.11,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 671258612068421,
+      "name": "华侨城·天荟",
+      "roomList": [
+        {
+          "area": 168.95,
+          "buildId": 685762723754053,
+          "buildName": "东湖新城149地块项目（一期）1",
+          "floor": "11",
+          "id": 685765889134693,
+          "price": 12439.17,
+          "roomName": "1102",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1#",
+          "totalPrice": 2101597.77,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 329239308886102,
+      "name": "武汉瑞府",
+      "roomList": [
+        {
+          "area": 186.45,
+          "buildId": 528289146503237,
+          "buildName": "新建居住、公园绿地项目8",
+          "floor": "37",
+          "id": 528291396247678,
+          "price": 55343.31,
+          "roomName": "3701",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "8#",
+          "totalPrice": 10318760.15,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 447752220282949,
+      "name": "城南华府书香御景",
+      "roomList": [
+        {
+          "area": 165.68,
+          "buildId": 446537024933957,
+          "buildName": "新建居住项目（城南华府·书香御景）1",
+          "floor": "2",
+          "id": 446537132208198,
+          "price": 7372.0,
+          "roomName": "201",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1#",
+          "totalPrice": 1221392.96,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334503250387022,
+      "name": "状元府",
+      "roomList": [
+        {
+          "area": 121.46,
+          "buildId": 312487849951301,
+          "buildName": "居住项目（状元府）1",
+          "floor": "32",
+          "id": 313346637693043,
+          "price": 6124.0,
+          "roomName": "3204",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1#",
+          "totalPrice": 743821.04,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334501106552915,
+      "name": "武汉城建天汇龙城",
+      "roomList": [
+        {
+          "area": 121.03,
+          "buildId": 312481235038279,
+          "buildName": "天汇龙城（龙桂苑A区）项目2",
+          "floor": "1",
+          "id": 313227801391174,
+          "price": 10017.0,
+          "roomName": "101",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 1212357.51,
+          "unitName": "二"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334502133780569,
+      "name": "鼎盛璟城",
+      "roomList": [
+        {
+          "area": 95.43,
+          "buildId": 318887717236805,
+          "buildName": "土地交易建住宅项目（二期地块）15",
+          "floor": "5",
+          "id": 318888702419033,
+          "price": 25288.0,
+          "roomName": "503",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "15#",
+          "totalPrice": 2413233.84,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 329239308886108,
+      "name": "华侨城红坊",
+      "roomList": [
+        {
+          "area": 163.3,
+          "buildId": 686116705628234,
+          "buildName": "青山区10街坊项目6",
+          "floor": "9",
+          "id": 686118832812103,
+          "price": 24560.42,
+          "roomName": "902",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "6#",
+          "totalPrice": 4010716.59,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334501106548827,
+      "name": "保利城七期云廷",
+      "roomList": [
+        {
+          "area": 119.62,
+          "buildId": 470960965705797,
+          "buildName": "新建居住项目（铁机村城中村改造2号地块）-B区1",
+          "floor": "20",
+          "id": 470961036722284,
+          "price": 21437.84,
+          "roomName": "2004",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "B1#",
+          "totalPrice": 2564394.42,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334502236393558,
+      "name": "帝大御璟城",
+      "roomList": [
+        {
+          "area": 118.76,
+          "buildId": 406218435203146,
+          "buildName": "住宅项目（帝大·御璟城）C区三期（4-5#楼、商业及公共配套项目）4",
+          "floor": "19",
+          "id": 406220007964793,
+          "price": 12262.0,
+          "roomName": "1904",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "4#",
+          "totalPrice": 1456235.12,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334502236389467,
+      "name": "绿都中央公园二期",
+      "roomList": [
+        {
+          "area": 127.45,
+          "buildId": 748408250290248,
+          "buildName": "富力绿都中央公园7",
+          "floor": "5",
+          "id": 748409440637026,
+          "price": 12165.21,
+          "roomName": "504",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "7#",
+          "totalPrice": 1550456.01,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334503202558031,
+      "name": "交投合盛嘉园",
+      "roomList": [
+        {
+          "area": 132.43,
+          "buildId": 312484162449488,
+          "buildName": "住宅楼（交投合盛嘉园一期）2",
+          "floor": "15",
+          "id": 313318083674197,
+          "price": 9405.0,
+          "roomName": "1501",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "2#",
+          "totalPrice": 1245504.15,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 334530243706958,
+      "name": "江南花山郡",
+      "roomList": [
+        {
+          "area": 156.8,
+          "buildId": 312580260483177,
+          "buildName": "庙山大花山社区建设项目8",
+          "floor": "23",
+          "id": 313389135368261,
+          "price": 8505.0,
+          "roomName": "2304",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "8#",
+          "totalPrice": 1333584.0,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 445105776463944,
+      "name": "长江新天地",
+      "roomList": [
+        {
+          "area": 188.53,
+          "buildId": 443379852767303,
+          "buildName": "新建居住、公园绿地、防护绿地项目（B4-1地块）4",
+          "floor": "23",
+          "id": 443380089585746,
+          "price": 36968.0,
+          "roomName": "2302",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "B4-4",
+          "totalPrice": 6969577.04,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 455095843917896,
+      "name": "武汉城建梦湖云著",
+      "roomList": [
+        {
+          "area": 123.13,
+          "buildId": 458244437962825,
+          "buildName": "新建居住、商业商务、轨道交通项目5",
+          "floor": "33",
+          "id": 458244743741544,
+          "price": 19513.0,
+          "roomName": "3302",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "5#",
+          "totalPrice": 2402635.69,
+          "unitName": "/"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 479787456045138,
+      "name": "联投燕语光年",
+      "roomList": [
+        {
+          "area": 105.36,
+          "buildId": 544945581748293,
+          "buildName": "联投青山武丰地块（A地块）3",
+          "floor": "23",
+          "id": 544946122346618,
+          "price": 20062.56,
+          "roomName": "2303",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 2113791.32,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 546052820308069,
+      "name": "恺德雲麓",
+      "roomList": [
+        {
+          "area": 135.26,
+          "buildId": 579982283178055,
+          "buildName": "新建居住、公园绿地项目（汉江湾片A4-1地块）3",
+          "floor": "39",
+          "id": 580311770591311,
+          "price": 21058.29,
+          "roomName": "3904",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3",
+          "totalPrice": 2848344.31,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 548952014192731,
+      "name": "中海·东湖玖章",
+      "roomList": [
+        {
+          "area": 143.31,
+          "buildId": 657103836868677,
+          "buildName": "新建居住、小学项目（电视机厂片A-1-1地块二期）3",
+          "floor": "2",
+          "id": 657106004987977,
+          "price": 29935.0,
+          "roomName": "202",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 4289984.85,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 722837163409480,
+      "name": "深业翠微谷",
+      "roomList": [
+        {
+          "area": 141.68,
+          "buildId": 721185611460678,
+          "buildName": "居住项目A地块13",
+          "floor": "11",
+          "id": 721185648894037,
+          "price": 16550.0,
+          "roomName": "1102",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "13#",
+          "totalPrice": 2344804.0,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 750719794376773,
+      "name": "璞拾光屿",
+      "roomList": [
+        {
+          "area": 133.18,
+          "buildId": 813092167467077,
+          "buildName": "居住项目（P（2024）166号C地块、D地块）项目4",
+          "floor": "4",
+          "id": 813092468437072,
+          "price": 21737.21,
+          "roomName": "402",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "4#",
+          "totalPrice": 2894961.63,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 756992061558853,
+      "name": "邦泰·璟和",
+      "roomList": [
+        {
+          "area": 138.19,
+          "buildId": 752308546015302,
+          "buildName": "华美饲料地块及青山滨江西片F地块（邦泰·璟和）1",
+          "floor": "18",
+          "id": 752308823421035,
+          "price": 26700.0,
+          "roomName": "1802",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1#",
+          "totalPrice": 3689673.0,
+          "unitName": "一"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 539756198498373,
+      "name": "武汉城建汉江云宸",
+      "roomList": [
+        {
+          "area": 123.07,
+          "buildId": 531834284814417,
+          "buildName": "新建居住、公园绿地项目古田四路131号地块7",
+          "floor": "3",
+          "id": 531835270312047,
+          "price": 14901.0,
+          "roomName": "302",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "7#",
+          "totalPrice": 1833866.07,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 588507312242760,
+      "name": "绿城光谷桂府",
+      "roomList": [
+        {
+          "area": 104.79,
+          "buildId": 592007658025034,
+          "buildName": "居住、社会福利项目（赛达锦城）一期3",
+          "floor": "20",
+          "id": 592007804846188,
+          "price": 14376.85,
+          "roomName": "2003",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3#",
+          "totalPrice": 1506550.11,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 671258612068421,
+      "name": "华侨城·天荟",
+      "roomList": [
+        {
+          "area": 168.95,
+          "buildId": 685762723754053,
+          "buildName": "东湖新城149地块项目（一期）1",
+          "floor": "11",
+          "id": 685765889134693,
+          "price": 12439.17,
+          "roomName": "1102",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "1#",
+          "totalPrice": 2101597.77,
+          "unitName": "1"
+        }
+      ],
+      "soldNum": 1
+    },
+    {
+      "allRoomList": [],
+      "id": 807946197209157,
+      "name": "KIC创新天地·漫序",
+      "roomList": [
+        {
+          "area": 128.06,
+          "buildId": 807514143813703,
+          "buildName": "居住、商务、商业项目（光谷创新天地）R23",
+          "floor": "9",
+          "id": 807518324564078,
+          "price": 16149.0,
+          "roomName": "901",
+          "roomTypeName": "",
+          "saleStatus": 1,
+          "shortBuildName": "3",
+          "totalPrice": 2068040.94,
+          "unitName": "2"
+        }
+      ],
+      "soldNum": 1
+    }
+  ],
+  "time": "2026-08-26 00:00:00",
+  "totalPages": 6,
+  "totalSoldNum": 53
+}

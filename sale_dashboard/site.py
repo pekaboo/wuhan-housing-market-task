@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from .one_price import ONE_PRICE_CSS, ONE_PRICE_JS, one_price_section
 from .render import esc, field_rows, integer, money, summarize
 
 
@@ -60,6 +61,8 @@ def render_project_page(
     all_count: int,
     previous_project: dict[str, Any] | None = None,
     next_project: dict[str, Any] | None = None,
+    one_price_snapshot: dict[str, Any] | None = None,
+    one_price_url: str | None = None,
 ) -> str:
     charts = all_charts(project)
     charts_html = ''.join(
@@ -89,7 +92,7 @@ def render_project_page(
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="{esc(project.get('name'))} 楼盘销控详情，包含接口全部字段、标准销控图、抖音版销控图与历史销控图。">
 <title>{esc(project.get('name'))} · 楼盘销控详情</title>
-<style>{DETAIL_CSS}</style>
+<style>{DETAIL_CSS}{ONE_PRICE_CSS}</style>
 </head>
 <body>
 <div class="shell">
@@ -115,6 +118,7 @@ def render_project_page(
     </table>
   </div>
 </section>
+{one_price_section(one_price_snapshot, one_price_url)}
 <details class="raw-data">
   <summary>完整原始 JSON</summary>
   <pre><code>{esc(json.dumps(project, ensure_ascii=False, indent=2, sort_keys=True))}</code></pre>
@@ -124,5 +128,8 @@ def render_project_page(
 <nav class="footer-nav" aria-label="项目导航">{previous_html}{next_html}</nav>
 <p class="description" style="margin-top:24px">生产快照生成时间：{esc(generated_at)}；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
+<script>
+{ONE_PRICE_JS}
+</script>
 </body>
 </html>'''

@@ -4,8 +4,11 @@
 
 - `site/index.html` — 第 1 页生产仪表盘
 - `site/page/2/`、`site/page/3/` … — 后续楼盘分页
-- `site/projects/{id}/` — 每个楼盘独立详情页，包含全部字段、原始 JSON、标准销控图、抖音版销控图与历史销控图
-- `site/data/sale-data.json` — 原始生产数据快照
+- `site/projects/{id}/` — 每个楼盘独立详情页，包含全部字段、原始 JSON、标准销控图、抖音版销控图、历史销控图与“一房一价”房号明细
+- `site/wangqian/` — 昨日网签楼盘与房号变化
+- `site/data/sale-data.json` — 楼盘原始生产数据快照
+- `site/data/projects/{id}/one-price.json` — 预售证与房号级一房一价快照
+- `site/data/wangqian/{date}.json` — 昨日网签原始快照
 - GitHub Pages 生产站点
 
 概览卡片直接展开“全部字段”表格并支持全字段搜索；页面包含最新销控图、已售套数、均价、分页、排序、暗色模式和响应式布局。未来上游新增字段会自动显示，无需修改模板。
@@ -16,6 +19,9 @@
 GitHub Actions schedule (00:00 UTC = 08:00 CST)
   → pytest
   → Python 标准库分页请求 GetLouPanSaleImages
+  → 每个楼盘请求 GetLouPanPreSaleCertificates
+  → 每张预售证分页请求 GetLouPanRoomItems
+  → 请求 GetWangQianHouseData 获取昨日网签
   → 生成多页静态 HTML + JSON
   → 安全检查 token 不落盘
   → 提交快照到 main
@@ -34,7 +40,9 @@ python3 -m venv .venv
 export WFT_TOKEN='你的 wfTToken'
 .venv/bin/python -m sale_dashboard \
   --site-output site \
-  --projects-per-page 6
+  --projects-per-page 6 \
+  --fetch-one-price \
+  --room-page-size 500
 ```
 
 也支持这些可选参数或同名环境变量：
@@ -44,6 +52,8 @@ export WFT_TOKEN='你的 wfTToken'
 | `--api-url` | `WFT_API_URL` | 五房通 `GetLouPanSaleImages` |
 | `--city-id` | `WFT_CITY_ID` | `4201` |
 | `--page-size` | `WFT_PAGE_SIZE` | `10` |
+| `--room-page-size` | `WFT_ROOM_PAGE_SIZE` | `500` |
+| `--fetch-one-price` | 无 | 关闭；开启后补齐一房一价与昨日网签 |
 | `--max-pages` | `WFT_MAX_PAGES` | `100` |
 | `--timeout` | `WFT_REQUEST_TIMEOUT_SECONDS` | `20` |
 | `--site-output` | `WFT_SITE_OUTPUT` | `site` |
@@ -64,8 +74,10 @@ export WFT_TOKEN='你的 wfTToken'
 - 逐页请求；当返回数量小于 `page_size` 时停止。
 - 使用 `max_pages` 防止上游异常导致无限分页。
 - 项目按 `id` 去重，避免分页期间数据移动造成重复。
-- HTML 对项目名、地址、图片地址等做 HTML 转义。
-- Action 生成后会反向扫描 `index.html` 和 JSON，确保 token 没有落盘。
+- HTML 对项目名、预售证名、房号、地址、图片地址等做 HTML 转义；房号表由 DOM API 渲染，避免二次注入。
+- 一房一价按“楼盘 → 预售证 → 房号”聚合，保留销售状态与异常状态；单项目失败会写入错误快照，不阻塞其他楼盘。
+- 昨日网签接口失败时仍生成当日销控总览，并在网签页显示明确错误。
+- Action 生成后会反向扫描整个 `site/` 目录，确保 token 没有落盘。
 - 输出文件使用同目录临时文件 + `os.replace` 原子写入。
 
 ## 测试
@@ -75,3 +87,14 @@ export WFT_TOKEN='你的 wfTToken'
 ```
 
 测试覆盖分页停止条件、去重、上游错误、安全转义、历史图列表选择、全字段动态展示、双销控图、原始 JSON、多页 HTML 生成和 JSON 原子输出。
+
+## 一房一价接口链路
+
+| 步骤 | 接口 | 输入 | 展示用途 |
+|---|---|---|---|
+| 1 | `GetLouPanSaleImages` | 城市 ID 分页 | 楼盘列表、销控图、总览 KPI |
+| 2 | `GetLouPanPreSaleCertificates` | 楼盘 `id` | 预售证编号、房源/已售/可售/去化摘要 |
+| 3 | `GetLouPanRoomItems` | 楼盘 `id` + 预售证 `id` 作为 `evidenceId` | 楼栋、单元、楼层、房号、户型、面积、单价、总价、交付与状态 |
+| 4 | `GetWangQianHouseData` | 昨日日期分页 | 昨日网签总量、楼盘变化与房号明细 |
+
+房号状态按上游枚举展示：`saleStatus=1` 为已售，`saleStatus=2` 为可售；`abnormalStatus=1` 追加“异常”标记。
