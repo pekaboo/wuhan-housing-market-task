@@ -266,7 +266,7 @@ def test_one_price_ui_offers_table_and_floor_distribution_modes(tmp_path):
     assert 'data-role="floor-results" hidden' in detail
     assert 'data-role="building-filter"' in detail
     assert 'data-role="unit-filter"' in detail
-    assert '可售房源相同单价使用同一色块' in detail
+    assert '相同价格同色；筛选外房源保留原位置并变成灰色方块' in detail
 
     for control in ('price-min', 'price-max', 'total-min', 'total-max'):
         assert f'data-role="{control}"' in detail
@@ -366,5 +366,62 @@ def test_one_price_floor_view_keeps_rooms_on_the_same_floor_in_one_row(tmp_path)
     assert match
     style = match.group(1)
     assert 'grid-auto-flow:column' in style
-    assert 'grid-auto-columns:minmax(126px,1fr)' in style
+    assert 'grid-auto-columns:minmax(112px,1fr)' in style
     assert 'grid-template-columns:repeat(auto-fit' not in style
+
+
+def test_one_price_3d_floor_view_keeps_filtered_rooms_as_grey_blocks(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [
+            {
+                **certificate(900),
+                'rooms': [
+                    room(1, floor='8', roomName='0801', price=18000),
+                    room(2, floor='8', roomName='0802', saleStatus=1, price=18000),
+                    room(3, floor='7', roomName='0701', price=21000),
+                ],
+            }
+        ],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 123, 'name': '测试楼盘', 'date': '2026-08-27'}],
+        site_dir=site_dir,
+        generated_at='2026-08-27 20:00:00',
+        one_price_snapshots={123: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
+
+    assert 'data-role="zoom-in"' in detail
+    assert 'data-role="zoom-out"' in detail
+    assert 'data-role="reset-camera"' in detail
+    assert '3D 楼栋' in detail
+    assert '拖拽旋转 · 滚轮缩放' in detail
+    assert 'function roomMatches(room)' in detail
+    assert 'function scopedRooms()' in detail
+    assert 'renderFloorView(visibleRooms)' in detail
+    assert "article.classList.toggle('filtered-out',!roomMatches(room))" in detail
+    assert 'function setCamera()' in detail
+    assert 'rotateX(calc(var(--camera-x)' in detail
+    assert '.floor-stage' in detail
+    assert '.floor-camera' in detail
+    assert '.building-3d' in detail
+    assert '.floor-slab' in detail
+    assert '.room-3d' in detail
+    assert '.filtered-out>*{display:none}' in detail
+    assert 'priceGroups.get(priceKey(room))' in detail
+    assert 'var group=priceGroups.get(priceKey(room))' in detail
+    assert "swatch.className='price-chip'" in detail
+    assert 'building-ground' in detail
+    assert 'DETAIL_BUILDING_LIMIT=16' in detail
+    assert '.building-world{display:flex;flex-wrap:wrap;width:100%;align-items:end;transform-style:flat}' in detail
+    assert 'rotateX(calc(var(--camera-x)' in detail.split('.building-3d',1)[1]
+    assert 'building-overview' in detail
+    assert 'focusBuilding(column)' in detail
+    assert "if(view==='table'||!event.target.closest('.floor-stage'))return;if(event.target.closest('.building-overview'))return;" in detail
+    assert 'var columnFloors=floorRooms.get(column.key).size' in detail
+    assert "block.style.setProperty('--floors',String(columnFloors))" in detail
+    assert "columnFloors+' 层，'" in detail

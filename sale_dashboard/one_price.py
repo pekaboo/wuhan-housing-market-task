@@ -77,6 +77,13 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
           <button type="button" data-role="room-filter" data-filter="sold" aria-pressed="false">已售</button>
           <button type="button" data-role="room-filter" data-filter="abnormal" aria-pressed="false">异常</button>
         </div>
+        <div class="floor-toolbar" aria-label="3D 楼栋视角控制">
+          <button type="button" data-role="zoom-in">放大</button>
+          <button type="button" data-role="zoom-out">缩小</button>
+          <button type="button" data-role="reset-camera">复位视角</button>
+          <button type="button" data-role="all-buildings">全部楼栋</button>
+          <span>3D 楼栋 · <output data-role="camera-scale">100%</output></span>
+        </div>
         <div class="numeric-filters" aria-label="价格筛选">
           <label>单价下限<input data-role="price-min" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
           <label>单价上限<input data-role="price-max" type="number" min="0" step="100" inputmode="numeric" placeholder="元/㎡"></label>
@@ -84,7 +91,7 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
           <label>总价上限<input data-role="total-max" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
         </div>
       </div>
-      <p class="floor-note">楼层分布按楼栋从左到右、楼层从上到下、同一楼层横向一排整体排布；已售为红色，可售为绿色并展示单价、总价；可售房源相同单价使用同一色块。</p>
+      <p class="floor-note">3D 楼栋按“楼栋 + 单元”作为一个立体单元渲染；楼层从上到下、同层房源横向排布。拖拽旋转 · 滚轮缩放，也使用按钮缩放。已售为红色，可售为绿色；右上角小方块表示单价，相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
       <div class="room-table-wrap">
         <table class="room-table">
           <caption class="sr-only">一房一价房源明细</caption>
@@ -99,7 +106,7 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
 
 
 
-ONE_PRICE_CSS = r'''.one-price{overflow:hidden;margin:0 0 24px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.one-price.empty{display:grid;min-height:170px;place-items:center;color:var(--muted)}.one-price-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding:18px 18px 14px}.one-price-head h2{margin:0}.one-price-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.one-price-head a{display:inline-flex;min-height:36px;align-items:center;padding:0 12px;border-radius:10px;background:var(--panel-soft);color:var(--brand-ink);font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}.one-price-error{margin:0;padding:13px 18px;background:color-mix(in srgb,#b42318 10%,var(--panel));color:#b42318;font-weight:750}.one-price-note{margin:0;padding:14px 18px;color:var(--muted)}.one-price-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--panel-soft)}.one-price-metric{min-width:0;padding:13px;background:var(--panel)}.one-price-metric span{display:block;color:var(--muted);font-size:11px}.one-price-metric strong{display:block;margin-top:2px;font-size:21px;letter-spacing:-.045em}.one-price-metric.available strong{color:#137a4b}.one-price-metric.sold strong{color:#a35613}.one-price-metric.abnormal strong{color:#a33815}@media (prefers-color-scheme:dark){.one-price-metric.available strong{color:#75d9a5}.one-price-metric.sold strong{color:#f0b76a}.one-price-metric.abnormal strong{color:#ff9d7a}.one-price-error{background:#43110c;color:#ffab94}}.room-controls{display:grid;grid-template-columns:auto minmax(170px,220px) minmax(140px,180px) minmax(130px,170px) minmax(220px,1fr);gap:9px;padding:13px 14px;border-top:1px solid var(--line);background:var(--panel-soft)}.room-controls label,.room-filters,.numeric-filters{display:flex;min-width:0;align-items:center;gap:7px;color:var(--muted);font-size:12px;font-weight:750}.room-controls select,.room-controls input{min-width:0;flex:1;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit;font-size:13px;outline:none}.room-controls input:focus-visible,.room-controls select:focus-visible{border-color:var(--focus)}.view-switch{display:flex;gap:5px}.view-switch button,.room-filters button{height:38px;padding:0 11px;border:0;border-radius:10px;background:var(--panel);color:var(--muted);font:inherit;font-size:12px;font-weight:800;cursor:pointer}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{background:var(--brand);color:#fff}.room-filters,.numeric-filters{grid-column:1/-1;flex-wrap:wrap}.room-filters{justify-content:flex-start;overflow:visible}.numeric-filters{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:7px}.numeric-filters label{flex-direction:column;align-items:stretch;gap:4px}.numeric-filters input{width:100%}.floor-note{margin:0;padding:9px 15px;border-top:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:12px}.room-table-wrap{overflow-x:auto;border-top:1px solid var(--line)}.room-table{width:100%;min-width:1030px;border-collapse:collapse;font-size:13px}.room-table th,.room-table td{padding:11px 13px;border-top:1px solid var(--line);text-align:left;vertical-align:top;white-space:nowrap}.room-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px}.room-table td.loading{color:var(--muted)}.status{display:inline-flex;height:24px;align-items:center;padding:0 8px;border-radius:999px;background:var(--panel-soft);color:var(--muted);font-size:11px;font-weight:800}.status.available{color:#137a4b;background:color-mix(in srgb,#137a4b 12%,var(--panel))}.status.sold{color:#a35613;background:color-mix(in srgb,#a35613 12%,var(--panel))}.status.abnormal{margin-left:5px;color:#a33815;background:color-mix(in srgb,#a33815 12%,var(--panel))}@media (prefers-color-scheme:dark){.status.available{color:#75d9a5}.status.sold{color:#f0b76a}.status.abnormal{color:#ff9d7a}}.floor-results{padding:14px;border-top:1px solid var(--line);background:var(--panel)}.floor-results>.loading{margin:0;color:var(--muted)}.floor-scroll{overflow-x:auto;padding:2px 2px 5px}.floor-matrix{display:grid;grid-template-columns:minmax(56px,64px) repeat(var(--floor-columns,1),minmax(136px,1fr));gap:7px;min-width:max-content;align-items:stretch}.floor-corner,.floor-column-head,.floor-label{color:var(--muted);font-size:11px;font-weight:800}.floor-corner{display:flex;min-height:46px;align-items:center;justify-content:flex-end;text-align:right}.floor-column-head{display:flex;min-height:46px;flex-direction:column;justify-content:center;gap:2px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel-soft);text-align:center}.floor-column-head strong{color:var(--ink);font-size:13px}.floor-column-head span{font-size:10px}.floor-label{position:sticky;left:0;z-index:1;display:flex;min-height:48px;align-items:center;justify-content:flex-end;padding-right:6px;background:var(--panel);text-align:right}.floor-missing{display:flex;min-height:112px;align-items:center;justify-content:center;border:1px dashed var(--line);border-radius:10px;background:color-mix(in srgb,var(--muted) 6%,var(--panel));color:var(--muted);font-size:11px;font-weight:800}.room-cells{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(126px,1fr);gap:7px;min-width:max-content}.floor-room{position:relative;min-width:0;min-height:112px;padding:8px 9px 8px 11px;border:1px solid var(--line);border-left:5px solid var(--price-color,var(--brand));border-radius:10px;background:color-mix(in srgb,var(--price-color,var(--brand)) 13%,var(--panel));color:var(--ink);cursor:default}.floor-room.available{border-left-color:var(--price-color,var(--brand));background:color-mix(in srgb,#137a4b 10%,var(--panel))}.floor-room.sold{border-left-color:#b42318;background:color-mix(in srgb,#b42318 14%,var(--panel))}.floor-room:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.floor-price{display:block;margin:0 0 4px;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:0}.floor-room strong{display:block;font-size:14px;letter-spacing:-.02em;overflow-wrap:anywhere}.floor-meta{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:750;overflow-wrap:anywhere}.floor-total{display:block;margin-top:4px;color:var(--muted);font-size:10px;font-weight:750}.floor-room .status{margin-top:6px}.floor-room .status+.status{margin-left:5px}.price-swatch{position:absolute;top:7px;right:7px;width:15px;height:15px;border:2px solid var(--panel);border-radius:4px;background:var(--price-color,var(--brand))}.room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.room-foot p{margin:0}.room-foot button{height:36px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-foot button{color:#07131d}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{color:#07131d}}.certificate-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft);border-top:1px solid var(--line)}.certificate-card{min-width:0;padding:14px;background:var(--panel)}.certificate-card h3{margin:0 0 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.certificate-card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}.certificate-card div{min-width:0}.certificate-card dt{color:var(--muted);font-size:10px}.certificate-card dd{margin:2px 0 0;font-size:14px;font-weight:800}@media (max-width:760px){.one-price-head{align-items:start;flex-direction:column}.one-price-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.one-price-metric:last-child{grid-column:1/-1}.room-controls{grid-template-columns:1fr}.view-switch{display:grid;grid-template-columns:1fr 1fr}.view-switch button,.room-filters button{min-height:44px}.room-controls select,.room-controls input{min-height:44px}.numeric-filters{grid-template-columns:1fr 1fr}.room-filters{justify-content:flex-start}.room-foot{align-items:stretch;flex-direction:column}.room-foot button{width:100%}.certificate-card dl{grid-template-columns:repeat(2,1fr)}}@media (max-width:430px){.numeric-filters{grid-template-columns:1fr}}@media (prefers-reduced-motion:reduce){.one-price *,.one-price *::before,.one-price *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}'''
+ONE_PRICE_CSS = r'''.one-price{overflow:hidden;margin:0 0 24px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.one-price.empty{display:grid;min-height:170px;place-items:center;color:var(--muted)}.one-price-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding:18px 18px 14px}.one-price-head h2{margin:0}.one-price-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.one-price-head a{display:inline-flex;min-height:36px;align-items:center;padding:0 12px;border-radius:10px;background:var(--panel-soft);color:var(--brand-ink);font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}.one-price-error{margin:0;padding:13px 18px;background:color-mix(in srgb,#b42318 10%,var(--panel));color:#b42318;font-weight:750}.one-price-note{margin:0;padding:14px 18px;color:var(--muted)}.one-price-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--panel-soft)}.one-price-metric{min-width:0;padding:13px;background:var(--panel)}.one-price-metric span{display:block;color:var(--muted);font-size:11px}.one-price-metric strong{display:block;margin-top:2px;font-size:21px;letter-spacing:-.045em}.one-price-metric.available strong{color:#137a4b}.one-price-metric.sold strong{color:#a35613}.one-price-metric.abnormal strong{color:#a33815}@media (prefers-color-scheme:dark){.one-price-metric.available strong{color:#75d9a5}.one-price-metric.sold strong{color:#f0b76a}.one-price-metric.abnormal strong{color:#ff9d7a}.one-price-error{background:#43110c;color:#ffab94}}.room-controls{display:grid;grid-template-columns:auto minmax(170px,220px) minmax(140px,180px) minmax(130px,170px) minmax(220px,1fr);gap:9px;padding:13px 14px;border-top:1px solid var(--line);background:var(--panel-soft)}.room-controls label,.room-filters,.numeric-filters{display:flex;min-width:0;align-items:center;gap:7px;color:var(--muted);font-size:12px;font-weight:750}.room-controls select,.room-controls input{min-width:0;flex:1;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit;font-size:13px;outline:none}.room-controls input:focus-visible,.room-controls select:focus-visible{border-color:var(--focus)}.view-switch{display:flex;gap:5px}.view-switch button,.room-filters button{height:38px;padding:0 11px;border:0;border-radius:10px;background:var(--panel);color:var(--muted);font:inherit;font-size:12px;font-weight:800;cursor:pointer}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{background:var(--brand);color:#fff}.room-filters,.numeric-filters{grid-column:1/-1;flex-wrap:wrap}.room-filters{justify-content:flex-start;overflow:visible}.numeric-filters{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:7px}.numeric-filters label{flex-direction:column;align-items:stretch;gap:4px}.numeric-filters input{width:100%}.floor-note{margin:0;padding:9px 15px;border-top:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:12px}.room-table-wrap{overflow-x:auto;border-top:1px solid var(--line)}.room-table{width:100%;min-width:1030px;border-collapse:collapse;font-size:13px}.room-table th,.room-table td{padding:11px 13px;border-top:1px solid var(--line);text-align:left;vertical-align:top;white-space:nowrap}.room-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px}.room-table td.loading{color:var(--muted)}.status{display:inline-flex;height:24px;align-items:center;padding:0 8px;border-radius:999px;background:var(--panel-soft);color:var(--muted);font-size:11px;font-weight:800}.status.available{color:#137a4b;background:color-mix(in srgb,#137a4b 12%,var(--panel))}.status.sold{color:#a35613;background:color-mix(in srgb,#a35613 12%,var(--panel))}.status.abnormal{margin-left:5px;color:#a33815;background:color-mix(in srgb,#a33815 12%,var(--panel))}@media (prefers-color-scheme:dark){.status.available{color:#75d9a5}.status.sold{color:#f0b76a}.status.abnormal{color:#ff9d7a}}.floor-results{--camera-x:-16deg;--camera-y:24deg;--camera-scale:1;position:relative;padding:0;border-top:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--brand) 8%,var(--panel)),var(--panel));color:var(--ink)}.floor-results>.loading{margin:0;padding:14px;color:var(--muted)}.floor-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--panel) 92%,transparent)}.floor-toolbar button{height:32px;padding:0 10px;border:0;border-radius:8px;background:var(--panel-soft);color:var(--ink);font:inherit;font-size:11px;font-weight:850;cursor:pointer}.floor-toolbar button:hover{background:var(--brand);color:#fff}.floor-toolbar span{display:inline-flex;align-items:center;min-height:32px;padding:0 8px;border-radius:8px;background:var(--panel-soft);color:var(--muted);font-size:11px;font-weight:800}.floor-stage{position:relative;z-index:1;overflow:auto;clip-path:inset(0);contain:paint;padding:440px clamp(14px,4vw,58px) 150px;perspective:1500px;perspective-origin:50% 38%;cursor:grab;touch-action:pan-y;overscroll-behavior:contain}.floor-stage:active{cursor:grabbing}.floor-camera{will-change:transform}.floor-matrix{display:block;width:100%;min-width:0;margin:auto}.building-world{display:flex;flex-wrap:wrap;width:100%;align-items:end;transform-style:flat}.building-world.detail-grid{gap:clamp(24px,4vw,62px)}.building-world.overview-grid{justify-content:center;gap:16px 10px}.building-3d{position:relative;min-width:190px;transform:rotateX(calc(var(--camera-x) + 0deg)) rotateY(calc(var(--camera-y) + 0deg)) scale3d(var(--camera-scale),var(--camera-scale),var(--camera-scale));transform-origin:50% 100%;transform-style:preserve-3d;transition:transform .18s ease-out}.building-overview{position:relative;width:84px;min-width:84px;padding:0;border:0;background:transparent;color:var(--ink);font:inherit;cursor:pointer;transform-style:flat}.building-overview:active,.building-overview:hover{color:var(--brand-ink)}.building-overview .building-head{position:relative;left:auto;top:auto;width:auto;transform:translateZ(12px)}.overview-body{position:relative;display:block;height:calc(var(--floors,1)*10px + 28px);transform-style:flat}.overview-face{position:absolute;inset:0;box-shadow:8px 8px 0 color-mix(in srgb,var(--ink) 12%,var(--panel)),16px 16px 0 color-mix(in srgb,var(--ink) 7%,var(--panel)),0 22px 40px #0b172426;border:1px solid color-mix(in srgb,var(--ink) 26%,var(--line));border-radius:4px;background:linear-gradient(180deg,color-mix(in srgb,var(--brand) 35%,var(--panel)),color-mix(in srgb,var(--ink) 16%,var(--panel))),repeating-linear-gradient(to top,#0b17240f 0 1px,transparent 1px 10px);box-shadow:inset 0 calc(var(--match-ratio,1)*-100%) 0 color-mix(in srgb,#17935d calc(var(--match-ratio,1)*45%),transparent)}.overview-scale{position:absolute;bottom:-23px;left:50%;white-space:nowrap;color:var(--muted);font-size:9px;font-weight:850;transform:translateX(-50%) translateZ(2px)}.building-overview:focus-visible{outline:3px solid var(--focus);outline-offset:5px}.building-head{position:absolute;left:-14px;top:-31px;width:calc(100% + 28px);display:grid;gap:2px;padding:6px 8px;border:1px solid var(--line);border-radius:9px;background:color-mix(in srgb,var(--panel) 94%,transparent);box-shadow:var(--shadow);text-align:center;transform:translateZ(14px);backdrop-filter:blur(4px)}.building-head strong{color:var(--ink);font-size:13px}.building-head span{color:var(--muted);font-size:10px}.floor-slab{position:relative;display:grid;grid-template-columns:42px minmax(0,1fr);gap:5px;min-height:69px;margin-top:3px;padding:5px 6px;border:1px solid color-mix(in srgb,var(--ink) 24%,var(--line));border-radius:5px;background:color-mix(in srgb,var(--ink) 4%,var(--panel));transform:translateZ(calc(var(--level,0)*17px));transform-style:preserve-3d;box-shadow:0 6px 14px #0b172418}.floor-slab::before{content:"";position:absolute;z-index:-1;left:-4px;top:-2px;width:calc(100% + 8px);height:16px;border-top:1px solid color-mix(in srgb,var(--ink) 28%,var(--line));background:linear-gradient(90deg,color-mix(in srgb,var(--brand) 26%,var(--panel)),color-mix(in srgb,var(--ink) 12%,var(--panel)));transform:rotateX(90deg);transform-origin:top}.floor-slab::after{content:"";position:absolute;z-index:-1;top:0;right:-15px;width:15px;height:100%;background:linear-gradient(90deg,color-mix(in srgb,var(--ink) 20%,var(--panel)),color-mix(in srgb,var(--ink) 9%,var(--panel)));transform:rotateY(90deg);transform-origin:right}.floor-label{display:flex;min-height:57px;align-items:center;justify-content:center;border-radius:4px;background:color-mix(in srgb,var(--ink) 8%,transparent);color:var(--muted);font-size:11px;font-weight:900}.room-cells{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(112px,1fr);gap:5px}.room-3d{position:relative;min-width:0;min-height:57px;padding:6px 7px 6px 9px;overflow:hidden;border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:4px;background:color-mix(in srgb,var(--price-color,var(--brand)) 21%,var(--panel));color:var(--ink);box-shadow:inset 0 -4px 0 color-mix(in srgb,var(--status-color,var(--brand)) 72%,#000)}.room-3d.available{--status-color:#17935d}.room-3d.sold{--status-color:#c62828;background:color-mix(in srgb,#c62828 18%,var(--panel))}.room-3d:focus-visible{outline:3px solid var(--focus);outline-offset:2px}.room-3d.filtered-out,.floor-missing{--price-color:#7b8794;--status-color:#7b8794;min-height:57px;padding:0;border:1px solid #7b87945c;border-radius:4px;background:#7b879426;color:#7b8794;font-size:11px;font-weight:850;text-align:center}.room-3d.filtered-out>*{display:none}.floor-missing{display:flex;align-items:center;justify-content:center}.floor-price{display:block;color:var(--muted);font-size:9px;font-weight:850;line-height:1.2}.room-3d strong{display:block;margin-top:1px;font-size:12px;line-height:1.2;letter-spacing:-.01em;overflow-wrap:anywhere}.floor-meta{display:block;margin-top:2px;color:var(--muted);font-size:9px;font-weight:750;line-height:1.2;overflow-wrap:anywhere}.floor-total{display:block;margin-top:2px;color:var(--muted);font-size:9px;font-weight:750}.room-3d .status{margin-top:3px;height:17px;padding:0 5px;font-size:8px}.room-3d .status+.status{margin-left:3px}.price-chip{position:absolute;top:5px;right:5px;width:11px;height:11px;border:2px solid color-mix(in srgb,var(--panel) 88%,transparent);border-radius:3px;background:var(--price-color,var(--brand));box-shadow:0 1px 3px #00000030}.building-ground{position:relative;height:14px;margin-top:4px;border-radius:5px;background:linear-gradient(90deg,color-mix(in srgb,var(--brand) 38%,var(--panel)),color-mix(in srgb,var(--ink) 17%,var(--panel)));box-shadow:0 14px 30px #0b172430;transform:translateZ(-2px) rotateX(12deg)}.room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.room-foot p{margin:0}.room-foot button{height:36px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-foot button{color:#07131d}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{color:#07131d}}.certificate-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft);border-top:1px solid var(--line)}.certificate-card{min-width:0;padding:14px;background:var(--panel)}.certificate-card h3{margin:0 0 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.certificate-card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}.certificate-card div{min-width:0}.certificate-card dt{color:var(--muted);font-size:10px}.certificate-card dd{margin:2px 0 0;font-size:14px;font-weight:800}@media (max-width:760px){.one-price-head{align-items:start;flex-direction:column}.one-price-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.one-price-metric:last-child{grid-column:1/-1}.room-controls{grid-template-columns:1fr}.view-switch{display:grid;grid-template-columns:1fr 1fr}.view-switch button,.room-filters button{min-height:44px}.room-controls select,.room-controls input{min-height:44px}.numeric-filters{grid-template-columns:1fr 1fr}.room-filters{justify-content:flex-start}.room-foot{align-items:stretch;flex-direction:column}.room-foot button{width:100%}.certificate-card dl{grid-template-columns:repeat(2,1fr)}}@media (max-width:430px){.numeric-filters{grid-template-columns:1fr}}@media (prefers-reduced-motion:reduce){.one-price *,.one-price *::before,.one-price *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}'''
 
 
 ONE_PRICE_JS = r'''(function(){
@@ -149,7 +156,6 @@ ONE_PRICE_JS = r'''(function(){
   function buildPricePalette(values){
     var unique=[];var seen=new Set();
     values.forEach(function(room){
-      if(Number(room.saleStatus)!==2)return;
       var value=numericValue(room.price);var key=priceKey(room);
       if(value===null||seen.has(key))return;seen.add(key);unique.push({key:key,value:value});
     });
@@ -164,23 +170,31 @@ ONE_PRICE_JS = r'''(function(){
   function matrixKey(room){return [text(room.buildName),text(room.unitName)].join('\\u0001');}
   function floorNumber(value){var match=String(value).match(/-?\d+(?:\.\d+)?/);return match?Number(match[0]):Number.NaN;}
   function naturalCompare(left,right){return String(left).localeCompare(String(right),'zh-Hans-CN',{numeric:true,sensitivity:'base'});}
-  function filterRooms(){
-    var words=query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  function scopedRooms(){
     return rooms.filter(function(room){
       if(certificate!=='all'&&room.certificateId!==certificate)return false;
       if(building!=='all'&&text(room.buildName)!==building)return false;
       if(unit!=='all'&&text(room.unitName)!==unit)return false;
-      if(filter==='available'&&Number(room.saleStatus)!==2)return false;
-      if(filter==='sold'&&Number(room.saleStatus)!==1)return false;
-      if(filter==='abnormal'&&Number(room.abnormalStatus)!==1)return false;
-      var price=numericValue(room.price);var totalPrice=totalYuan(room.totalPrice);
-      if(bounds.priceMin!==null&&(price===null||price<bounds.priceMin))return false;
-      if(bounds.priceMax!==null&&(price===null||price>bounds.priceMax))return false;
-      if(bounds.totalMin!==null&&(totalPrice===null||totalPrice<bounds.totalMin*10000))return false;
-      if(bounds.totalMax!==null&&(totalPrice===null||totalPrice>bounds.totalMax*10000))return false;
-      var haystack=[room.certificateName,room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout,room.price,room.totalPrice].join(' ').toLowerCase();
-      return words.every(function(word){return haystack.indexOf(word)>=0});
+      return true;
     });
+  }
+  function roomMatches(room){
+    if(certificate!=='all'&&room.certificateId!==certificate)return false;
+    if(building!=='all'&&text(room.buildName)!==building)return false;
+    if(unit!=='all'&&text(room.unitName)!==unit)return false;
+    if(filter==='available'&&Number(room.saleStatus)!==2)return false;
+    if(filter==='sold'&&Number(room.saleStatus)!==1)return false;
+    if(filter==='abnormal'&&Number(room.abnormalStatus)!==1)return false;
+    var price=numericValue(room.price);var totalPrice=totalYuan(room.totalPrice);
+    if(bounds.priceMin!==null&&(price===null||price<bounds.priceMin))return false;
+    if(bounds.priceMax!==null&&(price===null||price>bounds.priceMax))return false;
+    if(bounds.totalMin!==null&&(totalPrice===null||totalPrice<bounds.totalMin*10000))return false;
+    if(bounds.totalMax!==null&&(totalPrice===null||totalPrice>bounds.totalMax*10000))return false;
+    var haystack=[room.certificateName,room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout,room.price,room.totalPrice].join(' ').toLowerCase();
+    return query.trim().toLowerCase().split(/\s+/).filter(Boolean).every(function(word){return haystack.indexOf(word)>=0});
+  }
+  function filterRooms(){
+    return scopedRooms().filter(roomMatches);
   }
   function row(room){
     var tr=document.createElement('tr');
@@ -217,10 +231,10 @@ ONE_PRICE_JS = r'''(function(){
     setOptions(unitSelect,'全部单元',values,unit);unit=unitSelect.value;
   }
   function roomCell(room){
-    var available=Number(room.saleStatus)===2;var group=available?priceGroups.get(priceKey(room)):null;
-    var article=document.createElement('article');article.className='floor-room'+(available?' available':' sold');article.tabIndex=0;
+    var available=Number(room.saleStatus)===2;var group=priceGroups.get(priceKey(room));
+    var article=document.createElement('article');article.className='room-3d'+(available?' available':' sold');article.tabIndex=0;article.classList.toggle('filtered-out',!roomMatches(room));article.setAttribute('aria-disabled',roomMatches(room)?'false':'true');
     article.setAttribute('data-price',text(room.price));article.setAttribute('data-price-value',numericValue(room.price)===null?'':String(numericValue(room.price)));article.setAttribute('data-total-price',text(room.totalPrice));
-    article.setAttribute('data-price-group',available?priceKey(room):'sold');article.setAttribute('data-room-status',available?'available':'sold');
+    article.setAttribute('data-price-group',priceKey(room));article.setAttribute('data-room-status',available?'available':'sold');
     if(group)article.style.setProperty('--price-color',group);
     article.setAttribute('aria-label',text(room.buildName)+text(room.unitName)+text(room.floor)+' '+text(room.roomName)+(available?'，可售':'，已售')+'，单价 '+money(room.price)+'，总价 '+total(room.totalPrice));
     var price=document.createElement('span');price.className='floor-price';price.textContent=money(room.price);article.appendChild(price);
@@ -229,20 +243,22 @@ ONE_PRICE_JS = r'''(function(){
     var totalPrice=document.createElement('span');totalPrice.className='floor-total';totalPrice.textContent=total(room.totalPrice);article.appendChild(totalPrice);
     var badge=document.createElement('span');badge.className='status '+(available?'available':'sold');badge.textContent=available?'可售':'已售';article.appendChild(badge);
     if(Number(room.abnormalStatus)===1){var abnormal=document.createElement('span');abnormal.className='status abnormal';abnormal.textContent='异常';article.appendChild(abnormal);}
-    if(group){var swatch=document.createElement('span');swatch.className='price-swatch';swatch.setAttribute('aria-hidden','true');article.appendChild(swatch);}
+    if(group){var swatch=document.createElement('span');swatch.className='price-chip';swatch.setAttribute('aria-hidden','true');article.appendChild(swatch);}
     return article;
   }
   function floorHeader(column){
-    var head=document.createElement('div');head.className='floor-column-head';
+    var head=document.createElement('header');head.className='building-head floor-column-head';
     var building=document.createElement('strong');building.textContent=text(column.building);head.appendChild(building);
     var unit=document.createElement('span');unit.textContent='单元 '+text(column.unitName);head.appendChild(unit);
     return head;
   }
-  function renderFloorView(filtered){
+  var DETAIL_BUILDING_LIMIT=16;
+  function focusBuilding(column){building=text(column.building);unit=text(column.unitName);limit=100;render()}
+  function renderFloorView(allRooms){
     floorResults.replaceChildren();
-    if(!filtered.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有符合筛选条件的房源';floorResults.appendChild(empty);return;}
+    if(!allRooms.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有可展示的楼栋数据';floorResults.appendChild(empty);return;}
     var columns=[];var columnSeen=new Set();var floors=[];var floorSeen=new Set();var floorRooms=new Map();
-    filtered.forEach(function(room){
+    allRooms.forEach(function(room){
       var key=matrixKey(room);var floor=text(room.floor);
       if(!columnSeen.has(key)){
         columnSeen.add(key);columns.push({key:key,building:text(room.buildName),unitName:text(room.unitName)});floorRooms.set(key,new Map());
@@ -253,41 +269,85 @@ ONE_PRICE_JS = r'''(function(){
     });
     columns.sort(function(left,right){return naturalCompare(left.building,right.building)||naturalCompare(left.unitName,right.unitName)});
     floors.sort(function(left,right){var ln=floorNumber(left);var rn=floorNumber(right);if(isFinite(ln)&&isFinite(rn)&&ln!==rn)return rn-ln;if(isFinite(ln))return -1;if(isFinite(rn))return 1;return naturalCompare(left,right)});
-    var scroll=document.createElement('div');scroll.className='floor-scroll';
-    var matrix=document.createElement('div');matrix.className='floor-matrix';matrix.style.setProperty('--floor-columns',String(columns.length));
-    matrix.setAttribute('aria-label','楼栋从左到右、楼层从上到下、同一楼层横向一排的一房一价分布');
-    var corner=document.createElement('div');corner.className='floor-corner';corner.textContent='楼层 / 楼栋';matrix.appendChild(corner);
-    columns.forEach(function(column){matrix.appendChild(floorHeader(column))});
-    floors.forEach(function(floor){
-      var label=document.createElement('div');label.className='floor-label';label.textContent=floor;matrix.appendChild(label);
+    var scroll=document.createElement('div');scroll.className='floor-stage floor-scroll';scroll.setAttribute('role','application');scroll.setAttribute('aria-label','3D 楼栋分布，可拖拽旋转和缩放');
+    var matrix=document.createElement('div');matrix.className='floor-matrix floor-camera';matrix.style.setProperty('--floor-columns',String(columns.length));
+    matrix.setAttribute('aria-label','3D 楼栋；楼栋从左到右、楼层从上到下、同一楼层横向一排');
+    var world=document.createElement('div');world.className='building-world '+(columns.length>DETAIL_BUILDING_LIMIT?'overview-grid':'detail-grid');
+    if(columns.length>DETAIL_BUILDING_LIMIT){
       columns.forEach(function(column){
-        var rooms=floorRooms.get(column.key);
-        var values=rooms&&rooms.get(floor);
+        var values=[];floorRooms.get(column.key).forEach(function(floorRoomsForColumn){values.push.apply(values,floorRoomsForColumn)});
+        var matched=values.filter(roomMatches).length;var ratio=values.length?matched/values.length:0;var columnFloors=floorRooms.get(column.key).size;
+        var block=document.createElement('button');block.type='button';block.className='building-3d building-overview';block.style.setProperty('--floors',String(columnFloors));block.style.setProperty('--match-ratio',ratio.toFixed(3));
+        block.setAttribute('aria-label','聚焦 '+text(column.building)+' 单元 '+text(column.unitName)+'，'+columnFloors+' 层，'+values.length+' 套房源');
+        block.appendChild(floorHeader(column));
+        var body=document.createElement('span');body.className='overview-body';
+        var face=document.createElement('span');face.className='overview-face';face.setAttribute('aria-hidden','true');body.appendChild(face);
+        var scale=document.createElement('span');scale.className='overview-scale';scale.textContent=columnFloors+'F · '+values.length+'套';body.appendChild(scale);
+        block.appendChild(body);block.addEventListener('click',function(){focusBuilding(column)});world.appendChild(block);
+      });
+      matrix.appendChild(world);scroll.appendChild(matrix);floorResults.appendChild(scroll);return;
+    }
+    columns.forEach(function(column){
+      var building=document.createElement('article');building.className='building-3d';building.appendChild(floorHeader(column));
+      floors.forEach(function(floor,floorIndex){
+        var slab=document.createElement('div');slab.className='floor-slab';slab.style.setProperty('--level',String(floors.length-floorIndex-1));
+        var label=document.createElement('div');label.className='floor-label';label.textContent=floor;slab.appendChild(label);
+        var cells=document.createElement('div');cells.className='room-cells';
+        var values=floorRooms.get(column.key)&&floorRooms.get(column.key).get(floor);
         if(values&&values.length){
-          var cells=document.createElement('div');cells.className='room-cells';
           values.sort(function(left,right){return naturalCompare(left.roomName,right.roomName)}).forEach(function(room){cells.appendChild(roomCell(room))});
-          matrix.appendChild(cells);
         }else{
           var missing=document.createElement('div');missing.className='floor-missing';missing.textContent='—';
-          missing.setAttribute('aria-label',text(column.building)+' '+text(column.unitName)+' '+floor+' 无房源');matrix.appendChild(missing);
+          missing.setAttribute('aria-label',text(column.building)+' '+text(column.unitName)+' '+floor+' 无房源');cells.appendChild(missing);
         }
+        slab.appendChild(cells);building.appendChild(slab);
       });
+      var ground=document.createElement('div');ground.className='building-ground';ground.setAttribute('aria-hidden','true');building.appendChild(ground);
+      world.appendChild(building);
     });
-    scroll.appendChild(matrix);floorResults.appendChild(scroll);
+    matrix.appendChild(world);scroll.appendChild(matrix);floorResults.appendChild(scroll);
+  }
+  var camera={x:-16,y:24,scale:1};var cameraScale=root.querySelector('[data-role="camera-scale"]');
+  function setCamera(){
+    camera.scale=Math.min(2.2,Math.max(.45,camera.scale));
+    camera.x=Math.min(4,Math.max(-72,camera.x));camera.y=Math.min(72,Math.max(-72,camera.y));
+    floorResults.style.setProperty('--camera-x',camera.x.toFixed(2)+'deg');
+    floorResults.style.setProperty('--camera-y',camera.y.toFixed(2)+'deg');
+    floorResults.style.setProperty('--camera-scale',camera.scale.toFixed(3));
+    if(cameraScale)cameraScale.textContent=Math.round(camera.scale*100)+'%';
   }
   function render(){
     refreshBuildingOptions();refreshUnitOptions();
-    var filtered=filterRooms();
+    var visibleRooms=scopedRooms();var filtered=visibleRooms.filter(roomMatches);
     if(view==='table'){
       var fragment=document.createDocumentFragment();
       filtered.slice(0,limit).forEach(function(room){fragment.appendChild(row(room))});
       if(!filtered.length){var empty=document.createElement('tr');var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';cell.textContent='没有符合筛选条件的房源';empty.appendChild(cell);fragment.appendChild(empty);}
       tbody.replaceChildren(fragment);floorResults.replaceChildren();
-    }else{renderFloorView(filtered);}
+    }else{renderFloorView(visibleRooms);setCamera();}
     tableWrap.hidden=view!=='table';floorResults.hidden=view==='table';
-    count.textContent=view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'楼层分布显示 '+filtered.length+' 套房源';
-    more.hidden=view!=='table'||limit>=filtered.length;setSummary(rooms);
+    count.textContent=view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'3D 楼栋显示 '+filtered.length+' / '+visibleRooms.length+' 套匹配房源';
+    more.hidden=view!=='table'||limit>=filtered.length;setSummary(visibleRooms);
   }
+  var zoomIn=root.querySelector('[data-role="zoom-in"]');var zoomOut=root.querySelector('[data-role="zoom-out"]');var resetCamera=root.querySelector('[data-role="reset-camera"]');
+  if(zoomIn)zoomIn.addEventListener('click',function(){camera.scale+=.18;setCamera()});
+  if(zoomOut)zoomOut.addEventListener('click',function(){camera.scale-=.18;setCamera()});
+  if(resetCamera)resetCamera.addEventListener('click',function(){camera={x:-16,y:24,scale:1};setCamera()});
+  var allBuildings=root.querySelector('[data-role="all-buildings"]');
+  if(allBuildings)allBuildings.addEventListener('click',function(){building='all';unit='all';limit=100;render()});
+  floorResults.addEventListener('wheel',function(event){
+    if(view==='table'||!event.target.closest('.floor-stage'))return;
+    event.preventDefault();camera.scale-=event.deltaY*.0015;setCamera();
+  },{passive:false});
+  var drag=null;
+  floorResults.addEventListener('pointerdown',function(event){
+    if(view==='table'||!event.target.closest('.floor-stage'))return;if(event.target.closest('.building-overview'))return;
+    drag={x:event.clientX,y:event.clientY,cameraX:camera.x,cameraY:camera.y};floorResults.setPointerCapture(event.pointerId);
+  });
+  floorResults.addEventListener('pointermove',function(event){
+    if(!drag)return;camera.x=drag.cameraX+(event.clientY-drag.y)*.32;camera.y=drag.cameraY+(event.clientX-drag.x)*.38;setCamera();
+  });
+  ['pointerup','pointercancel'].forEach(function(type){floorResults.addEventListener(type,function(){drag=null})});
   root.querySelectorAll('[data-role="view-mode"]').forEach(function(button){
     button.addEventListener('click',function(){
       root.querySelectorAll('[data-role="view-mode"]').forEach(function(item){item.setAttribute('aria-pressed','false')});
