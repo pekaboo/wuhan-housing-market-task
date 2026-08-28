@@ -400,6 +400,20 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert 'DETAIL_BUILDING_LIMIT=16' in detail
     assert 'building-overview' in detail
     assert 'focusBuilding(column)' in detail
+    assert 'data-role="back-to-overview"' in detail
+    assert 'hidden aria-label="返回单元总览"' in detail
+    assert '返回单元总览' in detail
+    assert '.back-overview{position:absolute;top:12px;left:12px' in detail
+    assert 'var backToOverview=root.querySelector' in detail
+    assert 'function syncBackButton()' in detail
+    assert "backToOverview.hidden=!(view==='floor'" in detail
+    assert "backToOverview.addEventListener('click'" in detail
+    assert 'floorResults.appendChild(stage);if(backButton)floorResults.appendChild(backButton);' in detail
+    assert 'var selectableUnit=event.target.closest' in detail
+    assert 'if(!selectableUnit){event.preventDefault()' in detail
+    assert "block.addEventListener('pointerup',function(event){if(event.pointerType==='touch'&&!gestureMoved)focusBuilding(column)})" in detail
+    assert 'if(gestureMoved)return;focusBuilding(column)' in detail
+    assert "building='all';unit='all'" in detail
     assert 'var columnFloors=floorRooms.get(column.key).size' in detail
     assert "block.style.setProperty('--floors',String(columnFloors))" in detail
     assert "columnFloors+' 层，'" in detail
