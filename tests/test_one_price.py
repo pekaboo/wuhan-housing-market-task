@@ -463,6 +463,9 @@ def test_one_price_floor_map_has_apple_maps_style_proportional_gestures(tmp_path
         'wheel',
         'pinchState',
         'panBy(deltaX,deltaY)',
+        'function wheelFactor(event)',
+        'if(event.ctrlKey)',
+        'panBy(-event.deltaX*factor,-event.deltaY*factor)',
         "floorToolbar.hidden=view!=='floor'",
         '加号放大，减号缩小，0 复位',
     ):

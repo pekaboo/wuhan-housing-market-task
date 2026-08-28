@@ -92,7 +92,7 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
           <label>总价上限<input data-role="total-max" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
         </div>
       </div>
-      <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽平移、滚轮 / 双指等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
+      <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽 / 滚轮上下平移，双指捏合等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
       <div class="room-table-wrap">
         <table class="room-table">
           <caption class="sr-only">一房一价房源明细</caption>
@@ -418,10 +418,12 @@ ONE_PRICE_JS = r'''(function(){
   function stagePoint(stage,event){var rect=stage.getBoundingClientRect();return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
   function currentPoints(stage){var values=[];activePointers.forEach(function(point){values.push(point)});return values}
   function startPinch(stage){var points=currentPoints(stage);if(points.length<2)return;var ax=(points[0].x+points[1].x)/2;var ay=(points[0].y+points[1].y)/2;var dx=points[0].x-points[1].x;var dy=points[0].y-points[1].y;pinchState={distance:Math.max(1,Math.hypot(dx,dy)),baseScale:viewState.scale,worldX:(ax-viewState.x)/viewState.scale,worldY:(ay-viewState.y)/viewState.scale,midX:ax,midY:ay}}
+  function wheelFactor(event){return event.deltaMode===1?16:event.deltaMode===2?100:1}
   floorResults.addEventListener('wheel',function(event){
     if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;
-    event.preventDefault();var point=stagePoint(stage,event);var delta=event.deltaMode===1?event.deltaY*16:event.deltaY;
-    zoomAt(point.x,point.y,viewState.scale*Math.exp(-delta*.0022));
+    event.preventDefault();var factor=wheelFactor(event);var point=stagePoint(stage,event);
+    if(event.ctrlKey){zoomAt(point.x,point.y,viewState.scale*Math.exp(-event.deltaY*factor*.0022));return}
+    panBy(-event.deltaX*factor,-event.deltaY*factor);
   },{passive:false});
   floorResults.addEventListener('pointerdown',function(event){
     if(view==='table'||event.button!==0)return;var stage=event.target.closest('.floor-stage');if(!stage)return;
