@@ -17,7 +17,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
 :is(a,button,input,select,summary,[tabindex]):focus-visible{outline:3px solid color-mix(in srgb,var(--focus) 58%,transparent);outline-offset:3px;border-radius:var(--radius-sm)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
 .one-price{overflow:hidden;margin:0 0 24px;border:1px solid var(--line);border-radius:18px;background:var(--panel);box-shadow:var(--shadow)}.one-price.empty{display:grid;min-height:170px;place-items:center;color:var(--muted)}.one-price-head{display:flex;justify-content:space-between;gap:16px;align-items:start;padding:18px 18px 14px}.one-price-head h2{margin:0}.one-price-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.one-price-head a{display:inline-flex;min-height:36px;align-items:center;padding:0 12px;border-radius:10px;background:var(--panel-soft);color:var(--brand-ink);font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}.one-price-error{margin:0;padding:13px 18px;background:color-mix(in srgb,#b42318 10%,var(--panel));color:#b42318;font-weight:750}.one-price-note{margin:0;padding:14px 18px;color:var(--muted)}.one-price-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--panel-soft)}.one-price-metric{min-width:0;padding:13px;background:var(--panel)}.one-price-metric span{display:block;color:var(--muted);font-size:11px}.one-price-metric strong{display:block;margin-top:2px;font-size:21px;letter-spacing:-.045em}.one-price-metric.available strong{color:#137a4b}.one-price-metric.sold strong{color:#a35613}.one-price-metric.abnormal strong{color:#a33815}@media (prefers-color-scheme:dark){.one-price-metric.available strong{color:#75d9a5}.one-price-metric.sold strong{color:#f0b76a}.one-price-metric.abnormal strong{color:#ff9d7a}.one-price-error{background:#43110c;color:#ffab94}}.room-controls{display:grid;grid-template-columns:auto minmax(170px,220px) minmax(140px,180px) minmax(130px,170px) minmax(220px,1fr);gap:9px;padding:13px 14px;border-top:1px solid var(--line);background:var(--panel-soft)}.room-controls label,.room-filters,.numeric-filters{display:flex;min-width:0;align-items:center;gap:7px;color:var(--muted);font-size:12px;font-weight:750}.room-controls select,.room-controls input{min-width:0;flex:1;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit;font-size:13px;outline:none}.room-controls input:focus-visible,.room-controls select:focus-visible{border-color:var(--focus)}.view-switch{display:flex;gap:5px}.view-switch button,.room-filters button{height:38px;padding:0 11px;border:0;border-radius:10px;background:var(--panel);color:var(--muted);font:inherit;font-size:12px;font-weight:800;cursor:pointer}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{background:var(--brand);color:#fff}.room-filters,.numeric-filters{grid-column:1/-1;flex-wrap:wrap}.room-filters{justify-content:flex-start;overflow:visible}.numeric-filters{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:7px}.numeric-filters label{flex-direction:column;align-items:stretch;gap:4px}.numeric-filters input{width:100%}.floor-note{margin:0;padding:9px 15px;border-top:1px solid var(--line);background:var(--panel);color:var(--muted);font-size:12px}.room-table-wrap{overflow-x:auto;border-top:1px solid var(--line)}.room-table{width:100%;min-width:1030px;border-collapse:collapse;font-size:13px}.room-table th,.room-table td{padding:11px 13px;border-top:1px solid var(--line);text-align:left;vertical-align:top;white-space:nowrap}.room-table thead th{position:sticky;top:0;background:var(--panel);color:var(--muted);font-size:11px}.room-table td.loading{color:var(--muted)}.status{display:inline-flex;height:24px;align-items:center;padding:0 8px;border-radius:999px;background:var(--panel-soft);color:var(--muted);font-size:11px;font-weight:800}.status.available{color:#137a4b;background:color-mix(in srgb,#137a4b 12%,var(--panel))}.status.sold{color:#a35613;background:color-mix(in srgb,#a35613 12%,var(--panel))}.status.abnormal{margin-left:5px;color:#a33815;background:color-mix(in srgb,#a33815 12%,var(--panel))}@media (prefers-color-scheme:dark){.status.available{color:#75d9a5}.status.sold{color:#f0b76a}.status.abnormal{color:#ff9d7a}}.floor-results{--floor-scale:1;--pan-x:0px;--pan-y:0px;--map-surface:#f0f2f5;--map-panel:#ffffff;--map-panel-soft:#f7f8fa;--map-ink:#1d1d1f;--map-muted:#6e6e73;--map-line:#d2d2d7;--map-line-strong:#a1a1a6;--map-brand:#0071e3;--map-brand-ink:#0066cc;--map-focus:#0071e3;--map-available:#34c759;--map-sold:#ff3b30;--map-ghost:#8e8e93;--floor-axis:52px;--floor-height:96px;--room-width:112px;position:relative;padding:0;border-top:1px solid var(--map-line);background:var(--map-surface);color:var(--map-ink)}
-.floor-results>.loading{margin:0;padding:16px;color:var(--map-muted)}
+.floor-results>.loading{margin:0;padding:16px;color:var(--map-muted)}.floor-render-status{position:absolute;left:50%;bottom:12px;z-index:11;margin:0;padding:5px 10px;border:1px solid var(--map-line);border-radius:999px;background:color-mix(in srgb,var(--map-panel) 88%,transparent);color:var(--map-muted);font-size:10px;font-weight:750;box-shadow:0 8px 24px #00000014;transform:translateX(-50%);pointer-events:none}
 .floor-toolbar{position:relative;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:56px;padding:9px 14px;border-bottom:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);background:color-mix(in srgb,var(--map-panel) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
 .floor-toolbar button{height:34px;padding:0 12px;border:1px solid var(--map-line);border-radius:999px;background:color-mix(in srgb,var(--map-panel) 88%,transparent);color:var(--map-ink);font:inherit;font-size:12px;font-weight:650;letter-spacing:-.01em;cursor:pointer;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),color .18s var(--ease-out),box-shadow .18s var(--ease-out)}
 .floor-toolbar button:hover,.floor-toolbar button[aria-pressed=true]{border-color:color-mix(in srgb,var(--map-brand) 34%,var(--map-line));background:var(--map-panel);color:var(--map-brand-ink);box-shadow:0 1px 2px #0000000a,0 8px 20px #00000012}
@@ -39,7 +39,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
 .floor-axis-y{display:flex;align-items:center;justify-content:center;border-right:1px solid color-mix(in srgb,var(--map-line) 82%,transparent);color:var(--map-muted);font-size:11px;font-weight:650;font-variant-numeric:tabular-nums}
 .building-cell{position:relative;height:var(--floor-height);min-width:0;overflow:hidden;padding:4px;border:1px solid color-mix(in srgb,var(--map-line) 82%,transparent);border-radius:10px;background:color-mix(in srgb,var(--map-panel) 72%,transparent);box-shadow:0 1px 2px #00000006;backdrop-filter:blur(10px)}
 .room-cells{display:grid;height:calc(var(--floor-height) - 10px);grid-template-rows:100%;grid-auto-rows:100%;grid-auto-flow:column;grid-auto-columns:var(--room-width);gap:6px;align-content:stretch}
-.floor-room{position:relative;box-sizing:border-box;width:100%;height:100%;min-width:0;min-height:0;padding:7px 9px 6px 10px;overflow:hidden;border:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);border-left:4px solid var(--price-color,var(--map-brand));border-radius:7px;background:var(--map-panel);color:var(--map-ink);box-shadow:0 1px 2px #00000006;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),box-shadow .18s var(--ease-out)}
+.floor-room{position:relative;box-sizing:border-box;width:100%;height:100%;min-width:0;min-height:0;padding:7px 9px 6px 10px;overflow:hidden;border:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);border-left:4px solid var(--price-color,var(--map-brand));border-radius:7px;background:var(--map-panel);color:var(--map-ink);box-shadow:0 1px 2px #00000006;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);content-visibility:auto;contain:layout paint style;contain-intrinsic-size:auto 86px}
 .floor-room.available{--status-color:var(--map-available);background:color-mix(in srgb,var(--map-available) 7%,var(--map-panel))}
 .floor-room.sold{--status-color:var(--map-sold);background:color-mix(in srgb,var(--map-sold) 7%,var(--map-panel))}
 .floor-room:hover,.floor-room:focus-visible{border-color:color-mix(in srgb,var(--map-brand) 42%,var(--map-line));box-shadow:0 0 0 3px color-mix(in srgb,var(--map-brand) 14%,transparent),0 8px 20px #00000012}
@@ -291,7 +291,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   </article>
 </dialog>
 <nav class="footer-nav" aria-label="项目导航"><a class="previous" href="../../projects/656175822704712/"><span>上一个楼盘</span><span>武汉天宸</span></a><a class="next" href="../../projects/795364598689861/"><span>下一个楼盘</span><span>新希望·长粼府</span></a></nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-28 08:29:06；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-28 09:34:56；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 (function(){
@@ -417,14 +417,16 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
     var values=rooms.filter(function(room){return (certificate==='all'||room.certificateId===certificate)&&(building==='all'||text(room.buildName)===building)}).map(function(room){return text(room.unitName)});
     setOptions(unitSelect,'全部单元',values,unit);unit=unitSelect.value;
   }
-  function roomCell(room){
-    var available=Number(room.saleStatus)===2;var group=priceGroups.get(priceKey(room));
-    var article=document.createElement('article');article.className='floor-room'+(available?' available':' sold');article.tabIndex=0;article.classList.toggle('filtered-out',!roomMatches(room));article.setAttribute('aria-disabled',roomMatches(room)?'false':'true');
-    article.setAttribute('data-price',text(room.price));article.setAttribute('data-price-value',numericValue(room.price)===null?'':String(numericValue(room.price)));article.setAttribute('data-total-price',text(room.totalPrice));
+  function roomCell(room,matched){
+    var available=Number(room.saleStatus)===2;var price=numericValue(room.price);var group=priceGroups.get(priceKey(room));
+    var article=document.createElement('article');article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out');article.tabIndex=0;
+    article.setAttribute('aria-disabled',matched?'false':'true');
+    article.setAttribute('data-price',text(room.price));article.setAttribute('data-price-value',price===null?'':String(price));article.setAttribute('data-total-price',text(room.totalPrice));
     article.setAttribute('data-price-group',priceKey(room));article.setAttribute('data-room-status',available?'available':'sold');
+    article.setAttribute('aria-label',text(room.buildName)+text(room.unitName)+text(room.floor)+' '+text(room.roomName)+(available?'，可售':'，已售')+'，单价 '+money(room.price)+'，总价 '+total(room.totalPrice)+(matched?'':'，筛选外'));
+    if(!matched){article.textContent='—';return article}
     if(group)article.style.setProperty('--price-color',group);
-    article.setAttribute('aria-label',text(room.buildName)+text(room.unitName)+text(room.floor)+' '+text(room.roomName)+(available?'，可售':'，已售')+'，单价 '+money(room.price)+'，总价 '+total(room.totalPrice));
-    var price=document.createElement('span');price.className='floor-price';price.textContent=money(room.price);article.appendChild(price);
+    var priceLabel=document.createElement('span');priceLabel.className='floor-price';priceLabel.textContent=money(room.price);article.appendChild(priceLabel);
     var name=document.createElement('strong');name.textContent=text(room.roomName);article.appendChild(name);
     var meta=document.createElement('span');meta.className='floor-meta';meta.textContent=text(room.roomLayout)+' · '+area(room.area);article.appendChild(meta);
     var totalPrice=document.createElement('span');totalPrice.className='floor-total';totalPrice.textContent=total(room.totalPrice);article.appendChild(totalPrice);
@@ -433,47 +435,52 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
     if(group){var swatch=document.createElement('span');swatch.className='price-chip';swatch.setAttribute('aria-hidden','true');article.appendChild(swatch);}
     return article;
   }
+
   function floorHeader(column){
     var head=document.createElement('header');head.className='building-head floor-column-head';
     var building=document.createElement('strong');building.textContent=text(column.building);head.appendChild(building);
     var unit=document.createElement('span');unit.textContent='单元 '+text(column.unitName);head.appendChild(unit);
     return head;
   }
-  var DETAIL_BUILDING_LIMIT=16;var floorSignature='';
+  var DETAIL_BUILDING_LIMIT=16;var floorSignature='';var floorRenderToken=0;
   function focusBuilding(column){building=text(column.building);unit=text(column.unitName);limit=100;render()}
   function renderFloorView(allRooms){
+    var renderToken=++floorRenderToken;
     var backButton=backToOverview;
     floorResults.replaceChildren();
     if(!allRooms.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有可展示的楼栋数据';floorResults.appendChild(empty);if(backButton)floorResults.appendChild(backButton);return;}
     var columns=[];var columnSeen=new Set();var floors=[];var floorSeen=new Set();var floorRooms=new Map();var maxRoomsPerColumn=1;
     allRooms.forEach(function(room){
       var key=matrixKey(room);var floor=text(room.floor);
-      if(!columnSeen.has(key)){
-        columnSeen.add(key);columns.push({key:key,building:text(room.buildName),unitName:text(room.unitName)});floorRooms.set(key,new Map());
-      }
-      if(!floorSeen.has(floor)){floorSeen.add(floor);floors.push(floor);}
+      if(!columnSeen.has(key)){columnSeen.add(key);columns.push({key:key,building:text(room.buildName),unitName:text(room.unitName)});floorRooms.set(key,new Map())}
+      if(!floorSeen.has(floor)){floorSeen.add(floor);floors.push(floor)}
       var rooms=floorRooms.get(key);if(!rooms.has(floor))rooms.set(floor,[]);
       var values=rooms.get(floor);values.push(room);maxRoomsPerColumn=Math.max(maxRoomsPerColumn,values.length);
     });
     columns.sort(function(left,right){return naturalCompare(left.building,right.building)||naturalCompare(left.unitName,right.unitName)});
     floors.sort(function(left,right){var ln=floorNumber(left);var rn=floorNumber(right);if(isFinite(ln)&&isFinite(rn)&&ln!==rn)return rn-ln;if(isFinite(ln))return -1;if(isFinite(rn))return 1;return naturalCompare(left,right)});
     var signature=columns.map(function(column){return column.key}).join('|')+'::'+floors.join('|');
-    var stage=document.createElement('div');stage.className='floor-stage floor-map';stage.tabIndex=0;stage.setAttribute('role','application');stage.setAttribute('aria-label','楼层分布地图，可拖拽、缩放和键盘操作');stage.setAttribute('aria-keyshortcuts','方向键平移，加号放大，减号缩小，0 复位');
+    var stage=document.createElement('div');stage.className='floor-stage floor-map';stage.tabIndex=0;stage.setAttribute('role','application');stage.setAttribute('aria-label','楼层分布地图，可拖拽、缩放和键盘操作');stage.setAttribute('aria-keyshortcuts','方向键平移，加号放大，减号缩小，0 复位');stage.setAttribute('aria-busy','true');stage.dataset.renderState='loading';
+    var status=document.createElement('p');status.className='floor-render-status';status.textContent='楼层分布渲染中 0%';
     var canvas=document.createElement('div');canvas.className='floor-canvas';
-    if(columns.length>DETAIL_BUILDING_LIMIT){
-      var overview=document.createElement('div');overview.className='overview-grid';overview.setAttribute('aria-label','楼栋总览，选择楼栋单元后查看真实楼层分布');
+    var jobs=[];var overview=columns.length>DETAIL_BUILDING_LIMIT;
+    if(overview){
+      var overviewGrid=document.createElement('div');overviewGrid.className='overview-grid';overviewGrid.setAttribute('aria-label','楼栋总览，选择楼栋单元后查看真实楼层分布');
+      canvas.appendChild(overviewGrid);stage.appendChild(canvas);stage.appendChild(status);
       columns.forEach(function(column){
         var values=[];floorRooms.get(column.key).forEach(function(floorRoomsForColumn){values.push.apply(values,floorRoomsForColumn)});
         var matched=values.filter(roomMatches).length;var ratio=values.length?matched/values.length:0;var columnFloors=floorRooms.get(column.key).size;
-        var block=document.createElement('button');block.type='button';block.className='building-column building-overview';block.style.setProperty('--floors',String(columnFloors));block.style.setProperty('--match-ratio',ratio.toFixed(3));
-        block.setAttribute('aria-label','聚焦 '+text(column.building)+' 单元 '+text(column.unitName)+'，'+columnFloors+' 层，'+values.length+' 套房源');
-        block.appendChild(floorHeader(column));
-        var body=document.createElement('span');body.className='overview-body';
-        var face=document.createElement('span');face.className='overview-face';face.setAttribute('aria-hidden','true');body.appendChild(face);
-        var scale=document.createElement('span');scale.className='overview-scale';scale.textContent=columnFloors+'F · '+values.length+'套';body.appendChild(scale);
-        block.appendChild(body);block.addEventListener('pointerup',function(event){if(event.pointerType==='touch'&&!gestureMoved)focusBuilding(column)});block.addEventListener('click',function(event){if(gestureMoved)return;focusBuilding(column)});overview.appendChild(block);
+        jobs.push(function(){
+          var block=document.createElement('button');block.type='button';block.className='building-column building-overview';block.style.setProperty('--floors',String(columnFloors));block.style.setProperty('--match-ratio',ratio.toFixed(3));
+          block.setAttribute('aria-label','聚焦 '+text(column.building)+' 单元 '+text(column.unitName)+'，'+columnFloors+' 层，'+values.length+' 套房源');
+          block.appendChild(floorHeader(column));
+          var body=document.createElement('span');body.className='overview-body';
+          var face=document.createElement('span');face.className='overview-face';face.setAttribute('aria-hidden','true');body.appendChild(face);
+          var scale=document.createElement('span');scale.className='overview-scale';scale.textContent=columnFloors+'F · '+values.length+'套';body.appendChild(scale);
+          block.appendChild(body);block.addEventListener('pointerup',function(event){if(event.pointerType==='touch'&&!gestureMoved)focusBuilding(column)});block.addEventListener('click',function(event){if(gestureMoved)return;focusBuilding(column)});
+          return block;
+        });
       });
-      canvas.appendChild(overview);stage.appendChild(canvas);
     }else{
       var matrix=document.createElement('div');matrix.className='floor-matrix';matrix.style.setProperty('--floor-columns',String(columns.length));matrix.style.setProperty('--floor-count',String(floors.length));matrix.style.setProperty('--building-width',(maxRoomsPerColumn*119+8)+'px');
       matrix.setAttribute('aria-label','楼栋从左到右、楼层从上到下、同一楼层横向一排');
@@ -486,18 +493,40 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
         var axis=document.createElement('div');axis.className='floor-axis-y';axis.textContent=floor;row.appendChild(axis);
         columns.forEach(function(column){
           var cell=document.createElement('div');cell.className='building-cell';
-          var cells=document.createElement('div');cells.className='room-cells';
-          var values=floorRooms.get(column.key)&&floorRooms.get(column.key).get(floor);
-          if(values&&values.length){values.sort(function(left,right){return naturalCompare(left.roomName,right.roomName)}).forEach(function(room){cells.appendChild(roomCell(room))})}
-          else{var missing=document.createElement('div');missing.className='floor-missing';missing.textContent='—';missing.setAttribute('aria-label',text(column.building)+' '+text(column.unitName)+' '+floor+' 无房源');cells.appendChild(missing)}
-          cell.appendChild(cells);row.appendChild(cell);
+          var cells=document.createElement('div');cells.className='room-cells';cell.appendChild(cells);row.appendChild(cell);
+          jobs.push(function(){
+            var fragment=document.createDocumentFragment();var values=floorRooms.get(column.key)&&floorRooms.get(column.key).get(floor);
+            if(values&&values.length){values.sort(function(left,right){return naturalCompare(left.roomName,right.roomName)}).forEach(function(room){var matched=roomMatches(room);fragment.appendChild(roomCell(room,matched))})}
+            else{var missing=document.createElement('div');missing.className='floor-missing';missing.textContent='—';missing.setAttribute('aria-label',text(column.building)+' '+text(column.unitName)+' '+floor+' 无房源');fragment.appendChild(missing)}
+            cells.appendChild(fragment);
+          });
         });
         matrix.appendChild(row);
       });
-      canvas.appendChild(matrix);stage.appendChild(canvas);
+      canvas.appendChild(matrix);stage.appendChild(canvas);stage.appendChild(status);
     }
     floorResults.appendChild(stage);if(backButton)floorResults.appendChild(backButton);
-    if(signature!==floorSignature){floorSignature=signature;fitView(canvas)}else{applyViewState(canvas);queueClamp(canvas)}
+    if(!overview){
+      if(signature!==floorSignature){floorSignature=signature;fitView(canvas)}else{applyViewState(canvas);queueClamp(canvas)}
+    }
+    var cursor=0;
+    function finishRender(){
+      if(renderToken!==floorRenderToken)return;
+      if(overview){
+        if(signature!==floorSignature){floorSignature=signature;fitView(canvas)}else{applyViewState(canvas);queueClamp(canvas)}
+      }
+      stage.dataset.renderState='complete';stage.removeAttribute('aria-busy');status.textContent='楼层分布渲染完成';
+      requestAnimationFrame(function(){if(renderToken===floorRenderToken&&status.parentNode)status.parentNode.removeChild(status)});
+    }
+    function renderFloorBatch(){
+      if(renderToken!==floorRenderToken)return;
+      var frameStart=performance.now();var fragment=overview?document.createDocumentFragment():null;
+      while(cursor<jobs.length&&performance.now()-frameStart<10){var result=jobs[cursor++]();if(fragment)fragment.appendChild(result)}
+      if(fragment)canvas.firstChild.appendChild(fragment);
+      var percent=jobs.length?Math.round(cursor/jobs.length*100):100;status.textContent='楼层分布渲染中 '+percent+'%';
+      if(cursor<jobs.length)requestAnimationFrame(renderFloorBatch);else finishRender();
+    }
+    if(jobs.length)requestAnimationFrame(renderFloorBatch);else finishRender();
   }
   var viewState={scale:1,x:0,y:0};
   function clampScale(value){return Math.min(2.2,Math.max(.18,value))}
@@ -542,6 +571,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   function panBy(deltaX,deltaY){var canvas=floorResults.querySelector('.floor-canvas');if(!canvas)return;viewState.x+=deltaX;viewState.y+=deltaY;clampPan(canvas)}
   function resetView(canvas){fitView(canvas)}
   function render(){
+    floorRenderToken++;
     refreshBuildingOptions();refreshUnitOptions();
     var visibleRooms=scopedRooms();var filtered=visibleRooms.filter(roomMatches);
     tableWrap.hidden=view!=='table';floorResults.hidden=view==='table';if(floorToolbar)floorToolbar.hidden=view!=='floor';
@@ -658,7 +688,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
     tbody.replaceChildren(document.createElement('tr'));
     var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';
     cell.textContent='一房一价明细载入失败：'+error.message;tbody.firstChild.appendChild(cell);
-    floorResults.replaceChildren();var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);if(backToOverview)floorResults.appendChild(backToOverview);
+    floorRenderToken++;floorResults.replaceChildren();var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);if(backToOverview)floorResults.appendChild(backToOverview);
     count.textContent='载入失败';more.hidden=true;
   });
 })();
