@@ -49,7 +49,9 @@ jobs:
             --site-output site \
             --page-size 50 \
             --room-page-size 500 \
-            --reuse-enrichment
+            --reuse-enrichment \
+            --refresh-featured \
+            --featured-projects config/featured-projects.txt
 
       - name: Ensure token is absent from generated artifacts
         env:

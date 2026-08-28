@@ -124,6 +124,25 @@ class TestRenderHtml(unittest.TestCase):
         self.assertIn('data-role="sort-control"', page)
         self.assertIn('data-project-json=', page)
 
+    def test_featured_projects_render_first_in_a_dedicated_feature_region(self):
+        page = render_html(
+            [self.projects[1], self.projects[0]],
+            generated_at='2026-08-27 08:00:00',
+            featured_keys=['<script>unsafe</script>'],
+        )
+
+        self.assertIn('id="featured-projects"', page)
+        self.assertIn('data-region="featured"', page)
+        self.assertIn('data-region="all-projects"', page)
+        self.assertIn('重点楼盘', page)
+        self.assertIn('&lt;script&gt;unsafe&lt;/script&gt;', page)
+        self.assertIn('data-role="project-grid"', page)
+        self.assertLess(
+            page.index('id="featured-projects"'),
+            page.index('class="controls"'),
+        )
+        self.assertNotIn('id="featured-projects"', render_html(self.projects, generated_at='2026-08-27 08:00:00'))
+
     def test_overview_card_displays_and_searches_every_available_field(self):
         rich_project = {
             **project(4, '完整数据楼盘'),

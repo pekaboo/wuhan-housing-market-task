@@ -14,6 +14,17 @@
 - `site/data/enrichment-state.json` — 下一批增量抓取游标；
 - `site/data/sale-data.json` — 楼盘列表生产快照。
 
+### 手动重点楼盘清单
+
+编辑 `config/featured-projects.txt`，一行一个项目 ID 或项目名称（名称必须与 HTML 中显示的项目名一致；`#` 后为注释）：
+
+```text
+334502133780562
+武汉雅居乐花园
+```
+
+匹配到的项目会固定展示在首页最上方的 **重点楼盘** 区域，且不会在下方全部列表重复出现。每日自动 Action 会在复用既有增量数据的同时，强制刷新这些项目的一房一价与户型详情；手动全量增量任务也会优先处理它们。清单为空时，首页自动隐藏该区域；未匹配的行会被忽略，不影响其他项目生成。
+
 实时输出：
 
 - `/` — 实时全部楼盘总览；
@@ -26,7 +37,7 @@
 GitHub Actions schedule (00:00 UTC = 08:00 CST)
   → pytest
   → 分页请求 GetLouPanSaleImages（短页不终止，null/空列表终止，按 ID 去重）
-  → 每次轮转抓取 80 个楼盘的预售证、房号、户型图与昨日网签
+  → 每次轮转抓取 80 个楼盘的预售证、房号、户型图与昨日网签（重点楼盘每日优先刷新）
   → 复用 site/data 中未轮到楼盘的既有 JSON，生成全部楼盘总览与详情
   → 写入 enrichment-state.json、token 扫描、提交快照、部署 GitHub Pages
 
@@ -91,6 +102,8 @@ export WFT_TOKEN='你的 wfTToken'
 | `--room-page-size` | `WFT_ROOM_PAGE_SIZE` | `500` |
 | `--fetch-one-price` | 无 | 关闭；开启后分批补齐户型图、一房一价与昨日网签 |
 | `--enrichment-batch-size` | `WFT_ENRICHMENT_BATCH_SIZE` | `80`；按项目列表游标轮转，未轮到的项目复用已提交 JSON |
+| `--featured-projects` | `WFT_FEATURED_PROJECTS` | `config/featured-projects.txt`；支持项目 ID 或名称 |
+| `--refresh-featured` | 无 | 关闭；复用增量数据时仍强制刷新重点楼盘详情 |
 | `--max-pages` | `WFT_MAX_PAGES` | `100` |
 | `--timeout` | `WFT_REQUEST_TIMEOUT_SECONDS` | `20` |
 | `--site-output` | `WFT_SITE_OUTPUT` | `site` |

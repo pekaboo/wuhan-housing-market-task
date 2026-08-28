@@ -53,7 +53,8 @@ jobs:
             --page-size 50 \
             --room-page-size 500 \
             --fetch-one-price \
-            --enrichment-batch-size ${{ inputs.batch_size }}
+            --enrichment-batch-size ${{ inputs.batch_size }} \
+            --featured-projects config/featured-projects.txt
 
       - name: Ensure token is absent from generated artifacts
         env:

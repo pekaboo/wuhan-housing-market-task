@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import Any
 
 from .design import APPLE_DESIGN_CSS
+from .featured import split_featured_projects
 
 
 def esc(value: Any) -> str:
@@ -341,6 +342,12 @@ h1 { margin: 0; font-size: clamp(19px, 2.4vw, 27px); line-height: 1.1; letter-sp
 .coverage-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--brand), var(--ok)); }
 .wangqian-link { color: var(--brand-ink); font-size: 11px; font-weight: 800; text-decoration: none; white-space: nowrap; }
 .wangqian-link:hover { text-decoration: underline; }
+.featured { margin: 6px 0 12px; padding: 11px; border: 1px solid color-mix(in srgb,var(--brand) 18%,var(--line)); border-radius: var(--radius-xl); background: color-mix(in srgb,var(--brand) 5%,var(--panel)); box-shadow: var(--shadow); }
+.featured-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 9px; }
+.featured-head p { margin: 0; color: var(--brand); font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.featured-head h2 { margin: 1px 0 0; font-size: 17px; letter-spacing: -.035em; }
+.featured-head span { color: var(--muted); font-size: 10px; font-weight: 650; white-space: nowrap; }
+.featured-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px;align-items:start; }
 .controls { position: sticky; top: 10px; z-index: 8; margin: 12px 0 14px; border: 1px solid color-mix(in srgb,var(--ink) 7%,transparent); border-radius: var(--radius-xl); background: color-mix(in srgb,var(--panel) 74%,transparent); backdrop-filter:saturate(180%) blur(20px); box-shadow: var(--shadow-hover); }
 .control-inner { display: grid; grid-template-columns: minmax(260px, 1fr) auto; gap: 6px; padding: 7px; }
 .search { position: relative; display: flex; align-items: center; }
@@ -405,7 +412,7 @@ h1 { margin: 0; font-size: clamp(19px, 2.4vw, 27px); line-height: 1.1; letter-sp
 .empty { display: grid; min-height: 220px; place-items: center; border: 1px dashed var(--line); border-radius: 12px; background: var(--panel); color: var(--muted); }
 a:hover, button:hover { transition: background-color .16s ease-out, color .16s ease-out, border-color .16s ease-out; }
 :is(a, button, input, summary):focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-@media (max-width: 1000px) { .grid { grid-template-columns: minmax(0, 1fr); } .subtitle { display: block; } }
+@media (max-width: 1000px) { .grid,.featured-grid { grid-template-columns: minmax(0, 1fr); } .featured-head { align-items: start; flex-direction: column; } .subtitle { display: block; } }
 @media (max-width: 760px) {
   .top { align-items: start; flex-direction: column; }
   .metadata { justify-content: flex-start; }
@@ -426,8 +433,9 @@ a:hover, button:hover { transition: background-color .16s ease-out, color .16s e
 DASHBOARD_SCRIPT = """
 (function() {
   'use strict';
-  const grid = document.querySelector('[role="list"]');
-  const cards = Array.from(grid.querySelectorAll('.project'));
+  const cards = Array.from(document.querySelectorAll('[data-role="project-grid"] .project'));
+  const featuredSection = document.getElementById('featured-projects');
+  const emptyState = document.querySelector('[data-role="project-empty"]');
   const search = document.querySelector('[data-role="project-search"]');
   const dialog = document.getElementById('chart-dialog');
   const dialogImage = dialog.querySelector('[data-role="chart-dialog-image"]');
@@ -441,11 +449,13 @@ DASHBOARD_SCRIPT = """
       const value = (card.dataset.search || '').toLowerCase();
       card.hidden = words.some(word => !value.includes(word));
     });
+    if (featuredSection) featuredSection.hidden = !cards.some(card => card.closest('[data-region="featured"]') && !card.hidden);
+    if (emptyState) emptyState.hidden = cards.some(card => card.closest('[data-region="all-projects"]') && !card.hidden);
     if (sortMode === 'sold') cards.sort((a, b) => Number(b.dataset.sold) - Number(a.dataset.sold));
     else if (sortMode === 'price-asc') cards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
     else if (sortMode === 'price-desc') cards.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
     else cards.sort((a, b) => Number(a.dataset.defaultIndex) - Number(b.dataset.defaultIndex));
-    cards.forEach(card => grid.append(card));
+    cards.forEach(card => card.closest('[data-role="project-grid"]').append(card));
   }
   cards.forEach((card, index) => { card.dataset.defaultIndex = String(index); });
   search.addEventListener('input', apply);
@@ -483,20 +493,37 @@ def render_html(
     generated_at: str,
     root_prefix: str = '',
     one_price_snapshots: dict[Any, dict[str, Any]] | None = None,
+    featured_keys: list[str] | None = None,
 ) -> str:
     summary = summarize(projects)
     snapshots_by_id = {str(key): value for key, value in (one_price_snapshots or {}).items()}
-    cards = ''.join(
-        project_card(
-            project,
-            root_prefix=root_prefix,
-            one_price_summary=(
-                summarize_public_one_price(snapshots_by_id[str(project.get('id'))])
-                if str(project.get('id')) in snapshots_by_id
-                else None
-            ),
+    featured_projects, standard_projects = split_featured_projects(projects, featured_keys)
+
+    def render_cards(items: list[dict[str, Any]]) -> str:
+        return ''.join(
+            project_card(
+                project,
+                root_prefix=root_prefix,
+                one_price_summary=(
+                    summarize_public_one_price(snapshots_by_id[str(project.get('id'))])
+                    if str(project.get('id')) in snapshots_by_id
+                    else None
+                ),
+            )
+            for project in items
         )
-        for project in projects
+
+    cards = render_cards(standard_projects)
+    empty_hidden = ' hidden' if standard_projects else ''
+    featured_cards = render_cards(featured_projects)
+    featured_section = (
+        '<section class="featured" id="featured-projects" aria-label="重点楼盘">'
+        '<div class="featured-head"><div><p>Featured</p><h2>重点楼盘</h2></div>'
+        '<span>手动清单 · 每日自动补详情</span></div>'
+        '<div class="featured-grid" role="list" data-role="project-grid" data-region="featured">'
+        + featured_cards + '</div></section>'
+        if featured_projects
+        else ''
     )
     public_projects = [
         {
@@ -538,6 +565,7 @@ def render_html(
   <div class="kpi">{_icon('date')}<div><span>最新数据</span><strong>{esc(summary['latestDate'])}</strong></div></div>
 </section>
 {one_price_coverage(projects, one_price_snapshots, root_prefix=root_prefix)}
+{featured_section}
 <section class="controls" aria-label="全部楼盘筛选与排序">
   <div class="control-inner">
     <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg><span class="sr-only">搜索楼盘、开发商或地址</span><input data-role="project-search" type="search" placeholder="搜索楼盘、开发商、地址、全部接口字段" autocomplete="off"></label>
@@ -549,7 +577,7 @@ def render_html(
     </div>
   </div>
 </section>
-<main class="grid" role="list" aria-live="polite">{cards or '<section class="empty">暂无楼盘数据</section>'}</main>
+<main class="grid" role="list" data-role="project-grid" data-region="all-projects" aria-label="全部楼盘" aria-live="polite">{cards or '<section class="empty" data-role="project-empty"{empty_hidden}>暂无楼盘数据</section>'}</main>
 </div>
 <dialog id="chart-dialog" class="chart-dialog" aria-labelledby="chart-dialog-title">
   <article>

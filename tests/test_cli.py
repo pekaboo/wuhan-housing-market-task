@@ -192,3 +192,74 @@ def test_reuse_existing_enrichment_loads_all_committed_json_without_fetching():
         assert room_types == {'123': {'projectId': 123, 'status': 'complete', 'types': []}}
         assert state['nextIndex'] == 120
         assert wangqian == {'date': '2026-08-26', 'totalSoldNum': 9, 'projects': []}
+
+
+def test_featured_project_list_matches_ids_or_names_and_preserves_manual_order(tmp_path):
+    from sale_dashboard.featured import load_featured_project_keys, split_featured_projects
+
+    path = tmp_path / 'featured-projects.txt'
+    path.write_text(
+        '# 一行一个项目，支持 ID 或名称\n'
+        '\n'
+        '3\n'
+        '  重点楼盘  \n'
+        '3 # repeated by ID\n',
+        encoding='utf-8',
+    )
+    projects = [
+        {'id': 1, 'name': '普通楼盘'},
+        {'id': 3, 'name': '编号项目'},
+        {'id': 2, 'name': '重点楼盘'},
+    ]
+
+    keys = load_featured_project_keys(path)
+    featured, standard = split_featured_projects(projects, keys)
+
+    assert keys == ['3', '重点楼盘']
+    assert [item['id'] for item in featured] == [3, 2]
+    assert [item['id'] for item in standard] == [1]
+
+
+def test_enrichment_can_refresh_only_featured_projects_without_advancing_rotation():
+    from sale_dashboard.__main__ import enrich_project_batch
+
+    class RecordingClient:
+        def __init__(self):
+            self.project_ids = []
+
+        def fetch_presale_certificates(self, project_id):
+            self.project_ids.append(project_id)
+            return [{'id': f'cert-{project_id}'}]
+
+        def fetch_room_items(self, project_id, evidence_id):
+            return [{'roomName': f'room-{project_id}'}]
+
+        def fetch_room_types(self, project_id):
+            return [{'name': f'type-{project_id}'}]
+
+    projects = [{'id': index, 'name': f'项目{index}'} for index in range(1, 5)]
+    with tempfile.TemporaryDirectory() as temporary_directory:
+        root = Path(temporary_directory)
+        (root / 'data').mkdir()
+        (root / 'data' / 'enrichment-state.json').write_text(
+            json.dumps({'version': 1, 'nextIndex': 2}),
+            encoding='utf-8',
+        )
+        client = RecordingClient()
+        logs = []
+        one_price, room_types, state = enrich_project_batch(
+            client,
+            projects,
+            site_dir=root,
+            batch_size=0,
+            featured_keys=['项目3'],
+            featured_only=True,
+            progress=logs.append,
+        )
+
+        assert client.project_ids == [3]
+        assert one_price['3']['status'] == 'complete'
+        assert room_types['3']['status'] == 'complete'
+        assert state['nextIndex'] == 2
+        assert state['lastBatchProjectIds'] == [3]
+        assert 'refreshing 1 featured project' in '\n'.join(logs)

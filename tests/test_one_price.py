@@ -392,8 +392,8 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert 'function roomMatches(room)' in detail
     assert 'function scopedRooms()' in detail
     assert 'renderFloorView(visibleRooms)' in detail
-    assert "article.classList.toggle('filtered-out',!roomMatches(room))" in detail
-    assert '.floor-room.filtered-out>*{display:none}' in detail
+    assert "article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out')" in detail
+    assert "if(!matched){article.textContent='—';return article}" in detail
     assert '.floor-room.filtered-out{width:100%;height:100%;min-height:100%' in detail
     assert 'priceGroups.get(priceKey(room))' in detail
     assert "swatch.className='price-chip'" in detail
@@ -498,3 +498,44 @@ def test_one_price_floor_map_has_apple_maps_style_proportional_gestures(tmp_path
     assert 'matrix3d' not in detail
     assert 'room-3d' not in detail
     assert 'building-3d' not in detail
+
+
+def test_one_price_floor_rendering_is_progressive_and_keeps_filtered_cards_lightweight(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [
+            {
+                **certificate(902),
+                'rooms': [
+                    room(21, floor='10', roomName='1001', price=18000),
+                    room(22, floor='10', roomName='1002', saleStatus=1, price=18000),
+                    room(23, floor='9', roomName='0901', price=21000),
+                ],
+            }
+        ],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 9001, 'name': '渲染性能', 'date': '2026-08-28'}],
+        site_dir=site_dir,
+        generated_at='2026-08-28 08:00:00',
+        one_price_snapshots={9001: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '9001' / 'index.html').read_text(encoding='utf-8')
+    assert 'var floorRenderToken=0' in detail
+    assert 'var renderToken=++floorRenderToken' in detail
+    assert 'requestAnimationFrame(renderFloorBatch)' in detail
+    assert 'performance.now()' in detail
+    assert "stage.setAttribute('aria-busy','true')" in detail
+    assert "stage.removeAttribute('aria-busy')" in detail
+    assert 'floor-render-status' in detail
+    assert 'cells.appendChild(fragment)' in detail
+    assert 'if(fragment)canvas.firstChild.appendChild(fragment)' in detail
+    assert 'else canvas.firstChild.appendChild(fragment)' not in detail
+    assert 'roomCell(room,matched)' in detail
+    assert 'var matched=roomMatches(room)' in detail
+    assert "if(!matched){article.textContent='—';return article}" in detail
+    assert detail.count('var matched=roomMatches(room)') == 1
+    assert '.floor-room{position:relative;box-sizing:border-box;width:100%;height:100%;min-width:0;min-height:0;padding:7px 9px 6px 10px;overflow:hidden;border:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);border-left:4px solid var(--price-color,var(--map-brand));border-radius:7px;background:var(--map-panel);color:var(--map-ink);box-shadow:0 1px 2px #00000006;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);content-visibility:auto;contain:layout paint style;contain-intrinsic-size:auto 86px' in detail

@@ -90,6 +90,7 @@ def write_site(
     room_type_snapshots: dict[Any, dict[str, Any]] | None = None,
     wangqian_snapshot: dict[str, Any] | None = None,
     enrichment_state: dict[str, Any] | None = None,
+    featured_keys: list[str] | None = None,
 ) -> list[Path]:
     timestamp = generated_at or china_timestamp(now)
     root = Path(site_dir)
@@ -106,6 +107,7 @@ def write_site(
             projects,
             generated_at=timestamp,
             one_price_snapshots=snapshots or None,
+            featured_keys=featured_keys,
         ),
     )
     output_paths.append(Path('index.html'))

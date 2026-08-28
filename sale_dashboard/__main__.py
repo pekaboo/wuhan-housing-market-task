@@ -20,6 +20,7 @@ from .client import (
     SaleApiError,
 )
 from .enrichment import build_one_price_snapshot, build_room_type_snapshot, summarize_one_price
+from .featured import load_featured_project_keys, split_featured_projects
 from .generate import write_site
 
 DEFAULT_ENRICHMENT_BATCH_SIZE = 80
@@ -75,6 +76,16 @@ def build_parser() -> argparse.ArgumentParser:
         type=positive_int,
         default=int(os.getenv('WFT_ENRICHMENT_BATCH_SIZE', str(DEFAULT_ENRICHMENT_BATCH_SIZE))),
         help='number of projects to enrich per run; existing static JSON is reused for the rest',
+    )
+    parser.add_argument(
+        '--featured-projects',
+        default=Path(os.getenv('WFT_FEATURED_PROJECTS', 'config/featured-projects.txt')),
+        help='manual text list of featured project IDs or names, one per line',
+    )
+    parser.add_argument(
+        '--refresh-featured',
+        action='store_true',
+        help='refresh detail snapshots for every manually featured project during a reuse run',
     )
     return parser
 
@@ -189,14 +200,28 @@ def enrich_project_batch(
     site_dir: Path | str,
     batch_size: int,
     progress,
+    featured_keys: list[str] | None = None,
+    featured_only: bool = False,
 ) -> tuple[dict[str, dict], dict[str, dict], dict]:
+    if batch_size < 0 or (batch_size == 0 and not featured_only):
+        raise ValueError('batch_size must be positive unless featured_only is enabled')
     state = load_enrichment_state(site_dir)
     one_price_snapshots, room_type_snapshots = load_existing_snapshots(site_dir)
-    batch, next_index = select_enrichment_batch(projects, state['nextIndex'], batch_size)
-    progress(
-        f'enriching batch of {len(batch)} projects from index {state["nextIndex"]}; '
-        f'next batch starts at {next_index}'
-    )
+    featured_projects, _ = split_featured_projects(projects, featured_keys)
+    if featured_only:
+        batch = featured_projects
+        next_index = state['nextIndex']
+        progress(f'refreshing {len(batch)} featured project(s) without advancing the incremental rotation')
+    else:
+        rotation, next_index = select_enrichment_batch(projects, state['nextIndex'], batch_size)
+        featured_ids = {str(project.get('id')) for project in featured_projects}
+        batch = featured_projects + [
+            project for project in rotation if str(project.get('id')) not in featured_ids
+        ]
+        progress(
+            f'enriching {len(batch)} projects, including {len(featured_projects)} featured project(s); '
+            f'next rotation starts at {next_index}'
+        )
     positions = {str(project.get('id')): index for index, project in enumerate(projects, 1)}
     for project in batch:
         project_id = project.get('id')
@@ -258,6 +283,9 @@ def main() -> int:
     )
     projects = client.fetch_all_projects()
     log(f'fetched {len(projects)} unique projects')
+    featured_keys = load_featured_project_keys(args.featured_projects)
+    featured_matches, _ = split_featured_projects(projects, featured_keys)
+    log(f'loaded {len(featured_matches)} matched featured projects from {args.featured_projects}')
     one_price_snapshots: dict[str, dict] | None = None
     room_type_snapshots: dict[str, dict] | None = None
     wangqian_snapshot: dict | None = None
@@ -270,6 +298,7 @@ def main() -> int:
             site_dir=site_dir,
             batch_size=args.enrichment_batch_size,
             progress=log,
+            featured_keys=featured_keys,
         )
         request_date = _wangqian_request_date()
         log(f'fetching yesterday wangqian changes for {request_date}')
@@ -292,6 +321,16 @@ def main() -> int:
             f'reusing committed enrichment: {len(one_price_snapshots)} one-price snapshots, '
             f'{len(room_type_snapshots)} room-type snapshots'
         )
+        if args.refresh_featured and featured_matches:
+            one_price_snapshots, room_type_snapshots, enrichment_state = enrich_project_batch(
+                client,
+                projects,
+                site_dir=site_dir,
+                batch_size=0,
+                progress=log,
+                featured_keys=featured_keys,
+                featured_only=True,
+            )
 
     output_paths = write_site(
         projects,
@@ -300,6 +339,7 @@ def main() -> int:
         room_type_snapshots=room_type_snapshots,
         wangqian_snapshot=wangqian_snapshot,
         enrichment_state=enrichment_state,
+        featured_keys=featured_keys,
     )
     log(f'generated {len(projects)} projects and {len(output_paths)} files')
     return 0
