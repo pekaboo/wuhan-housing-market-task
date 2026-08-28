@@ -21,7 +21,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
 .floor-toolbar{position:relative;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:56px;padding:9px 14px;border-bottom:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);background:color-mix(in srgb,var(--map-panel) 82%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
 .floor-toolbar button{height:34px;padding:0 12px;border:1px solid var(--map-line);border-radius:999px;background:color-mix(in srgb,var(--map-panel) 88%,transparent);color:var(--map-ink);font:inherit;font-size:12px;font-weight:650;letter-spacing:-.01em;cursor:pointer;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),color .18s var(--ease-out),box-shadow .18s var(--ease-out)}
 .floor-toolbar button:hover,.floor-toolbar button[aria-pressed=true]{border-color:color-mix(in srgb,var(--map-brand) 34%,var(--map-line));background:var(--map-panel);color:var(--map-brand-ink);box-shadow:0 1px 2px #0000000a,0 8px 20px #00000012}
-.floor-toolbar button:focus-visible{outline:3px solid color-mix(in srgb,var(--map-focus) 58%,transparent);outline-offset:2px}
+.floor-toolbar button:focus-visible{outline:3px solid color-mix(in srgb,var(--map-focus) 58%,transparent);outline-offset:2px}.back-overview{position:absolute;top:12px;left:12px;z-index:12;display:inline-flex;min-height:38px;align-items:center;gap:4px;padding:0 13px;border:1px solid color-mix(in srgb,var(--map-ink) 14%,transparent);border-radius:999px;background:color-mix(in srgb,var(--map-panel) 88%,transparent);color:var(--map-brand-ink);font:inherit;font-size:12px;font-weight:750;letter-spacing:-.01em;cursor:pointer;backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);box-shadow:0 1px 2px #0000000a,0 10px 28px #00000016;transition:transform .18s var(--ease-out),border-color .18s var(--ease-out),background .18s var(--ease-out)}.back-overview:hover{border-color:color-mix(in srgb,var(--map-brand) 36%,var(--map-line));background:var(--map-panel)}.back-overview:active{transform:scale(.97)}.back-overview svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.back-overview[hidden]{display:none}
 .floor-toolbar span{display:inline-flex;align-items:center;justify-content:center;min-width:58px;min-height:34px;padding:0 10px;border:1px solid var(--map-line);border-radius:999px;background:color-mix(in srgb,var(--map-panel) 88%,transparent);color:var(--map-muted);font-size:12px;font-weight:650;font-variant-numeric:tabular-nums}
 .zoom-control{display:flex;align-items:center;gap:9px;min-height:34px;padding:0 12px;border:1px solid var(--map-line);border-radius:999px;background:color-mix(in srgb,var(--map-panel) 88%,transparent);color:var(--map-muted);font-size:12px;font-weight:650}
 .zoom-control input{width:132px;accent-color:var(--map-brand)}
@@ -126,7 +126,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
           <tbody data-role="room-results"><tr><td colspan="11" class="loading">正在载入房源明细…</td></tr></tbody>
         </table>
       </div>
-      <div class="floor-results" data-role="floor-results" hidden aria-live="polite"><p class="loading">正在载入楼层分布…</p></div>
+      <div class="floor-results" data-role="floor-results" hidden aria-live="polite"><button type="button" class="back-overview" data-role="back-to-overview" hidden aria-label="返回单元总览"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg><span>返回单元总览</span></button><p class="loading">正在载入楼层分布…</p></div>
       <div class="room-foot"><p data-role="room-count" role="status" aria-live="polite">等待载入</p><button type="button" data-role="room-more" hidden>显示更多房源</button></div>
       <div class="certificate-list"><article class="certificate-card">
               <h3>武房开预售[2019]142号</h3>
@@ -275,7 +275,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   </article>
 </dialog>
 <nav class="footer-nav" aria-label="项目导航"><a class="previous" href="../../projects/334503154651205/"><span>上一个楼盘</span><span>中南云城</span></a><a class="next" href="../../projects/334503397294185/"><span>下一个楼盘</span><span>联投花山郡别墅</span></a></nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-28 08:10:11；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-28 08:29:06；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 (function(){
@@ -289,6 +289,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   var tableWrap=root.querySelector('.room-table-wrap');
   var floorResults=root.querySelector('[data-role="floor-results"]');
   var floorToolbar=root.querySelector('.floor-toolbar');
+  var backToOverview=root.querySelector('[data-role="back-to-overview"]');
   var count=root.querySelector('[data-role="room-count"]');
   var more=root.querySelector('[data-role="room-more"]');
   var certificateSelect=root.querySelector('[data-role="certificate-filter"]');
@@ -425,8 +426,9 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   var DETAIL_BUILDING_LIMIT=16;var floorSignature='';
   function focusBuilding(column){building=text(column.building);unit=text(column.unitName);limit=100;render()}
   function renderFloorView(allRooms){
+    var backButton=backToOverview;
     floorResults.replaceChildren();
-    if(!allRooms.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有可展示的楼栋数据';floorResults.appendChild(empty);return;}
+    if(!allRooms.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有可展示的楼栋数据';floorResults.appendChild(empty);if(backButton)floorResults.appendChild(backButton);return;}
     var columns=[];var columnSeen=new Set();var floors=[];var floorSeen=new Set();var floorRooms=new Map();var maxRoomsPerColumn=1;
     allRooms.forEach(function(room){
       var key=matrixKey(room);var floor=text(room.floor);
@@ -453,9 +455,9 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
         var body=document.createElement('span');body.className='overview-body';
         var face=document.createElement('span');face.className='overview-face';face.setAttribute('aria-hidden','true');body.appendChild(face);
         var scale=document.createElement('span');scale.className='overview-scale';scale.textContent=columnFloors+'F · '+values.length+'套';body.appendChild(scale);
-        block.appendChild(body);block.addEventListener('click',function(){focusBuilding(column)});overview.appendChild(block);
+        block.appendChild(body);block.addEventListener('pointerup',function(event){if(event.pointerType==='touch'&&!gestureMoved)focusBuilding(column)});block.addEventListener('click',function(event){if(gestureMoved)return;focusBuilding(column)});overview.appendChild(block);
       });
-      canvas.appendChild(overview);stage.appendChild(canvas);floorResults.appendChild(stage);
+      canvas.appendChild(overview);stage.appendChild(canvas);
     }else{
       var matrix=document.createElement('div');matrix.className='floor-matrix';matrix.style.setProperty('--floor-columns',String(columns.length));matrix.style.setProperty('--floor-count',String(floors.length));matrix.style.setProperty('--building-width',(maxRoomsPerColumn*119+8)+'px');
       matrix.setAttribute('aria-label','楼栋从左到右、楼层从上到下、同一楼层横向一排');
@@ -476,8 +478,9 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
         });
         matrix.appendChild(row);
       });
-      canvas.appendChild(matrix);stage.appendChild(canvas);floorResults.appendChild(stage);
+      canvas.appendChild(matrix);stage.appendChild(canvas);
     }
+    floorResults.appendChild(stage);if(backButton)floorResults.appendChild(backButton);
     if(signature!==floorSignature){floorSignature=signature;fitView(canvas)}else{applyViewState(canvas);queueClamp(canvas)}
   }
   var viewState={scale:1,x:0,y:0};
@@ -526,6 +529,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
     refreshBuildingOptions();refreshUnitOptions();
     var visibleRooms=scopedRooms();var filtered=visibleRooms.filter(roomMatches);
     tableWrap.hidden=view!=='table';floorResults.hidden=view==='table';if(floorToolbar)floorToolbar.hidden=view!=='floor';
+    syncBackButton();
     if(view==='table'){
       var fragment=document.createDocumentFragment();
       filtered.slice(0,limit).forEach(function(room){fragment.appendChild(row(room))});
@@ -535,6 +539,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
     count.textContent=view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'楼层分布显示 '+filtered.length+' / '+visibleRooms.length+' 套匹配房源';
     more.hidden=view!=='table'||limit>=filtered.length;setSummary(visibleRooms);
   }
+  function syncBackButton(){if(backToOverview)backToOverview.hidden=!(view==='floor'&&(building!=='all'||unit!=='all'))}
   var zoomScale=root.querySelector('[data-role="zoom-scale"]');var zoomRange=root.querySelector('[data-role="zoom-range"]');var zoomIn=root.querySelector('[data-role="zoom-in"]');var zoomOut=root.querySelector('[data-role="zoom-out"]');var resetZoom=root.querySelector('[data-role="reset-zoom"]');
   function zoomFromControl(next){var stage=floorResults.querySelector('.floor-stage');if(!stage){setZoom(next);return}var rect=stage.getBoundingClientRect();setZoom(next,rect.width/2,rect.height/2)}
   if(zoomIn)zoomIn.addEventListener('click',function(){zoomFromControl((viewState.scale+.18)*100)});
@@ -543,6 +548,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   if(zoomRange)zoomRange.addEventListener('input',function(){zoomFromControl(zoomRange.value)});
   var allBuildings=root.querySelector('[data-role="all-buildings"]');
   if(allBuildings)allBuildings.addEventListener('click',function(){building='all';unit='all';limit=100;render()});
+  if(backToOverview)backToOverview.addEventListener('click',function(){building='all';unit='all';limit=100;render()});
   var activePointers=new Map();var pinchState=null;var gestureMoved=false;
   function stagePoint(stage,event){var rect=stage.getBoundingClientRect();return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
   function currentPoints(stage){var values=[];activePointers.forEach(function(point){values.push(point)});return values}
@@ -556,8 +562,8 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   },{passive:false});
   floorResults.addEventListener('pointerdown',function(event){
     if(view==='table'||event.button!==0)return;var stage=event.target.closest('.floor-stage');if(!stage)return;
-    event.preventDefault();var point=stagePoint(stage,event);activePointers.set(event.pointerId,point);gestureMoved=false;
-    if(!event.target.closest('.building-overview')){try{stage.setPointerCapture(event.pointerId)}catch(error){}}
+    var selectableUnit=event.target.closest('.building-overview');var point=stagePoint(stage,event);activePointers.set(event.pointerId,point);gestureMoved=false;
+    if(!selectableUnit){event.preventDefault();try{stage.setPointerCapture(event.pointerId)}catch(error){}}
     if(activePointers.size===2)startPinch(stage);
   });
   floorResults.addEventListener('pointermove',function(event){
@@ -636,7 +642,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
     tbody.replaceChildren(document.createElement('tr'));
     var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';
     cell.textContent='一房一价明细载入失败：'+error.message;tbody.firstChild.appendChild(cell);
-    floorResults.replaceChildren();var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);
+    floorResults.replaceChildren();var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);if(backToOverview)floorResults.appendChild(backToOverview);
     count.textContent='载入失败';more.hidden=true;
   });
 })();
