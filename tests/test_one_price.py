@@ -517,6 +517,11 @@ def test_one_price_floor_map_can_expand_to_full_screen_and_exit_safely(tmp_path)
     detail = (site_dir / 'projects' / '9101' / 'index.html').read_text(encoding='utf-8')
     assert 'data-role="floor-fullscreen"' in detail
     assert 'aria-pressed="false"' in detail
+    assert '全屏地图' in detail
+    assert 'floor-fullscreen-floating' in detail
+    assert '.one-price.floor-fullscreen .floor-fullscreen-floating{display:none' in detail
+    assert 'function floorFullscreenButtons()' in detail
+    assert 'floorResults.appendChild(fullscreenAction)' in detail
     assert '.one-price.floor-fullscreen' in detail
     assert 'function setFloorFullscreen(enabled,useNative)' in detail
     assert 'root.requestFullscreen' in detail
