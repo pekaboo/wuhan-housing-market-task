@@ -63,7 +63,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
 <header class="hero">
   <p class="eyebrow">Project Detail</p>
   <h1>武汉·理想之地</h1>
-  <p class="description">共 385 个楼盘中的当前项目详情页；展示接口返回的全部字段、标准销控图、抖音版销控图与历史销控图。</p>
+  <p class="description">共 387 个楼盘中的当前项目详情页；展示接口返回的全部字段、标准销控图、抖音版销控图与历史销控图。</p>
 </header>
 <section class="metrics" aria-label="核心指标">
   <div class="metric"><span>数据日期</span><strong>2026-08-23</strong></div>
@@ -118,7 +118,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
           <label>总价上限<input data-role="total-max" type="number" min="0" step="10000" inputmode="numeric" placeholder="万元"></label>
         </div>
       </div>
-      <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽平移、滚轮 / 双指等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
+      <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽 / 滚轮上下平移，双指捏合等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
       <div class="room-table-wrap">
         <table class="room-table">
           <caption class="sr-only">一房一价房源明细</caption>
@@ -393,7 +393,7 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   </article>
 </dialog>
 <nav class="footer-nav" aria-label="项目导航"><a class="previous" href="../../projects/704747788468293/"><span>上一个楼盘</span><span>华发外滩玺</span></a><a class="next" href="../../projects/448290873974853/"><span>下一个楼盘</span><span>国铁城投国樾滨江</span></a></nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-28 00:02:44；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<p class="description" style="margin-top:24px">生产快照生成时间：2026-08-28 08:10:11；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 (function(){
@@ -665,10 +665,12 @@ body::selection{background:color-mix(in srgb,var(--brand) 22%,transparent)}
   function stagePoint(stage,event){var rect=stage.getBoundingClientRect();return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
   function currentPoints(stage){var values=[];activePointers.forEach(function(point){values.push(point)});return values}
   function startPinch(stage){var points=currentPoints(stage);if(points.length<2)return;var ax=(points[0].x+points[1].x)/2;var ay=(points[0].y+points[1].y)/2;var dx=points[0].x-points[1].x;var dy=points[0].y-points[1].y;pinchState={distance:Math.max(1,Math.hypot(dx,dy)),baseScale:viewState.scale,worldX:(ax-viewState.x)/viewState.scale,worldY:(ay-viewState.y)/viewState.scale,midX:ax,midY:ay}}
+  function wheelFactor(event){return event.deltaMode===1?16:event.deltaMode===2?100:1}
   floorResults.addEventListener('wheel',function(event){
     if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;
-    event.preventDefault();var point=stagePoint(stage,event);var delta=event.deltaMode===1?event.deltaY*16:event.deltaY;
-    zoomAt(point.x,point.y,viewState.scale*Math.exp(-delta*.0022));
+    event.preventDefault();var factor=wheelFactor(event);var point=stagePoint(stage,event);
+    if(event.ctrlKey){zoomAt(point.x,point.y,viewState.scale*Math.exp(-event.deltaY*factor*.0022));return}
+    panBy(-event.deltaX*factor,-event.deltaY*factor);
   },{passive:false});
   floorResults.addEventListener('pointerdown',function(event){
     if(view==='table'||event.button!==0)return;var stage=event.target.closest('.floor-stage');if(!stage)return;
