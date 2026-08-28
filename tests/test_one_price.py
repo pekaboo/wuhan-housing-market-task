@@ -500,6 +500,35 @@ def test_one_price_floor_map_has_apple_maps_style_proportional_gestures(tmp_path
     assert 'building-3d' not in detail
 
 
+def test_one_price_floor_map_can_expand_to_full_screen_and_exit_safely(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [{**certificate(903), 'rooms': [room(31, floor='8', roomName='0801')]}],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 9101, 'name': '全屏楼层', 'date': '2026-08-28'}],
+        site_dir=site_dir,
+        generated_at='2026-08-28 08:00:00',
+        one_price_snapshots={9101: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '9101' / 'index.html').read_text(encoding='utf-8')
+    assert 'data-role="floor-fullscreen"' in detail
+    assert 'aria-pressed="false"' in detail
+    assert '.one-price.floor-fullscreen' in detail
+    assert 'function setFloorFullscreen(enabled,useNative)' in detail
+    assert 'root.requestFullscreen' in detail
+    assert "view==='table'&&floorFullscreen" in detail
+    assert "event.key==='Escape'" in detail
+    assert "root.classList.toggle('floor-fullscreen',enabled)" in detail
+    assert 'fullscreenchange' in detail
+    assert 'floorFullscreenScroll={x:0,y:0}' in detail
+    assert 'function restoreFloorScroll()' in detail
+    assert '.one-price.floor-fullscreen .floor-stage.floor-map{flex:1;height:auto;min-height:0' in detail
+
+
 def test_one_price_floor_rendering_is_progressive_and_keeps_filtered_cards_lightweight(tmp_path):
     one_price = {
         'status': 'complete',

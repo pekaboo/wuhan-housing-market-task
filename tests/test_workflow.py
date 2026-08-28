@@ -55,3 +55,5 @@ def test_featured_project_list_is_available_to_scheduled_and_manual_actions():
     assert '--featured-projects config/featured-projects.txt' in manual
     assert '一行一个' in featured
     assert 'ID 或名称' in featured
+    assert '806507620348020' in featured
+    assert '795364598689861' in featured

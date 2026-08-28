@@ -141,6 +141,10 @@ class TestRenderHtml(unittest.TestCase):
             page.index('id="featured-projects"'),
             page.index('class="controls"'),
         )
+        self.assertLess(
+            page.index('id="featured-projects"'),
+            page.index('class="kpis"'),
+        )
         self.assertNotIn('id="featured-projects"', render_html(self.projects, generated_at='2026-08-27 08:00:00'))
 
     def test_overview_card_displays_and_searches_every_available_field(self):

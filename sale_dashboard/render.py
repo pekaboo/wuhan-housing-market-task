@@ -558,6 +558,7 @@ def render_html(
   </div>
   <div class="metadata"><span class="pill">城市 4201 · 武汉</span><span class="pill">生成 {esc(generated_at)}</span></div>
 </header>
+{featured_section}
 <section class="kpis" aria-label="市场概览">
   <div class="kpi">{_icon('building')}<div><span>监测楼盘</span><strong>{integer(summary['count'])}</strong></div></div>
   <div class="kpi">{_icon('sold')}<div><span>已售合计</span><strong>{integer(summary['sold'])}</strong></div></div>
@@ -565,7 +566,6 @@ def render_html(
   <div class="kpi">{_icon('date')}<div><span>最新数据</span><strong>{esc(summary['latestDate'])}</strong></div></div>
 </section>
 {one_price_coverage(projects, one_price_snapshots, root_prefix=root_prefix)}
-{featured_section}
 <section class="controls" aria-label="全部楼盘筛选与排序">
   <div class="control-inner">
     <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/></svg><span class="sr-only">搜索楼盘、开发商或地址</span><input data-role="project-search" type="search" placeholder="搜索楼盘、开发商、地址、全部接口字段" autocomplete="off"></label>
