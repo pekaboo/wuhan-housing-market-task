@@ -267,6 +267,12 @@ def test_one_price_ui_offers_table_and_floor_distribution_modes(tmp_path):
     assert 'data-role="building-filter"' in detail
     assert 'data-role="unit-filter"' in detail
     assert '相同价格同色；筛选外房源保留原位置并变成灰色方块' in detail
+    assert 'data-role="filter-panel"' in detail
+    assert 'data-role="filter-toggle"' in detail
+    assert 'aria-controls="price-filter-panel"' in detail
+    assert 'data-role="reset-filters"' in detail
+    assert 'range-filter' in detail
+    assert 'state-dot' in detail
 
     for control in ('price-min', 'price-max', 'total-min', 'total-max'):
         assert f'data-role="{control}"' in detail
@@ -524,6 +530,9 @@ def test_one_price_floor_map_can_expand_to_full_screen_and_exit_safely(tmp_path)
     assert 'floorResults.appendChild(fullscreenAction)' in detail
     assert '.one-price.floor-fullscreen' in detail
     assert 'function setFloorFullscreen(enabled,useNative)' in detail
+    assert 'function floorViewportInsets(stage)' in detail
+    assert 'var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom)' in detail
+    assert detail.count('var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom)') == 2
     assert 'root.requestFullscreen' in detail
     assert "view==='table'&&floorFullscreen" in detail
     assert "event.key==='Escape'" in detail
