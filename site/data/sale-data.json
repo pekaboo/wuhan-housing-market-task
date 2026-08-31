@@ -1,7 +1,34 @@
 {
-  "count": 376,
-  "generatedAt": "2026-08-30 12:14:00",
+  "count": 373,
+  "generatedAt": "2026-08-31 12:19:39",
   "projects": [
+    {
+      "date": "2026-08-30",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/818efe5a912249bf809c304fd3b96980.png",
+      "id": 795364598689861,
+      "name": "新希望·长粼府",
+      "salePrice": 12500.0,
+      "soldChartImg": "https://img.wufangtong.cn/1676095835e64bbfaed3cb777def0561.png",
+      "soldNum": 11
+    },
+    {
+      "date": "2026-08-30",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/71665f5ad9384969ac881ace3c9ff718.png",
+      "id": 347273668268131,
+      "name": "中粮祥云地铁小镇",
+      "salePrice": 6500.0,
+      "soldChartImg": "https://img.wufangtong.cn/961f48ca6ad4435b9bef7ce85509766a.png",
+      "soldNum": 15
+    },
+    {
+      "date": "2026-08-30",
+      "douYinSoldChartImg": "https://img.wufangtong.cn/adfebc571f614a1fb67256153aa964de.png",
+      "id": 334503273410660,
+      "name": "中法企业中心",
+      "salePrice": 10000.0,
+      "soldChartImg": "https://img.wufangtong.cn/e23186ac685c431f9f43dd4433d83413.png",
+      "soldNum": 2
+    },
     {
       "date": "2026-08-29",
       "douYinSoldChartImg": "https://img.wufangtong.cn/a89f3a7fd6c445aa9440bfadcf519c41.png",
@@ -1111,15 +1138,6 @@
     },
     {
       "date": "2026-08-26",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/e219e1f132164fb4a591a0839e490f84.png",
-      "id": 347273668268131,
-      "name": "中粮祥云地铁小镇",
-      "salePrice": 6500.0,
-      "soldChartImg": "https://img.wufangtong.cn/daa59366b1a5496f96d69f5dcb13aabb.png",
-      "soldNum": 15
-    },
-    {
-      "date": "2026-08-26",
       "douYinSoldChartImg": "https://img.wufangtong.cn/ead0599541f3454eb556e69477c2c168.png",
       "id": 546052820308069,
       "name": "恺德雲麓",
@@ -1177,7 +1195,7 @@
       "douYinSoldChartImg": "https://img.wufangtong.cn/6777ce7844bd40e3921192352e88a125.png",
       "id": 477723038842956,
       "name": "武汉城建天樾",
-      "salePrice": 26000.0,
+      "salePrice": 25200.0,
       "soldChartImg": "https://img.wufangtong.cn/1a0b142fc327430c860344b0a4031378.png",
       "soldNum": 17
     },
@@ -1531,15 +1549,6 @@
       "salePrice": 24500.0,
       "soldChartImg": "https://img.wufangtong.cn/9cd3c24b54c14fbaa4861e2aa1ac85c8.png",
       "soldNum": 1
-    },
-    {
-      "date": "2026-08-23",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/3db1a8264c234954a4b351568111c247.png",
-      "id": 795364598689861,
-      "name": "新希望·长粼府",
-      "salePrice": 12500.0,
-      "soldChartImg": "https://img.wufangtong.cn/c3d357bf77be4ea792c5fd6e714325a3.png",
-      "soldNum": 11
     },
     {
       "date": "2026-08-23",
@@ -3289,15 +3298,6 @@
     },
     {
       "date": "2026-07-28",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/709b36e5b2a7491a99ca0b02e907dd47.png",
-      "id": 334503273410660,
-      "name": "中法企业中心",
-      "salePrice": 10000.0,
-      "soldChartImg": "https://img.wufangtong.cn/88abfbe8e05347adb023af90b63d0068.png",
-      "soldNum": 2
-    },
-    {
-      "date": "2026-07-28",
       "douYinSoldChartImg": "https://img.wufangtong.cn/c3d58c24d22b449eafd1284a7ef6f2b9.png",
       "id": 334530243706966,
       "name": "鑫城宜居",
@@ -3357,33 +3357,6 @@
       "name": "万科华生星耀大道",
       "salePrice": 9800.0,
       "soldChartImg": "https://img.wufangtong.cn/08375481ee3747f09b4f498948271c98.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-24",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/63c751a04f524ff1a7d02b9daf22c391.png",
-      "id": 334530222997610,
-      "name": "菁英城",
-      "salePrice": 13000.0,
-      "soldChartImg": "https://img.wufangtong.cn/fbc32cdc0fbb4755b50ee4188abf88af.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-24",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/a6d367443024490cbff299a3b6021313.png",
-      "id": 334503360417868,
-      "name": "中冶39大街",
-      "salePrice": 22000.0,
-      "soldChartImg": "https://img.wufangtong.cn/c14ecabaf43c41c5b8ecd8a5b3c89364.png",
-      "soldNum": 0
-    },
-    {
-      "date": "2026-07-24",
-      "douYinSoldChartImg": "https://img.wufangtong.cn/0fd38b5bfc5b445293782e0c9821079d.png",
-      "id": 334501415104587,
-      "name": "景瑞天赋滨江",
-      "salePrice": 12500.0,
-      "soldChartImg": "https://img.wufangtong.cn/3236c0192e284f7fa43f4ddbe0409200.png",
       "soldNum": 0
     }
   ]
