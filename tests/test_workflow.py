@@ -86,3 +86,18 @@ def test_daily_workflow_fails_fast_on_bad_switch_and_scans_token_before_commit()
     assert workflow.index('config/artifact-target.txt') < workflow.index('pytest -q')
     assert '::error::' in workflow
     assert workflow.index('gzip.decompress') < workflow.index('Commit production snapshot')
+
+
+def test_manual_workflow_switches_artifact_target_between_local_and_external():
+    workflow = Path('.github/workflows/manual-full-enrichment.yml').read_text(encoding='utf-8')
+
+    assert 'DATA_REPO: pekaboo/wuhan-housing-market-dashboard' in workflow
+    assert 'config/artifact-target.txt' in workflow
+    assert 'DATA_REPO_TOKEN' in workflow
+    assert "steps.target.outputs.target == 'local'" in workflow
+    assert "steps.target.outputs.target == 'external'" in workflow
+    assert 'rm -rf site' in workflow
+    assert 'mv site/.git .artifact-git' in workflow
+    assert 'GIT_DIR' in workflow
+    assert 'GIT_WORK_TREE' in workflow
+    assert workflow.index('gzip.decompress') < workflow.index('Commit enriched production snapshot')
