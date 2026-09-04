@@ -1,0 +1,4 @@
+# Where daily/manual workflows commit the site/ snapshot.
+# local    -> this repository (legacy behavior)
+# external -> pekaboo/wuhan-housing-market-dashboard (data-only repository)
+external
