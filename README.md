@@ -108,6 +108,24 @@ export WFT_TOKEN='你的 wfTToken'
 | `--timeout` | `WFT_REQUEST_TIMEOUT_SECONDS` | `20` |
 | `--site-output` | `WFT_SITE_OUTPUT` | `site` |
 
+## 产物输出仓库开关
+
+`config/artifact-target.txt` 决定每日/手动任务把 `site/` 快照提交到哪里：
+
+- `external`（默认）— 提交到数据仓 `pekaboo/wuhan-housing-market-dashboard`，本仓库只保留代码；增量复用与轮转游标都从数据仓读取。
+- `local` — 提交回本仓库（旧行为）。
+
+翻转开关 = 改一行并提交。文件缺失或值非法时任务会在测试前立即失败，不会猜方向。数据仓地址配置在两个 workflow 的顶层 `env.DATA_REPO`。
+
+external 模式前置条件（一次性）：
+
+1. 运行 `./scripts/bootstrap-dashboard-repo.sh`，把当前已提交的 `site/`（含增量游标）播种为数据仓首个提交；
+2. 在 **Settings → Secrets and variables → Actions** 添加 `DATA_REPO_TOKEN`：fine-grained PAT，仅授权 `pekaboo/wuhan-housing-market-dashboard`，权限仅 Contents: Read/Write。
+
+GitHub Pages 部署不受开关影响：部署打包的是 runner 上刚生成的 `site/`，URL 不变。
+
+注意：external 模式稳定运行后，可手动 `git rm -r site` 让本仓库彻底只留代码。删除后如切回 `local`，增量明细会冷启动，约 5 次运行重建（首页总览不受影响）。
+
 ## GitHub 配置
 
 在仓库 **Settings → Secrets and variables → Actions** 配置：
