@@ -64,3 +64,25 @@ def test_artifact_target_config_exists_and_holds_a_single_valid_value():
     tokens = [line.strip().lower() for line in value.splitlines() if line.strip() and not line.strip().startswith('#')]
     assert len(tokens) == 1
     assert tokens[0] in ('local', 'external')
+
+
+def test_daily_workflow_switches_artifact_target_between_local_and_external():
+    workflow = Path('.github/workflows/daily-production-html.yml').read_text(encoding='utf-8')
+
+    assert 'DATA_REPO: pekaboo/wuhan-housing-market-dashboard' in workflow
+    assert 'config/artifact-target.txt' in workflow
+    assert 'DATA_REPO_TOKEN' in workflow
+    assert "steps.target.outputs.target == 'local'" in workflow
+    assert "steps.target.outputs.target == 'external'" in workflow
+    assert 'rm -rf site' in workflow
+    assert 'mv site/.git .artifact-git' in workflow
+    assert 'GIT_DIR' in workflow
+    assert 'GIT_WORK_TREE' in workflow
+
+
+def test_daily_workflow_fails_fast_on_bad_switch_and_scans_token_before_commit():
+    workflow = Path('.github/workflows/daily-production-html.yml').read_text(encoding='utf-8')
+
+    assert workflow.index('config/artifact-target.txt') < workflow.index('pytest -q')
+    assert '::error::' in workflow
+    assert workflow.index('gzip.decompress') < workflow.index('Commit production snapshot')
