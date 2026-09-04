@@ -101,3 +101,12 @@ def test_manual_workflow_switches_artifact_target_between_local_and_external():
     assert 'GIT_DIR' in workflow
     assert 'GIT_WORK_TREE' in workflow
     assert workflow.index('gzip.decompress') < workflow.index('Commit enriched production snapshot')
+
+
+def test_bootstrap_dashboard_repo_script_seeds_from_committed_site_snapshot():
+    script = Path('scripts/bootstrap-dashboard-repo.sh').read_text(encoding='utf-8')
+
+    assert 'set -euo pipefail' in script
+    assert 'pekaboo/wuhan-housing-market-dashboard' in script
+    assert 'git archive HEAD:site' in script
+    assert 'refusing to seed' in script
