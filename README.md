@@ -1,4 +1,4 @@
-# pekaboo-task · 武汉楼盘销控静态总览 + 实时 FastAPI
+# wuhan-housing-market-task · 武汉楼盘销控静态总览 + 实时 FastAPI
 
 这个仓库包含两条链路：
 
@@ -152,7 +152,7 @@ external 模式前置条件（一次性，约 2 分钟）：
 #    Repository access 仅勾选 pekaboo/wuhan-housing-market-dashboard，
 #    Permissions 仅勾 Contents: Read and write
 # 2) 把 PAT 存为本仓库 secret
-gh secret set DATA_REPO_TOKEN -R pekaboo/pekaboo-task
+gh secret set DATA_REPO_TOKEN -R pekaboo/wuhan-housing-market-task
 # 3) 播种数据仓：自动建仓，并把当前已提交的 site/（含增量游标）推为首个提交
 ./scripts/bootstrap-dashboard-repo.sh
 ```

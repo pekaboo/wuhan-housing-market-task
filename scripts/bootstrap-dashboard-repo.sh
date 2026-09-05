@@ -31,7 +31,7 @@ git archive HEAD:site | tar -x -C "$seed"
 git -C "$seed" init --initial-branch=main >/dev/null
 git -C "$seed" add -A
 git -C "$seed" \
-  -c user.name='pekaboo-task[bot]' \
+  -c user.name='wuhan-housing-market-task[bot]' \
   -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
   commit -m 'chore: seed dashboard repository from the task repository site snapshot' >/dev/null
 git -C "$seed" push "$remote" main:main
