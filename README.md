@@ -159,8 +159,9 @@ gh secret set DATA_REPO_TOKEN -R pekaboo/wuhan-housing-market-task
 
 GitHub Pages 部署策略：
 
-- task 仓每次运行都部署主站 `https://pages.wangyitu.tech/wuhan-housing-market-task/`（自定义域名，两种模式下都是最新）；
-- dashboard 仓内置 `deploy-pages.yml`（`on: push` 自动发布数据仓自己的 Pages）。**注意**：GitHub Free 计划的私有仓库不支持 Pages——dashboard 仓现为私有，该 workflow 已停用；若日后转回公开（或升级 Pro/Team），执行 `gh workflow enable "Deploy Pages" -R pekaboo/wuhan-housing-market-dashboard` 即可恢复。
+- 站点由**公开的 dashboard 仓**发布：`https://pages.wangyitu.tech/wuhan-housing-market-dashboard/`，其内置 `deploy-pages.yml` 在每次快照推送后自动部署（用自身 `GITHUB_TOKEN`，零额外凭证）；
+- task 仓为**私有**（Free 计划私有仓不支持 Pages，也无需支持），只负责生成与推送数据，workflow 里没有 Pages 步骤；
+- local 模式说明：快照改提交回本仓库后 dashboard 仓不再收到推送，站点会停留在最后一次 external 快照——需要站点继续更新时先切回 `external`。
 
 注意：external 模式稳定运行后，可手动 `git rm -r site` 让本仓库彻底只留代码。删除后如切回 `local`，增量明细会冷启动，约 5 次运行重建（首页总览不受影响）。
 

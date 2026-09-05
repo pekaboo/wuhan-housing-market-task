@@ -18,16 +18,11 @@ env:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   enrich-and-publish:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out repository
@@ -131,16 +126,3 @@ jobs:
             git commit -m "chore: increment sale-control enrichment"
             git push
           fi
-
-      - name: Configure GitHub Pages
-        id: pages
-        uses: actions/configure-pages@v6
-
-      - name: Upload production HTML
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: site
-
-      - name: Deploy GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5

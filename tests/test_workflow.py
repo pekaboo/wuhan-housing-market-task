@@ -13,7 +13,8 @@ def test_workflow_publishes_the_complete_single_page_site_directory():
     assert '--room-page-size 500' in workflow
     assert 'git add -A site' in workflow
     assert 'git add -A site index.html data' not in workflow
-    assert 'path: site' in workflow
+    assert 'upload-pages-artifact' not in workflow
+    assert 'deploy-pages' not in workflow
     assert 'path: .' not in workflow
     assert 'gzip.decompress' in workflow
 
