@@ -123,8 +123,15 @@ checkout 代码仓
 
 - 不删除本仓库现有 `site/`（后续手动操作）。
 - 不修改 `sale_dashboard/` Python 代码。
-- 不迁移 GitHub Pages 到数据仓。
 - 不做双仓同时备份（用户已明确为单目标迁移模式）。
+
+## 修订：2026-09-05
+
+应用户要求增加 **dashboard 仓自动部署**（推翻原"不迁移 Pages"的非目标，采用双地址策略）：
+
+- dashboard 仓新增 `.github/workflows/deploy-pages.yml`：`on: push(main)` 用自身 `GITHUB_TOKEN` 把仓库根部署为 Pages（`pekaboo.github.io/wuhan-housing-market-dashboard/`），rsync 排除 `.git`/`.github` 后打包；
+- task 仓的 Pages 部署保持无条件执行（两种模式下主地址 `pages.wangyitu.tech/wuhan-housing-market-task/` 永远最新，避免任一地址出现僵尸站）；
+- task 仓 external 提交步骤改为 `git add -A -- . ':(exclude).github'`，防止把 dashboard 仓的部署 workflow 当作缺失文件删除。
 
 ## 实施清单（概要）
 

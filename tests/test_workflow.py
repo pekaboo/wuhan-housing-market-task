@@ -78,6 +78,7 @@ def test_daily_workflow_switches_artifact_target_between_local_and_external():
     assert 'mv site/.git .artifact-git' in workflow
     assert 'GIT_DIR' in workflow
     assert 'GIT_WORK_TREE' in workflow
+    assert "git add -A -- . ':(exclude).github'" in workflow
 
 
 def test_daily_workflow_fails_fast_on_bad_switch_and_scans_token_before_commit():
@@ -100,6 +101,7 @@ def test_manual_workflow_switches_artifact_target_between_local_and_external():
     assert 'mv site/.git .artifact-git' in workflow
     assert 'GIT_DIR' in workflow
     assert 'GIT_WORK_TREE' in workflow
+    assert "git add -A -- . ':(exclude).github'" in workflow
     assert workflow.index('gzip.decompress') < workflow.index('Commit enriched production snapshot')
 
 

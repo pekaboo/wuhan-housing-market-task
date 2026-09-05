@@ -124,7 +124,7 @@ jobs:
           export GIT_WORK_TREE="$PWD/site"
           git config user.name "wuhan-housing-market-task[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git add -A -- . ':(exclude).github'
           if git diff --cached --quiet; then
             echo "No enriched production snapshot changes."
           else
