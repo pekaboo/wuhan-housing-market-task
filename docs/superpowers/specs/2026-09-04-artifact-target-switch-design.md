@@ -132,6 +132,7 @@ checkout 代码仓
 - dashboard 仓新增 `.github/workflows/deploy-pages.yml`：`on: push(main)` 用自身 `GITHUB_TOKEN` 把仓库根部署为 Pages（`pekaboo.github.io/wuhan-housing-market-dashboard/`），rsync 排除 `.git`/`.github` 后打包；
 - task 仓的 Pages 部署保持无条件执行（两种模式下主地址 `pages.wangyitu.tech/wuhan-housing-market-task/` 永远最新，避免任一地址出现僵尸站）；
 - task 仓 external 提交步骤改为 `git add -A -- . ':(exclude).github'`，防止把 dashboard 仓的部署 workflow 当作缺失文件删除。
+- 同日稍后：应用户要求 dashboard 仓转为 **private**（账户为 Free 计划，私有仓不支持 Pages）→ `deploy-pages.yml` 已通过 `gh workflow disable` 停用（避免每日红叉），数据仓 Pages 配置被 GitHub 自动移除，仅保留 task 仓主站部署；恢复方式见 README。
 
 ## 实施清单（概要）
 
