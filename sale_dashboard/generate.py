@@ -137,7 +137,7 @@ def write_site(
                 all_count=len(projects),
                 previous_project=projects[index - 1] if index > 0 else None,
                 next_project=projects[index + 1] if index + 1 < len(projects) else None,
-                one_price_snapshot=snapshot,
+                one_price_snapshot=enriched_snapshot if snapshot is not None else None,
                 one_price_url=f'../../{data_relative_path.as_posix()}' if snapshot is not None else None,
                 room_type_snapshot=room_snapshot,
                 room_type_url=(

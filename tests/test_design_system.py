@@ -58,8 +58,8 @@ def test_overview_uses_refined_bento_and_segmented_controls():
     assert "backdrop-filter:saturate(180%)blur(20px)" in controls
     assert "border-radius:999px" in sort and "background:var(--panel-soft)" in sort
     assert "background:var(--panel)" in active_sort and "box-shadow:01px3px" in active_sort
-    assert "minmax(380px,1fr)" in grid and "gap:14px" in grid
-    assert "border-radius:22px" in project
+    assert "minmax(420px,1fr)" in grid and "gap:14px" in grid
+    assert "border-radius:20px" in project
     assert "border-color:var(--line-strong)" in project_hover
     assert "box-shadow:var(--shadow-hover)" in project_hover
     assert "transform:scale" not in style
