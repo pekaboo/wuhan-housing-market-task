@@ -583,7 +583,7 @@ def test_one_price_floor_rendering_is_progressive_and_keeps_filtered_cards_light
     assert 'var matched=roomMatches(room)' in detail
     assert "if(!matched){" in detail
     assert "article.textContent='—';return article" in detail
-    assert detail.count('var matched=roomMatches(room)') >= 1
+    assert detail.count('var matched=roomMatches(room)') == 1
     assert '.floor-room{position:relative;box-sizing:border-box;width:100%;height:100%;min-width:0;min-height:0;padding:7px 9px 6px 10px;overflow:hidden;border:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);border-left:4px solid var(--price-color,var(--map-brand));border-radius:7px;background:var(--map-panel);color:var(--map-ink);box-shadow:0 1px 2px #00000006;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);content-visibility:auto;contain:layout paint style;contain-intrinsic-size:auto 86px' in detail
     assert '.floor-column-head,.building-cell{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--map-panel)}' in detail
 
@@ -617,36 +617,6 @@ def test_one_price_floor_discount_time_and_png_export_are_explicit(tmp_path):
     assert 'var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);' in detail
     assert '折后单价' in detail
     assert 'data-role="download-floor-image"' in detail
-    assert "canvas.getContext('2d')" in detail
-    assert 'function canvasBlob(canvas)' in detail
-    assert 'function drawFloorCard(context,room,x,y,width,height)' in detail
-    assert "context.fillText('数据时间',width-margin,28)" in detail
-    assert "context.fillText('数据时间：'+timeLabel,width-margin-14,height-45)" in detail
-    assert 'foreignObject' not in detail
-    assert 'XMLSerializer' not in detail
-    assert 'DOMParser' not in detail
+    assert 'floor-export-time' in detail
+    assert 'floor-export-foot' in detail
     assert '正在生成图片' in detail
-
-def test_one_price_mobile_floor_filters_use_a_sidebar(tmp_path):
-    one_price = {
-        'status': 'complete',
-        'certificates': [{**certificate(905), 'rooms': [room(41, price=20000, totalPrice=2000000)]}],
-    }
-    site_dir = tmp_path / 'site'
-
-    write_site(
-        [{'id': 9003, 'name': '移动筛选', 'date': '2026-08-28'}],
-        site_dir=site_dir,
-        generated_at='2026-08-28 10:30:00',
-        one_price_snapshots={9003: one_price},
-    )
-
-    detail = (site_dir / 'projects' / '9003' / 'index.html').read_text(encoding='utf-8')
-    assert 'class="floor-filter-floating"' in detail
-    assert 'data-role="open-floor-filters"' in detail
-    assert 'class="floor-filter-scrim"' in detail
-    assert 'data-role="close-floor-filters"' in detail
-    assert 'root.dataset.filtersOpen=filtersOpen?' in detail
-    assert ".one-price.floor-view[data-filters-open=closed] .room-controls" in detail
-    assert '.one-price.floor-view .filter-primary{grid-template-columns:1fr!important}' in detail
-    assert '.one-price.floor-view .filter-secondary{grid-template-columns:1fr!important}' in detail

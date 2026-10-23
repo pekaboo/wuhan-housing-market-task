@@ -116,8 +116,6 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
           </div>
         </div>
       </div>
-      <button type="button" class="floor-filter-floating" data-role="open-floor-filters" aria-controls="price-filter-panel">筛选</button>
-      <button type="button" class="floor-filter-scrim" data-role="close-floor-filters" aria-label="关闭筛选侧栏"></button>
       <div class="floor-toolbar" aria-label="楼层分布缩放控制" hidden>
         <span class="floor-data-time"><span>数据时间</span><strong data-role="floor-data-time">{esc(generated_label)}</strong></span>
         <button type="button" data-role="zoom-in">放大</button>
@@ -202,27 +200,12 @@ FLOOR_MOBILE_CSS = r'''
 .floor-data-time span{min-height:0;padding:0;color:var(--map-muted);font-size:9px;line-height:1.2}
 .floor-data-time strong{max-width:100%;overflow:hidden;color:var(--map-ink);font-size:11px;font-variant-numeric:tabular-nums;text-overflow:ellipsis;white-space:nowrap}
 .floor-export-busy{position:absolute;left:50%;bottom:12px;z-index:20;margin:0;padding:6px 12px;border:1px solid var(--map-line);border-radius:999px;background:var(--map-panel);color:var(--map-ink);font-size:11px;font-weight:750;box-shadow:0 10px 30px #00000022;transform:translateX(-50%)}
-body.one-price-filters-open{overflow:hidden}
-.floor-filter-floating,.floor-filter-scrim{display:none}
 @media (max-width:1100px){.filter-secondary{grid-template-columns:repeat(2,minmax(0,1fr))}.discount-filter{grid-column:1/-1}}
 @media (max-width:760px){
-  .one-price.floor-view .room-controls{position:fixed;top:0;left:0;bottom:0;z-index:70;width:min(88vw,360px);max-height:none;box-sizing:border-box;overflow-y:auto;overscroll-behavior:contain;border:0;border-radius:0 20px 20px 0;background:var(--panel);box-shadow:14px 0 44px #00000038;transition:transform .22s var(--ease-out),visibility .22s}
-  .one-price.floor-view[data-filters-open=closed] .room-controls{visibility:hidden;transform:translateX(-102%)}
-  .one-price.floor-view[data-filters-open=open] .room-controls{visibility:visible;transform:none}
-  .one-price.floor-view[data-filters-open=closed]>.floor-filter-floating{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:10px;z-index:70;display:inline-flex;min-height:42px;align-items:center;justify-content:center;padding:0 15px;border:0;border-radius:999px;background:var(--map-brand);color:#fff;font:inherit;font-size:12px;font-weight:850;box-shadow:0 10px 28px #00000030}
-  .one-price.floor-view[data-filters-open=open]>.floor-filter-scrim{position:fixed;inset:0;z-index:60;display:block;border:0;padding:0;background:#00000066;backdrop-filter:saturate(120%) blur(2px)}
-  .one-price.floor-fullscreen>.floor-filter-floating,.one-price.floor-fullscreen>.floor-filter-scrim{display:inline-flex}
-  .one-price.floor-fullscreen[data-filters-open=closed]>.floor-filter-scrim{display:none}
-  .one-price.floor-view .controls-heading{position:sticky;top:0;z-index:2;padding:8px;border-radius:0;background:var(--panel)}
-  .one-price.floor-view .filter-panel{margin:0 8px 10px}
-  .one-price.floor-view .filter-primary{grid-template-columns:1fr!important}
-  .one-price.floor-view .filter-secondary{grid-template-columns:1fr!important}
-  .floor-toolbar{flex-wrap:nowrap;gap:5px;padding:7px 9px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .floor-toolbar::-webkit-scrollbar{display:none}
-  .floor-toolbar button,.zoom-control{flex:0 0 auto}.floor-toolbar button{height:38px;padding:0 10px;font-size:11px;white-space:nowrap}
-  .one-price.floor-fullscreen .floor-toolbar{right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;justify-content:flex-start;max-height:48px;overflow-x:auto}
-  .floor-data-time{flex:0 0 auto;max-width:150px}.zoom-control{gap:6px}.zoom-control input{width:112px}
-  .filter-panel{gap:7px;padding:8px}.discount-filter{align-items:stretch;flex-direction:column}.discount-presets{width:100%}
+  .floor-toolbar{gap:5px;padding:8px 10px}.floor-toolbar button{height:40px;padding:0 10px;font-size:11px}
+  .one-price.floor-fullscreen .floor-toolbar{right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;justify-content:flex-start;max-height:42vh;overflow:auto;-webkit-overflow-scrolling:touch}
+  .floor-data-time{flex:1 1 100%;align-items:center;text-align:center}.zoom-control{flex:1 1 100%;justify-content:space-between}.zoom-control input{width:min(190px,54vw)}
+  .filter-panel{gap:7px;padding:8px}.filter-secondary{grid-template-columns:1fr}.discount-filter{align-items:stretch;flex-direction:column}.discount-presets{width:100%}
   .room-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.room-filters button{justify-content:center;padding:0 4px}
   .range-filter{grid-template-columns:auto minmax(64px,1fr) 7px minmax(64px,1fr) auto}
 }
@@ -354,10 +337,7 @@ ONE_PRICE_JS = r'''(function(){
   }
   function syncFilterControls(){
     var count=activeFilterCount();
-    root.dataset.filtersOpen=filtersOpen?'open':'closed';
-    if(roomControls)roomControls.dataset.filtersOpen=filtersOpen?'open':'closed';
     if(filterPanel)filterPanel.hidden=!filtersOpen;
-    document.body.classList.toggle('one-price-filters-open',filtersOpen&&view==='floor'&&window.matchMedia('(max-width: 760px)').matches);
     if(filterToggle){
       filterToggle.setAttribute('aria-expanded',filtersOpen?'true':'false');
       filterToggle.classList.toggle('is-active',count>0);
@@ -595,7 +575,6 @@ ONE_PRICE_JS = r'''(function(){
   }
   function render(){
     floorRenderToken++;
-    root.classList.toggle('floor-view',view==='floor');
     refreshBuildingOptions();refreshUnitOptions();syncFilterControls();
     var visibleRooms=scopedRooms();var filtered=visibleRooms.filter(roomMatches);
     tableWrap.hidden=view!=='table';floorResults.hidden=view==='table';if(floorToolbar)floorToolbar.hidden=view!=='floor';
@@ -696,12 +675,6 @@ ONE_PRICE_JS = r'''(function(){
     });
   });
   if(filterToggle)filterToggle.addEventListener('click',function(){filtersOpen=!filtersOpen;syncFilterControls();if(view==='floor')refitFloorView()});
-  root.addEventListener('click',function(event){
-    var opener=event.target.closest('[data-role="open-floor-filters"]');
-    var closer=event.target.closest('[data-role="close-floor-filters"]');
-    if(!opener&&!closer)return;
-    event.preventDefault();filtersOpen=Boolean(opener);syncFilterControls();if(view==='floor')refitFloorView();
-  });
   if(resetFiltersButton)resetFiltersButton.addEventListener('click',clearAllFilters);
   root.querySelectorAll('[data-role="room-filter"]').forEach(function(button){
     button.addEventListener('click',function(){
@@ -733,6 +706,23 @@ ONE_PRICE_JS = r'''(function(){
     button.addEventListener('click',function(){setDiscount(button.getAttribute('data-discount'))});
   });
   more.addEventListener('click',function(){limit+=200;render()});
+  function xmlEscape(value){return String(value===undefined||value===null||value===''?'—':value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+  function exportStyles(){
+    var values=[];document.querySelectorAll('style').forEach(function(style){values.push(style.textContent)});
+    return values.join('\n')+''+
+      '.floor-export-root{box-sizing:border-box;display:block!important;padding:24px!important;border:0!important;background:#f5f7fa!important;color:#1d1d1f!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}'+
+      '.floor-export-head{display:flex;align-items:start;justify-content:space-between;gap:24px;margin:0 0 8px;padding:18px 20px;border:1px solid #d2d2d7;border-radius:16px 16px 0 0;background:#fff}'+
+      '.floor-export-head strong{display:block;color:#0071e3;font-size:11px;font-weight:850;letter-spacing:.12em}'+
+      '.floor-export-head h1{margin:3px 0 0;color:#1d1d1f;font-size:24px;line-height:1.15;letter-spacing:-.04em}'+
+      '.floor-export-time{display:flex;flex-direction:column;align-items:flex-end;gap:3px;white-space:nowrap}'+
+      '.floor-export-time span:first-child{color:#6e6e73;font-size:10px;font-weight:750}'+
+      '.floor-export-time strong{color:#1d1d1f;font-size:16px;font-variant-numeric:tabular-nums}'+
+      '.floor-export-time em{color:#0071e3;font-size:11px;font-style:normal;font-weight:800}'+
+      '.floor-export-root .floor-canvas{transform:none!important;will-change:auto;margin:0!important}'+
+      '.floor-export-root .floor-room{content-visibility:visible!important}'+
+      '.floor-export-foot{display:flex;justify-content:space-between;gap:18px;margin-top:8px;padding:13px 20px;border:1px solid #d2d2d7;border-radius:0 0 16px 16px;background:#fff;color:#6e6e73;font-size:11px;font-weight:700}'+
+      '.floor-export-foot strong{color:#1d1d1f;font-variant-numeric:tabular-nums}';
+  }
   function exportFilterSummary(){
     var values=[];
     if(certificate!=='all')values.push('预售证 '+certificateSelect.options[certificateSelect.selectedIndex].textContent);
@@ -740,155 +730,54 @@ ONE_PRICE_JS = r'''(function(){
     if(unit!=='all')values.push(unit+'单元');
     if(filter!=='all')values.push({available:'可售',sold:'已售',abnormal:'异常'}[filter]||filter);
     if(query.trim())values.push('“'+query.trim()+'”');
-    if(bounds.priceMin!==null||bounds.priceMax!==null)values.push('单价 '+text(bounds.priceMin)+'-'+text(bounds.priceMax));
-    if(bounds.totalMin!==null||bounds.totalMax!==null)values.push('总价 '+text(bounds.totalMin)+'-'+text(bounds.totalMax)+'万元');
-    if(discountRate!==100)values.push('折后 '+discountRate+'%');
     return values.length?values.join(' · '):'全部房源';
   }
-  function exportModel(){
-    var allRooms=scopedRooms();var columns=[];var columnSeen=new Set();var floors=[];var floorSeen=new Set();var grouped=new Map();var maxRooms=1;
-    allRooms.forEach(function(room){
-      var key=matrixKey(room);var floor=text(room.floor);
-      if(!columnSeen.has(key)){columnSeen.add(key);columns.push({key:key,building:text(room.building),unitName:text(room.unitName)});grouped.set(key,new Map())}
-      if(!floorSeen.has(floor)){floorSeen.add(floor);floors.push(floor)}
-      var floorMap=grouped.get(key);if(!floorMap.has(floor))floorMap.set(floor,[]);
-      var values=floorMap.get(floor);values.push(room);maxRooms=Math.max(maxRooms,values.length);
-    });
-    columns.sort(function(left,right){return naturalCompare(left.building,right.building)||naturalCompare(left.unitName,right.unitName)});
-    floors.sort(function(left,right){var ln=floorNumber(left);var rn=floorNumber(right);if(isFinite(ln)&&isFinite(rn)&&ln!==rn)return rn-ln;if(isFinite(ln))return -1;if(isFinite(rn))return 1;return naturalCompare(left,right)});
-    grouped.forEach(function(floorMap){floorMap.forEach(function(values){values.sort(function(left,right){return naturalCompare(left.roomName,right.roomName)})})});
-    return {rooms:allRooms,columns:columns,floors:floors,grouped:grouped,maxRooms:maxRooms};
-  }
-  function truncateText(context,value,maxWidth){
-    var output=String(value);
-    if(context.measureText(output).width<=maxWidth)return output;
-    while(output&&context.measureText(output+'…').width>maxWidth)output=output.slice(0,-1);
-    return output+'…';
-  }
-  function roundRect(context,x,y,width,height,radius){
-    context.beginPath();context.moveTo(x+radius,y);context.arcTo(x+width,y,x+width,y+height,radius);context.arcTo(x+width,y+height,x,y+height,radius);context.arcTo(x,y+height,x,y,radius);context.arcTo(x,y,x+width,y,radius);context.closePath();
-  }
-  function drawFloorCard(context,room,x,y,width,height){
-    var matched=roomMatches(room);var available=Number(room.saleStatus)===2;var abnormal=Number(room.abnormalStatus)===1;
-    var fill=matched?(available?'#eefaf4':'#fff3e9'):'#f0f1f3';var ink=matched?'#202224':'#797f88';var accent=matched?(available?'#1a7f4e':'#d97b31'):'#a7adba';
-    context.fillStyle=fill;roundRect(context,x,y,width,height,8);context.fill();
-    context.fillStyle=accent;roundRect(context,x,y,4,height,2);context.fill();
-    context.strokeStyle=matched?'#00000014':'#0000000d';context.lineWidth=1;roundRect(context,x+.5,y+.5,width-1,height-1,8);context.stroke();
-    context.fillStyle=ink;context.textBaseline='top';context.textAlign='left';
-    context.font='800 15px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif';
-    context.fillText(truncateText(context,text(room.roomName),width-26),x+11,y+9);
-    context.font='600 11px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif';context.fillStyle=matched?'#606770':'#8d939d';
-    context.fillText(truncateText(context,text(room.roomLayout)+' · '+area(room.area),width-22),x+11,y+30);
-    if(matched){
-      context.fillStyle='#0071e3';context.font='800 13px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif';
-      context.fillText(truncateText(context,money(discounted(room.price)),width-22),x+11,y+48);
-      context.fillStyle='#4b5158';context.font='700 10px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif';
-      context.fillText(truncateText(context,total(discounted(room.totalPrice)),width-22),x+11,y+66);
-      var label=available?'可售':'已售';context.font='800 9px sans-serif';var pillWidth=context.measureText(label).width+13;
-      context.fillStyle=available?'#dff4e8':'#ffe4cd';roundRect(context,x+width-pillWidth-9,y+8,pillWidth,16,8);context.fill();
-      context.fillStyle=available?'#12693f':'#a45513';context.textAlign='center';context.fillText(label,x+width-pillWidth/2-9,y+12);context.textAlign='left';
-      if(abnormal){context.fillStyle='#b42318';context.font='800 9px sans-serif';context.fillText('异常',x+width-32,y+30)}
-    }else{
-      context.fillStyle='#797f88';context.font='750 14px sans-serif';context.textAlign='center';context.fillText('—',x+width/2,y+53);context.textAlign='left';
-    }
-  }
-  function dataUrlBlob(href){
-    var binary=atob(href.split(',')[1]);var bytes=new Uint8Array(binary.length);
-    for(var index=0;index<binary.length;index++)bytes[index]=binary.charCodeAt(index);
-    return new Blob([bytes],{type:'image/png'});
-  }
-  function canvasBlob(canvas){
-    return new Promise(function(resolve,reject){
-      if(canvas.toBlob){canvas.toBlob(function(blob){blob?resolve(blob):reject(new Error('浏览器未返回图片数据'))},'image/png');return}
-      try{var href=canvas.toDataURL('image/png');if(href.indexOf('data:image/png')!==0)throw new Error('图片格式不受支持');resolve(dataUrlBlob(href))}catch(error){reject(error)}
-    });
-  }
-  function exportFloorImage(){
-    return new Promise(function(resolve,reject){
-      if(view!=='floor'){reject(new Error('请先切换到楼层分布视图'));return}
-      if(!scopedRooms().length){reject(new Error('当前筛选没有可导出的楼栋'));return}
-      var busy=document.createElement('p');busy.className='floor-export-busy';busy.setAttribute('role','status');busy.textContent='正在生成图片…';floorResults.appendChild(busy);
-      window.requestAnimationFrame(function(){
-        try{
-          var model=exportModel();var title=(document.querySelector('.hero h1')||{}).textContent||'楼盘楼层分布';var timeLabel=dataTime&&dataTime!=='—'?dataTime:'未记录';
-          var discountLabel=discountRate===100?'原价':'折后 '+discountRate+'%';var cardWidth=126;var cardHeight=88;var cardGap=7;var columnGap=12;var axisWidth=46;var headerHeight=58;var rowHeight=98;var margin=28;
-          var overview=model.columns.length>DETAIL_BUILDING_LIMIT&&building==='all'&&unit==='all';
-          var contentWidth,contentHeight,columnWidth=model.maxRooms*cardWidth+(model.maxRooms-1)*cardGap;
-          var overviewColumns,overviewRows,columnsPerBand,bands;
-          if(overview){
-            overviewColumns=Math.min(5,Math.max(2,Math.ceil(Math.sqrt(model.columns.length))));overviewRows=Math.ceil(model.columns.length/overviewColumns);
-            contentWidth=margin*2+overviewColumns*236+(overviewColumns-1)*16;contentHeight=overviewRows*202+(overviewRows-1)*16;
-          }else{
-            columnsPerBand=Math.max(1,Math.min(12,Math.ceil(Math.sqrt(model.columns.length))));bands=Math.ceil(model.columns.length/columnsPerBand);
-            contentWidth=margin*2+axisWidth+columnsPerBand*(columnWidth+columnGap)-columnGap;contentHeight=bands*(headerHeight+model.floors.length*rowHeight+26)+(bands-1)*30;
-          }
-          var width=Math.max(1080,Math.ceil(contentWidth));var height=Math.ceil(172+contentHeight+70);var scale=width<1600?2:1.5;
-          var maxSide=8192,maxPixels=16000000;
-          if(width*scale>maxSide||height*scale>maxSide)scale=Math.min(scale,maxSide/Math.max(width,height));
-          if(width*height*scale*scale>maxPixels)scale=Math.min(scale,Math.sqrt(maxPixels/(width*height)));
-          scale=Math.max(.35,scale);var canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(width*scale));canvas.height=Math.max(1,Math.round(height*scale));
-          var context=canvas.getContext('2d');if(!context)throw new Error('当前浏览器不支持图片画布');
-          context.scale(scale,scale);context.fillStyle='#f5f7fa';context.fillRect(0,0,width,height);context.textBaseline='top';context.textAlign='left';
-          context.fillStyle='#0071e3';context.font='850 12px sans-serif';context.fillText('FLOOR MAP',margin,26);
-          context.fillStyle='#1d1d1f';context.font='850 29px -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif';context.fillText(truncateText(context,title,width-360),margin,45);
-          context.textAlign='right';context.fillStyle='#6e6e73';context.font='750 11px sans-serif';context.fillText('数据时间',width-margin,28);
-          context.fillStyle='#1d1d1f';context.font='800 17px sans-serif';context.fillText(truncateText(context,timeLabel,330),width-margin,44);
-          context.fillStyle='#0071e3';context.font='800 12px sans-serif';context.fillText(discountLabel,width-margin,68);
-          context.textAlign='left';context.fillStyle='#fff';roundRect(context,margin,98,width-margin*2,34,12);context.fill();context.strokeStyle='#d8dade';context.stroke();
-          context.fillStyle='#495057';context.font='700 12px sans-serif';context.fillText(truncateText(context,'筛选：'+exportFilterSummary(),width-margin*2-24),margin+12,109);
-          var top=150;
-          if(overview){
-            model.columns.forEach(function(column,index){
-              var columnIndex=index%overviewColumns;var rowIndex=Math.floor(index/overviewColumns);var x=margin+columnIndex*(236+16);var y=top+rowIndex*(202+16);var floorMap=model.grouped.get(column.key);var values=[];floorMap.forEach(function(floorRooms){values.push.apply(values,floorRooms)});
-              var matched=values.filter(roomMatches);var available=values.filter(function(room){return Number(room.saleStatus)===2}).length;var prices=matched.map(function(room){return discounted(room.price)}).filter(function(value){return value!==null});var totals=matched.map(function(room){return discounted(room.totalPrice)}).filter(function(value){return value!==null});
-              var average=function(values){return values.length?values.reduce(function(left,right){return left+right},0)/values.length:null};
-              context.fillStyle='#fff';roundRect(context,x,y,236,202,15);context.fill();context.strokeStyle='#d8dade';context.stroke();
-              context.fillStyle='#0071e3';context.font='800 11px sans-serif';context.fillText('BUILDING',x+16,y+15);
-              context.fillStyle='#1d1d1f';context.font='850 21px sans-serif';context.fillText(truncateText(context,text(column.building),150),x+16,y+32);
-              context.textAlign='right';context.fillText(truncateText(context,'单元 '+text(column.unitName),60),x+220,y+36);context.textAlign='left';
-              context.fillStyle='#495057';context.font='700 12px sans-serif';context.fillText(floorMap.size+' 层 · '+values.length+' 套',x+16,y+72);context.fillText(matched.length+' 套匹配 · 可售 '+available,x+16,y+94);
-              context.fillStyle='#0071e3';context.font='800 14px sans-serif';context.fillText(truncateText(context,'均单价 '+(average(prices)===null?'—':money(average(prices))),204),x+16,y+124);
-              context.fillStyle='#4b5158';context.font='700 12px sans-serif';context.fillText(truncateText(context,'均总价 '+(average(totals)===null?'—':total(average(totals))),204),x+16,y+146);
-              context.fillStyle='#e8f2ff';roundRect(context,x+16,y+170,204,7,4);context.fill();context.fillStyle='#0071e3';roundRect(context,x+16,y+170,Math.max(2,204*matched.length/Math.max(1,values.length)),7,4);context.fill();
-            });
-          }else{
-            for(var band=0;band<bands;band++){
-              var bandColumns=model.columns.slice(band*columnsPerBand,(band+1)*columnsPerBand);var bandTop=top+band*(headerHeight+model.floors.length*rowHeight+56);
-              context.fillStyle='#6e6e73';context.font='750 11px sans-serif';context.fillText('楼层',margin,bandTop+21);
-              bandColumns.forEach(function(column,columnIndex){
-                var x=margin+axisWidth+columnIndex*(columnWidth+columnGap);
-                context.fillStyle='#fff';roundRect(context,x,bandTop,columnWidth,headerHeight-14,12);context.fill();context.strokeStyle='#d8dade';context.stroke();
-                context.fillStyle='#1d1d1f';context.font='850 16px sans-serif';context.fillText(truncateText(context,text(column.building),columnWidth/2),x+10,bandTop+7);
-                context.fillStyle='#6e6e73';context.font='700 11px sans-serif';context.fillText(truncateText(context,'单元 '+text(column.unitName),columnWidth-20),x+10,bandTop+30);
-              });
-              model.floors.forEach(function(floor,rowIndex){
-                var y=bandTop+headerHeight+rowIndex*rowHeight;context.fillStyle='#6e6e73';context.font='750 12px sans-serif';context.textAlign='right';context.fillText(truncateText(context,floor,axisWidth-10),margin+axisWidth-10,y+35);context.textAlign='left';
-                bandColumns.forEach(function(column,columnIndex){
-                  var x=margin+axisWidth+columnIndex*(columnWidth+columnGap);var values=model.grouped.get(column.key).get(floor);
-                  if(values&&values.length){values.forEach(function(room,itemIndex){drawFloorCard(context,room,x+itemIndex*(cardWidth+cardGap),y,cardWidth,cardHeight)})}
-                  else{context.strokeStyle='#c8ccd4';context.setLineDash([5,4]);roundRect(context,x,y,cardWidth,cardHeight,8);context.stroke();context.setLineDash([]);context.fillStyle='#a7adba';context.font='700 13px sans-serif';context.textAlign='center';context.fillText('—',x+cardWidth/2,y+36);context.textAlign='left'}
-                });
-              });
-            }
-          }
-          context.fillStyle='#fff';roundRect(context,margin,height-58,width-margin*2,38,12);context.fill();context.strokeStyle='#d8dade';context.stroke();
-          context.fillStyle='#495057';context.font='700 11px sans-serif';context.fillText('武汉一房一价 · 楼层分布',margin+14,height-46);
-          context.textAlign='right';context.fillStyle='#1d1d1f';context.font='800 12px sans-serif';context.fillText('数据时间：'+timeLabel,width-margin-14,height-45);context.textAlign='left';
-          canvasBlob(canvas).then(function(blob){downloadBlob(blob,'楼层分布-'+safeFilename(title)+'-'+safeFilename(timeLabel)+'.png');busy.remove();resolve()}).catch(function(error){busy.remove();reject(error)});
-        }catch(error){busy.remove();reject(error)}
-      });
-    });
-  }
-  if(downloadFloorButton)downloadFloorButton.addEventListener('click',function(){
-    downloadFloorButton.disabled=true;exportFloorImage().catch(function(error){
-      var message=document.createElement('p');message.className='floor-export-busy';message.setAttribute('role','alert');message.textContent='图片生成失败：'+error.message;floorResults.appendChild(message);window.setTimeout(function(){message.remove()},5000);window.alert('图片生成失败：'+error.message)
-    }).then(function(){downloadFloorButton.disabled=false});
-  });
   function downloadBlob(blob,filename){
     var link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download=filename;document.body.appendChild(link);link.click();
     window.setTimeout(function(){URL.revokeObjectURL(link.href);link.remove()},1000);
   }
   function safeFilename(value){return String(value).replace(/[\\/:*?"|]/g,'-').replace(/\s+/g,'-').slice(0,48)}
+  function exportFloorImage(){
+    var source=floorResults.querySelector('.floor-canvas');
+    if(!source||view!=='floor')return;
+    var busy=document.createElement('p');busy.className='floor-export-busy';busy.setAttribute('role','status');busy.textContent='正在生成图片…';floorResults.appendChild(busy);
+    var title=(document.querySelector('.hero h1')||{}).textContent||'楼盘楼层分布';
+    var timeLabel=dataTime&&dataTime!=='—'?dataTime:'未记录';
+    var clone=source.cloneNode(true);clone.style.transform='none';clone.style.willChange='auto';
+    var sourceWidth=Math.max(320,source.scrollWidth),sourceHeight=Math.max(240,source.scrollHeight);
+    var width=sourceWidth+48,height=sourceHeight+214;
+    var markup='<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'" viewBox="0 0 '+width+' '+height+'">'+
+      '<foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" class="floor-results floor-export-root">'+
+      '<style>'+exportStyles()+'</style>'+
+      '<header class="floor-export-head"><div><strong>FLOOR MAP</strong><h1>'+xmlEscape(title)+'</h1></div><div class="floor-export-time"><span>数据时间</span><strong>'+xmlEscape(timeLabel)+'</strong><em>'+(discountRate===100?'原价':'折后 '+discountRate+'%')+'</em></div></header>'+
+      clone.outerHTML+
+      '<footer class="floor-export-foot"><span>'+xmlEscape(exportFilterSummary())+'</span><span>数据时间：<strong>'+xmlEscape(timeLabel)+'</strong></span></footer>'+
+      '</div></foreignObject></svg>';
+    var parsed=new DOMParser().parseFromString(markup,'image/svg+xml');
+    if(parsed.getElementsByTagName('parsererror').length)throw new Error('图片文档生成失败');
+    var svgUrl=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(parsed.documentElement)],{type:'image/svg+xml;charset=utf-8'}));
+    var image=new Image();
+    image.onload=function(){
+      var maxSide=12000,maxPixels=24000000,scale=Math.min(2,Math.max(1,(width<1200?1.6:1)));
+      if(width*scale>maxSide||height*scale>maxSide)scale=Math.min(scale,maxSide/Math.max(width,height));
+      if(width*height*scale*scale>maxPixels)scale=Math.min(scale,Math.sqrt(maxPixels/(width*height)));
+      var canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(width*scale));canvas.height=Math.max(1,Math.round(height*scale));
+      var context=canvas.getContext('2d');context.fillStyle='#f5f7fa';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(image,0,0,canvas.width,canvas.height);
+      URL.revokeObjectURL(svgUrl);
+      if(canvas.toBlob){
+        canvas.toBlob(function(blob){
+          if(blob)downloadBlob(blob,'楼层分布-'+safeFilename(title)+'-'+safeFilename(timeLabel)+'.png');
+          else window.alert('图片生成失败：浏览器未返回图片数据');
+          busy.remove();
+        },'image/png');
+      }else{
+        var dataLink=document.createElement('a');dataLink.href=canvas.toDataURL('image/png');dataLink.download='楼层分布-'+safeFilename(title)+'-'+safeFilename(timeLabel)+'.png';document.body.appendChild(dataLink);dataLink.click();window.setTimeout(function(){dataLink.remove()},1000);busy.remove();
+      }
+    };
+    image.onerror=function(){URL.revokeObjectURL(svgUrl);busy.remove();window.alert('当前浏览器不支持直接导出，请长按楼层分布截图保存')};
+    image.src=svgUrl;
+  }
+  if(downloadFloorButton)downloadFloorButton.addEventListener('click',function(){try{exportFloorImage()}catch(error){window.alert('图片生成失败：'+error.message)}});
   syncDiscountControls();syncFilterControls();
   function loadJSON(url){
     if(!/\.json\.gz$/.test(url))return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()});
