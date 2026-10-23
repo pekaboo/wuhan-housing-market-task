@@ -55,10 +55,7 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
     elif not certificates:
         status_html = '<p class="one-price-note">该楼盘暂无可展示的预售证明细。</p>'
 
-    generated_at = snapshot.get('generatedAt') if isinstance(snapshot, dict) else None
-    generated_label = generated_at or '载入中'
-
-    return f'''<section id="one-price" class="one-price" data-one-price-url="{esc(data_url)}" data-generated-at="{esc(generated_at or '')}" aria-labelledby="one-price-title">
+    return f'''<section id="one-price" class="one-price" data-one-price-url="{esc(data_url)}" aria-labelledby="one-price-title">
       <div class="one-price-head">
         <div><h2 id="one-price-title">一房一价</h2><p>按预售证聚合房号、面积、单价、总价、销售与异常状态；支持明细表与真实楼层分布两种视图。</p></div>
         <a href="{esc(data_url)}" download>JSON 明细</a>
@@ -104,30 +101,19 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
               <input data-role="total-max" type="number" min="0" step="10000" inputmode="numeric" placeholder="最高" aria-label="总价上限">
               <span class="range-unit">万元</span>
             </div>
-            <div class="discount-filter" role="group" aria-label="价格折扣">
-              <label class="discount-input"><span>折扣</span><input data-role="discount-filter" type="number" min="1" max="100" step="1" value="100" inputmode="numeric" aria-label="价格折扣百分比"></label>
-              <div class="discount-presets" aria-label="常用折扣">
-                <button type="button" data-role="discount-preset" data-discount="100" aria-pressed="true">100%</button>
-                <button type="button" data-role="discount-preset" data-discount="95" aria-pressed="false">95%</button>
-                <button type="button" data-role="discount-preset" data-discount="90" aria-pressed="false">90%</button>
-                <button type="button" data-role="discount-preset" data-discount="85" aria-pressed="false">85%</button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="floor-toolbar" aria-label="楼层分布缩放控制" hidden>
-        <span class="floor-data-time"><span>数据时间</span><strong data-role="floor-data-time">{esc(generated_label)}</strong></span>
         <button type="button" data-role="zoom-in">放大</button>
         <button type="button" data-role="zoom-out">缩小</button>
         <button type="button" data-role="reset-zoom">复位</button>
         <button type="button" data-role="floor-fullscreen" aria-pressed="false">全屏地图</button>
         <label class="zoom-control">缩放<input data-role="zoom-range" type="range" min="18" max="220" step="1" value="100" aria-label="楼层分布缩放比例"></label>
         <button type="button" data-role="all-buildings">全部楼栋</button>
-        <button type="button" data-role="download-floor-image">下载图片</button>
         <span><output data-role="zoom-scale">100%</output></span>
       </div>
-      <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽 / 滚轮上下平移，双指捏合等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。图片导出会带上当前筛选结果与数据时间。</p>
+      <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽 / 滚轮上下平移，双指捏合等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
       <div class="room-table-wrap">
         <table class="room-table">
           <caption class="sr-only">一房一价房源明细</caption>
@@ -184,35 +170,6 @@ ONE_PRICE_CSS = r'''.one-price{overflow:hidden;margin:0 0 24px;border:1px solid 
 @media (prefers-color-scheme:dark){.floor-results{--map-surface:#0b141c;--map-panel:#1d1d20;--map-panel-soft:#2c2c2e;--map-ink:#f5f5f7;--map-muted:#a1a1a6;--map-line:#38383a;--map-line-strong:#5a5a5e;--map-brand:#2997ff;--map-brand-ink:#64a8ff;--map-focus:#64a8ff;--map-available:#30d158;--map-sold:#ff453a;--map-ghost:#98989d}.one-price.floor-fullscreen{background:#0b141c}.one-price.floor-fullscreen .room-controls{border-color:#48484a;background:color-mix(in srgb,#1d1d20 88%,transparent);box-shadow:0 18px 48px #00000073}.one-price.floor-fullscreen .floor-toolbar{border-color:#48484a;box-shadow:0 18px 48px #00000073}.floor-toolbar,.zoom-control,.floor-toolbar span{background:color-mix(in srgb,#1d1d20 82%,transparent)}.floor-toolbar button,.floor-toolbar span,.zoom-control{border-color:#48484a}.floor-stage.floor-map{background-image:radial-gradient(circle at 50% 0,color-mix(in srgb,#2c2c2e 58%,transparent) 0,transparent 62%),repeating-linear-gradient(90deg,color-mix(in srgb,#f5f5f7 5%,transparent) 0 1px,transparent 1px 32px),repeating-linear-gradient(180deg,color-mix(in srgb,#f5f5f7 5%,transparent) 0 1px,transparent 1px 32px)}.floor-room{box-shadow:0 1px 2px #00000040}.floor-room.filtered-out,.floor-missing{background:color-mix(in srgb,#98989d 15%,transparent)}}.overview-grid{display:grid;width:100%;max-width:1440px;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:18px;margin:0 auto}.building-overview{position:relative;min-width:0;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit;cursor:pointer}.building-overview:hover,.building-overview:active{border-color:color-mix(in srgb,var(--brand) 48%,var(--line));transform:translateY(-1px)}.building-overview .floor-column-head{min-height:46px;border:0;background:transparent}.overview-body{position:relative;display:block;margin:0 8px 10px;height:calc(var(--floors,1)*10px + 18px)}.overview-face{position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--ink) 28%,var(--line));border-radius:4px;background:linear-gradient(to top,color-mix(in srgb,#17935d calc(var(--match-ratio,1)*60%),transparent) 0,transparent calc(var(--match-ratio,1)*100%)),repeating-linear-gradient(to top,color-mix(in srgb,var(--ink) 18%,transparent) 0 1px,transparent 1px 10px)}.overview-scale{position:absolute;bottom:-19px;left:50%;white-space:nowrap;color:var(--muted);font-size:9px;font-weight:850;transform:translateX(-50%)}.building-overview:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.room-foot p{margin:0}.room-foot button{height:36px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-foot button{color:#07131d}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{color:#07131d}}.certificate-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft);border-top:1px solid var(--line)}.certificate-card{min-width:0;padding:14px;background:var(--panel)}.certificate-card h3{margin:0 0 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.certificate-card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}.certificate-card div{min-width:0}.certificate-card dt{color:var(--muted);font-size:10px}.certificate-card dd{margin:2px 0 0;font-size:14px;font-weight:800}@media (max-width:1100px){.filter-primary{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-secondary{grid-template-columns:1fr}}@media (max-width:760px){.floor-toolbar{right:10px;bottom:10px;max-width:calc(100% - 20px)}.floor-toolbar button{height:44px}.floor-toolbar span,.zoom-control{min-height:44px}.one-price-head{align-items:start;flex-direction:column}.one-price-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.one-price-metric:last-child{grid-column:1/-1}.room-controls{padding:10px}.controls-heading{align-items:stretch;flex-direction:column}.view-switch{grid-template-columns:1fr 1fr}.view-switch button,.room-filters button,.filter-actions button{min-height:42px}.filter-actions{display:grid;grid-template-columns:1fr 1fr}.filter-actions button{width:100%}.filter-primary{grid-template-columns:1fr}.select-field{height:44px}.select-field select,.select-field input{height:40px}.filter-secondary{align-items:stretch}.room-filters{overflow-x:auto;padding-bottom:2px}.range-filter{grid-template-columns:auto minmax(72px,1fr) auto minmax(72px,1fr) auto}.one-price.floor-fullscreen .room-controls{top:10px;left:10px;right:10px;max-height:calc(100% - 20px)}.one-price.floor-fullscreen .back-overview,.one-price.floor-fullscreen .floor-render-status{bottom:74px}.room-foot{align-items:stretch;flex-direction:column}.room-foot button{width:100%}.certificate-card dl{grid-template-columns:repeat(2,1fr)}}@media (max-width:430px){.filter-actions{grid-template-columns:1fr}.range-filter{grid-template-columns:auto minmax(58px,1fr) auto minmax(58px,1fr) auto}.range-unit{display:none}}@media (prefers-reduced-motion:reduce){.one-price *,.one-price *::before,.one-price *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}'''
 
 
-FLOOR_MOBILE_CSS = r'''
-.filter-panel{border-radius:18px}
-.discount-filter{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0;padding:7px 9px;border:1px solid var(--line);border-radius:12px;background:var(--panel-soft)}
-.discount-input{display:flex;align-items:center;gap:7px;min-width:104px}
-.discount-input span{color:var(--muted);font-size:10px;font-weight:750}
-.discount-input input{width:68px;min-height:34px;padding:4px 8px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);font:inherit;font-size:13px;font-variant-numeric:tabular-nums;text-align:center}
-.discount-presets{display:grid;grid-template-columns:repeat(4,minmax(44px,1fr));gap:4px;min-width:0}
-.discount-presets button{min-height:32px;padding:0 5px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--muted);font:inherit;font-size:11px;font-weight:750;cursor:pointer}
-.discount-presets button[aria-pressed=true]{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 10%,var(--panel));color:var(--brand-ink)}
-.floor-column-head,.building-cell{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--map-panel)}
-.floor-room{box-shadow:none;transition:none}
-@media (hover:hover) and (prefers-reduced-motion:no-preference){.floor-room{transition:border-color .18s var(--ease-out)}}
-.floor-data-time{flex:1 1 190px;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;min-height:34px;padding:4px 10px;text-align:left}
-.floor-data-time span{min-height:0;padding:0;color:var(--map-muted);font-size:9px;line-height:1.2}
-.floor-data-time strong{max-width:100%;overflow:hidden;color:var(--map-ink);font-size:11px;font-variant-numeric:tabular-nums;text-overflow:ellipsis;white-space:nowrap}
-.floor-export-busy{position:absolute;left:50%;bottom:12px;z-index:20;margin:0;padding:6px 12px;border:1px solid var(--map-line);border-radius:999px;background:var(--map-panel);color:var(--map-ink);font-size:11px;font-weight:750;box-shadow:0 10px 30px #00000022;transform:translateX(-50%)}
-@media (max-width:1100px){.filter-secondary{grid-template-columns:repeat(2,minmax(0,1fr))}.discount-filter{grid-column:1/-1}}
-@media (max-width:760px){
-  .floor-toolbar{gap:5px;padding:8px 10px}.floor-toolbar button{height:40px;padding:0 10px;font-size:11px}
-  .one-price.floor-fullscreen .floor-toolbar{right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;justify-content:flex-start;max-height:42vh;overflow:auto;-webkit-overflow-scrolling:touch}
-  .floor-data-time{flex:1 1 100%;align-items:center;text-align:center}.zoom-control{flex:1 1 100%;justify-content:space-between}.zoom-control input{width:min(190px,54vw)}
-  .filter-panel{gap:7px;padding:8px}.filter-secondary{grid-template-columns:1fr}.discount-filter{align-items:stretch;flex-direction:column}.discount-presets{width:100%}
-  .room-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.room-filters button{justify-content:center;padding:0 4px}
-  .range-filter{grid-template-columns:auto minmax(64px,1fr) 7px minmax(64px,1fr) auto}
-}
-@media (max-width:430px){.discount-presets{grid-template-columns:repeat(2,minmax(0,1fr))}.range-unit{display:none}}
-'''
-
-
 ONE_PRICE_JS = r'''(function(){
   'use strict';
   var root=document.querySelector('[data-one-price-url]');
@@ -220,7 +177,6 @@ ONE_PRICE_JS = r'''(function(){
   var url=root.getAttribute('data-one-price-url');
   var view='table',filter='all',certificate='all',building='all',unit='all',query='',limit=100;
   var bounds={priceMin:null,priceMax:null,totalMin:null,totalMax:null};
-  var discountRate=100,renderTimer=null,dataTime=root.getAttribute('data-generated-at')||'';
   var tbody=root.querySelector('[data-role="room-results"]');
   var tableWrap=root.querySelector('.room-table-wrap');
   var floorResults=root.querySelector('[data-role="floor-results"]');
@@ -232,38 +188,29 @@ ONE_PRICE_JS = r'''(function(){
   var buildingSelect=root.querySelector('[data-role="building-filter"]');
   var unitSelect=root.querySelector('[data-role="unit-filter"]');
   var search=root.querySelector('[data-role="room-search"]');
-  var discountInput=root.querySelector('[data-role="discount-filter"]');
   var roomControls=root.querySelector('.room-controls');
   var filterPanel=root.querySelector('[data-role="filter-panel"]');
   var filterToggle=root.querySelector('[data-role="filter-toggle"]');
   var filterCount=root.querySelector('[data-role="filter-count"]');
   var resetFiltersButton=root.querySelector('[data-role="reset-filters"]');
-  var downloadFloorButton=root.querySelector('[data-role="download-floor-image"]');
-  var floorDataTime=root.querySelector('[data-role="floor-data-time"]');
-  var filtersOpen=filterPanel?!(filterPanel.hidden||window.matchMedia('(max-width: 760px)').matches):false;
-  if(filterPanel)filterPanel.hidden=!filtersOpen;
+  var filtersOpen=!(filterPanel&&filterPanel.hidden);
   var rooms=[];
   var priceGroups=new Map();
   function text(value){return value===null||value===undefined||value===''?'—':String(value);}
-  function pickRoom(room){var picked=Object.assign({},room,{
+  function pickRoom(room){return Object.assign({},room,{
     buildName:room.buildName!==undefined?room.buildName:room.buildingName,
     unitName:room.unitName!==undefined?room.unitName:room.unit,
     floor:room.floor!==undefined?room.floor:room.floorName,
     roomName:room.roomName,
     roomLayout:room.roomLayout!==undefined?room.roomLayout:room.houseType,
     area:room.area!==undefined?room.area:room.buildArea
-  });picked.searchText=[picked.certificateName,picked.buildName,picked.unitName,picked.floor,picked.roomName,picked.roomLayout,picked.price,picked.totalPrice].join(' ').toLowerCase();return picked}
+  });}
   function numericValue(value){if(value===null||value===undefined||value==='')return null;var parsed=Number(value);return isFinite(parsed)?parsed:null;}
   function totalYuan(value){return numericValue(value);}
-  function discounted(value){var parsed=numericValue(value);return parsed===null?null:parsed*discountRate/100}
   function number(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN'):text(value);}
   function area(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:2})+' ㎡':text(value);}
   function money(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:0})+' 元/㎡':text(value);}
   function total(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:0})+' 元':text(value);}
-  function setDataTime(value){
-    dataTime=text(value||dataTime);root.setAttribute('data-generated-at',dataTime==='—'?'':dataTime);
-    if(floorDataTime)floorDataTime.textContent=dataTime;
-  }
   function setSummary(values){
     var sold=values.filter(function(room){return Number(room.saleStatus)===1}).length;
     var available=values.filter(function(room){return Number(room.saleStatus)===2}).length;
@@ -307,12 +254,12 @@ ONE_PRICE_JS = r'''(function(){
     if(filter==='available'&&Number(room.saleStatus)!==2)return false;
     if(filter==='sold'&&Number(room.saleStatus)!==1)return false;
     if(filter==='abnormal'&&Number(room.abnormalStatus)!==1)return false;
-    var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);
+    var price=numericValue(room.price);var totalPrice=totalYuan(room.totalPrice);
     if(bounds.priceMin!==null&&(price===null||price<bounds.priceMin))return false;
     if(bounds.priceMax!==null&&(price===null||price>bounds.priceMax))return false;
     if(bounds.totalMin!==null&&(totalPrice===null||totalPrice<bounds.totalMin*10000))return false;
     if(bounds.totalMax!==null&&(totalPrice===null||totalPrice>bounds.totalMax*10000))return false;
-    var haystack=room.searchText||[room.certificateName,room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout,room.price,room.totalPrice].join(' ').toLowerCase();
+    var haystack=[room.certificateName,room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout,room.price,room.totalPrice].join(' ').toLowerCase();
     return query.trim().toLowerCase().split(/\s+/).filter(Boolean).every(function(word){return haystack.indexOf(word)>=0});
   }
   function filterRooms(){
@@ -326,14 +273,7 @@ ONE_PRICE_JS = r'''(function(){
     if(filter!=='all')count++;
     if(query.trim())count++;
     Object.keys(bounds).forEach(function(key){if(bounds[key]!==null&&isFinite(bounds[key]))count++});
-    if(discountRate!==100)count++;
     return count;
-  }
-  function syncDiscountControls(){
-    if(discountInput)discountInput.value=String(discountRate);
-    root.querySelectorAll('[data-role="discount-preset"]').forEach(function(button){
-      button.setAttribute('aria-pressed',Number(button.getAttribute('data-discount'))===discountRate?'true':'false')
-    });
   }
   function syncFilterControls(){
     var count=activeFilterCount();
@@ -351,7 +291,6 @@ ONE_PRICE_JS = r'''(function(){
   function clearAllFilters(){
     certificate='all';building='all';unit='all';filter='all';query='';limit=100;
     bounds={priceMin:null,priceMax:null,totalMin:null,totalMax:null};
-    discountRate=100;syncDiscountControls();
     if(certificateSelect)certificateSelect.value='all';
     if(buildingSelect)buildingSelect.value='all';
     if(unitSelect)unitSelect.value='all';
@@ -367,7 +306,7 @@ ONE_PRICE_JS = r'''(function(){
     [room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout].forEach(function(value){
       var cell=document.createElement('td');cell.textContent=text(value);tr.appendChild(cell);
     });
-    [area(room.area),money(discounted(room.price)),total(discounted(room.totalPrice))].forEach(function(value){
+    [area(room.area),money(room.price),total(room.totalPrice)].forEach(function(value){
       var cell=document.createElement('td');cell.textContent=value;tr.appendChild(cell);
     });
     var statusCell=document.createElement('td');var badge=document.createElement('span');
@@ -397,23 +336,18 @@ ONE_PRICE_JS = r'''(function(){
     setOptions(unitSelect,'全部单元',values,unit);unit=unitSelect.value;
   }
   function roomCell(room,matched){
-    var available=Number(room.saleStatus)===2;
+    var available=Number(room.saleStatus)===2;var price=numericValue(room.price);var group=priceGroups.get(priceKey(room));
     var article=document.createElement('article');article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out');article.tabIndex=0;
     article.setAttribute('aria-disabled',matched?'false':'true');
-    if(!matched){
-      article.setAttribute('data-room-status',available?'available':'sold');
-      article.setAttribute('aria-label',text(room.roomName)+'，筛选外');
-      article.textContent='—';return article;
-    }
-    var price=discounted(room.price);var group=priceGroups.get(priceKey(room));
-    article.setAttribute('data-price',price===null?'—':String(price));article.setAttribute('data-price-value',price===null?'':String(price));article.setAttribute('data-total-price',discounted(room.totalPrice)===null?'—':String(discounted(room.totalPrice)));article.setAttribute('data-original-price',text(room.price));
+    article.setAttribute('data-price',text(room.price));article.setAttribute('data-price-value',price===null?'':String(price));article.setAttribute('data-total-price',text(room.totalPrice));
     article.setAttribute('data-price-group',priceKey(room));article.setAttribute('data-room-status',available?'available':'sold');
-    article.setAttribute('aria-label',text(room.buildName)+text(room.unitName)+text(room.floor)+' '+text(room.roomName)+(available?'，可售':'，已售')+'，折后单价 '+money(price)+'，折后总价 '+total(discounted(room.totalPrice)));
+    article.setAttribute('aria-label',text(room.buildName)+text(room.unitName)+text(room.floor)+' '+text(room.roomName)+(available?'，可售':'，已售')+'，单价 '+money(room.price)+'，总价 '+total(room.totalPrice)+(matched?'':'，筛选外'));
+    if(!matched){article.textContent='—';return article}
     if(group)article.style.setProperty('--price-color',group);
-    var priceLabel=document.createElement('span');priceLabel.className='floor-price';priceLabel.textContent=money(price);article.appendChild(priceLabel);
+    var priceLabel=document.createElement('span');priceLabel.className='floor-price';priceLabel.textContent=money(room.price);article.appendChild(priceLabel);
     var name=document.createElement('strong');name.textContent=text(room.roomName);article.appendChild(name);
     var meta=document.createElement('span');meta.className='floor-meta';meta.textContent=text(room.roomLayout)+' · '+area(room.area);article.appendChild(meta);
-    var totalPrice=document.createElement('span');totalPrice.className='floor-total';totalPrice.textContent=total(discounted(room.totalPrice));article.appendChild(totalPrice);
+    var totalPrice=document.createElement('span');totalPrice.className='floor-total';totalPrice.textContent=total(room.totalPrice);article.appendChild(totalPrice);
     var badge=document.createElement('span');badge.className='status '+(available?'available':'sold');badge.textContent=available?'可售':'已售';article.appendChild(badge);
     if(Number(room.abnormalStatus)===1){var abnormal=document.createElement('span');abnormal.className='status abnormal';abnormal.textContent='异常';article.appendChild(abnormal);}
     if(group){var swatch=document.createElement('span');swatch.className='price-chip';swatch.setAttribute('aria-hidden','true');article.appendChild(swatch);}
@@ -426,13 +360,7 @@ ONE_PRICE_JS = r'''(function(){
     var unit=document.createElement('span');unit.textContent='单元 '+text(column.unitName);head.appendChild(unit);
     return head;
   }
-  function detailBuildingLimit(){
-    if(window.matchMedia('(max-width: 520px)').matches)return 3;
-    if(window.matchMedia('(max-width: 760px)').matches)return 4;
-    if(window.matchMedia('(max-width: 1100px)').matches)return 8;
-    return 16;
-  }
-  var DETAIL_BUILDING_LIMIT=detailBuildingLimit();var floorSignature='';var floorRenderToken=0;
+  var DETAIL_BUILDING_LIMIT=16;var floorSignature='';var floorRenderToken=0;
   function focusBuilding(column){building=text(column.building);unit=text(column.unitName);limit=100;render()}
   function renderFloorView(allRooms){
     var renderToken=++floorRenderToken;
@@ -488,7 +416,7 @@ ONE_PRICE_JS = r'''(function(){
             var fragment=document.createDocumentFragment();var values=floorRooms.get(column.key)&&floorRooms.get(column.key).get(floor);
             if(values&&values.length){values.sort(function(left,right){return naturalCompare(left.roomName,right.roomName)}).forEach(function(room){var matched=roomMatches(room);fragment.appendChild(roomCell(room,matched))})}
             else{var missing=document.createElement('div');missing.className='floor-missing';missing.textContent='—';missing.setAttribute('aria-label',text(column.building)+' '+text(column.unitName)+' '+floor+' 无房源');fragment.appendChild(missing)}
-            return fragment;
+            cells.appendChild(fragment);
           });
         });
         matrix.appendChild(row);
@@ -511,9 +439,9 @@ ONE_PRICE_JS = r'''(function(){
     }
     function renderFloorBatch(){
       if(renderToken!==floorRenderToken)return;
-      var frameStart=performance.now();var fragment=document.createDocumentFragment();
+      var frameStart=performance.now();var fragment=overview?document.createDocumentFragment():null;
       while(cursor<jobs.length&&performance.now()-frameStart<10){var result=jobs[cursor++]();if(fragment)fragment.appendChild(result)}
-      if(cursor>=jobs.length&&canvas.firstChild)canvas.firstChild.appendChild(fragment);
+      if(fragment)canvas.firstChild.appendChild(fragment);
       var percent=jobs.length?Math.round(cursor/jobs.length*100):100;status.textContent='楼层分布渲染中 '+percent+'%';
       if(cursor<jobs.length)requestAnimationFrame(renderFloorBatch);else finishRender();
     }
@@ -569,10 +497,6 @@ ONE_PRICE_JS = r'''(function(){
   }
   function panBy(deltaX,deltaY){var canvas=floorResults.querySelector('.floor-canvas');if(!canvas)return;viewState.x+=deltaX;viewState.y+=deltaY;clampPan(canvas)}
   function resetView(canvas){fitView(canvas)}
-  function scheduleRender(){
-    if(renderTimer)window.clearTimeout(renderTimer);
-    renderTimer=window.setTimeout(function(){renderTimer=null;render()},180);
-  }
   function render(){
     floorRenderToken++;
     refreshBuildingOptions();refreshUnitOptions();syncFilterControls();
@@ -586,8 +510,7 @@ ONE_PRICE_JS = r'''(function(){
       if(!filtered.length){var empty=document.createElement('tr');var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';cell.textContent='没有符合筛选条件的房源';empty.appendChild(cell);fragment.appendChild(empty);}
       tbody.replaceChildren(fragment);floorResults.replaceChildren();
     }else{renderFloorView(visibleRooms)}
-    var discountLabel=discountRate===100?'':' · 折后 '+discountRate+'%';
-    count.textContent=(view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'楼层分布显示 '+filtered.length+' / '+visibleRooms.length+' 套匹配房源')+discountLabel;
+    count.textContent=view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'楼层分布显示 '+filtered.length+' / '+visibleRooms.length+' 套匹配房源';
     more.hidden=view!=='table'||limit>=filtered.length;setSummary(visibleRooms);
   }
   function syncBackButton(){if(backToOverview)backToOverview.hidden=!(view==='floor'&&(building!=='all'||unit!=='all'))}
@@ -598,7 +521,7 @@ ONE_PRICE_JS = r'''(function(){
   function restoreFloorScroll(){requestAnimationFrame(function(){window.scrollTo(floorFullscreenScroll.x,floorFullscreenScroll.y);refitFloorView()})}
   function setFloorFullscreen(enabled,useNative){
     if(enabled===floorFullscreen)return;
-    if(enabled){if(window.matchMedia('(min-width: 761px)').matches)filtersOpen=true;syncFilterControls();floorFullscreenScroll={x:window.scrollX,y:window.scrollY}}
+    if(enabled){filtersOpen=true;syncFilterControls();floorFullscreenScroll={x:window.scrollX,y:window.scrollY}}
     floorFullscreen=enabled;root.classList.toggle('floor-fullscreen',enabled);syncFloorFullscreen();
     if(enabled&&useNative&&root.requestFullscreen){try{var request=root.requestFullscreen();if(request&&request.catch)request.catch(function(){})}catch(error){}}
     if(!enabled&&document.fullscreenElement===root&&document.exitFullscreen){try{var exit=document.exitFullscreen();if(exit&&exit.catch)exit.catch(function(){})}catch(error){}}
@@ -682,103 +605,15 @@ ONE_PRICE_JS = r'''(function(){
       button.setAttribute('aria-pressed','true');filter=button.getAttribute('data-filter');limit=100;render();
     });
   });
-  search.addEventListener('input',function(){query=search.value;limit=100;scheduleRender()});
+  search.addEventListener('input',function(){query=search.value;limit=100;render()});
   certificateSelect.addEventListener('change',function(){certificate=certificateSelect.value;building='all';unit='all';limit=100;render()});
   buildingSelect.addEventListener('change',function(){building=buildingSelect.value;unit='all';limit=100;render()});
   unitSelect.addEventListener('change',function(){unit=unitSelect.value;limit=100;render()});
   [['price-min','priceMin'],['price-max','priceMax'],['total-min','totalMin'],['total-max','totalMax']].forEach(function(pair){
     var input=root.querySelector('[data-role="'+pair[0]+'"]');if(!input)return;
-    input.addEventListener('input',function(){bounds[pair[1]]=input.value===''?null:Number(input.value);if(input.value!==''&&!isFinite(bounds[pair[1]]))bounds[pair[1]]=null;limit=100;scheduleRender()});
-  });
-  function setDiscount(value){
-    var parsed=Math.round(Number(value));
-    if(!isFinite(parsed))parsed=100;
-    discountRate=Math.min(100,Math.max(1,parsed));syncDiscountControls();limit=100;render();
-  }
-  if(discountInput){
-    discountInput.addEventListener('input',function(){
-      if(discountInput.value==='')return;
-      var parsed=Math.round(Number(discountInput.value));if(isFinite(parsed)&&parsed>=1&&parsed<=100)discountRate=parsed;limit=100;scheduleRender();
-    });
-    discountInput.addEventListener('change',function(){setDiscount(discountInput.value)});
-  }
-  root.querySelectorAll('[data-role="discount-preset"]').forEach(function(button){
-    button.addEventListener('click',function(){setDiscount(button.getAttribute('data-discount'))});
+    input.addEventListener('input',function(){bounds[pair[1]]=input.value===''?null:Number(input.value);if(input.value!==''&&!isFinite(bounds[pair[1]]))bounds[pair[1]]=null;limit=100;render()});
   });
   more.addEventListener('click',function(){limit+=200;render()});
-  function xmlEscape(value){return String(value===undefined||value===null||value===''?'—':value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-  function exportStyles(){
-    var values=[];document.querySelectorAll('style').forEach(function(style){values.push(style.textContent)});
-    return values.join('\n')+''+
-      '.floor-export-root{box-sizing:border-box;display:block!important;padding:24px!important;border:0!important;background:#f5f7fa!important;color:#1d1d1f!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}'+
-      '.floor-export-head{display:flex;align-items:start;justify-content:space-between;gap:24px;margin:0 0 8px;padding:18px 20px;border:1px solid #d2d2d7;border-radius:16px 16px 0 0;background:#fff}'+
-      '.floor-export-head strong{display:block;color:#0071e3;font-size:11px;font-weight:850;letter-spacing:.12em}'+
-      '.floor-export-head h1{margin:3px 0 0;color:#1d1d1f;font-size:24px;line-height:1.15;letter-spacing:-.04em}'+
-      '.floor-export-time{display:flex;flex-direction:column;align-items:flex-end;gap:3px;white-space:nowrap}'+
-      '.floor-export-time span:first-child{color:#6e6e73;font-size:10px;font-weight:750}'+
-      '.floor-export-time strong{color:#1d1d1f;font-size:16px;font-variant-numeric:tabular-nums}'+
-      '.floor-export-time em{color:#0071e3;font-size:11px;font-style:normal;font-weight:800}'+
-      '.floor-export-root .floor-canvas{transform:none!important;will-change:auto;margin:0!important}'+
-      '.floor-export-root .floor-room{content-visibility:visible!important}'+
-      '.floor-export-foot{display:flex;justify-content:space-between;gap:18px;margin-top:8px;padding:13px 20px;border:1px solid #d2d2d7;border-radius:0 0 16px 16px;background:#fff;color:#6e6e73;font-size:11px;font-weight:700}'+
-      '.floor-export-foot strong{color:#1d1d1f;font-variant-numeric:tabular-nums}';
-  }
-  function exportFilterSummary(){
-    var values=[];
-    if(certificate!=='all')values.push('预售证 '+certificateSelect.options[certificateSelect.selectedIndex].textContent);
-    if(building!=='all')values.push(building+'栋');
-    if(unit!=='all')values.push(unit+'单元');
-    if(filter!=='all')values.push({available:'可售',sold:'已售',abnormal:'异常'}[filter]||filter);
-    if(query.trim())values.push('“'+query.trim()+'”');
-    return values.length?values.join(' · '):'全部房源';
-  }
-  function downloadBlob(blob,filename){
-    var link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download=filename;document.body.appendChild(link);link.click();
-    window.setTimeout(function(){URL.revokeObjectURL(link.href);link.remove()},1000);
-  }
-  function safeFilename(value){return String(value).replace(/[\\/:*?"|]/g,'-').replace(/\s+/g,'-').slice(0,48)}
-  function exportFloorImage(){
-    var source=floorResults.querySelector('.floor-canvas');
-    if(!source||view!=='floor')return;
-    var busy=document.createElement('p');busy.className='floor-export-busy';busy.setAttribute('role','status');busy.textContent='正在生成图片…';floorResults.appendChild(busy);
-    var title=(document.querySelector('.hero h1')||{}).textContent||'楼盘楼层分布';
-    var timeLabel=dataTime&&dataTime!=='—'?dataTime:'未记录';
-    var clone=source.cloneNode(true);clone.style.transform='none';clone.style.willChange='auto';
-    var sourceWidth=Math.max(320,source.scrollWidth),sourceHeight=Math.max(240,source.scrollHeight);
-    var width=sourceWidth+48,height=sourceHeight+214;
-    var markup='<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'" viewBox="0 0 '+width+' '+height+'">'+
-      '<foreignObject width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml" class="floor-results floor-export-root">'+
-      '<style>'+exportStyles()+'</style>'+
-      '<header class="floor-export-head"><div><strong>FLOOR MAP</strong><h1>'+xmlEscape(title)+'</h1></div><div class="floor-export-time"><span>数据时间</span><strong>'+xmlEscape(timeLabel)+'</strong><em>'+(discountRate===100?'原价':'折后 '+discountRate+'%')+'</em></div></header>'+
-      clone.outerHTML+
-      '<footer class="floor-export-foot"><span>'+xmlEscape(exportFilterSummary())+'</span><span>数据时间：<strong>'+xmlEscape(timeLabel)+'</strong></span></footer>'+
-      '</div></foreignObject></svg>';
-    var parsed=new DOMParser().parseFromString(markup,'image/svg+xml');
-    if(parsed.getElementsByTagName('parsererror').length)throw new Error('图片文档生成失败');
-    var svgUrl=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(parsed.documentElement)],{type:'image/svg+xml;charset=utf-8'}));
-    var image=new Image();
-    image.onload=function(){
-      var maxSide=12000,maxPixels=24000000,scale=Math.min(2,Math.max(1,(width<1200?1.6:1)));
-      if(width*scale>maxSide||height*scale>maxSide)scale=Math.min(scale,maxSide/Math.max(width,height));
-      if(width*height*scale*scale>maxPixels)scale=Math.min(scale,Math.sqrt(maxPixels/(width*height)));
-      var canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(width*scale));canvas.height=Math.max(1,Math.round(height*scale));
-      var context=canvas.getContext('2d');context.fillStyle='#f5f7fa';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(image,0,0,canvas.width,canvas.height);
-      URL.revokeObjectURL(svgUrl);
-      if(canvas.toBlob){
-        canvas.toBlob(function(blob){
-          if(blob)downloadBlob(blob,'楼层分布-'+safeFilename(title)+'-'+safeFilename(timeLabel)+'.png');
-          else window.alert('图片生成失败：浏览器未返回图片数据');
-          busy.remove();
-        },'image/png');
-      }else{
-        var dataLink=document.createElement('a');dataLink.href=canvas.toDataURL('image/png');dataLink.download='楼层分布-'+safeFilename(title)+'-'+safeFilename(timeLabel)+'.png';document.body.appendChild(dataLink);dataLink.click();window.setTimeout(function(){dataLink.remove()},1000);busy.remove();
-      }
-    };
-    image.onerror=function(){URL.revokeObjectURL(svgUrl);busy.remove();window.alert('当前浏览器不支持直接导出，请长按楼层分布截图保存')};
-    image.src=svgUrl;
-  }
-  if(downloadFloorButton)downloadFloorButton.addEventListener('click',function(){try{exportFloorImage()}catch(error){window.alert('图片生成失败：'+error.message)}});
-  syncDiscountControls();syncFilterControls();
   function loadJSON(url){
     if(!/\.json\.gz$/.test(url))return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()});
     if(typeof DecompressionStream==='undefined')return Promise.reject(new Error('当前浏览器不支持解压静态 JSON'));
@@ -792,12 +627,9 @@ ONE_PRICE_JS = r'''(function(){
     (data.certificates||[]).forEach(function(certificate){
       var id=String(certificate.id||'unknown');var name=certificate.name||('预售证 '+id);
       var option=document.createElement('option');option.value=id;option.textContent=name;certificateSelect.appendChild(option);
-      (certificate.rooms||[]).forEach(function(room){
-        var picked=Object.assign({},pickRoom(room),{certificateId:id,certificateName:name});
-        picked.searchText=(name+' '+picked.searchText).toLowerCase();rooms.push(picked);
-      });
+      (certificate.rooms||[]).forEach(function(room){rooms.push(Object.assign({},pickRoom(room),{certificateId:id,certificateName:name}))});
     });
-    setDataTime(data&&data.generatedAt);priceGroups=buildPricePalette(rooms);render();
+    priceGroups=buildPricePalette(rooms);render();
   }).catch(function(error){
     tbody.replaceChildren(document.createElement('tr'));
     var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';

@@ -4,7 +4,7 @@ import json
 from typing import Any
 
 from .design import APPLE_DESIGN_CSS, APPLE_DETAIL_CSS
-from .one_price import FLOOR_MOBILE_CSS, ONE_PRICE_CSS, ONE_PRICE_JS, one_price_section
+from .one_price import ONE_PRICE_CSS, ONE_PRICE_JS, one_price_section
 from .room_types import ROOM_TYPE_CSS, ROOM_TYPE_JS, room_type_section
 from .render import esc, field_rows, integer, money, summarize
 
@@ -117,7 +117,7 @@ def render_project_page(
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="{esc(project.get('name'))} 楼盘销控详情，包含接口全部字段、标准销控图、抖音版销控图与历史销控图。">
 <title>{esc(project.get('name'))} · 楼盘销控详情</title>
-<style>{DETAIL_CSS}{APPLE_DESIGN_CSS}{ONE_PRICE_CSS}{FLOOR_MOBILE_CSS}{ROOM_TYPE_CSS}{APPLE_DETAIL_CSS}</style>
+<style>{DETAIL_CSS}{APPLE_DESIGN_CSS}{ONE_PRICE_CSS}{ROOM_TYPE_CSS}{APPLE_DETAIL_CSS}</style>
 </head>
 <body>
 <div class="shell">

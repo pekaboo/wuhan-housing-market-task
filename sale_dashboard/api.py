@@ -97,9 +97,7 @@ def create_app(service: DashboardService | None = None) -> FastAPI:
     ) -> dict[str, Any]:
         if run_upstream(lambda: service.project(project_id)) is None:
             raise HTTPException(status_code=404, detail='Project not found')
-        one_price_snapshot = run_upstream(lambda: service.one_price(project_id, refresh=refresh))
-        one_price_snapshot.setdefault('generatedAt', china_timestamp())
-        return one_price_snapshot
+        return run_upstream(lambda: service.one_price(project_id, refresh=refresh))
 
     @app.get('/api/projects/{project_id}/room-types')
     def project_room_types(
@@ -132,7 +130,6 @@ def create_app(service: DashboardService | None = None) -> FastAPI:
 
         project = projects[index]
         one_price_snapshot = run_upstream(lambda: service.one_price(project_id, refresh=refresh))
-        one_price_snapshot.setdefault('generatedAt', china_timestamp())
         room_type_snapshot = run_upstream(lambda: service.room_types(project_id, refresh=refresh))
         return render_project_page(
             project,
