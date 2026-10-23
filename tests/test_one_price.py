@@ -401,7 +401,11 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert "article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out')" in detail
     assert "if(!matched){article.textContent='—';return article}" in detail
     assert '.floor-room.filtered-out{width:100%;height:100%;min-height:100%' in detail
+    assert '.floor-room.sold{--price-color:var(--map-ghost);--status-color:var(--map-ghost);border-color:color-mix(in srgb,var(--map-ghost) 28%,transparent);border-left-color:var(--map-ghost);background:color-mix(in srgb,var(--map-ghost) 12%,var(--map-panel));color:var(--map-ghost)}' in detail
+    assert '.floor-room.sold .floor-price,.floor-room.sold strong,.floor-room.sold .floor-meta,.floor-room.sold .floor-total{color:var(--map-ghost)}' in detail
+    assert '.floor-room.sold .status{color:var(--map-ghost);background:color-mix(in srgb,var(--map-ghost) 14%,transparent)}' in detail
     assert 'priceGroups.get(priceKey(room))' in detail
+    assert "if(group&&available)article.style.setProperty('--price-color',group)" in detail
     assert "swatch.className='price-chip'" in detail
     assert 'function detailBuildingLimit()' in detail
     assert "matchMedia('(max-width: 520px)').matches)return 3" in detail

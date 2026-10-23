@@ -158,7 +158,9 @@ ONE_PRICE_CSS = r'''.one-price{overflow:hidden;margin:0 0 24px;border:1px solid 
 .room-cells{display:grid;height:calc(var(--floor-height) - 10px);grid-template-rows:100%;grid-auto-rows:100%;grid-auto-flow:column;grid-auto-columns:var(--room-width);gap:6px;align-content:stretch}
 .floor-room{position:relative;box-sizing:border-box;width:100%;height:100%;min-width:0;min-height:0;padding:7px 9px 6px 10px;overflow:hidden;border:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);border-left:4px solid var(--price-color,var(--map-brand));border-radius:7px;background:var(--map-panel);color:var(--map-ink);box-shadow:0 1px 2px #00000006;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);content-visibility:auto;contain:layout paint style;contain-intrinsic-size:auto 86px}
 .floor-room.available{--status-color:var(--map-available);background:color-mix(in srgb,var(--map-available) 7%,var(--map-panel))}
-.floor-room.sold{--status-color:var(--map-sold);background:color-mix(in srgb,var(--map-sold) 7%,var(--map-panel))}
+.floor-room.sold{--price-color:var(--map-ghost);--status-color:var(--map-ghost);border-color:color-mix(in srgb,var(--map-ghost) 28%,transparent);border-left-color:var(--map-ghost);background:color-mix(in srgb,var(--map-ghost) 12%,var(--map-panel));color:var(--map-ghost)}
+.floor-room.sold .floor-price,.floor-room.sold strong,.floor-room.sold .floor-meta,.floor-room.sold .floor-total{color:var(--map-ghost)}
+.floor-room.sold .status{color:var(--map-ghost);background:color-mix(in srgb,var(--map-ghost) 14%,transparent)}
 .floor-room:hover,.floor-room:focus-visible{border-color:color-mix(in srgb,var(--map-brand) 42%,var(--map-line));box-shadow:0 0 0 3px color-mix(in srgb,var(--map-brand) 14%,transparent),0 8px 20px #00000012}
 .floor-room:focus-visible{outline:3px solid color-mix(in srgb,var(--map-focus) 58%,transparent);outline-offset:2px}
 .floor-room.filtered-out,.floor-missing{--price-color:var(--map-ghost);--status-color:var(--map-ghost);padding:0;border:1px solid color-mix(in srgb,var(--map-ghost) 24%,transparent);border-left-width:1px;border-radius:7px;background:color-mix(in srgb,var(--map-ghost) 12%,transparent);color:var(--map-ghost);font-size:11px;font-weight:650;text-align:center;box-shadow:none}
@@ -363,7 +365,7 @@ ONE_PRICE_JS = r'''(function(){
     article.setAttribute('data-price-group',priceKey(room));article.setAttribute('data-room-status',available?'available':'sold');
     article.setAttribute('aria-label',text(room.buildName)+text(room.unitName)+text(room.floor)+' '+text(room.roomName)+(available?'，可售':'，已售')+'，单价 '+money(price)+'，总价 '+total(totalPrice)+(matched?'':'，筛选外'));
     if(!matched){article.textContent='—';return article}
-    if(group)article.style.setProperty('--price-color',group);
+    if(group&&available)article.style.setProperty('--price-color',group);
     var priceLabel=document.createElement('span');priceLabel.className='floor-price';priceLabel.textContent=money(price);article.appendChild(priceLabel);
     var name=document.createElement('strong');name.textContent=text(room.roomName);article.appendChild(name);
     var meta=document.createElement('span');meta.className='floor-meta';meta.textContent=text(room.roomLayout)+' · '+area(room.area);article.appendChild(meta);
