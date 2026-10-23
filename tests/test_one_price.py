@@ -538,6 +538,13 @@ def test_one_price_floor_map_can_expand_to_full_screen_and_exit_safely(tmp_path)
     assert '.one-price.floor-fullscreen' in detail
     assert 'function setFloorFullscreen(enabled,useNative)' in detail
     assert 'function floorViewportInsets(stage)' in detail
+    assert "filtersOpen=!window.matchMedia('(max-width: 760px)').matches" in detail
+    assert "roomControls.classList.toggle('filters-collapsed',!filtersOpen)" in detail
+    assert ".one-price.floor-fullscreen .room-controls.filters-collapsed [data-role=\"reset-filters\"]{display:none}" in detail
+    assert '.one-price.floor-fullscreen .floor-toolbar{right:calc(10px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));left:calc(10px + env(safe-area-inset-left));z-index:50;flex-wrap:nowrap' in detail
+    assert '.one-price.floor-fullscreen .back-overview{left:calc(10px + env(safe-area-inset-left));bottom:calc(64px + env(safe-area-inset-bottom));z-index:55;min-height:40px}' in detail
+    assert "if(view==='table'||event.button!==0)return;gestureMoved=false;var stage=event.target.closest('.floor-stage');if(!stage)return" in detail
+    assert "floorResults.addEventListener('touchmove',function(event)" in detail
     assert 'var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom)' in detail
     assert detail.count('var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom)') == 2
     assert 'root.requestFullscreen' in detail
