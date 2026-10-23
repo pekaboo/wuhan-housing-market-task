@@ -403,7 +403,10 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert '.floor-room.filtered-out{width:100%;height:100%;min-height:100%' in detail
     assert 'priceGroups.get(priceKey(room))' in detail
     assert "swatch.className='price-chip'" in detail
-    assert 'DETAIL_BUILDING_LIMIT=16' in detail
+    assert 'function detailBuildingLimit()' in detail
+    assert "matchMedia('(max-width: 520px)').matches)return 3" in detail
+    assert "matchMedia('(max-width: 760px)').matches)return 4" in detail
+    assert "matchMedia('(max-width: 1100px)').matches)return 8" in detail
     assert 'building-overview' in detail
     assert 'focusBuilding(column)' in detail
     assert 'data-role="back-to-overview"' in detail
@@ -574,11 +577,44 @@ def test_one_price_floor_rendering_is_progressive_and_keeps_filtered_cards_light
     assert "stage.setAttribute('aria-busy','true')" in detail
     assert "stage.removeAttribute('aria-busy')" in detail
     assert 'floor-render-status' in detail
-    assert 'cells.appendChild(fragment)' in detail
-    assert 'if(fragment)canvas.firstChild.appendChild(fragment)' in detail
+    assert 'jobs.push(function(){' in detail
+    assert 'return row;' in detail
+    assert 'if(fragment.firstChild)canvas.firstChild.appendChild(fragment)' in detail
     assert 'else canvas.firstChild.appendChild(fragment)' not in detail
-    assert 'roomCell(room,matched)' in detail
-    assert 'var matched=roomMatches(room)' in detail
+    assert 'roomCell(room,roomMatches(room))' in detail
     assert "if(!matched){article.textContent='—';return article}" in detail
-    assert detail.count('var matched=roomMatches(room)') == 1
+    assert 'var matched=roomMatches(room)' not in detail
+    assert 'function scheduleRender(delay)' in detail
+    assert 'picked.searchText=' in detail
+    assert 'FLOOR_OPTIMIZATION_CSS' not in detail
+    assert '.floor-column-head,.building-cell{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--map-panel)}' in detail
+    assert '.floor-room{box-shadow:none;transition:none}' in detail
+
+
+def test_one_price_floor_discount_defaults_to_full_price(tmp_path):
+    one_price = {
+        'status': 'complete',
+        'certificates': [{**certificate(903), 'rooms': [room(31, price=20000, totalPrice=2000000)]}],
+    }
+    site_dir = tmp_path / 'site'
+
+    write_site(
+        [{'id': 9002, 'name': '价格折扣', 'date': '2026-08-28'}],
+        site_dir=site_dir,
+        generated_at='2026-08-28 08:00:00',
+        one_price_snapshots={9002: one_price},
+    )
+
+    detail = (site_dir / 'projects' / '9002' / 'index.html').read_text(encoding='utf-8')
+    assert 'data-role="discount-filter"' in detail
+    assert 'value="100"' in detail
+    assert 'discountRate=100' in detail
+    assert 'function discounted(value)' in detail
+    assert 'parsed*discountRate/100' in detail
+    assert 'var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);' in detail
+    assert 'var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);var group=' in detail
+    assert 'priceLabel.textContent=money(price)' in detail
+    assert 'totalLabel.textContent=total(totalPrice)' in detail
+    assert "discountRate===100?'':' · 折后 '+discountRate+'%'" in detail
+    assert "discountInput.addEventListener('change'" in detail
     assert '.floor-room{position:relative;box-sizing:border-box;width:100%;height:100%;min-width:0;min-height:0;padding:7px 9px 6px 10px;overflow:hidden;border:1px solid color-mix(in srgb,var(--map-ink) 10%,transparent);border-left:4px solid var(--price-color,var(--map-brand));border-radius:7px;background:var(--map-panel);color:var(--map-ink);box-shadow:0 1px 2px #00000006;transition:background .18s var(--ease-out),border-color .18s var(--ease-out),box-shadow .18s var(--ease-out);content-visibility:auto;contain:layout paint style;contain-intrinsic-size:auto 86px' in detail
