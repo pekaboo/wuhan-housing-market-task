@@ -82,6 +82,7 @@ def test_featured_project_list_is_available_to_scheduled_and_manual_actions():
     assert 'ID 或名称' in featured
     assert '806507620348020' in featured
     assert '795364598689861' in featured
+    assert '781406555324501' in featured
 
 
 def test_artifact_target_config_exists_and_holds_a_single_valid_value():
