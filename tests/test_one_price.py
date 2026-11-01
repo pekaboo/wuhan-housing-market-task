@@ -419,6 +419,8 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert 'mobileFullFloor=true' in detail
     assert 'mobileFullFloor=false' in detail
     assert "if(!isMobileViewport()||mobileFullFloor){floorResults.dataset.zoomLevel='high';return}" in detail
+    assert "data-zoom-level='low'] .floor-price" not in detail
+    assert "data-zoom-level='medium'] .floor-price" not in detail
     assert "if(signature===floorSignature&&existingStage&&existingStage.dataset.renderState==='complete')" in detail
     assert 'function updateFloorFilters(allRooms)' in detail
     assert 'building-overview' in detail
