@@ -82,7 +82,7 @@ FastAPI
 - `site/featured-daily-sales/` 按楼盘 → 楼栋 → 单元/楼层/房号展示；
 - `site/data/featured-daily-sales/YYYY-MM-DD.json` 保留逐日历史，`latest.json` 是最新日报；
 - 统计来自官方昨日网签明细，并在生成时校验楼栋明细合计与接口楼盘汇总值一致；
-- 同步成功后会评论到固定的 GitHub Issue 并 `@pekaboo`，点击通知里的链接查看日报。
+- 同步成功后通过 Bark 推送每个重点楼盘的成交摘要；点击通知进入对应楼盘详情页。Bark 地址保存在 `BARK_URL` Actions Secret 中。
 
 ### 实时输出
 

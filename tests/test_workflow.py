@@ -57,11 +57,12 @@ def test_featured_daily_sales_workflow_tracks_yesterday_by_building():
     assert 'countMatchesSource' in workflow
     assert 'gzip.decompress' in workflow
     assert "git add -A -- . ':(exclude).github'" in workflow
-    assert 'issues: write' in workflow
-    assert 'Notify featured daily sales result' in workflow
-    assert '@pekaboo' in workflow
-    assert 'featured-daily-sales/' in workflow
-    assert 'gh issue comment' in workflow
+    assert 'Send Bark notifications' in workflow
+    assert 'BARK_URL: ${{ secrets.BARK_URL }}' in workflow
+    assert 'urlopen' in workflow
+    assert "group': 'example'" in workflow
+    assert "ttl': '600'" in workflow
+    assert 'projects/' in workflow
 
 
 def test_featured_project_list_is_available_to_scheduled_and_manual_actions():

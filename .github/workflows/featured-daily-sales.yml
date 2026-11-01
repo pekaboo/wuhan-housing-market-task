@@ -15,7 +15,6 @@ env:
 
 permissions:
   contents: write
-  issues: write
 
 jobs:
   sync-and-publish:
@@ -139,33 +138,44 @@ jobs:
             git push
           fi
 
-      - name: Notify featured daily sales result
+      - name: Send Bark notifications
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BARK_URL: ${{ secrets.BARK_URL }}
         run: |
+          test -n "$BARK_URL" || { echo "::error::Set the BARK_URL repository secret."; exit 1; }
           python - <<'PY'
           import json
+          import os
+          import ssl
           from pathlib import Path
+          from urllib.parse import quote, urlencode
+          from urllib.request import Request, urlopen
 
           report = json.loads(Path('site/data/featured-daily-sales/latest.json').read_text(encoding='utf-8'))
-          lines = [
-              f"### 重点楼盘 {report.get('date') or '昨日'} 成交：{report.get('totalSold') or 0} 套",
-              "",
-              "@pekaboo [打开重点楼盘昨日成交日报](https://pages.wangyitu.tech/wuhan-housing-market-dashboard/featured-daily-sales/)",
-              "",
-          ]
-          for project in report.get('projects', []):
-              buildings = ', '.join(
-                  f"{building.get('shortBuildName') or building.get('buildName') or '未知楼栋'}: {building.get('soldCount') or 0} 套"
-                  for building in project.get('buildings', [])
-              ) or '无成交'
-              lines.append(f"- **{project.get('name') or project.get('projectId')}**：{project.get('soldCount') or 0} 套（{buildings}）")
-          Path('/tmp/featured-daily-sales-notification.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
-          PY
+          base_url = os.environ['BARK_URL'].rstrip('/')
+          if not base_url.startswith('https://'):
+              raise SystemExit('BARK_URL must be an HTTPS endpoint')
 
-          issue_number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --json number,title --jq '.[] | select(.title == "Featured Daily Sales daily notification") | .number' | head -n 1)
-          if [ -z "$issue_number" ]; then
-            issue_url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Featured Daily Sales daily notification" --assignee pekaboo --body "This issue carries daily @pekaboo notifications for featured-project sales.")
-            issue_number="${issue_url##*/}"
-          fi
-          gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body-file /tmp/featured-daily-sales-notification.md
+          for project in report.get('projects', []):
+              date = report.get('date') or '昨日'
+              name = project.get('name') or project.get('projectId') or '重点楼盘'
+              count = int(project.get('soldCount') or 0)
+              buildings = project.get('buildings') or []
+              building_text = '；'.join(
+                  f"{building.get('shortBuildName') or building.get('buildName') or '未知楼栋'} {building.get('soldCount') or 0}套"
+                  for building in buildings
+              ) or '无成交'
+              title = f'{name} 昨日成交 {count} 套'
+              body = f'{date}：{building_text}'
+              project_url = f"https://pages.wangyitu.tech/wuhan-housing-market-dashboard/projects/{quote(str(project.get('projectId')), safe='')}/"
+              notification_url = (
+                  f"{base_url}/{quote(title, safe='')}/{quote(body, safe='')}?"
+                  + urlencode({'group': 'example', 'ttl': '600', 'url': project_url})
+              )
+              request = Request(notification_url, headers={'User-Agent': 'wuhan-housing-market-task-action'})
+              with urlopen(request, timeout=15, context=ssl.create_default_context()) as response:
+                  result = json.loads(response.read().decode('utf-8'))
+              if result.get('code') != 200:
+                  raise SystemExit(f"Bark rejected notification for {name}: {result}")
+              print(f'notified {name}: {count} sold')
+          PY
