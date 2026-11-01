@@ -15,6 +15,7 @@ env:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   sync-and-publish:
@@ -137,3 +138,34 @@ jobs:
             git commit -m "chore: update featured daily sales"
             git push
           fi
+
+      - name: Notify featured daily sales result
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path('site/data/featured-daily-sales/latest.json').read_text(encoding='utf-8'))
+          lines = [
+              f"### 重点楼盘 {report.get('date') or '昨日'} 成交：{report.get('totalSold') or 0} 套",
+              "",
+              "@pekaboo [打开重点楼盘昨日成交日报](https://pages.wangyitu.tech/wuhan-housing-market-dashboard/featured-daily-sales/)",
+              "",
+          ]
+          for project in report.get('projects', []):
+              buildings = ', '.join(
+                  f"{building.get('shortBuildName') or building.get('buildName') or '未知楼栋'}: {building.get('soldCount') or 0} 套"
+                  for building in project.get('buildings', [])
+              ) or '无成交'
+              lines.append(f"- **{project.get('name') or project.get('projectId')}**：{project.get('soldCount') or 0} 套（{buildings}）")
+          Path('/tmp/featured-daily-sales-notification.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
+
+          issue_number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --json number,title --jq '.[] | select(.title == "Featured Daily Sales daily notification") | .number' | head -n 1)
+          if [ -z "$issue_number" ]; then
+            issue_url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Featured Daily Sales daily notification" --assignee pekaboo --body "This issue carries daily @pekaboo notifications for featured-project sales.")
+            issue_number="${issue_url##*/}"
+          fi
+          gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body-file /tmp/featured-daily-sales-notification.md
