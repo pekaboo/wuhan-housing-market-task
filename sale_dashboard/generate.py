@@ -185,6 +185,8 @@ def write_site(
             featured_keys,
             generated_at=timestamp,
             projects=projects,
+            one_price_snapshots=snapshots,
+            room_type_snapshots=room_snapshots,
         )
         reports = {str(report['date']): report for report in featured_sales_history if report.get('date')}
         reports[str(current_report['date'])] = current_report

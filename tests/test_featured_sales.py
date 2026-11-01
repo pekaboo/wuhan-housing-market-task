@@ -51,6 +51,106 @@ def test_builds_featured_daily_sales_by_building_and_keeps_zero_sale_projects():
     assert '昨日无成交' in page
 
 
+def test_featured_sales_report_enriches_project_and_building_details():
+    snapshot = {
+        'date': '2026-10-31',
+        'list': [
+            {
+                'id': 123,
+                'name': '重点盘一',
+                'soldNum': 1,
+                'roomList': [
+                    {
+                        'buildName': '洪山区测试地块项目1',
+                        'shortBuildName': '1#',
+                        'unitName': '1',
+                        'roomName': '101',
+                        'area': 100,
+                        'price': 10000,
+                        'totalPrice': 1000000,
+                        'saleStatus': 1,
+                    }
+                ],
+            }
+        ],
+    }
+    projects = [{'id': 123, 'name': '重点盘一', 'address': '洪山区测试街道 1 号', 'salePrice': 10000, 'soldNum': 50}]
+    one_price = {
+        123: {
+            'projectId': 123,
+            'status': 'complete',
+            'certificates': [
+                {
+                    'name': '测试预售证',
+                    'houseNum': 100,
+                    'availableRoomNum': 50,
+                    'soldNum': 50,
+                    'abnormalNum': 1,
+                    'completionTime': '2027-12-01',
+                    'deliveryTime': '2028-01-01',
+                    'rooms': [
+                        {'saleStatus': 2, 'area': 100, 'totalPrice': 1000000, 'delivery': '毛坯房'},
+                    ],
+                }
+            ],
+        }
+    }
+    room_types = {
+        123: {
+            'projectId': 123,
+            'status': 'complete',
+            'types': [
+                {
+                    'name': '100平米',
+                    'buildList': [
+                        {
+                            'buildName': '洪山区测试地块项目1',
+                            'buildShortName': '1#',
+                            'buildType': '高层',
+                            'floorTotal': 18,
+                            'unitName': '1',
+                            'roomTotal': 100,
+                            'soldNum': 50,
+                            'availableRoomNum': 50,
+                            'evidenceName': '测试预售证',
+                        }
+                    ],
+                }
+            ],
+        }
+    }
+
+    report = build_featured_daily_sales(
+        snapshot,
+        ['123'],
+        generated_at='2026-11-01 09:00:00',
+        projects=projects,
+        one_price_snapshots=one_price,
+        room_type_snapshots=room_types,
+    )
+    page = render_featured_daily_sales_page(report, [report])
+
+    project = report['projects'][0]
+    assert project['location'] == {'kind': '地址/街道', 'value': '洪山区测试街道 1 号'}
+    assert project['district'] == '洪山'
+    assert project['inventory']['certificateCount'] == 1
+    assert project['inventory']['roomCount'] == 100
+    assert project['inventory']['availableCount'] == 50
+    assert project['inventory']['availableAveragePrice'] == 10000
+    building = project['buildings'][0]
+    assert building['officialBuildName'] == '洪山区测试地块项目1'
+    assert building['buildType'] == '高层'
+    assert building['floorTotal'] == 18
+    assert building['presaleCertificates'] == ['测试预售证']
+    assert '地址/街道' in page
+    assert '洪山区测试街道 1 号' in page
+    assert '去化率' in page
+    assert '预计竣工' in page
+    assert '楼型 高层' in page
+    assert '楼层 18 层' in page
+    assert '查看完整详情' in page
+
+
 def test_write_site_preserves_featured_daily_sales_history_and_writes_latest_page():
     with tempfile.TemporaryDirectory() as temporary_directory:
         site_dir = Path(temporary_directory)
