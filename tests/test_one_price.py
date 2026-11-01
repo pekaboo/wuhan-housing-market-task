@@ -398,19 +398,22 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert 'function roomMatches(room)' in detail
     assert 'function scopedRooms()' in detail
     assert 'renderFloorView(visibleRooms)' in detail
-    assert "article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out')" in detail
-    assert "if(!matched){article.textContent='—';return article}" in detail
-    assert '.floor-room.filtered-out{width:100%;height:100%;min-height:100%' in detail
+    assert "article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out')+(isActive?' result-active':'')" in detail
+    assert '.floor-room.filtered-out>*{display:none}' in detail
+    assert ".floor-room.filtered-out::after{content:'—'}" in detail
+    assert 'function updateRoomCell(room,matched,isActive)' in detail
+    assert 'roomElements.set(room,article)' in detail
     assert '.floor-room.sold{--price-color:var(--map-ghost);--status-color:var(--map-ghost);border-color:color-mix(in srgb,var(--map-ghost) 28%,transparent);border-left-color:var(--map-ghost);background:color-mix(in srgb,var(--map-ghost) 12%,var(--map-panel));color:var(--map-ghost)}' in detail
     assert '.floor-room.sold .floor-price,.floor-room.sold strong,.floor-room.sold .floor-meta,.floor-room.sold .floor-total{color:var(--map-ghost)}' in detail
     assert '.floor-room.sold .status{color:var(--map-ghost);background:color-mix(in srgb,var(--map-ghost) 14%,transparent)}' in detail
     assert 'priceGroups.get(priceKey(room))' in detail
     assert "if(group&&available)article.style.setProperty('--price-color',group)" in detail
     assert "swatch.className='price-chip'" in detail
-    assert 'function detailBuildingLimit()' in detail
-    assert "matchMedia('(max-width: 520px)').matches)return 3" in detail
-    assert "matchMedia('(max-width: 760px)').matches)return 4" in detail
-    assert "matchMedia('(max-width: 1100px)').matches)return 8" in detail
+    assert "var overview=building==='all'&&unit==='all'" in detail
+    assert "canvas.className='floor-canvas'+(overview?' overview-canvas':'')" in detail
+    assert "var signature=(building==='all'&&unit==='all'?'overview':'detail')" in detail
+    assert "if(signature===floorSignature&&existingStage&&existingStage.dataset.renderState==='complete')" in detail
+    assert 'function updateFloorFilters(allRooms)' in detail
     assert 'building-overview' in detail
     assert 'focusBuilding(column)' in detail
     assert 'data-role="back-to-overview"' in detail
@@ -424,12 +427,15 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert 'floorResults.appendChild(stage);if(backButton)floorResults.appendChild(backButton);' in detail
     assert 'var selectableUnit=event.target.closest' in detail
     assert 'if(!selectableUnit){event.preventDefault()' in detail
-    assert "block.addEventListener('pointerup',function(event){if(event.pointerType==='touch'&&!gestureMoved)focusBuilding(column)})" in detail
-    assert 'if(gestureMoved)return;focusBuilding(column)' in detail
+    assert "block.addEventListener('pointerup',function(event){if(!gestureMoved)focusBuilding(column)})" in detail
+    assert "block.addEventListener('click',function(event){if(event.detail===0)focusBuilding(column)})" in detail
+    assert 'data-role="result-prev"' in detail
+    assert 'data-role="result-next"' in detail
+    assert 'data-role="result-status"' in detail
     assert "building='all';unit='all'" in detail
     assert 'var columnFloors=floorRooms.get(column.key).size' in detail
     assert "block.style.setProperty('--floors',String(columnFloors))" in detail
-    assert "columnFloors+' 层，'" in detail
+    assert "匹配 '+matched+' / '+values.length+' 套房源'" in detail
     assert "block.className='building-column building-overview'" in detail
 
 
@@ -475,7 +481,11 @@ def test_one_price_floor_map_has_apple_maps_style_proportional_gestures(tmp_path
         "floorResults.style.setProperty('--pan-y'",
         'Math.min(2.2,Math.max(.18',
         'function fitView(canvas)',
-        'function resetView(canvas){fitView(canvas)}',
+        'function resetView(canvas){if(canvas)fitView(canvas)}',
+        'function queueTransform(canvas,shouldClamp)',
+        'var transformFrame=null',
+        'stageBoxCache',
+        'requestAnimationFrame(function(){transformFrame=null',
         'fitView(canvas)',
         '.floor-canvas{position:relative;',
         'transform-origin:0 0',
@@ -543,7 +553,9 @@ def test_one_price_floor_map_can_expand_to_full_screen_and_exit_safely(tmp_path)
     assert ".one-price.floor-fullscreen .room-controls.filters-collapsed [data-role=\"reset-filters\"]{display:none}" in detail
     assert '.one-price.floor-fullscreen .floor-toolbar{right:calc(10px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));left:calc(10px + env(safe-area-inset-left));z-index:50;flex-wrap:nowrap' in detail
     assert '.one-price.floor-fullscreen .back-overview{left:calc(10px + env(safe-area-inset-left));bottom:calc(64px + env(safe-area-inset-bottom));z-index:55;min-height:40px}' in detail
-    assert "if(view==='table'||event.button!==0)return;gestureMoved=false;var stage=event.target.closest('.floor-stage');if(!stage)return" in detail
+    assert "if(view==='table'||event.button!==0)return;var stage=event.target.closest('.floor-stage');if(!stage)return" in detail
+    assert 'function revealFloorStage(stage)' in detail
+    assert "stage.scrollIntoView({block:'center'})" in detail
     assert "floorResults.addEventListener('touchmove',function(event)" in detail
     assert 'var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom)' in detail
     assert detail.count('var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom)') == 2
@@ -592,9 +604,9 @@ def test_one_price_floor_rendering_is_progressive_and_keeps_filtered_cards_light
     assert 'return row;' in detail
     assert 'if(fragment.firstChild)canvas.firstChild.appendChild(fragment)' in detail
     assert 'else canvas.firstChild.appendChild(fragment)' not in detail
-    assert 'roomCell(room,roomMatches(room))' in detail
-    assert "if(!matched){article.textContent='—';return article}" in detail
-    assert 'var matched=roomMatches(room)' not in detail
+    assert 'cells.appendChild(roomCell(room))' in detail
+    assert 'allRooms.forEach(function(room,index){updateRoomCell(room,roomMatches(room),index===resultIndex&&resultRooms[index]===room)})' in detail
+    assert 'overviewBindings.forEach(function(binding)' in detail
     assert 'function scheduleRender(delay)' in detail
     assert 'picked.searchText=' in detail
     assert 'FLOOR_OPTIMIZATION_CSS' not in detail
@@ -623,7 +635,7 @@ def test_one_price_floor_discount_defaults_to_full_price(tmp_path):
     assert 'function discounted(value)' in detail
     assert 'parsed*discountRate/100' in detail
     assert 'var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);' in detail
-    assert 'var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);var group=' in detail
+    assert "var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);\n    var group=priceGroups.get(priceKey(room));" in detail
     assert 'priceLabel.textContent=money(price)' in detail
     assert 'totalLabel.textContent=total(totalPrice)' in detail
     assert "discountRate===100?'':' · 折后 '+discountRate+'%'" in detail

@@ -113,9 +113,11 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
         <button type="button" data-role="zoom-in">放大</button>
         <button type="button" data-role="zoom-out">缩小</button>
         <button type="button" data-role="reset-zoom">复位</button>
-        <button type="button" data-role="floor-fullscreen" aria-pressed="false">全屏地图</button>
+        <button type="button" data-role="floor-fullscreen" aria-pressed="false">全屏</button>
         <label class="zoom-control">缩放<input data-role="zoom-range" type="range" min="18" max="220" step="1" value="100" aria-label="楼层分布缩放比例"></label>
-        <button type="button" data-role="all-buildings">全部楼栋</button>
+        <button type="button" data-role="result-prev" disabled>上一结果</button>
+        <span class="result-status" data-role="result-status" aria-live="polite">0/0</span>
+        <button type="button" data-role="result-next" disabled>下一结果</button>
         <span><output data-role="zoom-scale">100%</output></span>
       </div>
       <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽 / 滚轮上下平移，双指捏合等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
@@ -174,7 +176,7 @@ ONE_PRICE_CSS = r'''.one-price{overflow:hidden;margin:0 0 24px;border:1px solid 
 .floor-room .status{margin-top:3px;height:17px;padding:0 5px;font-size:8px}
 .floor-room .status+.status{margin-left:3px}
 .price-chip{position:absolute;top:5px;right:5px;width:10px;height:10px;border:2px solid color-mix(in srgb,var(--map-panel) 90%,transparent);border-radius:3px;background:var(--price-color,var(--map-brand));box-shadow:0 1px 2px #00000012}
-@media (prefers-color-scheme:dark){.floor-results{--map-surface:#0b141c;--map-panel:#1d1d20;--map-panel-soft:#2c2c2e;--map-ink:#f5f5f7;--map-muted:#a1a1a6;--map-line:#38383a;--map-line-strong:#5a5a5e;--map-brand:#2997ff;--map-brand-ink:#64a8ff;--map-focus:#64a8ff;--map-available:#30d158;--map-sold:#ff453a;--map-ghost:#98989d}.one-price.floor-fullscreen{background:#0b141c}.one-price.floor-fullscreen .room-controls{border-color:#48484a;background:color-mix(in srgb,#1d1d20 88%,transparent);box-shadow:0 18px 48px #00000073}.one-price.floor-fullscreen .floor-toolbar{border-color:#48484a;box-shadow:0 18px 48px #00000073}.floor-toolbar,.zoom-control,.floor-toolbar span{background:color-mix(in srgb,#1d1d20 82%,transparent)}.floor-toolbar button,.floor-toolbar span,.zoom-control{border-color:#48484a}.floor-stage.floor-map{background-image:radial-gradient(circle at 50% 0,color-mix(in srgb,#2c2c2e 58%,transparent) 0,transparent 62%),repeating-linear-gradient(90deg,color-mix(in srgb,#f5f5f7 5%,transparent) 0 1px,transparent 1px 32px),repeating-linear-gradient(180deg,color-mix(in srgb,#f5f5f7 5%,transparent) 0 1px,transparent 1px 32px)}.floor-room{box-shadow:0 1px 2px #00000040}.floor-room.filtered-out,.floor-missing{background:color-mix(in srgb,#98989d 15%,transparent)}}.overview-grid{display:grid;width:100%;max-width:1440px;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:18px;margin:0 auto}.building-overview{position:relative;min-width:0;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit;cursor:pointer}.building-overview:hover,.building-overview:active{border-color:color-mix(in srgb,var(--brand) 48%,var(--line));transform:translateY(-1px)}.building-overview .floor-column-head{min-height:46px;border:0;background:transparent}.overview-body{position:relative;display:block;margin:0 8px 10px;height:calc(var(--floors,1)*10px + 18px)}.overview-face{position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--ink) 28%,var(--line));border-radius:4px;background:linear-gradient(to top,color-mix(in srgb,#17935d calc(var(--match-ratio,1)*60%),transparent) 0,transparent calc(var(--match-ratio,1)*100%)),repeating-linear-gradient(to top,color-mix(in srgb,var(--ink) 18%,transparent) 0 1px,transparent 1px 10px)}.overview-scale{position:absolute;bottom:-19px;left:50%;white-space:nowrap;color:var(--muted);font-size:9px;font-weight:850;transform:translateX(-50%)}.building-overview:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.room-foot p{margin:0}.room-foot button{height:36px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-foot button{color:#07131d}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{color:#07131d}}.certificate-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft);border-top:1px solid var(--line)}.certificate-card{min-width:0;padding:14px;background:var(--panel)}.certificate-card h3{margin:0 0 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.certificate-card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}.certificate-card div{min-width:0}.certificate-card dt{color:var(--muted);font-size:10px}.certificate-card dd{margin:2px 0 0;font-size:14px;font-weight:800}@media (max-width:1100px){.filter-primary{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-secondary{grid-template-columns:1fr}}@media (max-width:760px){.floor-toolbar{right:10px;bottom:10px;max-width:calc(100% - 20px)}.floor-toolbar button{height:44px}.floor-toolbar span,.zoom-control{min-height:44px}.one-price-head{align-items:start;flex-direction:column}.one-price-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.one-price-metric:last-child{grid-column:1/-1}.room-controls{padding:10px}.controls-heading{align-items:stretch;flex-direction:column}.view-switch{grid-template-columns:1fr 1fr}.view-switch button,.room-filters button,.filter-actions button{min-height:42px}.filter-actions{display:grid;grid-template-columns:1fr 1fr}.filter-actions button{width:100%}.filter-primary{grid-template-columns:1fr}.select-field{height:44px}.select-field select,.select-field input{height:40px}.filter-secondary{align-items:stretch}.room-filters{overflow-x:auto;padding-bottom:2px}.range-filter{grid-template-columns:auto minmax(72px,1fr) auto minmax(72px,1fr) auto}.one-price.floor-fullscreen .room-controls{top:10px;left:10px;right:10px;max-height:calc(100% - 20px)}.one-price.floor-fullscreen .back-overview,.one-price.floor-fullscreen .floor-render-status{bottom:74px}.room-foot{align-items:stretch;flex-direction:column}.room-foot button{width:100%}.certificate-card dl{grid-template-columns:repeat(2,1fr)}}@media (max-width:430px){.filter-actions{grid-template-columns:1fr}.range-filter{grid-template-columns:auto minmax(58px,1fr) auto minmax(58px,1fr) auto}.range-unit{display:none}}@media (prefers-reduced-motion:reduce){.one-price *,.one-price *::before,.one-price *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}'''
+@media (prefers-color-scheme:dark){.floor-results{--map-surface:#0b141c;--map-panel:#1d1d20;--map-panel-soft:#2c2c2e;--map-ink:#f5f5f7;--map-muted:#a1a1a6;--map-line:#38383a;--map-line-strong:#5a5a5e;--map-brand:#2997ff;--map-brand-ink:#64a8ff;--map-focus:#64a8ff;--map-available:#30d158;--map-sold:#ff453a;--map-ghost:#98989d}.one-price.floor-fullscreen{background:#0b141c}.one-price.floor-fullscreen .room-controls{border-color:#48484a;background:color-mix(in srgb,#1d1d20 88%,transparent);box-shadow:0 18px 48px #00000073}.one-price.floor-fullscreen .floor-toolbar{border-color:#48484a;box-shadow:0 18px 48px #00000073}.floor-toolbar,.zoom-control,.floor-toolbar span{background:color-mix(in srgb,#1d1d20 82%,transparent)}.floor-toolbar button,.floor-toolbar span,.zoom-control{border-color:#48484a}.floor-stage.floor-map{background-image:radial-gradient(circle at 50% 0,color-mix(in srgb,#2c2c2e 58%,transparent) 0,transparent 62%),repeating-linear-gradient(90deg,color-mix(in srgb,#f5f5f7 5%,transparent) 0 1px,transparent 1px 32px),repeating-linear-gradient(180deg,color-mix(in srgb,#f5f5f7 5%,transparent) 0 1px,transparent 1px 32px)}.floor-room{box-shadow:0 1px 2px #00000040}.floor-room.filtered-out,.floor-missing{background:color-mix(in srgb,#98989d 15%,transparent)}}.overview-grid{display:grid;width:100%;max-width:1440px;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:14px;margin:0 auto}.floor-canvas.overview-canvas{width:100%}.building-overview{min-height:118px;touch-action:manipulation}.floor-stage.floor-map{touch-action:none}.floor-room{cursor:pointer}.floor-room.result-active{outline:3px solid var(--map-focus);outline-offset:2px;z-index:2}.floor-room.filtered-out>*{display:none}.floor-room.filtered-out::after{content:'—'}.floor-results[data-zoom-level='low'] .floor-price,.floor-results[data-zoom-level='low'] .floor-meta,.floor-results[data-zoom-level='low'] .floor-total,.floor-results[data-zoom-level='low'] .price-chip{display:none}.floor-results[data-zoom-level='medium'] .floor-meta,.floor-results[data-zoom-level='medium'] .floor-total,.floor-results[data-zoom-level='medium'] .price-chip{display:none}.result-status{min-width:42px;text-align:center;font-variant-numeric:tabular-nums}.floor-toolbar button{cursor:pointer}.building-overview{position:relative;min-width:0;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit;cursor:pointer}.building-overview:hover,.building-overview:active{border-color:color-mix(in srgb,var(--brand) 48%,var(--line));transform:translateY(-1px)}.building-overview .floor-column-head{min-height:46px;border:0;background:transparent}.overview-body{position:relative;display:block;margin:0 8px 10px;height:calc(var(--floors,1)*10px + 18px)}.overview-face{position:absolute;inset:0;border:1px solid color-mix(in srgb,var(--ink) 28%,var(--line));border-radius:4px;background:linear-gradient(to top,color-mix(in srgb,#17935d calc(var(--match-ratio,1)*60%),transparent) 0,transparent calc(var(--match-ratio,1)*100%)),repeating-linear-gradient(to top,color-mix(in srgb,var(--ink) 18%,transparent) 0 1px,transparent 1px 10px)}.overview-scale{position:absolute;bottom:-19px;left:50%;white-space:nowrap;color:var(--muted);font-size:9px;font-weight:850;transform:translateX(-50%)}.building-overview:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.room-foot p{margin:0}.room-foot button{height:36px;padding:0 13px;border:0;border-radius:10px;background:var(--brand);color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}@media (prefers-color-scheme:dark){.room-foot button{color:#07131d}.view-switch button[aria-pressed=true],.room-filters button[aria-pressed=true]{color:#07131d}}.certificate-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;padding:1px;background:var(--panel-soft);border-top:1px solid var(--line)}.certificate-card{min-width:0;padding:14px;background:var(--panel)}.certificate-card h3{margin:0 0 8px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}.certificate-card dl{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}.certificate-card div{min-width:0}.certificate-card dt{color:var(--muted);font-size:10px}.certificate-card dd{margin:2px 0 0;font-size:14px;font-weight:800}@media (max-width:1100px){.filter-primary{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-secondary{grid-template-columns:1fr}}@media (max-width:760px){.floor-toolbar{right:10px;bottom:10px;max-width:calc(100% - 20px)}.floor-toolbar button{height:44px}.floor-toolbar span,.zoom-control{min-height:44px}.one-price-head{align-items:start;flex-direction:column}.one-price-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.one-price-metric:last-child{grid-column:1/-1}.room-controls{padding:10px}.controls-heading{align-items:stretch;flex-direction:column}.view-switch{grid-template-columns:1fr 1fr}.view-switch button,.room-filters button,.filter-actions button{min-height:42px}.filter-actions{display:grid;grid-template-columns:1fr 1fr}.filter-actions button{width:100%}.filter-primary{grid-template-columns:1fr}.select-field{height:44px}.select-field select,.select-field input{height:40px}.filter-secondary{align-items:stretch}.room-filters{overflow-x:auto;padding-bottom:2px}.range-filter{grid-template-columns:auto minmax(72px,1fr) auto minmax(72px,1fr) auto}.one-price.floor-fullscreen .room-controls{top:10px;left:10px;right:10px;max-height:calc(100% - 20px)}.one-price.floor-fullscreen .back-overview,.one-price.floor-fullscreen .floor-render-status{bottom:74px}.room-foot{align-items:stretch;flex-direction:column}.room-foot button{width:100%}.certificate-card dl{grid-template-columns:repeat(2,1fr)}}@media (max-width:430px){.filter-actions{grid-template-columns:1fr}.range-filter{grid-template-columns:auto minmax(58px,1fr) auto minmax(58px,1fr) auto}.range-unit{display:none}}@media (prefers-reduced-motion:reduce){.one-price *,.one-price *::before,.one-price *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}'''
 
 
 FLOOR_OPTIMIZATION_CSS = r'''.discount-field{display:grid;grid-template-columns:auto minmax(76px,88px) auto;align-items:center;gap:8px;min-width:132px;height:38px;padding:0 10px;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--muted);font-size:11px;font-weight:800}
@@ -184,8 +186,8 @@ FLOOR_OPTIMIZATION_CSS = r'''.discount-field{display:grid;grid-template-columns:
 .floor-column-head,.building-cell{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--map-panel)}
 .floor-room{box-shadow:none;transition:none}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.floor-room{transition:border-color .18s var(--ease-out)}}
-@media (max-width:760px){.discount-field{height:44px}.discount-field input{height:40px}}
-@media (max-width:760px){html:has(.one-price.floor-fullscreen),html:has(.one-price.floor-fullscreen) body{overflow:hidden;overscroll-behavior:none}.one-price.floor-fullscreen .room-controls{top:calc(10px + env(safe-area-inset-top));left:10px;right:auto;width:auto;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);padding:6px;overflow:visible;border-radius:14px}.one-price.floor-fullscreen .controls-heading{flex-direction:row;align-items:center}.one-price.floor-fullscreen .view-switch{display:none}.one-price.floor-fullscreen .filter-actions{display:flex}.one-price.floor-fullscreen .filter-actions button{min-height:38px;width:auto}.one-price.floor-fullscreen .room-controls.filters-collapsed [data-role="reset-filters"]{display:none}.one-price.floor-fullscreen .filter-panel{position:absolute;top:calc(100% + 8px);left:0;width:min(92vw,360px);max-height:calc(100vh - 92px);padding:10px;overflow:auto;border:1px solid var(--map-line);border-radius:14px;background:var(--map-panel);box-shadow:0 18px 48px #00000024}.one-price.floor-fullscreen .floor-toolbar{right:calc(10px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));left:calc(10px + env(safe-area-inset-left));z-index:50;flex-wrap:nowrap;gap:4px;min-height:48px;padding:4px;overflow-x:auto;overscroll-behavior:contain;touch-action:pan-x;scrollbar-width:none}.one-price.floor-fullscreen .floor-toolbar::-webkit-scrollbar{display:none}.one-price.floor-fullscreen .floor-toolbar button{flex:0 0 auto;min-height:40px}.one-price.floor-fullscreen .floor-toolbar>span,.one-price.floor-fullscreen .zoom-control,.one-price.floor-fullscreen [data-role="all-buildings"]{display:none}.one-price.floor-fullscreen .back-overview{left:calc(10px + env(safe-area-inset-left));bottom:calc(64px + env(safe-area-inset-bottom));z-index:55;min-height:40px}}
+@media (max-width:760px){.overview-body{height:58px}.overview-scale{bottom:-16px;font-size:8px}.discount-field{height:44px}.discount-field input{height:40px}}
+@media (max-width:760px){html:has(.one-price.floor-fullscreen),html:has(.one-price.floor-fullscreen) body{overflow:hidden;overscroll-behavior:none}.one-price.floor-fullscreen .room-controls{top:calc(10px + env(safe-area-inset-top));left:10px;right:auto;width:auto;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);padding:6px;overflow:visible;border-radius:14px}.one-price.floor-fullscreen .controls-heading{flex-direction:row;align-items:center}.one-price.floor-fullscreen .view-switch{display:none}.one-price.floor-fullscreen .filter-actions{display:flex}.one-price.floor-fullscreen .filter-actions button{min-height:38px;width:auto}.one-price.floor-fullscreen .room-controls.filters-collapsed [data-role="reset-filters"]{display:none}.one-price.floor-fullscreen .filter-panel{position:absolute;top:calc(100% + 8px);left:0;width:min(92vw,360px);max-height:calc(100vh - 92px);padding:10px;overflow:auto;border:1px solid var(--map-line);border-radius:14px;background:var(--map-panel);box-shadow:0 18px 48px #00000024}.one-price.floor-fullscreen .floor-toolbar{right:calc(10px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));left:calc(10px + env(safe-area-inset-left));z-index:50;flex-wrap:nowrap;gap:4px;min-height:48px;padding:4px;overflow-x:auto;overscroll-behavior:contain;touch-action:pan-x;scrollbar-width:none}.one-price.floor-fullscreen .floor-toolbar::-webkit-scrollbar{display:none}.one-price.floor-fullscreen .floor-toolbar button{flex:0 0 auto;min-height:40px}.one-price.floor-fullscreen .floor-toolbar>span:not(.result-status),.one-price.floor-fullscreen .zoom-control{display:none}.one-price.floor-fullscreen .back-overview{left:calc(10px + env(safe-area-inset-left));bottom:calc(64px + env(safe-area-inset-bottom));z-index:55;min-height:40px}}
 '''
 
 
@@ -213,10 +215,21 @@ ONE_PRICE_JS = r'''(function(){
   var filterToggle=root.querySelector('[data-role="filter-toggle"]');
   var filterCount=root.querySelector('[data-role="filter-count"]');
   var resetFiltersButton=root.querySelector('[data-role="reset-filters"]');
+  var resultPrev=root.querySelector('[data-role="result-prev"]');
+  var resultNext=root.querySelector('[data-role="result-next"]');
+  var resultStatus=root.querySelector('[data-role="result-status"]');
   var filtersOpen=!(filterPanel&&filterPanel.hidden);
   var rooms=[];
   var priceGroups=new Map();
-  function text(value){return value===null||value===undefined||value===''?'—':String(value);}
+  var roomElements=new Map();
+  var overviewBindings=[];
+  var floorSignature='';
+  var floorRenderToken=0;
+  var resultRooms=[];
+  var resultIndex=0;
+  var focusResultAfterRender=false,focusResultMode='';
+
+  function text(value){return value===null||value===undefined||value===''?'—':String(value)}
   function pickRoom(room){var picked=Object.assign({},room,{
     buildName:room.buildName!==undefined?room.buildName:room.buildingName,
     unitName:room.unitName!==undefined?room.unitName:room.unit,
@@ -225,13 +238,12 @@ ONE_PRICE_JS = r'''(function(){
     roomLayout:room.roomLayout!==undefined?room.roomLayout:room.houseType,
     area:room.area!==undefined?room.area:room.buildArea
   });picked.searchText=[picked.certificateName,picked.buildName,picked.unitName,picked.floor,picked.roomName,picked.roomLayout,picked.price,picked.totalPrice].join(' ').toLowerCase();return picked}
-  function numericValue(value){if(value===null||value===undefined||value==='')return null;var parsed=Number(value);return isFinite(parsed)?parsed:null;}
-  function totalYuan(value){return numericValue(value);}
+  function numericValue(value){if(value===null||value===undefined||value==='')return null;var parsed=Number(value);return isFinite(parsed)?parsed:null}
   function discounted(value){var parsed=numericValue(value);return parsed===null?null:parsed*discountRate/100}
-  function number(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN'):text(value);}
-  function area(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:2})+' ㎡':text(value);}
-  function money(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:0})+' 元/㎡':text(value);}
-  function total(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:0})+' 元':text(value);}
+  function number(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN'):text(value)}
+  function area(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:2})+' ㎡':text(value)}
+  function money(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:0})+' 元/㎡':text(value)}
+  function total(value){var parsed=Number(value);return isFinite(parsed)?parsed.toLocaleString('zh-CN',{maximumFractionDigits:0})+' 元':text(value)}
   function setSummary(values){
     var sold=values.filter(function(room){return Number(room.saleStatus)===1}).length;
     var available=values.filter(function(room){return Number(room.saleStatus)===2}).length;
@@ -239,27 +251,18 @@ ONE_PRICE_JS = r'''(function(){
     var summary=[certificateSelect.options.length-1,values.length,available,sold,abnormal];
     root.querySelectorAll('.one-price-metric strong').forEach(function(item,index){item.textContent=number(summary[index])});
   }
-  function priceKey(room){
-    var value=numericValue(room.price);
-    return value===null?'unknown':'price-'+String(value);
-  }
+  function priceKey(room){var value=numericValue(room.price);return value===null?'unknown':'price-'+String(value)}
   function buildPricePalette(values){
     var unique=[];var seen=new Set();
-    values.forEach(function(room){
-      var value=numericValue(room.price);var key=priceKey(room);
-      if(value===null||seen.has(key))return;seen.add(key);unique.push({key:key,value:value});
-    });
+    values.forEach(function(room){var value=numericValue(room.price);var key=priceKey(room);if(value===null||seen.has(key))return;seen.add(key);unique.push({key:key,value:value})});
     unique.sort(function(left,right){return left.value-right.value});
     var result=new Map();
-    unique.forEach(function(item,index){
-      var hue=(index*137.508)%360;var light=40+(index%4)*7;
-      result.set(item.key,'hsl('+hue.toFixed(2)+',72%,'+light+'%)');
-    });
+    unique.forEach(function(item,index){var hue=(index*137.508)%360;var light=40+(index%4)*7;result.set(item.key,'hsl('+hue.toFixed(2)+',72%,'+light+'%)')});
     return result;
   }
-  function matrixKey(room){return [text(room.buildName),text(room.unitName)].join('\\u0001');}
-  function floorNumber(value){var match=String(value).match(/-?\d+(?:\.\d+)?/);return match?Number(match[0]):Number.NaN;}
-  function naturalCompare(left,right){return String(left).localeCompare(String(right),'zh-Hans-CN',{numeric:true,sensitivity:'base'});}
+  function matrixKey(room){return [text(room.buildName),text(room.unitName)].join('\u0001')}
+  function floorNumber(value){var match=String(value).match(/-?\d+(?:\.\d+)?/);return match?Number(match[0]):Number.NaN}
+  function naturalCompare(left,right){return String(left).localeCompare(String(right),'zh-Hans-CN',{numeric:true,sensitivity:'base'})}
   function scopedRooms(){
     return rooms.filter(function(room){
       if(certificate!=='all'&&room.certificateId!==certificate)return false;
@@ -283,62 +286,49 @@ ONE_PRICE_JS = r'''(function(){
     var haystack=room.searchText||[room.certificateName,room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout,room.price,room.totalPrice].join(' ').toLowerCase();
     return query.trim().toLowerCase().split(/\s+/).filter(Boolean).every(function(word){return haystack.indexOf(word)>=0});
   }
-  function filterRooms(){
-    return scopedRooms().filter(roomMatches);
-  }
+  function filterRooms(){return scopedRooms().filter(roomMatches)}
   function activeFilterCount(){
-    var count=0;
-    if(certificate!=='all')count++;
-    if(building!=='all')count++;
-    if(unit!=='all')count++;
-    if(filter!=='all')count++;
-    if(query.trim())count++;
-    Object.keys(bounds).forEach(function(key){if(bounds[key]!==null&&isFinite(bounds[key]))count++});
-    if(discountRate!==100)count++;
-    return count;
+    var active=0;
+    if(certificate!=='all')active++;
+    if(building!=='all')active++;
+    if(unit!=='all')active++;
+    if(filter!=='all')active++;
+    if(query.trim())active++;
+    Object.keys(bounds).forEach(function(key){if(bounds[key]!==null&&isFinite(bounds[key]))active++});
+    if(discountRate!==100)active++;
+    return active;
   }
   function syncFilterControls(){
-    var count=activeFilterCount();
+    var active=activeFilterCount();
     if(filterPanel)filterPanel.hidden=!filtersOpen;
     if(roomControls)roomControls.classList.toggle('filters-collapsed',!filtersOpen);
     if(filterToggle){
       filterToggle.setAttribute('aria-expanded',filtersOpen?'true':'false');
-      filterToggle.classList.toggle('is-active',count>0);
+      filterToggle.classList.toggle('is-active',active>0);
     }
-    if(filterCount){
-      filterCount.textContent=String(count);
-      filterCount.hidden=count===0;
-    }
-    if(resetFiltersButton)resetFiltersButton.disabled=count===0;
+    if(filterCount){filterCount.textContent=String(active);filterCount.hidden=active===0}
+    if(resetFiltersButton)resetFiltersButton.disabled=active===0;
   }
   function clearAllFilters(){
     certificate='all';building='all';unit='all';filter='all';query='';limit=100;
-    bounds={priceMin:null,priceMax:null,totalMin:null,totalMax:null};
-    discountRate=100;if(discountInput)discountInput.value='100';
+    bounds={priceMin:null,priceMax:null,totalMin:null,totalMax:null};discountRate=100;
+    if(discountInput)discountInput.value='100';
     if(certificateSelect)certificateSelect.value='all';
     if(buildingSelect)buildingSelect.value='all';
     if(unitSelect)unitSelect.value='all';
     if(search)search.value='';
     root.querySelectorAll('[data-role="room-filter"]').forEach(function(item){item.setAttribute('aria-pressed',item.getAttribute('data-filter')==='all'?'true':'false')});
-    [['price-min','priceMin'],['price-max','priceMax'],['total-min','totalMin'],['total-max','totalMax']].forEach(function(pair){
-      var input=root.querySelector('[data-role="'+pair[0]+'"]');if(input)input.value='';
-    });
-    render();
+    [['price-min','priceMin'],['price-max','priceMax'],['total-min','totalMin'],['total-max','totalMax']].forEach(function(pair){var input=root.querySelector('[data-role="'+pair[0]+'"]');if(input)input.value=''});
+    resultIndex=0;render();
   }
   function row(room){
     var tr=document.createElement('tr');
-    [room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout].forEach(function(value){
-      var cell=document.createElement('td');cell.textContent=text(value);tr.appendChild(cell);
-    });
-    [area(room.area),money(room.price),total(room.totalPrice)].forEach(function(value){
-      var cell=document.createElement('td');cell.textContent=value;tr.appendChild(cell);
-    });
-    var statusCell=document.createElement('td');var badge=document.createElement('span');
-    var available=Number(room.saleStatus)===2;
-    badge.className='status '+(available?'available':'sold');badge.textContent=available?'可售':'已售';
-    statusCell.appendChild(badge);tr.appendChild(statusCell);
+    [room.buildName,room.unitName,room.floor,room.roomName,room.roomLayout].forEach(function(value){var cell=document.createElement('td');cell.textContent=text(value);tr.appendChild(cell)});
+    [area(room.area),money(room.price),total(room.totalPrice)].forEach(function(value){var cell=document.createElement('td');cell.textContent=value;tr.appendChild(cell)});
+    var statusCell=document.createElement('td');var badge=document.createElement('span');var available=Number(room.saleStatus)===2;
+    badge.className='status '+(available?'available':'sold');badge.textContent=available?'可售':'已售';statusCell.appendChild(badge);tr.appendChild(statusCell);
     var flagCell=document.createElement('td');
-    if(Number(room.abnormalStatus)===1){var flag=document.createElement('span');flag.className='status abnormal';flag.textContent='异常';flagCell.appendChild(flag);}else{flagCell.textContent='—';}
+    if(Number(room.abnormalStatus)===1){var flag=document.createElement('span');flag.className='status abnormal';flag.textContent='异常';flagCell.appendChild(flag)}else flagCell.textContent='—';
     tr.appendChild(flagCell);
     var delivery=document.createElement('td');delivery.textContent=text(room.delivery);tr.appendChild(delivery);
     return tr;
@@ -359,93 +349,104 @@ ONE_PRICE_JS = r'''(function(){
     var values=rooms.filter(function(room){return (certificate==='all'||room.certificateId===certificate)&&(building==='all'||text(room.buildName)===building)}).map(function(room){return text(room.unitName)});
     setOptions(unitSelect,'全部单元',values,unit);unit=unitSelect.value;
   }
-  function roomCell(room,matched){
-    var available=Number(room.saleStatus)===2;var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);var group=priceGroups.get(priceKey(room));
-    var article=document.createElement('article');article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out');article.tabIndex=0;
+  function updateRoomCell(room,matched,isActive){
+    var article=roomElements.get(room);if(!article)return;
+    var available=Number(room.saleStatus)===2;var price=discounted(room.price);var totalPrice=discounted(room.totalPrice);
+    var group=priceGroups.get(priceKey(room));
+    article.className='floor-room '+(available?'available':'sold')+(matched?'':' filtered-out')+(isActive?' result-active':'');
     article.setAttribute('aria-disabled',matched?'false':'true');
-    article.setAttribute('data-price',price===null?'—':String(price));article.setAttribute('data-price-value',price===null?'':String(price));article.setAttribute('data-total-price',totalPrice===null?'—':String(totalPrice));
-    article.setAttribute('data-price-group',priceKey(room));article.setAttribute('data-room-status',available?'available':'sold');
+    article.setAttribute('data-price',price===null?'—':String(price));article.setAttribute('data-price-value',price===null?'':String(price));article.setAttribute('data-total-price',totalPrice===null?'—':String(totalPrice));article.setAttribute('data-price-group',priceKey(room));
     article.setAttribute('aria-label',text(room.buildName)+text(room.unitName)+text(room.floor)+' '+text(room.roomName)+(available?'，可售':'，已售')+'，单价 '+money(price)+'，总价 '+total(totalPrice)+(matched?'':'，筛选外'));
-    if(!matched){article.textContent='—';return article}
-    if(group&&available)article.style.setProperty('--price-color',group);
-    var priceLabel=document.createElement('span');priceLabel.className='floor-price';priceLabel.textContent=money(price);article.appendChild(priceLabel);
-    var name=document.createElement('strong');name.textContent=text(room.roomName);article.appendChild(name);
-    var meta=document.createElement('span');meta.className='floor-meta';meta.textContent=text(room.roomLayout)+' · '+area(room.area);article.appendChild(meta);
-    var totalLabel=document.createElement('span');totalLabel.className='floor-total';totalLabel.textContent=total(totalPrice);article.appendChild(totalLabel);
-    var badge=document.createElement('span');badge.className='status '+(available?'available':'sold');badge.textContent=available?'可售':'已售';article.appendChild(badge);
-    if(Number(room.abnormalStatus)===1){var abnormal=document.createElement('span');abnormal.className='status abnormal';abnormal.textContent='异常';article.appendChild(abnormal);}
-    if(group){var swatch=document.createElement('span');swatch.className='price-chip';swatch.setAttribute('aria-hidden','true');article.appendChild(swatch);}
-    return article;
+    if(group&&available)article.style.setProperty('--price-color',group);else article.style.removeProperty('--price-color');
+    var priceLabel=article.querySelector('.floor-price');if(priceLabel)priceLabel.textContent=money(price);
+    var name=article.querySelector('strong');if(name)name.textContent=text(room.roomName);
+    var meta=article.querySelector('.floor-meta');if(meta)meta.textContent=text(room.roomLayout)+' · '+area(room.area);
+    var totalLabel=article.querySelector('.floor-total');if(totalLabel)totalLabel.textContent=total(totalPrice);
+    var badge=article.querySelector('.status');if(badge)badge.textContent=available?'可售':'已售';
   }
-
+  function roomCell(room){
+    var available=Number(room.saleStatus)===2;var article=document.createElement('article');
+    article.className='floor-room '+(available?'available':'sold');article.tabIndex=-1;
+    var priceLabel=document.createElement('span');priceLabel.className='floor-price';article.appendChild(priceLabel);
+    var name=document.createElement('strong');name.textContent=text(room.roomName);article.appendChild(name);
+    var meta=document.createElement('span');meta.className='floor-meta';article.appendChild(meta);
+    var totalLabel=document.createElement('span');totalLabel.className='floor-total';article.appendChild(totalLabel);
+    var badge=document.createElement('span');badge.className='status '+(available?'available':'sold');article.appendChild(badge);
+    if(Number(room.abnormalStatus)===1){var abnormal=document.createElement('span');abnormal.className='status abnormal';abnormal.textContent='异常';article.appendChild(abnormal)}
+    if(priceGroups.get(priceKey(room))){var swatch=document.createElement('span');swatch.className='price-chip';swatch.setAttribute('aria-hidden','true');article.appendChild(swatch)}
+    roomElements.set(room,article);return article;
+  }
   function floorHeader(column){
     var head=document.createElement('header');head.className='building-head floor-column-head';
     var building=document.createElement('strong');building.textContent=text(column.building);head.appendChild(building);
-    var unit=document.createElement('span');unit.textContent='单元 '+text(column.unitName);head.appendChild(unit);
-    return head;
+    var unit=document.createElement('span');unit.textContent='单元 '+text(column.unitName);head.appendChild(unit);return head;
   }
-  function detailBuildingLimit(){
-    if(window.matchMedia('(max-width: 520px)').matches)return 3;
-    if(window.matchMedia('(max-width: 760px)').matches)return 4;
-    if(window.matchMedia('(max-width: 1100px)').matches)return 8;
-    return 16;
-  }
-  var floorSignature='';var floorRenderToken=0;
   function focusBuilding(column){building=text(column.building);unit=text(column.unitName);limit=100;render()}
+  function updateFloorFilters(allRooms){
+    overviewBindings.forEach(function(binding){
+      var matched=binding.values.filter(roomMatches).length;var ratio=binding.values.length?matched/binding.values.length:0;
+      binding.element.style.setProperty('--match-ratio',ratio.toFixed(3));
+      binding.element.setAttribute('aria-label','聚焦 '+binding.column.building+' 单元 '+binding.column.unitName+'，'+binding.floors+' 层，匹配 '+matched+' / '+binding.values.length+' 套房源');
+      var scale=binding.element.querySelector('.overview-scale');if(scale)scale.textContent=binding.floors+'F · '+matched+'/'+binding.values.length+'套';
+    });
+    allRooms.forEach(function(room,index){updateRoomCell(room,roomMatches(room),index===resultIndex&&resultRooms[index]===room)});
+  }
   function renderFloorView(allRooms){
-    var renderToken=++floorRenderToken;
-    var backButton=backToOverview;
-    floorResults.replaceChildren();
-    if(!allRooms.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有可展示的楼栋数据';floorResults.appendChild(empty);if(backButton)floorResults.appendChild(backButton);return;}
+    var renderToken=++floorRenderToken;var backButton=backToOverview;
     var columns=[];var columnSeen=new Set();var floors=[];var floorSeen=new Set();var floorRooms=new Map();var maxRoomsPerColumn=1;
     allRooms.forEach(function(room){
       var key=matrixKey(room);var floor=text(room.floor);
       if(!columnSeen.has(key)){columnSeen.add(key);columns.push({key:key,building:text(room.buildName),unitName:text(room.unitName)});floorRooms.set(key,new Map())}
       if(!floorSeen.has(floor)){floorSeen.add(floor);floors.push(floor)}
-      var rooms=floorRooms.get(key);if(!rooms.has(floor))rooms.set(floor,[]);
-      var values=rooms.get(floor);values.push(room);maxRoomsPerColumn=Math.max(maxRoomsPerColumn,values.length);
+      var roomsByFloor=floorRooms.get(key);if(!roomsByFloor.has(floor))roomsByFloor.set(floor,[]);
+      var values=roomsByFloor.get(floor);values.push(room);maxRoomsPerColumn=Math.max(maxRoomsPerColumn,values.length);
     });
     columns.sort(function(left,right){return naturalCompare(left.building,right.building)||naturalCompare(left.unitName,right.unitName)});
     floors.sort(function(left,right){var ln=floorNumber(left);var rn=floorNumber(right);if(isFinite(ln)&&isFinite(rn)&&ln!==rn)return rn-ln;if(isFinite(ln))return -1;if(isFinite(rn))return 1;return naturalCompare(left,right)});
-    var signature=columns.map(function(column){return column.key}).join('|')+'::'+floors.join('|');
+    var signature=(building==='all'&&unit==='all'?'overview':'detail')+'::'+columns.map(function(column){return column.key}).join('|')+'::'+floors.join('|');
+    var existingStage=floorResults.querySelector('.floor-stage');
+    if(signature===floorSignature&&existingStage&&existingStage.dataset.renderState==='complete'){
+      updateFloorFilters(allRooms);syncBackButton();
+      if(focusResultAfterRender)centerResult(resultIndex);
+      focusResultAfterRender=false;focusResultMode='';return;
+    }
+    floorSignature=signature;roomElements.clear();overviewBindings=[];floorResults.replaceChildren();
+    if(!allRooms.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有可展示的楼栋数据';floorResults.appendChild(empty);if(backButton)floorResults.appendChild(backButton);return}
+    var overview=building==='all'&&unit==='all';
     var stage=document.createElement('div');stage.className='floor-stage floor-map';stage.tabIndex=0;stage.setAttribute('role','application');stage.setAttribute('aria-label','楼层分布地图，可拖拽、缩放和键盘操作');stage.setAttribute('aria-keyshortcuts','方向键平移，加号放大，减号缩小，0 复位');stage.setAttribute('aria-busy','true');stage.dataset.renderState='loading';
     var status=document.createElement('p');status.className='floor-render-status';status.textContent='楼层分布渲染中 0%';
-    var canvas=document.createElement('div');canvas.className='floor-canvas';
-    var jobs=[];var overview=columns.length>detailBuildingLimit();
+    var canvas=document.createElement('div');canvas.className='floor-canvas'+(overview?' overview-canvas':'');
+    var jobs=[];
     if(overview){
       var overviewGrid=document.createElement('div');overviewGrid.className='overview-grid';overviewGrid.setAttribute('aria-label','楼栋总览，选择楼栋单元后查看真实楼层分布');
       canvas.appendChild(overviewGrid);stage.appendChild(canvas);stage.appendChild(status);
       columns.forEach(function(column){
-        var values=[];floorRooms.get(column.key).forEach(function(floorRoomsForColumn){values.push.apply(values,floorRoomsForColumn)});
-        var matched=values.filter(roomMatches).length;var ratio=values.length?matched/values.length:0;var columnFloors=floorRooms.get(column.key).size;
+        var values=[];floorRooms.get(column.key).forEach(function(columnFloorRooms){values.push.apply(values,columnFloorRooms)});
+        var columnFloors=floorRooms.get(column.key).size;var matched=values.filter(roomMatches).length;var ratio=values.length?matched/values.length:0;
         jobs.push(function(){
           var block=document.createElement('button');block.type='button';block.className='building-column building-overview';block.style.setProperty('--floors',String(columnFloors));block.style.setProperty('--match-ratio',ratio.toFixed(3));
-          block.setAttribute('aria-label','聚焦 '+text(column.building)+' 单元 '+text(column.unitName)+'，'+columnFloors+' 层，'+values.length+' 套房源');
+          block.setAttribute('aria-label','聚焦 '+column.building+' 单元 '+column.unitName+'，'+columnFloors+' 层，匹配 '+matched+' / '+values.length+' 套房源');
           block.appendChild(floorHeader(column));
-          var body=document.createElement('span');body.className='overview-body';
-          var face=document.createElement('span');face.className='overview-face';face.setAttribute('aria-hidden','true');body.appendChild(face);
-          var scale=document.createElement('span');scale.className='overview-scale';scale.textContent=columnFloors+'F · '+values.length+'套';body.appendChild(scale);
-          block.appendChild(body);block.addEventListener('pointerup',function(event){if(event.pointerType==='touch'&&!gestureMoved)focusBuilding(column)});block.addEventListener('click',function(event){if(gestureMoved)return;focusBuilding(column)});
+          var body=document.createElement('span');body.className='overview-body';var face=document.createElement('span');face.className='overview-face';face.setAttribute('aria-hidden','true');body.appendChild(face);
+          var scale=document.createElement('span');scale.className='overview-scale';scale.textContent=columnFloors+'F · '+matched+'/'+values.length+'套';body.appendChild(scale);block.appendChild(body);
+          overviewBindings.push({element:block,column:column,values:values,floors:columnFloors});
+          block.addEventListener('pointerup',function(event){if(!gestureMoved)focusBuilding(column)});
+          block.addEventListener('click',function(event){if(event.detail===0)focusBuilding(column)});
           return block;
         });
       });
     }else{
-      var matrix=document.createElement('div');matrix.className='floor-matrix';matrix.style.setProperty('--floor-columns',String(columns.length));matrix.style.setProperty('--floor-count',String(floors.length));matrix.style.setProperty('--building-width',(maxRoomsPerColumn*119+8)+'px');
-      matrix.setAttribute('aria-label','楼栋从左到右、楼层从上到下、同一楼层横向一排');
-      var headerRow=document.createElement('div');headerRow.className='floor-row header-row';
-      var corner=document.createElement('div');corner.className='floor-corner';corner.textContent='楼层';headerRow.appendChild(corner);
-      columns.forEach(function(column){headerRow.appendChild(floorHeader(column))});
-      matrix.appendChild(headerRow);
+      var matrix=document.createElement('div');matrix.className='floor-matrix';matrix.style.setProperty('--floor-columns',String(columns.length));matrix.style.setProperty('--floor-count',String(floors.length));matrix.style.setProperty('--building-width',(maxRoomsPerColumn*119+8)+'px');matrix.setAttribute('aria-label','楼栋从左到右、楼层从上到下、同一楼层横向一排');
+      var headerRow=document.createElement('div');headerRow.className='floor-row header-row';var corner=document.createElement('div');corner.className='floor-corner';corner.textContent='楼层';headerRow.appendChild(corner);
+      columns.forEach(function(column){headerRow.appendChild(floorHeader(column))});matrix.appendChild(headerRow);
       floors.forEach(function(floor){
         jobs.push(function(){
-          var row=document.createElement('div');row.className='floor-row';
-          var axis=document.createElement('div');axis.className='floor-axis-y';axis.textContent=floor;row.appendChild(axis);
+          var row=document.createElement('div');row.className='floor-row';var axis=document.createElement('div');axis.className='floor-axis-y';axis.textContent=floor;row.appendChild(axis);
           columns.forEach(function(column){
-            var cell=document.createElement('div');cell.className='building-cell';
-            var cells=document.createElement('div');cells.className='room-cells';cell.appendChild(cells);row.appendChild(cell);
+            var cell=document.createElement('div');cell.className='building-cell';var cells=document.createElement('div');cells.className='room-cells';cell.appendChild(cells);row.appendChild(cell);
             var values=floorRooms.get(column.key)&&floorRooms.get(column.key).get(floor);
-            if(values&&values.length){values.sort(function(left,right){return naturalCompare(left.roomName,right.roomName)}).forEach(function(room){cells.appendChild(roomCell(room,roomMatches(room)))})}
-            else{var missing=document.createElement('div');missing.className='floor-missing';missing.textContent='—';missing.setAttribute('aria-label',text(column.building)+' '+text(column.unitName)+' '+floor+' 无房源');cells.appendChild(missing)}
+            if(values&&values.length)values.sort(function(left,right){return naturalCompare(left.roomName,right.roomName)}).forEach(function(room){cells.appendChild(roomCell(room))});
+            else{var missing=document.createElement('div');missing.className='floor-missing';missing.textContent='—';missing.setAttribute('aria-label',column.building+' '+column.unitName+' '+floor+' 无房源');cells.appendChild(missing)}
           });
           return row;
         });
@@ -457,9 +458,10 @@ ONE_PRICE_JS = r'''(function(){
     var cursor=0;
     function finishRender(){
       if(renderToken!==floorRenderToken)return;
-      if(signature!==floorSignature){floorSignature=signature;fitView(canvas)}else{applyViewState(canvas);queueClamp(canvas)}
-      stage.dataset.renderState='complete';stage.removeAttribute('aria-busy');status.textContent='楼层分布渲染完成';
-      requestAnimationFrame(function(){if(renderToken===floorRenderToken&&status.parentNode)status.parentNode.removeChild(status)});
+      updateFloorFilters(allRooms);fitView(canvas);stage.dataset.renderState='complete';stage.removeAttribute('aria-busy');status.textContent='楼层分布渲染完成';
+      syncBackButton();revealFloorStage(stage);
+      requestAnimationFrame(function(){if(renderToken===floorRenderToken&&status.parentNode)status.parentNode.removeChild(status);if(focusResultAfterRender)centerResult(resultIndex)});
+      focusResultAfterRender=false;focusResultMode='';
     }
     function renderFloorBatch(){
       if(renderToken!==floorRenderToken)return;
@@ -471,31 +473,69 @@ ONE_PRICE_JS = r'''(function(){
     }
     if(jobs.length)requestAnimationFrame(renderFloorBatch);else finishRender();
   }
-  var viewState={scale:1,x:0,y:0};
-  function clampScale(value){return Math.min(2.2,Math.max(.18,value))}
-  function fitView(canvas){
-    if(!canvas)return;var stage=canvas.closest('.floor-stage');if(!stage)return;
-    var insets=floorViewportInsets(stage);var width=Math.max(1,canvas.offsetWidth);var height=Math.max(1,canvas.offsetHeight);var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom);
-    var fitAll=Math.min((stage.clientWidth-32)/width,(availableHeight-32)/height,1);
-    var fitHeight=Math.min((availableHeight-32)/height,1);
-    var preferFullWidth=canvas.firstChild&&String(canvas.firstChild.className).indexOf('overview-grid')>=0;
-    viewState.scale=clampScale(preferFullWidth?fitAll:(fitAll>=.55?fitAll:fitHeight));
-    viewState.x=(stage.clientWidth-width*viewState.scale)/2;viewState.y=insets.top+(availableHeight-height*viewState.scale)/2;
-    applyViewState(canvas);queueClamp(canvas);var percent=Math.round(viewState.scale*100);
-    if(zoomScale)zoomScale.textContent=percent+'%';if(zoomRange)zoomRange.value=String(percent);
+  function syncBackButton(){if(backToOverview)backToOverview.hidden=!(view==='floor'&&(building!=='all'||unit!=='all'))}
+  function syncResultControls(){
+    var active=activeFilterCount()>0&&resultRooms.length>0;
+    if(resultPrev)resultPrev.disabled=!active||resultRooms.length<2;
+    if(resultNext)resultNext.disabled=!active||resultRooms.length<2;
+    if(resultStatus)resultStatus.textContent=resultRooms.length?(resultIndex+1)+'/'+resultRooms.length:'0/0';
+    if(view==='floor'){
+      var activeRoom=resultRooms[resultIndex],activeElement=activeRoom&&roomElements.get(activeRoom);
+      roomElements.forEach(function(element){element.classList.remove('result-active');if(element!==activeElement)element.tabIndex=-1});
+      if(activeElement){activeElement.classList.add('result-active');activeElement.tabIndex=0}
+    }
   }
-  function applyViewState(canvas){
-    floorResults.style.setProperty('--floor-scale',viewState.scale.toFixed(3));
-    floorResults.style.setProperty('--pan-x',viewState.x.toFixed(2)+'px');
-    floorResults.style.setProperty('--pan-y',viewState.y.toFixed(2)+'px');
-    if(canvas)canvas.style.transform='translate3d('+viewState.x.toFixed(2)+'px,'+viewState.y.toFixed(2)+'px,0) scale('+viewState.scale.toFixed(4)+')';
+  function selectResultIndex(next){
+    if(!resultRooms.length)return;resultIndex=Math.min(resultRooms.length-1,Math.max(0,next));var room=resultRooms[resultIndex];
+    if(room){building=text(room.buildName);unit=text(room.unitName);refreshBuildingOptions();refreshUnitOptions()}
+    focusResultAfterRender=true;focusResultMode='index';render();
+  }
+  function centerResult(index){
+    var room=resultRooms[index];var article=room&&roomElements.get(room);if(!article)return;
+    roomElements.forEach(function(element){element.tabIndex=-1;element.classList.remove('result-active')});
+    article.tabIndex=0;article.classList.add('result-active');article.focus({preventScroll:true});updateRoomCell(room,true,true);
+    var canvas=floorResults.querySelector('.floor-canvas'),stage=floorResults.querySelector('.floor-stage');if(!canvas||!stage)return;
+    if(viewState.scale<1){viewState.scale=1;viewState.x=0;viewState.y=0;applyViewState(canvas)}
+    var stageRect=stage.getBoundingClientRect(),roomRect=article.getBoundingClientRect();
+    var roomX=roomRect.left-stageRect.left+roomRect.width/2,roomY=roomRect.top-stageRect.top+roomRect.height/2;
+    viewState.x=stage.clientWidth/2-roomX*viewState.scale;viewState.y=stage.clientHeight/2-roomY*viewState.scale;clampPan(canvas);
+  }
+  function render(){
+    if(renderTimer){window.clearTimeout(renderTimer);renderTimer=null}
+    floorRenderToken++;refreshBuildingOptions();refreshUnitOptions();syncFilterControls();
+    if(focusResultAfterRender&&focusResultMode==='first'){
+      var candidates=rooms.filter(roomMatches);
+      if(!candidates.length&&(building!=='all'||unit!=='all')){building='all';unit='all';refreshBuildingOptions();refreshUnitOptions();candidates=rooms.filter(roomMatches)}
+      if(candidates.length){var first=candidates[0];building=text(first.buildName);unit=text(first.unitName);refreshBuildingOptions();refreshUnitOptions();resultIndex=0}
+    }
+    var visibleRooms=scopedRooms();var filtered=visibleRooms.filter(roomMatches);
+    resultRooms=filtered;if(resultIndex>=resultRooms.length)resultIndex=0;
+    tableWrap.hidden=view!=='table';floorResults.hidden=view==='table';if(floorToolbar)floorToolbar.hidden=view!=='floor';
+    if(view==='table'&&floorFullscreen)setFloorFullscreen(false,true);
+    syncBackButton();
+    if(view==='table'){
+      var fragment=document.createDocumentFragment();filtered.slice(0,limit).forEach(function(room){fragment.appendChild(row(room))});
+      if(!filtered.length){var empty=document.createElement('tr');var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';cell.textContent='没有符合筛选条件的房源';empty.appendChild(cell);fragment.appendChild(empty)}
+      tbody.replaceChildren(fragment);floorResults.replaceChildren();floorSignature='';
+    }else renderFloorView(visibleRooms);
+    var discountLabel=discountRate===100?'':' · 折后 '+discountRate+'%';
+    count.textContent=(view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'楼层分布显示 '+filtered.length+' / '+visibleRooms.length+' 套匹配房源')+discountLabel;
+    more.hidden=view!=='table'||limit>=filtered.length;setSummary(visibleRooms);syncResultControls();
+  }
+  function scheduleRender(delay){if(renderTimer)window.clearTimeout(renderTimer);renderTimer=window.setTimeout(function(){renderTimer=null;render()},delay===undefined?180:delay)}
+  function requestResultFocus(){focusResultAfterRender=true;focusResultMode='first'}
+  var viewState={scale:1,x:0,y:0};var transformFrame=null;var transformShouldClamp=false;var transformCanvas=null;var stageBoxCache=null;var stageBoxElement=null;
+  function clampScale(value){return Math.min(2.2,Math.max(.18,value))}
+  function setZoomLevel(){var scale=viewState.scale;floorResults.dataset.zoomLevel=scale<.65?'low':scale<1?'medium':'high'}
+  function applyViewState(canvas){floorResults.style.setProperty('--floor-scale',viewState.scale.toFixed(3));floorResults.style.setProperty('--pan-x',viewState.x.toFixed(2)+'px');floorResults.style.setProperty('--pan-y',viewState.y.toFixed(2)+'px');if(canvas)canvas.style.transform='translate3d('+viewState.x.toFixed(2)+'px,'+viewState.y.toFixed(2)+'px,0) scale('+viewState.scale.toFixed(4)+')';setZoomLevel();var percent=Math.round(viewState.scale*100);if(zoomScale)zoomScale.textContent=percent+'%';if(zoomRange)zoomRange.value=String(percent)}
+  function queueTransform(canvas,shouldClamp){
+    transformCanvas=canvas||transformCanvas;transformShouldClamp=transformShouldClamp||!!shouldClamp;
+    if(transformFrame)return;
+    transformFrame=requestAnimationFrame(function(){transformFrame=null;var canvasToApply=transformCanvas;transformCanvas=null;var clamp=transformShouldClamp;transformShouldClamp=false;if(!canvasToApply)return;if(clamp)clampPan(canvasToApply);else applyViewState(canvasToApply)});
   }
   function floorViewportInsets(stage){
     var top=0,bottom=0;
-    if(root.classList.contains('floor-fullscreen')){
-      if(filtersOpen&&roomControls)top=Math.ceil(roomControls.getBoundingClientRect().height)+28;
-      if(floorToolbar)bottom=Math.ceil(floorToolbar.getBoundingClientRect().height)+28;
-    }
+    if(root.classList.contains('floor-fullscreen')){if(filtersOpen&&roomControls)top=Math.ceil(roomControls.getBoundingClientRect().height)+28;if(floorToolbar)bottom=Math.ceil(floorToolbar.getBoundingClientRect().height)+28}
     return{top:top,bottom:bottom};
   }
   function clampPan(canvas){
@@ -505,50 +545,24 @@ ONE_PRICE_JS = r'''(function(){
     viewState.y=availableHeight>=height?insets.top+(availableHeight-height)/2:Math.min(insets.top,Math.max(stage.clientHeight-insets.bottom-height,viewState.y));
     applyViewState(canvas);
   }
-  function queueClamp(canvas){requestAnimationFrame(function(){clampPan(canvas)})}
-  function setZoom(value,anchorX,anchorY){
-    var next=Number(value);if(!isFinite(next))return;
-    var stage=floorResults.querySelector('.floor-stage');
-    if((anchorX===undefined||anchorY===undefined)&&stage){var rect=stage.getBoundingClientRect();anchorX=rect.width/2;anchorY=rect.height/2}
-    zoomAt(anchorX||0,anchorY||0,next/100);
+  function queueClamp(canvas){queueTransform(canvas,true)}
+  function fitView(canvas){
+    if(!canvas)return;var stage=canvas.closest('.floor-stage');if(!stage)return;
+    var insets=floorViewportInsets(stage);var width=Math.max(1,canvas.offsetWidth);var height=Math.max(1,canvas.offsetHeight);var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom);
+    var fitAll=Math.min((stage.clientWidth-32)/width,(availableHeight-32)/height,1);var fitHeight=Math.min((availableHeight-32)/height,1);
+    var overview=canvas.classList.contains('overview-canvas')&&window.matchMedia('(max-width: 760px)').matches;
+    viewState.scale=clampScale(overview?fitHeight:(fitAll>=.55?fitAll:fitHeight));
+    viewState.x=(stage.clientWidth-width*viewState.scale)/2;viewState.y=insets.top+(availableHeight-height*viewState.scale)/2;applyViewState(canvas);queueClamp(canvas);
   }
+  function setZoom(value,anchorX,anchorY){var next=Number(value);if(!isFinite(next))return;var stage=floorResults.querySelector('.floor-stage');if((anchorX===undefined||anchorY===undefined)&&stage){var rect=stage.getBoundingClientRect();anchorX=rect.width/2;anchorY=rect.height/2}zoomAt(anchorX||0,anchorY||0,next/100)}
   function zoomAt(anchorX,anchorY,nextScale){
     var canvas=floorResults.querySelector('.floor-canvas');if(!canvas)return;
-    var oldScale=viewState.scale;var worldX=(anchorX-viewState.x)/viewState.scale;var worldY=(anchorY-viewState.y)/viewState.scale;
-    viewState.scale=clampScale(nextScale);
-    viewState.x=anchorX-worldX*viewState.scale;viewState.y=anchorY-worldY*viewState.scale;
-    applyViewState(canvas);queueClamp(canvas);
-    var percent=Math.round(viewState.scale*100);if(zoomScale)zoomScale.textContent=percent+'%';if(zoomRange)zoomRange.value=String(percent);
+    var worldX=(anchorX-viewState.x)/viewState.scale,worldY=(anchorY-viewState.y)/viewState.scale;
+    viewState.scale=clampScale(nextScale);viewState.x=anchorX-worldX*viewState.scale;viewState.y=anchorY-worldY*viewState.scale;queueTransform(canvas,true);
   }
-  function panBy(deltaX,deltaY){var canvas=floorResults.querySelector('.floor-canvas');if(!canvas)return;viewState.x+=deltaX;viewState.y+=deltaY;clampPan(canvas)}
-  function resetView(canvas){fitView(canvas)}
-  function render(){
-    if(renderTimer){window.clearTimeout(renderTimer);renderTimer=null}
-    floorRenderToken++;
-    refreshBuildingOptions();refreshUnitOptions();syncFilterControls();
-    var visibleRooms=scopedRooms();var filtered=visibleRooms.filter(roomMatches);
-    tableWrap.hidden=view!=='table';floorResults.hidden=view==='table';if(floorToolbar)floorToolbar.hidden=view!=='floor';
-    if(view==='table'&&floorFullscreen)setFloorFullscreen(false,true);
-    syncBackButton();
-    if(view==='table'){
-      var fragment=document.createDocumentFragment();
-      filtered.slice(0,limit).forEach(function(room){fragment.appendChild(row(room))});
-      if(!filtered.length){var empty=document.createElement('tr');var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';cell.textContent='没有符合筛选条件的房源';empty.appendChild(cell);fragment.appendChild(empty);}
-      tbody.replaceChildren(fragment);floorResults.replaceChildren();
-    }else{renderFloorView(visibleRooms)}
-    var discountLabel=discountRate===100?'':' · 折后 '+discountRate+'%';
-    count.textContent=(view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'楼层分布显示 '+filtered.length+' / '+visibleRooms.length+' 套匹配房源')+discountLabel;
-    more.hidden=view!=='table'||limit>=filtered.length;setSummary(visibleRooms);
-  }
-  function scheduleRender(delay){
-    if(renderTimer)window.clearTimeout(renderTimer);
-    renderTimer=window.setTimeout(function(){renderTimer=null;render()},delay===undefined?180:delay);
-  }
-  function syncBackButton(){if(backToOverview)backToOverview.hidden=!(view==='floor'&&(building!=='all'||unit!=='all'))}
-  var zoomScale=root.querySelector('[data-role="zoom-scale"]');var zoomRange=root.querySelector('[data-role="zoom-range"]');var zoomIn=root.querySelector('[data-role="zoom-in"]');var zoomOut=root.querySelector('[data-role="zoom-out"]');var resetZoom=root.querySelector('[data-role="reset-zoom"]');var floorFullscreen=false;var floorFullscreenScroll={x:0,y:0};
-  function floorFullscreenButtons(){return Array.prototype.slice.call(root.querySelectorAll('[data-role="floor-fullscreen"]'))}
-  function syncFloorFullscreen(){floorFullscreenButtons().forEach(function(button){button.setAttribute('aria-pressed',floorFullscreen?'true':'false');button.textContent=floorFullscreen?'退出全屏':'全屏地图'})}
-  function refitFloorView(){requestAnimationFrame(function(){requestAnimationFrame(function(){if(view!=='floor')return;var canvas=floorResults.querySelector('.floor-canvas');if(canvas)fitView(canvas)})})}
+  function panBy(deltaX,deltaY){var canvas=floorResults.querySelector('.floor-canvas');if(!canvas)return;viewState.x+=deltaX;viewState.y+=deltaY;queueTransform(canvas,false)}
+  function resetView(canvas){if(canvas)fitView(canvas)}
+  function refitFloorView(){requestAnimationFrame(function(){requestAnimationFrame(function(){if(view!=='floor')return;stageBoxCache=null;var canvas=floorResults.querySelector('.floor-canvas');if(canvas)fitView(canvas)})})}
   function restoreFloorScroll(){requestAnimationFrame(function(){window.scrollTo(floorFullscreenScroll.x,floorFullscreenScroll.y);refitFloorView()})}
   function setFloorFullscreen(enabled,useNative){
     if(enabled===floorFullscreen)return;
@@ -559,132 +573,114 @@ ONE_PRICE_JS = r'''(function(){
     if(enabled)refitFloorView();else restoreFloorScroll();
   }
   function zoomFromControl(next){var stage=floorResults.querySelector('.floor-stage');if(!stage){setZoom(next);return}var rect=stage.getBoundingClientRect();setZoom(next,rect.width/2,rect.height/2)}
+  var zoomScale=root.querySelector('[data-role="zoom-scale"]'),zoomRange=root.querySelector('[data-role="zoom-range"]'),zoomIn=root.querySelector('[data-role="zoom-in"]'),zoomOut=root.querySelector('[data-role="zoom-out"]'),resetZoom=root.querySelector('[data-role="reset-zoom"]'),floorFullscreen=false,floorFullscreenScroll={x:0,y:0};
+  function floorFullscreenButtons(){return Array.prototype.slice.call(root.querySelectorAll('[data-role="floor-fullscreen"]'))}
+  function syncFloorFullscreen(){floorFullscreenButtons().forEach(function(button){button.setAttribute('aria-pressed',floorFullscreen?'true':'false');button.textContent=floorFullscreen?'退出全屏':'全屏地图'})}
+  function revealFloorStage(stage){
+    if(!stage)return;
+    stage.scrollIntoView({block:'center'});
+  }
   if(zoomIn)zoomIn.addEventListener('click',function(){zoomFromControl((viewState.scale+.18)*100)});
   if(zoomOut)zoomOut.addEventListener('click',function(){zoomFromControl((viewState.scale-.18)*100)});
   if(resetZoom)resetZoom.addEventListener('click',function(){resetView(floorResults.querySelector('.floor-canvas'))});
   root.addEventListener('click',function(event){var button=event.target.closest('[data-role="floor-fullscreen"]');if(button)setFloorFullscreen(!floorFullscreen,true)});
-  document.addEventListener('fullscreenchange',function(){if(floorFullscreen&&document.fullscreenElement!==root){floorFullscreen=false;root.classList.remove('floor-fullscreen');syncFloorFullscreen();restoreFloorScroll()}if(!document.fullscreenElement&&!floorFullscreen)setTimeout(function(){restoreFloorScroll()},50)});
+  document.addEventListener('fullscreenchange',function(){if(floorFullscreen&&document.fullscreenElement!==root){floorFullscreen=false;root.classList.remove('floor-fullscreen');syncFloorFullscreen();restoreFloorScroll()}if(!document.fullscreenElement&&!floorFullscreen)setTimeout(restoreFloorScroll,50)});
   document.addEventListener('keydown',function(event){if(event.key==='Escape'&&floorFullscreen){event.preventDefault();setFloorFullscreen(false,true)}});
-  window.addEventListener('resize',function(){if(view==='floor')refitFloorView()});
+  window.addEventListener('resize',function(){stageBoxCache=null;if(view==='floor')refitFloorView()});
+  window.addEventListener('scroll',function(){stageBoxCache=null},{passive:true});
   if(zoomRange)zoomRange.addEventListener('input',function(){zoomFromControl(zoomRange.value)});
-  var allBuildings=root.querySelector('[data-role="all-buildings"]');
-  if(allBuildings)allBuildings.addEventListener('click',function(){building='all';unit='all';limit=100;render()});
+  if(resultPrev)resultPrev.addEventListener('click',function(){selectResultIndex(resultIndex-1)});
+  if(resultNext)resultNext.addEventListener('click',function(){selectResultIndex(resultIndex+1)});
   if(backToOverview)backToOverview.addEventListener('click',function(){building='all';unit='all';limit=100;render()});
-  var activePointers=new Map();var pinchState=null;var gestureMoved=false;
-  function stagePoint(stage,event){var rect=stage.getBoundingClientRect();return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
-  function currentPoints(stage){var values=[];activePointers.forEach(function(point){values.push(point)});return values}
-  function startPinch(stage){var points=currentPoints(stage);if(points.length<2)return;var ax=(points[0].x+points[1].x)/2;var ay=(points[0].y+points[1].y)/2;var dx=points[0].x-points[1].x;var dy=points[0].y-points[1].y;pinchState={distance:Math.max(1,Math.hypot(dx,dy)),baseScale:viewState.scale,worldX:(ax-viewState.x)/viewState.scale,worldY:(ay-viewState.y)/viewState.scale,midX:ax,midY:ay}}
+  var activePointers=new Map(),pinchState=null,gestureMoved=false,gestureStage=null,gestureRect=null;
+  function stageBox(stage){if(stageBoxElement!==stage||!stageBoxCache){gestureRect=stage.getBoundingClientRect();stageBoxElement=stage;stageBoxCache=gestureRect}return stageBoxCache}
+  function stagePoint(stage,event){var rect=stageBox(stage);return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
+  function currentPoints(){var values=[];activePointers.forEach(function(point){values.push(point)});return values}
+  function startPinch(stage){var points=currentPoints(stage);if(points.length<2)return;var ax=(points[0].x+points[1].x)/2,ay=(points[0].y+points[1].y)/2,dx=points[0].x-points[1].x,dy=points[0].y-points[1].y;pinchState={distance:Math.max(1,Math.hypot(dx,dy)),baseScale:viewState.scale,worldX:(ax-viewState.x)/viewState.scale,worldY:(ay-viewState.y)/viewState.scale}}
   function wheelFactor(event){return event.deltaMode===1?16:event.deltaMode===2?100:1}
   floorResults.addEventListener('wheel',function(event){
-    if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;
-    event.preventDefault();var factor=wheelFactor(event);var point=stagePoint(stage,event);
+    if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;event.preventDefault();
+    var factor=wheelFactor(event),point=stagePoint(stage,event);
     if(event.ctrlKey){zoomAt(point.x,point.y,viewState.scale*Math.exp(-event.deltaY*factor*.0022));return}
     panBy(-event.deltaX*factor,-event.deltaY*factor);
   },{passive:false});
   floorResults.addEventListener('pointerdown',function(event){
-    if(view==='table'||event.button!==0)return;gestureMoved=false;var stage=event.target.closest('.floor-stage');if(!stage)return;
-    var selectableUnit=event.target.closest('.building-overview');var point=stagePoint(stage,event);activePointers.set(event.pointerId,point);gestureMoved=false;
+    if(view==='table'||event.button!==0)return;var stage=event.target.closest('.floor-stage');if(!stage)return;
+    gestureMoved=false;gestureStage=stage;stageBox(stage);var selectableUnit=event.target.closest('.building-overview');var point=stagePoint(stage,event);activePointers.set(event.pointerId,point);
     if(!selectableUnit){event.preventDefault();try{stage.setPointerCapture(event.pointerId)}catch(error){}}
     if(activePointers.size===2)startPinch(stage);
   });
   floorResults.addEventListener('pointermove',function(event){
-    if(view==='table'||!activePointers.has(event.pointerId))return;var stage=event.target.closest('.floor-stage');if(!stage)return;
-    var previous=activePointers.get(event.pointerId);var point=stagePoint(stage,event);activePointers.set(event.pointerId,point);
+    if(view==='table'||!activePointers.has(event.pointerId)||!gestureStage)return;var stage=gestureStage;var previous=activePointers.get(event.pointerId),point=stagePoint(stage,event);activePointers.set(event.pointerId,point);
     if(Math.hypot(point.x-previous.x,point.y-previous.y)>4)gestureMoved=true;
     if(gestureMoved)stage.classList.add('dragging');
     if(activePointers.size>=2&&pinchState){
-      var points=currentPoints(stage);var ax=(points[0].x+points[1].x)/2;var ay=(points[0].y+points[1].y)/2;
-      var dx=points[0].x-points[1].x;var dy=points[0].y-points[1].y;var distance=Math.max(1,Math.hypot(dx,dy));
-      viewState.scale=clampScale(pinchState.baseScale*distance/pinchState.distance);
-      viewState.x=ax-pinchState.worldX*viewState.scale;viewState.y=ay-pinchState.worldY*viewState.scale;applyViewState(floorResults.querySelector('.floor-canvas'));
-      var percent=Math.round(viewState.scale*100);if(zoomScale)zoomScale.textContent=percent+'%';if(zoomRange)zoomRange.value=String(percent);
-    }else if(activePointers.size===1){panBy(point.x-previous.x,point.y-previous.y)}
+      var points=currentPoints(),ax=(points[0].x+points[1].x)/2,ay=(points[0].y+points[1].y)/2,dx=points[0].x-points[1].x,dy=points[0].y-points[1].y,distance=Math.max(1,Math.hypot(dx,dy));
+      viewState.scale=clampScale(pinchState.baseScale*distance/pinchState.distance);viewState.x=ax-pinchState.worldX*viewState.scale;viewState.y=ay-pinchState.worldY*viewState.scale;queueTransform(floorResults.querySelector('.floor-canvas'),false);
+    }else if(activePointers.size===1)panBy(point.x-previous.x,point.y-previous.y);
   });
   function endPointer(event){
-    if(!activePointers.has(event.pointerId))return;
-    var stage=event.target.closest('.floor-stage');
-    activePointers.delete(event.pointerId);
+    if(!activePointers.has(event.pointerId))return;var stage=gestureStage;activePointers.delete(event.pointerId);
     if(stage){try{stage.releasePointerCapture(event.pointerId)}catch(error){}}
     if(activePointers.size<2)pinchState=null;
-    if(!activePointers.size){if(stage)stage.classList.remove('dragging');queueClamp(floorResults.querySelector('.floor-canvas'))}
+    if(!activePointers.size){if(stage)stage.classList.remove('dragging');queueClamp(floorResults.querySelector('.floor-canvas'));gestureStage=null;gestureMoved=false}
   }
-  floorResults.addEventListener('pointerup',endPointer);
-  floorResults.addEventListener('pointercancel',endPointer);
-  floorResults.addEventListener('touchmove',function(event){
-    if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;event.preventDefault()
-  },{passive:false});
-  floorResults.addEventListener('click',function(event){if(view==='floor'&&gestureMoved){event.stopPropagation();event.preventDefault()}},true);
+  floorResults.addEventListener('pointerup',endPointer);floorResults.addEventListener('pointercancel',endPointer);
+  floorResults.addEventListener('touchmove',function(event){if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;event.preventDefault()},{passive:false});
+  floorResults.addEventListener('click',function(event){
+    if(view==='floor'&&gestureMoved){event.stopPropagation();event.preventDefault();return}
+    var room=event.target.closest('.floor-room');if(!room)return;roomElements.forEach(function(element){element.tabIndex=-1});room.tabIndex=0;
+  },true);
+  function focusRoomFrom(element,deltaX,deltaY){
+    var elements=Array.prototype.slice.call(floorResults.querySelectorAll('.floor-room:not(.filtered-out)'));var index=elements.indexOf(element);var next=elements[index+deltaY*3+deltaX];if(next){next.tabIndex=0;next.focus({preventScroll:true})}
+  }
   floorResults.addEventListener('keydown',function(event){
-    if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;
-    var step=event.shiftKey?100:40;var key=event.key;
-    if(key==='ArrowLeft'){event.preventDefault();panBy(-step,0)}
-    else if(key==='ArrowRight'){event.preventDefault();panBy(step,0)}
-    else if(key==='ArrowUp'){event.preventDefault();panBy(0,-step)}
-    else if(key==='ArrowDown'){event.preventDefault();panBy(0,step)}
-    else if(key==='+'||key==='='){event.preventDefault();zoomFromControl((viewState.scale+.08)*100)}
-    else if(key==='-'||key==='_'){event.preventDefault();zoomFromControl((viewState.scale-.08)*100)}
-    else if(key==='0'){event.preventDefault();resetView(floorResults.querySelector('.floor-canvas'))}
+    if(view==='table')return;var stage=event.target.closest('.floor-stage');if(!stage)return;var key=event.key;
+    if(event.target.classList&&event.target.classList.contains('floor-room')){
+      if(key==='ArrowLeft'||key==='ArrowRight'||key==='ArrowUp'||key==='ArrowDown'){event.preventDefault();focusRoomFrom(event.target,key==='ArrowLeft'?-1:key==='ArrowRight'?1:0,key==='ArrowUp'?-1:key==='ArrowDown'?1:0)}
+      else if(key==='Escape'){event.preventDefault();stage.focus()}
+      return;
+    }
+    var step=event.shiftKey?100:40;
+    if(key==='ArrowLeft'){event.preventDefault();panBy(-step,0)}else if(key==='ArrowRight'){event.preventDefault();panBy(step,0)}else if(key==='ArrowUp'){event.preventDefault();panBy(0,-step)}else if(key==='ArrowDown'){event.preventDefault();panBy(0,step)}else if(key==='+'||key==='='){event.preventDefault();zoomFromControl((viewState.scale+.08)*100)}else if(key==='-'||key==='_'){event.preventDefault();zoomFromControl((viewState.scale-.08)*100)}else if(key==='0'){event.preventDefault();resetView(floorResults.querySelector('.floor-canvas'))}
   });
   root.querySelectorAll('[data-role="view-mode"]').forEach(function(button){
-    button.addEventListener('click',function(){
-      root.querySelectorAll('[data-role="view-mode"]').forEach(function(item){item.setAttribute('aria-pressed','false')});
-      button.setAttribute('aria-pressed','true');view=button.getAttribute('data-mode');render();
-    });
+    button.addEventListener('click',function(){root.querySelectorAll('[data-role="view-mode"]').forEach(function(item){item.setAttribute('aria-pressed','false')});button.setAttribute('aria-pressed','true');view=button.getAttribute('data-mode');render()});
   });
   if(filterToggle)filterToggle.addEventListener('click',function(){filtersOpen=!filtersOpen;syncFilterControls();if(view==='floor')refitFloorView()});
   if(resetFiltersButton)resetFiltersButton.addEventListener('click',clearAllFilters);
   root.querySelectorAll('[data-role="room-filter"]').forEach(function(button){
-    button.addEventListener('click',function(){
-      root.querySelectorAll('[data-role="room-filter"]').forEach(function(item){item.setAttribute('aria-pressed','false')});
-      button.setAttribute('aria-pressed','true');filter=button.getAttribute('data-filter');limit=100;render();
-    });
+    button.addEventListener('click',function(){root.querySelectorAll('[data-role="room-filter"]').forEach(function(item){item.setAttribute('aria-pressed','false')});button.setAttribute('aria-pressed','true');filter=button.getAttribute('data-filter');limit=100;requestResultFocus();render()});
   });
-  search.addEventListener('input',function(){query=search.value;limit=100;scheduleRender()});
-  certificateSelect.addEventListener('change',function(){certificate=certificateSelect.value;building='all';unit='all';limit=100;render()});
+  search.addEventListener('input',function(){query=search.value;limit=100;requestResultFocus();scheduleRender()});
+  certificateSelect.addEventListener('change',function(){certificate=certificateSelect.value;limit=100;render()});
   buildingSelect.addEventListener('change',function(){building=buildingSelect.value;unit='all';limit=100;render()});
   unitSelect.addEventListener('change',function(){unit=unitSelect.value;limit=100;render()});
   [['price-min','priceMin'],['price-max','priceMax'],['total-min','totalMin'],['total-max','totalMax']].forEach(function(pair){
     var input=root.querySelector('[data-role="'+pair[0]+'"]');if(!input)return;
-    input.addEventListener('input',function(){bounds[pair[1]]=input.value===''?null:Number(input.value);if(input.value!==''&&!isFinite(bounds[pair[1]]))bounds[pair[1]]=null;limit=100;scheduleRender()});
+    input.addEventListener('input',function(){bounds[pair[1]]=input.value===''?null:Number(input.value);if(input.value!==''&&!isFinite(bounds[pair[1]]))bounds[pair[1]]=null;limit=100;requestResultFocus();scheduleRender()});
   });
-  function setDiscount(value){
-    var parsed=Math.round(Number(value));
-    if(!isFinite(parsed))parsed=discountRate;
-    discountRate=Math.min(100,Math.max(1,parsed));if(discountInput)discountInput.value=String(discountRate);limit=100;render();
-  }
+  function setDiscount(value){var parsed=Math.round(Number(value));if(!isFinite(parsed))parsed=discountRate;discountRate=Math.min(100,Math.max(1,parsed));if(discountInput)discountInput.value=String(discountRate);limit=100;render()}
   if(discountInput){
-    discountInput.addEventListener('input',function(){
-      if(discountInput.value==='')return;
-      var parsed=Math.round(Number(discountInput.value));if(isFinite(parsed)&&parsed>=1&&parsed<=100)discountRate=parsed;limit=100;scheduleRender(320);
-    });
+    discountInput.addEventListener('input',function(){if(discountInput.value==='')return;var parsed=Math.round(Number(discountInput.value));if(isFinite(parsed)&&parsed>=1&&parsed<=100)discountRate=parsed;limit=100;scheduleRender(320)});
     discountInput.addEventListener('change',function(){setDiscount(discountInput.value)});
   }
   more.addEventListener('click',function(){limit+=200;render()});
   function loadJSON(url){
     if(!/\.json\.gz$/.test(url))return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.json()});
     if(typeof DecompressionStream==='undefined')return Promise.reject(new Error('当前浏览器不支持解压静态 JSON'));
-    return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.arrayBuffer()}).then(function(buffer){
-      var stream=new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'));return new Response(stream).json();
-    });
+    return fetch(url).then(function(response){if(!response.ok)throw new Error('HTTP '+response.status);return response.arrayBuffer()}).then(function(buffer){var stream=new Blob([buffer]).stream().pipeThrough(new DecompressionStream('gzip'));return new Response(stream).json()});
   }
   loadJSON(url).then(function(data){
     if(data&&data.status&&data.status!=='complete')throw new Error(data.message||'接口返回错误');
-    rooms=[];
-    (data.certificates||[]).forEach(function(certificate){
-      var id=String(certificate.id||'unknown');var name=certificate.name||('预售证 '+id);
-      var option=document.createElement('option');option.value=id;option.textContent=name;certificateSelect.appendChild(option);
-      (certificate.rooms||[]).forEach(function(room){
-        var picked=Object.assign({},pickRoom(room),{certificateId:id,certificateName:name});
-        picked.searchText=(name+' '+picked.searchText).toLowerCase();rooms.push(picked);
-      });
+    rooms=[];(data.certificates||[]).forEach(function(certificateSource){
+      var id=String(certificateSource.id||'unknown'),name=certificateSource.name||('预售证 '+id),option=document.createElement('option');option.value=id;option.textContent=name;certificateSelect.appendChild(option);
+      (certificateSource.rooms||[]).forEach(function(room){var picked=Object.assign({},pickRoom(room),{certificateId:id,certificateName:name});picked.searchText=(name+' '+picked.searchText).toLowerCase();rooms.push(picked)});
     });
     priceGroups=buildPricePalette(rooms);render();
   }).catch(function(error){
-    tbody.replaceChildren(document.createElement('tr'));
-    var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';
-    cell.textContent='一房一价明细载入失败：'+error.message;tbody.firstChild.appendChild(cell);
-    floorRenderToken++;floorResults.replaceChildren();var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);if(backToOverview)floorResults.appendChild(backToOverview);
-    count.textContent='载入失败';more.hidden=true;
+    tbody.replaceChildren(document.createElement('tr'));var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';cell.textContent='一房一价明细载入失败：'+error.message;tbody.firstChild.appendChild(cell);
+    floorRenderToken++;floorResults.replaceChildren();floorSignature='';var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);if(backToOverview)floorResults.appendChild(backToOverview);count.textContent='载入失败';more.hidden=true;
   });
 })();
 '''
