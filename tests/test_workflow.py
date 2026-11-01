@@ -57,14 +57,17 @@ def test_featured_daily_sales_workflow_tracks_yesterday_by_building():
     assert 'countMatchesSource' in workflow
     assert 'gzip.decompress' in workflow
     assert "git add -A -- . ':(exclude).github'" in workflow
-    assert 'Send Bark notifications' in workflow
+    assert 'Send Bark notification' in workflow
     assert 'BARK_URL: ${{ secrets.BARK_URL }}' in workflow
     assert 'urlopen' in workflow
     assert 'PAGES_BASE_URL: ${{ vars.PAGES_BASE_URL }}' in workflow
     assert 'BARK_GROUP: ${{ vars.BARK_GROUP }}' in workflow
     assert 'BARK_TTL: ${{ vars.BARK_TTL }}' in workflow
-    assert 'urlencode({\'group\': bark_group, \'ttl\': str(bark_ttl), \'url\': project_url})' in workflow
-    assert 'projects/' in workflow
+    assert "title = f'重点楼盘 {date} 成交 {total_sold} 套'" in workflow
+    assert "report_url = f'{pages_base_url}/featured-daily-sales/'" in workflow
+    assert "urlencode({'group': bark_group, 'ttl': str(bark_ttl), 'url': report_url})" in workflow
+    assert 'projects/' not in workflow
+    assert 'notified featured daily summary' in workflow
 
 
 def test_featured_project_list_is_available_to_scheduled_and_manual_actions():

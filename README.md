@@ -82,7 +82,7 @@ FastAPI
 - `site/featured-daily-sales/` 按楼盘 → 楼栋 → 单元/楼层/房号展示，并汇总项目/地块线索、行政区线索、库存、去化、可售均价、户型数、竣工交付、楼型、楼层、单元与预售证；
 - `site/data/featured-daily-sales/YYYY-MM-DD.json` 保留逐日历史，`latest.json` 是最新日报；
 - 统计来自官方昨日网签明细，并在生成时校验楼栋明细合计与接口楼盘汇总值一致；
-- 同步成功后通过 Bark 推送每个重点楼盘的成交摘要；点击通知进入对应楼盘详情页。Bark 地址保存在 `BARK_URL` Actions Secret 中。
+- 同步成功后通过 Bark 推送一条重点楼盘汇总通知；点击通知进入重点楼盘昨日成交日报，再查看各楼盘与楼栋明细。Bark 地址保存在 `BARK_URL` Actions Secret 中。
 
 ### 实时输出
 
