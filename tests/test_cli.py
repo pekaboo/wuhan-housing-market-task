@@ -155,6 +155,13 @@ def test_enrichment_batch_fetches_only_the_rotation_slice_and_keeps_old_data():
         assert 'preserved the previous one-price snapshot' in '\n'.join(logs)
 
 
+def test_parser_accepts_zero_for_featured_only_manual_enrichment():
+    args = build_parser().parse_args(['--fetch-one-price', '--enrichment-batch-size', '0'])
+
+    assert args.fetch_one_price is True
+    assert args.enrichment_batch_size == 0
+
+
 def test_parser_supports_reusing_committed_enrichment_for_daily_runs():
     args = build_parser().parse_args(['--reuse-enrichment'])
 

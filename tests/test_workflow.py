@@ -37,7 +37,8 @@ def test_full_enrichment_workflow_is_manual_and_batched():
     assert 'workflow_dispatch:' in workflow
     assert 'schedule:' not in workflow
     assert 'batch_size:' in workflow
-    assert 'default: 100' in workflow
+    assert 'default: 0' in workflow
+    assert '0 refreshes featured projects only' in workflow
     assert '--fetch-one-price' in workflow
     assert '--enrichment-batch-size ${{ inputs.batch_size }}' in workflow
     assert 'timeout-minutes: 30' in workflow

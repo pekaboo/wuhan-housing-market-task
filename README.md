@@ -129,7 +129,7 @@ FastAPI
 | `--page-size` | `WFT_PAGE_SIZE` | `50` |
 | `--room-page-size` | `WFT_ROOM_PAGE_SIZE` | `500` |
 | `--fetch-one-price` | 无 | 关闭；开启后分批补齐户型图、一房一价与昨日网签 |
-| `--enrichment-batch-size` | `WFT_ENRICHMENT_BATCH_SIZE` | `80`；按项目列表游标轮转，未轮到的项目复用已提交 JSON |
+| `--enrichment-batch-size` | `WFT_ENRICHMENT_BATCH_SIZE` | `80`；按项目列表游标轮转，未轮到的项目复用已提交 JSON；`0` 表示仅刷新重点楼盘 |
 | `--featured-projects` | `WFT_FEATURED_PROJECTS` | `config/featured-projects.txt`；支持项目 ID 或名称 |
 | `--refresh-featured` | 无 | 关闭；复用增量数据时仍强制刷新重点楼盘详情 |
 | `--max-pages` | `WFT_MAX_PAGES` | `100` |

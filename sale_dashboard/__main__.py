@@ -43,6 +43,13 @@ def positive_int(value: str) -> int:
     return parsed
 
 
+def nonnegative_int(value: str) -> int:
+    parsed = int(value)
+    if parsed < 0:
+        raise argparse.ArgumentTypeError('must be non-negative')
+    return parsed
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Generate the Wuhan sale-control static dashboard')
     parser.add_argument('--site-output', default=os.getenv('WFT_SITE_OUTPUT', 'site'))
@@ -73,9 +80,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         '--enrichment-batch-size',
-        type=positive_int,
+        type=nonnegative_int,
         default=int(os.getenv('WFT_ENRICHMENT_BATCH_SIZE', str(DEFAULT_ENRICHMENT_BATCH_SIZE))),
-        help='number of projects to enrich per run; existing static JSON is reused for the rest',
+        help='number of projects to enrich per run; 0 refreshes only featured projects',
     )
     parser.add_argument(
         '--featured-projects',
@@ -302,6 +309,7 @@ def main() -> int:
             batch_size=args.enrichment_batch_size,
             progress=log,
             featured_keys=featured_keys,
+            featured_only=args.enrichment_batch_size == 0,
         )
         request_date = _wangqian_request_date()
         log(f'fetching yesterday wangqian changes for {request_date}')

@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       batch_size:
-        description: Number of projects to enrich incrementally in this run
+        description: Number of extra projects to enrich incrementally; 0 refreshes featured projects only
         required: true
-        default: 100
+        default: 0
         type: number
 
 concurrency:
