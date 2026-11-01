@@ -65,8 +65,8 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
       <div class="room-controls">
         <div class="controls-heading">
           <div class="view-switch" role="group" aria-label="一房一价视图">
-            <button type="button" data-role="view-mode" data-mode="table" aria-pressed="true">明细表</button>
-            <button type="button" data-role="view-mode" data-mode="floor" aria-pressed="false">楼层分布</button>
+            <button type="button" data-role="view-mode" data-mode="table" aria-pressed="false">明细表</button>
+            <button type="button" data-role="view-mode" data-mode="floor" aria-pressed="true">楼层分布</button>
           </div>
           <div class="filter-actions">
             <button type="button" class="filter-toggle" data-role="filter-toggle" aria-expanded="true" aria-controls="price-filter-panel"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span>筛选</span><span class="filter-count" data-role="filter-count" hidden>0</span></button>
@@ -82,8 +82,8 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
           </div>
           <div class="filter-row filter-secondary">
             <div class="room-filters" role="group" aria-label="房源状态筛选">
-              <button type="button" data-role="room-filter" data-filter="all" aria-pressed="true"><span>全部</span></button>
-              <button type="button" data-role="room-filter" data-filter="available" aria-pressed="false"><i class="state-dot" aria-hidden="true"></i><span>可售</span></button>
+              <button type="button" data-role="room-filter" data-filter="all" aria-pressed="false"><span>全部</span></button>
+              <button type="button" data-role="room-filter" data-filter="available" aria-pressed="true"><i class="state-dot" aria-hidden="true"></i><span>可售</span></button>
               <button type="button" data-role="room-filter" data-filter="sold" aria-pressed="false"><i class="state-dot" aria-hidden="true"></i><span>已售</span></button>
               <button type="button" data-role="room-filter" data-filter="abnormal" aria-pressed="false"><i class="state-dot" aria-hidden="true"></i><span>异常</span></button>
             </div>
@@ -122,14 +122,14 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
         <span><output data-role="zoom-scale">100%</output></span>
       </div>
       <p class="floor-note">楼层分布按“楼栋 + 单元”排布：楼栋从左到右、楼层从上到下、同一楼层横向一排。地图式操作：拖拽 / 滚轮上下平移，双指捏合等比缩放；已售为红色，可售为绿色，右上角小方块表示单价且相同价格同色；筛选外房源保留原位置并变成灰色方块。</p>
-      <div class="room-table-wrap">
+      <div class="room-table-wrap" hidden>
         <table class="room-table">
           <caption class="sr-only">一房一价房源明细</caption>
           <thead><tr><th>楼栋</th><th>单元</th><th>楼层</th><th>房号</th><th>户型</th><th>面积</th><th>单价</th><th>总价</th><th>状态</th><th>标记</th><th>交付</th></tr></thead>
           <tbody data-role="room-results"><tr><td colspan="11" class="loading">正在载入房源明细…</td></tr></tbody>
         </table>
       </div>
-      <div class="floor-results" data-role="floor-results" hidden aria-live="polite"><button type="button" class="back-overview" data-role="back-to-overview" hidden aria-label="返回单元总览"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg><span>返回单元总览</span></button><p class="loading">正在载入楼层分布…</p></div>
+      <div class="floor-results" data-role="floor-results" aria-live="polite"><button type="button" class="back-overview" data-role="back-to-overview" hidden aria-label="返回单元总览"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg><span>返回单元总览</span></button><p class="loading">正在载入楼层分布…</p></div>
       <div class="room-foot"><p data-role="room-count" role="status" aria-live="polite">等待载入</p><button type="button" data-role="room-more" hidden>显示更多房源</button></div>
       <div class="certificate-list">{''.join(certificate_cards) or '<p class="one-price-note">暂无预售证摘要。</p>'}</div>
     </section>'''
@@ -197,7 +197,7 @@ ONE_PRICE_JS = r'''(function(){
   var root=document.querySelector('[data-one-price-url]');
   if(!root)return;
   var url=root.getAttribute('data-one-price-url');
-  var view='table',filter='all',certificate='all',building='all',unit='all',query='',limit=100,discountRate=100,renderTimer=null;
+  var view='floor',filter='available',certificate='all',building='all',unit='all',query='',limit=100,discountRate=100,renderTimer=null;
   var bounds={priceMin:null,priceMax:null,totalMin:null,totalMax:null};
   var tbody=root.querySelector('[data-role="room-results"]');
   var tableWrap=root.querySelector('.room-table-wrap');
@@ -317,14 +317,14 @@ ONE_PRICE_JS = r'''(function(){
     if(resetFiltersButton)resetFiltersButton.disabled=active===0;
   }
   function clearAllFilters(){
-    certificate='all';building='all';unit='all';filter='all';query='';limit=100;
+    certificate='all';building='all';unit='all';filter='available';query='';limit=100;
     bounds={priceMin:null,priceMax:null,totalMin:null,totalMax:null};discountRate=100;
     if(discountInput)discountInput.value='100';
     if(certificateSelect)certificateSelect.value='all';
     if(buildingSelect)buildingSelect.value='all';
     if(unitSelect)unitSelect.value='all';
     if(search)search.value='';
-    root.querySelectorAll('[data-role="room-filter"]').forEach(function(item){item.setAttribute('aria-pressed',item.getAttribute('data-filter')==='all'?'true':'false')});
+    root.querySelectorAll('[data-role="room-filter"]').forEach(function(item){item.setAttribute('aria-pressed',item.getAttribute('data-filter')===filter?'true':'false')});
     [['price-min','priceMin'],['price-max','priceMax'],['total-min','totalMin'],['total-max','totalMax']].forEach(function(pair){var input=root.querySelector('[data-role="'+pair[0]+'"]');if(input)input.value=''});
     resultIndex=0;render();
   }
@@ -693,7 +693,7 @@ ONE_PRICE_JS = r'''(function(){
     priceGroups=buildPricePalette(rooms);render();
   }).catch(function(error){
     tbody.replaceChildren(document.createElement('tr'));var cell=document.createElement('td');cell.colSpan=11;cell.className='loading';cell.textContent='一房一价明细载入失败：'+error.message;tbody.firstChild.appendChild(cell);
-    floorRenderToken++;floorResults.replaceChildren();floorSignature='';var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);if(backToOverview)floorResults.appendChild(backToOverview);count.textContent='载入失败';more.hidden=true;
+    tableWrap.hidden=false;floorToolbar.hidden=true;floorRenderToken++;floorResults.replaceChildren();floorResults.hidden=true;floorSignature='';var floorError=document.createElement('p');floorError.className='loading';floorError.textContent='楼层分布载入失败：'+error.message;floorResults.appendChild(floorError);if(backToOverview)floorResults.appendChild(backToOverview);count.textContent='载入失败';more.hidden=true;
   });
 })();
 '''

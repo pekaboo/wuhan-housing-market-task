@@ -259,11 +259,14 @@ def test_one_price_ui_offers_table_and_floor_distribution_modes(tmp_path):
 
     detail = (site_dir / 'projects' / '123' / 'index.html').read_text(encoding='utf-8')
 
-    assert 'data-role="view-mode" data-mode="table" aria-pressed="true"' in detail
-    assert 'data-role="view-mode" data-mode="floor" aria-pressed="false"' in detail
+    assert 'data-role="view-mode" data-mode="table" aria-pressed="false"' in detail
+    assert 'data-role="view-mode" data-mode="floor" aria-pressed="true"' in detail
     assert '明细表' in detail
     assert '楼层分布' in detail
-    assert 'data-role="floor-results" hidden' in detail
+    assert 'data-role="floor-results" aria-live="polite"' in detail
+    assert "var view='floor',filter='available'" in detail
+    assert 'data-filter="available" aria-pressed="true"' in detail
+    assert "filter='available';query='';limit=100;" in detail
     assert 'data-role="building-filter"' in detail
     assert 'data-role="unit-filter"' in detail
     assert '相同价格同色；筛选外房源保留原位置并变成灰色方块' in detail
