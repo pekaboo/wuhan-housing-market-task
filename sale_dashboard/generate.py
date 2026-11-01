@@ -11,6 +11,11 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from .featured_sales import (
+    build_featured_daily_sales,
+    load_featured_daily_sales_history,
+    render_featured_daily_sales_page,
+)
 from .render import render_html
 from .site import render_project_page
 from .wangqian import render_wangqian_page
@@ -106,6 +111,7 @@ def write_site(
 ) -> list[Path]:
     timestamp = generated_at or china_timestamp(now)
     root = Path(site_dir)
+    featured_sales_history = load_featured_daily_sales_history(root) if wangqian_snapshot and featured_keys else []
     if root.exists():
         shutil.rmtree(root)
     root.mkdir(parents=True, exist_ok=True)
@@ -172,6 +178,25 @@ def write_site(
         _atomic_write(root / relative_path, render_wangqian_page(wangqian_snapshot, generated_at=timestamp))
         output_paths.append(relative_path)
         _write_json(root / 'data' / 'wangqian' / f'{_wangqian_slug(wangqian_snapshot)}.json', wangqian_snapshot)
+
+    if wangqian_snapshot is not None and featured_keys:
+        current_report = build_featured_daily_sales(
+            wangqian_snapshot,
+            featured_keys,
+            generated_at=timestamp,
+            projects=projects,
+        )
+        reports = {str(report['date']): report for report in featured_sales_history if report.get('date')}
+        reports[str(current_report['date'])] = current_report
+        for date, report in reports.items():
+            _write_json(root / 'data' / 'featured-daily-sales' / f'{date}.json', report)
+        _write_json(root / 'data' / 'featured-daily-sales' / 'latest.json', current_report)
+        relative_path = Path('featured-daily-sales', 'index.html')
+        _atomic_write(
+            root / relative_path,
+            render_featured_daily_sales_page(current_report, list(reports.values())),
+        )
+        output_paths.append(relative_path)
 
     if enrichment_state is not None:
         state = dict(enrichment_state)

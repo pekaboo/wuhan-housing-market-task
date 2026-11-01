@@ -1,0 +1,139 @@
+name: Featured Daily Sales
+
+on:
+  schedule:
+    # 09:00 Asia/Shanghai = 01:00 UTC. GitHub may queue cron runs for a few minutes.
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: production-site
+  cancel-in-progress: false
+
+env:
+  DATA_REPO: pekaboo/wuhan-housing-market-dashboard
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Resolve artifact target
+        id: target
+        run: |
+          value=$(grep -v '^[[:space:]]*#' config/artifact-target.txt | grep -v '^[[:space:]]*$' | head -n 1 | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')
+          case "$value" in
+            local|external)
+              echo "artifact target: $value"
+              echo "target=$value" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "::error::config/artifact-target.txt must contain exactly 'local' or 'external' (found '${value:-<missing>}')."
+              exit 1
+              ;;
+          esac
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Run tests
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt
+          pytest -q
+
+      - name: Check out dashboard repository snapshot
+        if: ${{ steps.target.outputs.target == 'external' }}
+        env:
+          DATA_REPO_TOKEN: ${{ secrets.DATA_REPO_TOKEN }}
+        run: |
+          test -n "$DATA_REPO_TOKEN" || { echo "::error::Set the DATA_REPO_TOKEN repository secret."; exit 1; }
+          rm -rf site
+          git clone --depth 1 "https://x-access-token:${DATA_REPO_TOKEN}@github.com/${DATA_REPO}.git" site
+          mv site/.git .artifact-git
+
+      - name: Sync featured projects and yesterday sales
+        env:
+          WFT_TOKEN: ${{ secrets.WFT_TOKEN }}
+        run: |
+          test -n "$WFT_TOKEN" || { echo "::error::Set the WFT_TOKEN repository secret."; exit 1; }
+          python -m sale_dashboard \
+            --site-output site \
+            --page-size 50 \
+            --room-page-size 500 \
+            --fetch-one-price \
+            --enrichment-batch-size 0 \
+            --featured-projects config/featured-projects.txt
+
+      - name: Validate featured sales report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path('site/data/featured-daily-sales/latest.json').read_text(encoding='utf-8'))
+          if report.get('status') == 'error':
+              raise SystemExit(f"Featured daily sales source failed: {report.get('message')}")
+          for project in report.get('projects', []):
+              if not project.get('countMatchesSource', True):
+                  raise SystemExit(f"Building totals do not match source total for {project.get('name')}")
+          PY
+
+      - name: Ensure token is absent from generated artifacts
+        env:
+          WFT_TOKEN: ${{ secrets.WFT_TOKEN }}
+        run: |
+          python - <<'PY'
+          import gzip
+          import os
+          from pathlib import Path
+
+          token = os.environ["WFT_TOKEN"].encode("utf-8")
+          for path in Path("site").rglob("*"):
+              if not path.is_file():
+                  continue
+              content = path.read_bytes()
+              if content.startswith(b"\x1f\x8b"):
+                  content = gzip.decompress(content)
+              if token in content:
+                  raise SystemExit(f"Generated artifacts contain the upstream token: {path}")
+          PY
+
+      - name: Commit featured daily sales snapshot (local)
+        if: ${{ steps.target.outputs.target == 'local' }}
+        run: |
+          git config user.name "wuhan-housing-market-task[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A site
+          if git diff --cached --quiet; then
+            echo "No featured daily sales changes."
+          else
+            git commit -m "chore: update featured daily sales"
+            git push
+          fi
+
+      - name: Commit featured daily sales snapshot (external)
+        if: ${{ steps.target.outputs.target == 'external' }}
+        run: |
+          export GIT_DIR="$PWD/.artifact-git"
+          export GIT_WORK_TREE="$PWD/site"
+          git config user.name "wuhan-housing-market-task[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- . ':(exclude).github'
+          if git diff --cached --quiet; then
+            echo "No featured daily sales changes."
+          else
+            git commit -m "chore: update featured daily sales"
+            git push
+          fi

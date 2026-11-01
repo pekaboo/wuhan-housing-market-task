@@ -189,7 +189,7 @@ def one_price_coverage(
     <span>{esc(detail)}</span>
   </div>
   <div class="coverage-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{percentage}" aria-label="一房一价覆盖率 {percentage}%"><i style="width:{percentage}%"></i></div>
-  <a class="wangqian-link" href="{esc(root_prefix) if root_prefix else ''}wangqian/">查看昨日网签</a>
+  <div class="report-links"><a class="wangqian-link" href="{esc(root_prefix) if root_prefix else ''}wangqian/">查看昨日网签</a><a class="wangqian-link" href="{esc(root_prefix) if root_prefix else ''}featured-daily-sales/">重点楼盘日报</a></div>
 </section>'''
 
 
@@ -341,7 +341,7 @@ h1 { margin: 0; font-size: clamp(19px, 2.4vw, 27px); line-height: 1.1; letter-sp
 .coverage-bar { height: 7px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--ink) 10%, transparent); }
 .coverage-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--brand), var(--ok)); }
 .wangqian-link { color: var(--brand-ink); font-size: 11px; font-weight: 800; text-decoration: none; white-space: nowrap; }
-.wangqian-link:hover { text-decoration: underline; }
+.wangqian-link:hover { text-decoration: underline; } .report-links { display: flex; gap: 12px; align-items: center; }
 .featured { margin: 6px 0 12px; padding: 11px; border: 1px solid color-mix(in srgb,var(--brand) 18%,var(--line)); border-radius: var(--radius-xl); background: color-mix(in srgb,var(--brand) 5%,var(--panel)); box-shadow: var(--shadow); }
 .featured-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 9px; }
 .featured-head p { margin: 0; color: var(--brand); font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }

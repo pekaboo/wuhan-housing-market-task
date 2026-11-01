@@ -47,6 +47,18 @@ def test_full_enrichment_workflow_is_manual_and_batched():
     assert 'gzip.decompress' in workflow
 
 
+def test_featured_daily_sales_workflow_tracks_yesterday_by_building():
+    workflow = Path('.github/workflows/featured-daily-sales.yml').read_text(encoding='utf-8')
+
+    assert 'cron: "0 1 * * *"' in workflow
+    assert '--enrichment-batch-size 0' in workflow
+    assert '--featured-projects config/featured-projects.txt' in workflow
+    assert 'featured-daily-sales/latest.json' in workflow
+    assert 'countMatchesSource' in workflow
+    assert 'gzip.decompress' in workflow
+    assert "git add -A -- . ':(exclude).github'" in workflow
+
+
 def test_featured_project_list_is_available_to_scheduled_and_manual_actions():
     daily = Path('.github/workflows/daily-production-html.yml').read_text(encoding='utf-8')
     manual = Path('.github/workflows/manual-full-enrichment.yml').read_text(encoding='utf-8')

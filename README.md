@@ -76,6 +76,13 @@ FastAPI
 - `site/data/enrichment-state.json` — 下一批增量抓取游标；
 - `site/data/sale-data.json` — 楼盘列表生产快照；`listUpdatedAt` 表示楼盘列表/销控图刷新时间，`enrichmentUpdatedAt` 表示一房一价/户型图明细最后实际刷新时间。
 
+### 重点楼盘昨日成交
+
+- 每日 **09:00（Asia/Shanghai）** 由独立 Action 同步重点楼盘昨日网签；
+- `site/featured-daily-sales/` 按楼盘 → 楼栋 → 单元/楼层/房号展示；
+- `site/data/featured-daily-sales/YYYY-MM-DD.json` 保留逐日历史，`latest.json` 是最新日报；
+- 统计来自官方昨日网签明细，并在生成时校验楼栋明细合计与接口楼盘汇总值一致。
+
 ### 实时输出
 
 - `/` — 实时全部楼盘总览；
