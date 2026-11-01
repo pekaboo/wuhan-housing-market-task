@@ -224,6 +224,17 @@ class TestRenderHtml(unittest.TestCase):
         self.assertIn('&lt;开发商&gt;测试&lt;/开发商&gt;', page)
         self.assertNotIn('<开发商>测试</开发商>', page)
 
+    def test_overview_distinguishes_list_and_enrichment_update_times(self):
+        page = render_html(
+            self.projects,
+            generated_at='2026-08-28 08:00:00',
+            enrichment_updated_at='2026-08-27 16:20:00',
+        )
+
+        self.assertIn('列表更新 2026-08-28 08:00:00', page)
+        self.assertIn('明细更新 2026-08-27 16:20:00', page)
+        self.assertNotIn('生成 2026-08-28 08:00:00', page)
+
     def test_overview_prioritizes_dense_data_and_opens_charts_in_a_dialog(self):
         rich_project = {
             **project(4, '高密度楼盘'),
@@ -254,6 +265,19 @@ class TestRenderHtml(unittest.TestCase):
         self.assertIn('测试开发商', page)
         self.assertIn('武汉市测试区密集路 1 号', page)
 
+
+
+    def test_detail_page_distinguishes_list_and_enrichment_update_times(self):
+        page = render_project_page(
+            project(4, '完整数据楼盘'),
+            generated_at='2026-08-28 08:00:00',
+            all_count=1,
+            detail_updated_at='2026-08-27 16:20:00',
+        )
+
+        self.assertIn('楼盘列表更新：2026-08-28 08:00:00', page)
+        self.assertIn('一房一价 / 户型更新：2026-08-27 16:20:00', page)
+        self.assertNotIn('生产快照生成时间：2026-08-28 08:00:00', page)
 
 class TestWriteOutputs(unittest.TestCase):
     def test_writes_html_and_atomic_json_snapshot(self):
@@ -338,6 +362,42 @@ class TestSinglePageSite(unittest.TestCase):
             self.assertEqual(snapshot['count'], 7)
             self.assertEqual(snapshot['generatedAt'], '2026-08-27 08:00:00')
 
+
+    def test_writes_separate_list_and_enrichment_update_times(self):
+        projects = [project(1, '壹号院'), project(2, '江岸府')]
+        one_price_snapshots = {
+            1: {'projectId': 1, 'status': 'ok', 'certificates': [], 'generatedAt': '2026-08-26 16:20:00'},
+            2: {'projectId': 2, 'status': 'ok', 'certificates': [], 'generatedAt': '2026-08-27 16:20:00'},
+        }
+        room_type_snapshots = {
+            1: {'projectId': 1, 'status': 'ok', 'certificates': [], 'generatedAt': '2026-08-26 16:21:00'},
+            2: {'projectId': 2, 'status': 'ok', 'certificates': [], 'generatedAt': '2026-08-27 16:21:00'},
+        }
+
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            site_dir = Path(temporary_directory)
+            write_site(
+                projects,
+                site_dir=site_dir,
+                generated_at='2026-08-28 08:00:00',
+                one_price_snapshots=one_price_snapshots,
+                room_type_snapshots=room_type_snapshots,
+                enrichment_state={'version': 1, 'nextIndex': 2},
+            )
+
+            overview = (site_dir / 'index.html').read_text(encoding='utf-8')
+            detail = (site_dir / 'projects' / '1' / 'index.html').read_text(encoding='utf-8')
+            sale_data = json.loads((site_dir / 'data' / 'sale-data.json').read_text(encoding='utf-8'))
+            state = json.loads((site_dir / 'data' / 'enrichment-state.json').read_text(encoding='utf-8'))
+
+            self.assertIn('列表更新 2026-08-28 08:00:00', overview)
+            self.assertIn('明细更新 2026-08-27 16:21:00', overview)
+            self.assertIn('楼盘列表更新：2026-08-28 08:00:00', detail)
+            self.assertIn('一房一价 / 户型更新：2026-08-26 16:21:00', detail)
+            self.assertEqual(sale_data['listUpdatedAt'], '2026-08-28 08:00:00')
+            self.assertEqual(sale_data['enrichmentUpdatedAt'], '2026-08-27 16:21:00')
+            self.assertEqual(state['listUpdatedAt'], '2026-08-28 08:00:00')
+            self.assertEqual(state['enrichmentUpdatedAt'], '2026-08-27 16:21:00')
 
     def test_writes_incremental_enrichment_progress_for_the_next_action_run(self):
         with tempfile.TemporaryDirectory() as temporary_directory:

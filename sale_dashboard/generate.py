@@ -53,6 +53,18 @@ def safe_project_id(project: dict[str, Any], index: int) -> str:
     return ''.join(character if character.isalnum() else '-' for character in raw_id).strip('-') or f'project-{index}'
 
 
+def _latest_generated_at(*snapshot_collections: dict[Any, dict[str, Any]] | None) -> str | None:
+    values = [
+        value
+        for snapshots in snapshot_collections
+        for snapshot in (snapshots or {}).values()
+        if isinstance(snapshot, dict)
+        for value in [snapshot.get('generatedAt')]
+        if isinstance(value, str) and value
+    ]
+    return max(values) if values else None
+
+
 def _project_snapshot(
     project: dict[str, Any],
     snapshots: dict[Any, dict[str, Any]],
@@ -99,6 +111,7 @@ def write_site(
     root.mkdir(parents=True, exist_ok=True)
     snapshots = one_price_snapshots or {}
     room_snapshots = room_type_snapshots or {}
+    enrichment_updated_at = _latest_generated_at(snapshots, room_snapshots)
 
     output_paths: list[Path] = []
     _atomic_write(
@@ -106,6 +119,7 @@ def write_site(
         render_html(
             projects,
             generated_at=timestamp,
+            enrichment_updated_at=enrichment_updated_at,
             one_price_snapshots=snapshots or None,
             featured_keys=featured_keys,
         ),
@@ -134,6 +148,10 @@ def write_site(
             render_project_page(
                 project,
                 generated_at=timestamp,
+                detail_updated_at=_latest_generated_at(
+                    {project.get('id'): snapshot} if snapshot is not None else None,
+                    {project.get('id'): room_snapshot} if room_snapshot is not None else None,
+                ),
                 all_count=len(projects),
                 previous_project=projects[index - 1] if index > 0 else None,
                 next_project=projects[index + 1] if index + 1 < len(projects) else None,
@@ -158,9 +176,18 @@ def write_site(
     if enrichment_state is not None:
         state = dict(enrichment_state)
         state.setdefault('lastRunAt', timestamp)
+        state['listUpdatedAt'] = timestamp
+        if enrichment_updated_at:
+            state['enrichmentUpdatedAt'] = enrichment_updated_at
         _write_json(root / 'data' / 'enrichment-state.json', state)
 
-    snapshot_data = {'generatedAt': timestamp, 'count': len(projects), 'projects': projects}
+    snapshot_data = {
+        'generatedAt': timestamp,
+        'listUpdatedAt': timestamp,
+        'enrichmentUpdatedAt': enrichment_updated_at,
+        'count': len(projects),
+        'projects': projects,
+    }
     _write_json(root / 'data' / 'sale-data.json', snapshot_data)
     return output_paths
 

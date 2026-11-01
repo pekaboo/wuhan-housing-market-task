@@ -259,7 +259,9 @@ def test_enrichment_can_refresh_only_featured_projects_without_advancing_rotatio
 
         assert client.project_ids == [3]
         assert one_price['3']['status'] == 'complete'
+        assert one_price['3']['generatedAt']
         assert room_types['3']['status'] == 'complete'
+        assert room_types['3']['generatedAt']
         assert state['nextIndex'] == 2
         assert state['lastBatchProjectIds'] == [3]
         assert 'refreshing 1 featured project' in '\n'.join(logs)

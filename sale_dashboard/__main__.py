@@ -21,7 +21,7 @@ from .client import (
 )
 from .enrichment import build_one_price_snapshot, build_room_type_snapshot, summarize_one_price
 from .featured import load_featured_project_keys, split_featured_projects
-from .generate import write_site
+from .generate import china_timestamp, write_site
 
 DEFAULT_ENRICHMENT_BATCH_SIZE = 80
 ENRICHMENT_STATE_VERSION = 1
@@ -233,6 +233,8 @@ def enrich_project_batch(
         progress(f'[{position}/{len(projects)}] enriching {project_name} ({project_id})')
 
         new_one_price = build_one_price_snapshot(client, project_id)
+        detail_updated_at = china_timestamp()
+        new_one_price['generatedAt'] = detail_updated_at
         old_one_price = one_price_snapshots.get(str(project_id))
         if new_one_price.get('status') == 'error' and old_one_price and old_one_price.get('status') != 'error':
             progress(f'[{position}/{len(projects)}] preserved the previous one-price snapshot for {project_name}')
@@ -240,6 +242,7 @@ def enrich_project_batch(
             one_price_snapshots[str(project_id)] = new_one_price
 
         new_room_types = build_room_type_snapshot(client, project_id)
+        new_room_types['generatedAt'] = detail_updated_at
         old_room_types = room_type_snapshots.get(str(project_id))
         if new_room_types.get('status') == 'error' and old_room_types and old_room_types.get('status') != 'error':
             progress(f'[{position}/{len(projects)}] preserved the previous room-type snapshot for {project_name}')

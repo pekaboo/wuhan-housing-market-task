@@ -74,7 +74,7 @@ FastAPI
 - `site/data/projects/{id}/one-price.json.gz` — 该楼盘一房一价持久 gzip JSON；浏览器端自动解压，显著控制仓库体积；
 - `site/data/projects/{id}/room-types.json` — 该楼盘户型图持久 JSON；
 - `site/data/enrichment-state.json` — 下一批增量抓取游标；
-- `site/data/sale-data.json` — 楼盘列表生产快照。
+- `site/data/sale-data.json` — 楼盘列表生产快照；`listUpdatedAt` 表示楼盘列表/销控图刷新时间，`enrichmentUpdatedAt` 表示一房一价/户型图明细最后实际刷新时间。
 
 ### 实时输出
 

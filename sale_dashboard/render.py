@@ -491,6 +491,7 @@ def render_html(
     projects: list[dict[str, Any]],
     *,
     generated_at: str,
+    enrichment_updated_at: str | None = None,
     root_prefix: str = '',
     one_price_snapshots: dict[Any, dict[str, Any]] | None = None,
     featured_keys: list[str] | None = None,
@@ -556,7 +557,7 @@ def render_html(
     <h1>武汉楼盘销控情报台</h1>
     <p class="subtitle">每日 08:00 自动获取生产数据；一房一价增量由手动全量任务维护。</p>
   </div>
-  <div class="metadata"><span class="pill">城市 4201 · 武汉</span><span class="pill">生成 {esc(generated_at)}</span></div>
+  <div class="metadata"><span class="pill">城市 4201 · 武汉</span><span class="pill">列表更新 {esc(generated_at)}</span><span class="pill">明细更新 {esc(enrichment_updated_at or '暂无')}</span></div>
 </header>
 {featured_section}
 <section class="kpis" aria-label="市场概览">

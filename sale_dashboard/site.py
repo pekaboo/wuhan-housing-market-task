@@ -81,6 +81,7 @@ def render_project_page(
     project: dict[str, Any],
     *,
     generated_at: str,
+    detail_updated_at: str | None = None,
     all_count: int,
     previous_project: dict[str, Any] | None = None,
     next_project: dict[str, Any] | None = None,
@@ -161,7 +162,7 @@ def render_project_page(
   </article>
 </dialog>
 <nav class="footer-nav" aria-label="项目导航">{previous_html}{next_html}</nav>
-<p class="description" style="margin-top:24px">生产快照生成时间：{esc(generated_at)}；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
+<p class="description" style="margin-top:24px">楼盘列表更新：{esc(generated_at)}；一房一价 / 户型更新：{esc(detail_updated_at or '暂无')}；<a href="../../data/sale-data.json">查看 JSON 数据</a>。</p>
 </div>
 <script>
 {ONE_PRICE_JS}
