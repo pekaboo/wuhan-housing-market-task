@@ -151,7 +151,7 @@ FastAPI
 - `external`（默认）— 提交到数据仓 `pekaboo/wuhan-housing-market-dashboard`，本仓库只保留代码；增量复用与轮转游标都从数据仓读取。
 - `local` — 提交回本仓库（旧行为）。
 
-翻转开关 = 改一行并提交。文件缺失或值非法时任务会在测试前立即失败，不会猜方向。数据仓地址配置在两个 workflow 的顶层 `env.DATA_REPO`。
+翻转开关 = 改一行并提交。文件缺失或值非法时任务会在测试前立即失败，不会猜方向。数据仓地址配置在 Actions Variable `DATA_REPO`。
 
 external 模式前置条件（一次性，约 2 分钟）：
 
@@ -175,10 +175,21 @@ GitHub Pages 部署策略：
 
 ### GitHub Secrets 与 Pages
 
-在仓库 **Settings → Secrets and variables → Actions** 配置：
+在仓库 **Settings → Secrets and variables → Actions** 配置。
+
+Actions Variables（非敏感运行时配置）：
+
+- `DATA_REPO`：数据仓，例如 `pekaboo/wuhan-housing-market-dashboard`；
+- `WFT_API_URL`：五房通完整 API endpoint，例如 `https://xcx.wufangtong.com/api/v1/data/GetLouPanSaleImages`；
+- `PAGES_BASE_URL`：公开站点根地址，例如 `https://pages.wangyitu.tech/wuhan-housing-market-dashboard`；
+- `BARK_GROUP`：Bark 通知分组；
+- `BARK_TTL`：Bark 通知保留秒数，取值 60–86400。
+
+Actions Secrets（凭证，不要放在 Variables）：
 
 - `WFT_TOKEN`：五房通登录 token。不要提交到代码。
 - `DATA_REPO_TOKEN`：跨仓推送产物用的 fine-grained PAT（见上一节）。
+- `BARK_URL`：包含设备推送 key 的 Bark endpoint。因为它包含凭证，必须放 Secret，而不是 Variable。
 
 上游 token 有有效期。过期后每日静态任务会失败；FastAPI 健康检查仍可用，但数据接口会返回 503/502，需要重新抓包并更新环境变量。
 

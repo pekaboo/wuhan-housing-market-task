@@ -11,7 +11,11 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DATA_REPO: pekaboo/wuhan-housing-market-dashboard
+  DATA_REPO: ${{ vars.DATA_REPO }}
+  WFT_API_URL: ${{ vars.WFT_API_URL }}
+  PAGES_BASE_URL: ${{ vars.PAGES_BASE_URL }}
+  BARK_GROUP: ${{ vars.BARK_GROUP }}
+  BARK_TTL: ${{ vars.BARK_TTL }}
 
 permissions:
   contents: write
@@ -25,6 +29,40 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
+      - name: Validate runtime configuration
+        run: |
+          test -n "$DATA_REPO" || { echo "::error::Set the DATA_REPO Actions variable."; exit 1; }
+          printf '%s' "$DATA_REPO" | grep -Eq '^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$' || {
+            echo "::error::DATA_REPO must look like owner/repository."
+            exit 1
+          }
+          test -n "$WFT_API_URL" || { echo "::error::Set the WFT_API_URL Actions variable."; exit 1; }
+          case "$WFT_API_URL" in
+            https://*) ;;
+            *) echo "::error::WFT_API_URL must use HTTPS."; exit 1 ;;
+          esac
+          printf '%s' "$WFT_API_URL" | grep -Eq '^[^[:space:]]+$' || {
+            echo "::error::WFT_API_URL must not contain whitespace."
+            exit 1
+          }
+          test -n "$PAGES_BASE_URL" || { echo "::error::Set the PAGES_BASE_URL Actions variable."; exit 1; }
+          case "$PAGES_BASE_URL" in
+            https://*) ;;
+            *) echo "::error::PAGES_BASE_URL must use HTTPS."; exit 1 ;;
+          esac
+          test -n "$BARK_GROUP" || { echo "::error::Set the BARK_GROUP Actions variable."; exit 1; }
+          printf '%s' "$BARK_GROUP" | grep -Eq '^[A-Za-z0-9_.-]+$' || {
+            echo "::error::BARK_GROUP may only contain letters, numbers, dots, underscores, and hyphens."
+            exit 1
+          }
+          test -n "$BARK_TTL" || { echo "::error::Set the BARK_TTL Actions variable."; exit 1; }
+          case "$BARK_TTL" in
+            ''|*[!0-9]*) echo "::error::BARK_TTL must be an integer."; exit 1 ;;
+          esac
+          if [ "$BARK_TTL" -lt 60 ] || [ "$BARK_TTL" -gt 86400 ]; then
+            echo "::error::BARK_TTL must be between 60 and 86400 seconds."
+            exit 1
+          fi
       - name: Resolve artifact target
         id: target
         run: |
@@ -70,6 +108,7 @@ jobs:
           test -n "$WFT_TOKEN" || { echo "::error::Set the WFT_TOKEN repository secret."; exit 1; }
           python -m sale_dashboard \
             --site-output site \
+            --api-url "$WFT_API_URL" \
             --page-size 50 \
             --room-page-size 500 \
             --fetch-one-price \
@@ -153,6 +192,11 @@ jobs:
 
           report = json.loads(Path('site/data/featured-daily-sales/latest.json').read_text(encoding='utf-8'))
           base_url = os.environ['BARK_URL'].rstrip('/')
+          pages_base_url = os.environ['PAGES_BASE_URL'].rstrip('/')
+          bark_group = os.environ['BARK_GROUP'].strip()
+          bark_ttl = int(os.environ['BARK_TTL'])
+          if not pages_base_url.startswith('https://'):
+              raise SystemExit('PAGES_BASE_URL must use HTTPS')
           if not base_url.startswith('https://'):
               raise SystemExit('BARK_URL must be an HTTPS endpoint')
 
@@ -167,10 +211,10 @@ jobs:
               ) or '无成交'
               title = f'{name} 昨日成交 {count} 套'
               body = f'{date}：{building_text}'
-              project_url = f"https://pages.wangyitu.tech/wuhan-housing-market-dashboard/projects/{quote(str(project.get('projectId')), safe='')}/"
+              project_url = f"{pages_base_url}/projects/{quote(str(project.get('projectId')), safe='')}/"
               notification_url = (
                   f"{base_url}/{quote(title, safe='')}/{quote(body, safe='')}?"
-                  + urlencode({'group': 'example', 'ttl': '600', 'url': project_url})
+                  + urlencode({'group': bark_group, 'ttl': str(bark_ttl), 'url': project_url})
               )
               request = Request(notification_url, headers={'User-Agent': 'wuhan-housing-market-task-action'})
               with urlopen(request, timeout=15, context=ssl.create_default_context()) as response:

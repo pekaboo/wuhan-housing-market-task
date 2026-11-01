@@ -60,8 +60,10 @@ def test_featured_daily_sales_workflow_tracks_yesterday_by_building():
     assert 'Send Bark notifications' in workflow
     assert 'BARK_URL: ${{ secrets.BARK_URL }}' in workflow
     assert 'urlopen' in workflow
-    assert "group': 'example'" in workflow
-    assert "ttl': '600'" in workflow
+    assert 'PAGES_BASE_URL: ${{ vars.PAGES_BASE_URL }}' in workflow
+    assert 'BARK_GROUP: ${{ vars.BARK_GROUP }}' in workflow
+    assert 'BARK_TTL: ${{ vars.BARK_TTL }}' in workflow
+    assert 'urlencode({\'group\': bark_group, \'ttl\': str(bark_ttl), \'url\': project_url})' in workflow
     assert 'projects/' in workflow
 
 
@@ -89,7 +91,9 @@ def test_artifact_target_config_exists_and_holds_a_single_valid_value():
 def test_daily_workflow_switches_artifact_target_between_local_and_external():
     workflow = Path('.github/workflows/daily-production-html.yml').read_text(encoding='utf-8')
 
-    assert 'DATA_REPO: pekaboo/wuhan-housing-market-dashboard' in workflow
+    assert 'DATA_REPO: ${{ vars.DATA_REPO }}' in workflow
+    assert 'WFT_API_URL: ${{ vars.WFT_API_URL }}' in workflow
+    assert 'Validate runtime configuration' in workflow
     assert 'config/artifact-target.txt' in workflow
     assert 'DATA_REPO_TOKEN' in workflow
     assert "steps.target.outputs.target == 'local'" in workflow
@@ -112,7 +116,8 @@ def test_daily_workflow_fails_fast_on_bad_switch_and_scans_token_before_commit()
 def test_manual_workflow_switches_artifact_target_between_local_and_external():
     workflow = Path('.github/workflows/manual-full-enrichment.yml').read_text(encoding='utf-8')
 
-    assert 'DATA_REPO: pekaboo/wuhan-housing-market-dashboard' in workflow
+    assert 'DATA_REPO: ${{ vars.DATA_REPO }}' in workflow
+    assert 'WFT_API_URL: ${{ vars.WFT_API_URL }}' in workflow
     assert 'config/artifact-target.txt' in workflow
     assert 'DATA_REPO_TOKEN' in workflow
     assert "steps.target.outputs.target == 'local'" in workflow

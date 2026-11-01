@@ -11,7 +11,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DATA_REPO: pekaboo/wuhan-housing-market-dashboard
+  DATA_REPO: ${{ vars.DATA_REPO }}
+  WFT_API_URL: ${{ vars.WFT_API_URL }}
 
 permissions:
   contents: write
@@ -25,6 +26,22 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
+      - name: Validate runtime configuration
+        run: |
+          test -n "$DATA_REPO" || { echo "::error::Set the DATA_REPO Actions variable."; exit 1; }
+          printf '%s' "$DATA_REPO" | grep -Eq '^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$' || {
+            echo "::error::DATA_REPO must look like owner/repository."
+            exit 1
+          }
+          test -n "$WFT_API_URL" || { echo "::error::Set the WFT_API_URL Actions variable."; exit 1; }
+          case "$WFT_API_URL" in
+            https://*) ;;
+            *) echo "::error::WFT_API_URL must use HTTPS."; exit 1 ;;
+          esac
+          printf '%s' "$WFT_API_URL" | grep -Eq '^[^[:space:]]+$' || {
+            echo "::error::WFT_API_URL must not contain whitespace."
+            exit 1
+          }
       - name: Resolve artifact target
         id: target
         run: |
@@ -70,6 +87,7 @@ jobs:
           test -n "$WFT_TOKEN" || { echo "::error::Set the WFT_TOKEN repository secret."; exit 1; }
           python -m sale_dashboard \
             --site-output site \
+            --api-url "$WFT_API_URL" \
             --page-size 50 \
             --room-page-size 500 \
             --reuse-enrichment \
