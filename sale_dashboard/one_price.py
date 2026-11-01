@@ -187,7 +187,7 @@ FLOOR_OPTIMIZATION_CSS = r'''.discount-field{display:grid;grid-template-columns:
 .floor-column-head,.building-cell{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--map-panel)}
 .floor-room{box-shadow:none;transition:none}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.floor-room{transition:border-color .18s var(--ease-out)}}
-@media (max-width:760px){.overview-body{height:58px}.overview-scale{bottom:-16px;font-size:8px}.discount-field{height:44px}.discount-field input{height:40px}}
+@media (max-width:760px){.floor-price{font-size:11px;font-weight:800}.overview-body{height:58px}.overview-scale{bottom:-16px;font-size:8px}.discount-field{height:44px}.discount-field input{height:40px}}
 @media (max-width:760px){html:has(.one-price.floor-fullscreen),html:has(.one-price.floor-fullscreen) body{overflow:hidden;overscroll-behavior:none}.one-price.floor-fullscreen .room-controls{top:calc(10px + env(safe-area-inset-top));left:10px;right:auto;width:auto;max-width:calc(100vw - 20px);max-height:calc(100vh - 20px);padding:6px;overflow:visible;border-radius:14px}.one-price.floor-fullscreen .controls-heading{flex-direction:row;align-items:center}.one-price.floor-fullscreen .view-switch{display:none}.one-price.floor-fullscreen .filter-actions{display:flex}.one-price.floor-fullscreen .filter-actions button{min-height:38px;width:auto}.one-price.floor-fullscreen .room-controls.filters-collapsed [data-role="reset-filters"]{display:none}.one-price.floor-fullscreen .filter-panel{position:absolute;top:calc(100% + 8px);left:0;width:min(92vw,360px);max-height:calc(100vh - 92px);padding:10px;overflow:auto;border:1px solid var(--map-line);border-radius:14px;background:var(--map-panel);box-shadow:0 18px 48px #00000024}.one-price.floor-fullscreen .floor-toolbar{right:calc(10px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));left:calc(10px + env(safe-area-inset-left));z-index:50;flex-wrap:nowrap;gap:4px;min-height:48px;padding:4px;overflow-x:auto;overscroll-behavior:contain;touch-action:pan-x;scrollbar-width:none}.one-price.floor-fullscreen .floor-toolbar::-webkit-scrollbar{display:none}.one-price.floor-fullscreen .floor-toolbar button{flex:0 0 auto;min-height:40px}.one-price.floor-fullscreen .floor-toolbar>span:not(.result-status),.one-price.floor-fullscreen .zoom-control{display:none}.one-price.floor-fullscreen .back-overview{left:calc(10px + env(safe-area-inset-left));bottom:calc(64px + env(safe-area-inset-bottom));z-index:55;min-height:40px}}
 '''
 
@@ -563,7 +563,9 @@ ONE_PRICE_JS = r'''(function(){
     var insets=floorViewportInsets(stage);var width=Math.max(1,canvas.offsetWidth);var height=Math.max(1,canvas.offsetHeight);var availableHeight=Math.max(1,stage.clientHeight-insets.top-insets.bottom);
     var fitAll=Math.min((stage.clientWidth-32)/width,(availableHeight-32)/height,1);var fitHeight=Math.min((availableHeight-32)/height,1);
     var overview=canvas.classList.contains('overview-canvas')&&window.matchMedia('(max-width: 760px)').matches;
-    viewState.scale=clampScale(overview?fitHeight:(fitAll>=.55?fitAll:fitHeight));
+    var fittedScale=overview?fitHeight:(fitAll>=.55?fitAll:fitHeight);
+    var readableScale=isMobileViewport()&&!overview?1:fittedScale;
+    viewState.scale=clampScale(readableScale);
     viewState.x=(stage.clientWidth-width*viewState.scale)/2;viewState.y=insets.top+(availableHeight-height*viewState.scale)/2;applyViewState(canvas);queueClamp(canvas);
   }
   function setZoom(value,anchorX,anchorY){var next=Number(value);if(!isFinite(next))return;var stage=floorResults.querySelector('.floor-stage');if((anchorX===undefined||anchorY===undefined)&&stage){var rect=stage.getBoundingClientRect();anchorX=rect.width/2;anchorY=rect.height/2}zoomAt(anchorX||0,anchorY||0,next/100)}
