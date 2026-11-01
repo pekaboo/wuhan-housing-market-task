@@ -409,9 +409,16 @@ def test_one_price_floor_map_preserves_grey_placeholders_and_large_project_overv
     assert 'priceGroups.get(priceKey(room))' in detail
     assert "if(group&&available)article.style.setProperty('--price-color',group)" in detail
     assert "swatch.className='price-chip'" in detail
-    assert "var overview=building==='all'&&unit==='all'" in detail
+    assert "var overview=building==='all'&&unit==='all'&&shouldUseOverview(allRooms)" in detail
     assert "canvas.className='floor-canvas'+(overview?' overview-canvas':'')" in detail
-    assert "var signature=(building==='all'&&unit==='all'?'overview':'detail')" in detail
+    assert "var signature=(overview?'overview':'detail')" in detail
+    assert 'function isMobileViewport()' in detail
+    assert 'function shouldUseOverview(values)' in detail
+    assert 'function shouldFocusResultBuilding()' in detail
+    assert 'data-role="all-buildings" hidden' in detail
+    assert 'mobileFullFloor=true' in detail
+    assert 'mobileFullFloor=false' in detail
+    assert "if(!isMobileViewport()||mobileFullFloor){floorResults.dataset.zoomLevel='high';return}" in detail
     assert "if(signature===floorSignature&&existingStage&&existingStage.dataset.renderState==='complete')" in detail
     assert 'function updateFloorFilters(allRooms)' in detail
     assert 'building-overview' in detail

@@ -114,6 +114,7 @@ def one_price_section(snapshot: dict[str, Any] | None, data_url: str | None) -> 
         <button type="button" data-role="zoom-out">缩小</button>
         <button type="button" data-role="reset-zoom">复位</button>
         <button type="button" data-role="floor-fullscreen" aria-pressed="false">全屏</button>
+        <button type="button" data-role="all-buildings" hidden>全图</button>
         <label class="zoom-control">缩放<input data-role="zoom-range" type="range" min="18" max="220" step="1" value="100" aria-label="楼层分布缩放比例"></label>
         <button type="button" data-role="result-prev" disabled>上一结果</button>
         <span class="result-status" data-role="result-status" aria-live="polite">0/0</span>
@@ -217,6 +218,12 @@ ONE_PRICE_JS = r'''(function(){
   var resetFiltersButton=root.querySelector('[data-role="reset-filters"]');
   var resultPrev=root.querySelector('[data-role="result-prev"]');
   var resultNext=root.querySelector('[data-role="result-next"]');
+  var allBuildingsButton=root.querySelector('[data-role="all-buildings"]');
+  var mobileFullFloor=false;
+  var MOBILE_FULL_ROOM_LIMIT=180;
+  function isMobileViewport(){return window.matchMedia('(max-width: 760px)').matches}
+  function shouldUseOverview(values){return isMobileViewport()&&!mobileFullFloor&&values.length>MOBILE_FULL_ROOM_LIMIT}
+  function shouldFocusResultBuilding(){return isMobileViewport()&&!mobileFullFloor&&building==='all'&&unit==='all'&&rooms.length>MOBILE_FULL_ROOM_LIMIT}
   var resultStatus=root.querySelector('[data-role="result-status"]');
   var filtersOpen=!(filterPanel&&filterPanel.hidden);
   var rooms=[];
@@ -381,7 +388,7 @@ ONE_PRICE_JS = r'''(function(){
     var building=document.createElement('strong');building.textContent=text(column.building);head.appendChild(building);
     var unit=document.createElement('span');unit.textContent='单元 '+text(column.unitName);head.appendChild(unit);return head;
   }
-  function focusBuilding(column){building=text(column.building);unit=text(column.unitName);limit=100;render()}
+  function focusBuilding(column){building=text(column.building);unit=text(column.unitName);mobileFullFloor=false;limit=100;render()}
   function updateFloorFilters(allRooms){
     overviewBindings.forEach(function(binding){
       var matched=binding.values.filter(roomMatches).length;var ratio=binding.values.length?matched/binding.values.length:0;
@@ -403,7 +410,8 @@ ONE_PRICE_JS = r'''(function(){
     });
     columns.sort(function(left,right){return naturalCompare(left.building,right.building)||naturalCompare(left.unitName,right.unitName)});
     floors.sort(function(left,right){var ln=floorNumber(left);var rn=floorNumber(right);if(isFinite(ln)&&isFinite(rn)&&ln!==rn)return rn-ln;if(isFinite(ln))return -1;if(isFinite(rn))return 1;return naturalCompare(left,right)});
-    var signature=(building==='all'&&unit==='all'?'overview':'detail')+'::'+columns.map(function(column){return column.key}).join('|')+'::'+floors.join('|');
+    var overview=building==='all'&&unit==='all'&&shouldUseOverview(allRooms);
+    var signature=(overview?'overview':'detail')+'::'+columns.map(function(column){return column.key}).join('|')+'::'+floors.join('|');
     var existingStage=floorResults.querySelector('.floor-stage');
     if(signature===floorSignature&&existingStage&&existingStage.dataset.renderState==='complete'){
       updateFloorFilters(allRooms);syncBackButton();
@@ -412,7 +420,6 @@ ONE_PRICE_JS = r'''(function(){
     }
     floorSignature=signature;roomElements.clear();overviewBindings=[];floorResults.replaceChildren();
     if(!allRooms.length){var empty=document.createElement('p');empty.className='loading';empty.textContent='没有可展示的楼栋数据';floorResults.appendChild(empty);if(backButton)floorResults.appendChild(backButton);return}
-    var overview=building==='all'&&unit==='all';
     var stage=document.createElement('div');stage.className='floor-stage floor-map';stage.tabIndex=0;stage.setAttribute('role','application');stage.setAttribute('aria-label','楼层分布地图，可拖拽、缩放和键盘操作');stage.setAttribute('aria-keyshortcuts','方向键平移，加号放大，减号缩小，0 复位');stage.setAttribute('aria-busy','true');stage.dataset.renderState='loading';
     var status=document.createElement('p');status.className='floor-render-status';status.textContent='楼层分布渲染中 0%';
     var canvas=document.createElement('div');canvas.className='floor-canvas'+(overview?' overview-canvas':'');
@@ -473,7 +480,12 @@ ONE_PRICE_JS = r'''(function(){
     }
     if(jobs.length)requestAnimationFrame(renderFloorBatch);else finishRender();
   }
-  function syncBackButton(){if(backToOverview)backToOverview.hidden=!(view==='floor'&&(building!=='all'||unit!=='all'))}
+  function syncBackButton(){if(backToOverview)backToOverview.hidden=!(view==='floor'&&(mobileFullFloor||building!=='all'||unit!=='all'))}
+  function syncFloorModeControls(){
+    if(!allBuildingsButton)return;
+    var show=view==='floor'&&isMobileViewport()&&!mobileFullFloor&&building==='all'&&unit==='all'&&rooms.length>MOBILE_FULL_ROOM_LIMIT;
+    allBuildingsButton.hidden=!show;
+  }
   function syncResultControls(){
     var active=activeFilterCount()>0&&resultRooms.length>0;
     if(resultPrev)resultPrev.disabled=!active||resultRooms.length<2;
@@ -506,7 +518,7 @@ ONE_PRICE_JS = r'''(function(){
     if(focusResultAfterRender&&focusResultMode==='first'){
       var candidates=rooms.filter(roomMatches);
       if(!candidates.length&&(building!=='all'||unit!=='all')){building='all';unit='all';refreshBuildingOptions();refreshUnitOptions();candidates=rooms.filter(roomMatches)}
-      if(candidates.length){var first=candidates[0];building=text(first.buildName);unit=text(first.unitName);refreshBuildingOptions();refreshUnitOptions();resultIndex=0}
+      if(candidates.length&&shouldFocusResultBuilding()){var first=candidates[0];building=text(first.buildName);unit=text(first.unitName);refreshBuildingOptions();refreshUnitOptions();resultIndex=0}
     }
     var visibleRooms=scopedRooms();var filtered=visibleRooms.filter(roomMatches);
     resultRooms=filtered;if(resultIndex>=resultRooms.length)resultIndex=0;
@@ -520,13 +532,13 @@ ONE_PRICE_JS = r'''(function(){
     }else renderFloorView(visibleRooms);
     var discountLabel=discountRate===100?'':' · 折后 '+discountRate+'%';
     count.textContent=(view==='table'?'显示 '+Math.min(limit,filtered.length)+' / '+filtered.length+' 套房源':'楼层分布显示 '+filtered.length+' / '+visibleRooms.length+' 套匹配房源')+discountLabel;
-    more.hidden=view!=='table'||limit>=filtered.length;setSummary(visibleRooms);syncResultControls();
+    more.hidden=view!=='table'||limit>=filtered.length;setSummary(visibleRooms);syncResultControls();syncFloorModeControls();
   }
   function scheduleRender(delay){if(renderTimer)window.clearTimeout(renderTimer);renderTimer=window.setTimeout(function(){renderTimer=null;render()},delay===undefined?180:delay)}
   function requestResultFocus(){focusResultAfterRender=true;focusResultMode='first'}
   var viewState={scale:1,x:0,y:0};var transformFrame=null;var transformShouldClamp=false;var transformCanvas=null;var stageBoxCache=null;var stageBoxElement=null;
   function clampScale(value){return Math.min(2.2,Math.max(.18,value))}
-  function setZoomLevel(){var scale=viewState.scale;floorResults.dataset.zoomLevel=scale<.65?'low':scale<1?'medium':'high'}
+  function setZoomLevel(){var scale=viewState.scale;if(!isMobileViewport()||mobileFullFloor){floorResults.dataset.zoomLevel='high';return}floorResults.dataset.zoomLevel=scale<.65?'low':scale<1?'medium':'high'}
   function applyViewState(canvas){floorResults.style.setProperty('--floor-scale',viewState.scale.toFixed(3));floorResults.style.setProperty('--pan-x',viewState.x.toFixed(2)+'px');floorResults.style.setProperty('--pan-y',viewState.y.toFixed(2)+'px');if(canvas)canvas.style.transform='translate3d('+viewState.x.toFixed(2)+'px,'+viewState.y.toFixed(2)+'px,0) scale('+viewState.scale.toFixed(4)+')';setZoomLevel();var percent=Math.round(viewState.scale*100);if(zoomScale)zoomScale.textContent=percent+'%';if(zoomRange)zoomRange.value=String(percent)}
   function queueTransform(canvas,shouldClamp){
     transformCanvas=canvas||transformCanvas;transformShouldClamp=transformShouldClamp||!!shouldClamp;
@@ -591,7 +603,8 @@ ONE_PRICE_JS = r'''(function(){
   if(zoomRange)zoomRange.addEventListener('input',function(){zoomFromControl(zoomRange.value)});
   if(resultPrev)resultPrev.addEventListener('click',function(){selectResultIndex(resultIndex-1)});
   if(resultNext)resultNext.addEventListener('click',function(){selectResultIndex(resultIndex+1)});
-  if(backToOverview)backToOverview.addEventListener('click',function(){building='all';unit='all';limit=100;render()});
+  if(allBuildingsButton)allBuildingsButton.addEventListener('click',function(){building='all';unit='all';mobileFullFloor=true;limit=100;render()});
+  if(backToOverview)backToOverview.addEventListener('click',function(){building='all';unit='all';mobileFullFloor=false;limit=100;render()});
   var activePointers=new Map(),pinchState=null,gestureMoved=false,gestureStage=null,gestureRect=null;
   function stageBox(stage){if(stageBoxElement!==stage||!stageBoxCache){gestureRect=stage.getBoundingClientRect();stageBoxElement=stage;stageBoxCache=gestureRect}return stageBoxCache}
   function stagePoint(stage,event){var rect=stageBox(stage);return{x:event.clientX-rect.left,y:event.clientY-rect.top}}
